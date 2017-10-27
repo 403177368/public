@@ -466,6 +466,7 @@ exports.default = {
 //
 //
 //
+//
 
 /***/ }),
 /* 73 */
@@ -1458,7 +1459,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "panel panel-default tabbed"
   }, [_c('div', {
     staticClass: "panel-heading"
-  }, [_c('span', [_vm._v("简书")]), _c('span', [_vm._v("豆瓣")]), _c('span', [_vm._v("贴吧")])]), _c('div', {
+  }, [_c('span', [_vm._v("简书")]), _c('span', [_vm._v("豆瓣")]), _c('span', [_vm._v("贴吧")]), _c('span', [_vm._v("知乎")])]), _c('div', {
     staticClass: "panel-body form-inline"
   }, [_c('input', {
     staticClass: "form-control input-sm",
