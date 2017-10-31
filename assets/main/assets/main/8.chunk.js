@@ -136,6 +136,8 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 //
 //
 //
+//
+//
 
 exports.default = {
   data: function data() {
@@ -210,7 +212,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card post--"
   }, [_c('div', {
     staticClass: "card-body"
-  }, [_c('h1', [_vm._v(_vm._s(_vm.post.title))]), _c('div', [_c('div', {
+  }, [_c('div', {
+    staticClass: "page-header"
+  }, [_c('h1', [_vm._v(_vm._s(_vm.post.title))])]), _c('div', [_c('div', {
     staticStyle: {
       "margin-bottom": "15px",
       "overflow": "hidden"
