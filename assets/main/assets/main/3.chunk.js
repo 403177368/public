@@ -40,6 +40,8 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
 
 
 exports.default = {
@@ -66,8 +68,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "container-fluid"
   }, [_c('div', {
+    staticClass: "form-group"
+  }, [_c('div', {
     staticClass: "btn btn-primary"
-  }, [_vm._v("\n      Deploy\n    ")]), _c('table', {
+  }, [_vm._v("\n        Deploy\n      ")])]), _c('table', {
     staticClass: "table table-bordered"
   }, [_c('thead', [_c('tr', [_c('th')])])])])])
 }]}

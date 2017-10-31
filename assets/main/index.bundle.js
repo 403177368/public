@@ -229,6 +229,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _vue2.default.use(_vueRouter2.default);
 
 var routes = [{
+  path: '*',
+  component: {
+    template: '<div class="Route404">404: This route doesn\'t exist.</div>'
+  }
+}, {
   path: '/',
   redirect: '/main/home'
 }, {

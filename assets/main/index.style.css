@@ -991,16 +991,35 @@ a {
   height: 100%;
   background: #1C2B36;
 }
-.NavLeft a {
+.NavLeft .first-container {
+  width: 100%;
+  max-height: 50px;
+  overflow: hidden;
+}
+.NavLeft .first-container.active {
+  max-height: 10000px;
+}
+.NavLeft .first-container a {
+  box-sizing: border-box;
   display: block;
-  padding: 10px 20px;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 15px;
   background: #1C2B36;
   color: #869fb1;
   cursor: pointer;
   text-decoration: none;
 }
-.NavLeft a:hover {
+.NavLeft .first-container a:hover {
+  background: black;
   color: white;
+}
+.NavLeft .first-container a i {
+  height: 50px;
+  line-height: 50px;
+}
+.NavLeft .first-container .second-container a {
+  padding: 0 30px;
 }
 
 .Mask {
@@ -1021,10 +1040,15 @@ a {
   width: 60%;
   margin: 0;
   margin: auto;
+  overflow: scroll;
 }
 .Mask .cell .Edit .close {
   color: black;
   cursor: pointer;
+}
+.Mask .cell .Edit .panel-body {
+  max-height: 60vh;
+  overflow: scroll;
 }
 .Mask .cell .Edit .panel-footer .btn {
   margin-right: 10px;
@@ -1038,6 +1062,7 @@ a {
   margin-bottom: 0;
   border: none;
   border-radius: 0;
+  z-index: 1000;
 }
 .MyNavbar a {
   color: white;
@@ -1048,22 +1073,22 @@ a {
   position: fixed;
   top: 50px;
   right: 50px;
-  z-index: 999;
+  z-index: 9999;
 }
 
-.RouteAdmin[data-v-9a52ff3c] {
+.RouteAdmin[data-v-690b9843] {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
-.RouteAdmin .main-part[data-v-9a52ff3c] {
+.RouteAdmin .main-part[data-v-690b9843] {
   box-sizing: border-box;
   width: 100%;
   height: 100vh;
   margin-top: 50px;
   overflow: scroll;
 }
-.RouteAdmin .right-part[data-v-9a52ff3c] {
+.RouteAdmin .right-part[data-v-690b9843] {
   margin-left: 200px;
   height: 100vh;
   overflow: scroll;
@@ -1089,6 +1114,10 @@ a {
   font-weight: normal;
   width: 200px;
   height: 30px;
+}
+
+.AdminDeployment[data-v-a67932b0] {
+  padding: 15px 0;
 }
 
 .RouteSequelize[data-v-7a9c0b86] {

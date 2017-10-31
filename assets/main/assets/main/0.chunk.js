@@ -659,7 +659,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('nav', {
     staticClass: "Page navigation"
   }, [_c('ul', {
-    staticClass: "pagination"
+    staticClass: "pagination pagination-sm"
   }, [_c('li', {
     on: {
       "click": function($event) {

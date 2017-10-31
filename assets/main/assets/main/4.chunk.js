@@ -222,6 +222,13 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
   data: function data() {
@@ -291,24 +298,26 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.close
     }
-  })])]), _c('form', {
+  })])]), _c('div', {
+    staticClass: "panel-body"
+  }, [_c('form', {
     staticClass: "form-horizontal"
   }, [_c('div', {
     staticClass: "container-fluid"
   }, _vm._l((_vm.item), function(val, key) {
     return _c('div', {
       key: "key",
-      staticClass: "row-fluid"
+      staticClass: "row"
     }, [_c('div', {
       staticClass: "form-group"
     }, [_c('div', {
       staticClass: "col-sm-2"
     }, [_c('label', {
       staticClass: "control-label"
-    }, [_vm._v("\n                    " + _vm._s(key) + "\n                  ")])]), _c('div', {
+    }, [_vm._v("\n                      " + _vm._s(key) + "\n                    ")])]), _c('div', {
       staticClass: "col-sm-10"
     }, [(key !== 'id') ? _c('input', {
-      staticClass: "form-control",
+      staticClass: "form-control input-sm",
       attrs: {
         "type": "text"
       },
@@ -321,7 +330,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }) : _vm._e()])])])
-  }))]), _c('div', {
+  }))])]), _c('div', {
     staticClass: "panel-footer"
   }, [_c('div', {
     staticClass: "btn btn-success",
@@ -481,22 +490,72 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
   data: function data() {
     return {
       tabs: [{
         name: 'Deployment',
-        href: '/admin/deployment'
-
+        href: '/admin/deployment',
+        active: false
+        // children: [{
+        //   name: 'aaa'
+        // }, {
+        //   name: 'bbb'
+        // }]
       }, {
         name: 'Lowdb',
         href: '/admin/lowdb',
         subs: []
       }, {
         name: 'Sequelize',
-        href: '/admin/sequelize',
-        subs: []
+        href: '',
+        active: false,
+        children: [{
+          href: '/admin/sequelize',
+          name: 'items'
+        }]
       }, {
         name: 'Posts',
         href: '/admin/posts',
@@ -515,7 +574,13 @@ exports.default = {
       }]
     };
   },
-  computed: {}
+
+  methods: {
+    toggle: function toggle(i) {
+      console.log(i);
+      this.tabs[i].active = !this.tabs[i].active;
+    }
+  }
 };
 
 /***/ }),
@@ -526,12 +591,34 @@ exports.default = {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "NavLeft"
-  }, _vm._l((_vm.tabs), function(a) {
-    return _c('router-link', {
+  }, _vm._l((_vm.tabs), function(a, i) {
+    return _c('div', {
+      staticClass: "first-container",
+      class: a.active ? 'active' : ''
+    }, [_c('div', {
+      staticClass: "first-body",
+      on: {
+        "click": function($event) {
+          _vm.toggle(i)
+        }
+      }
+    }, [_c('router-link', {
       attrs: {
         "to": a.href
       }
-    }, [_vm._v(_vm._s(a.name))])
+    }, [_vm._v("\n        " + _vm._s(a.name) + "\n        "), (a.children) ? _c('i', {
+      staticClass: "fa fa-chevron-down pull-right"
+    }) : _vm._e()])], 1), (a.children) ? _c('div', {
+      staticClass: "second-container"
+    }, _vm._l((a.children), function(b) {
+      return _c('div', {
+        staticClass: "second-body"
+      }, [_c('router-link', {
+        attrs: {
+          "to": b.href
+        }
+      }, [_vm._v(_vm._s(b.name))])], 1)
+    })) : _vm._e()])
   }))
 },staticRenderFns: []}
 
@@ -775,6 +862,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
 
 exports.default = {
   data: function data() {
@@ -848,7 +936,7 @@ var Component = __webpack_require__(0)(
   /* template */
   __webpack_require__(144),
   /* scopeId */
-  "data-v-9a52ff3c",
+  "data-v-690b9843",
   /* cssModules */
   null
 )

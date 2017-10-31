@@ -5148,7 +5148,7 @@ exports.push([module.i, ".RouteMember {\n  width: 100%;\n  background: #ECEBEB;\
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 exports.Orders = undefined;
 
@@ -5165,26 +5165,26 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Orders = exports.Orders = function (_Component) {
-	_inherits(Orders, _Component);
+  _inherits(Orders, _Component);
 
-	function Orders() {
-		_classCallCheck(this, Orders);
+  function Orders() {
+    _classCallCheck(this, Orders);
 
-		return _possibleConstructorReturn(this, (Orders.__proto__ || Object.getPrototypeOf(Orders)).apply(this, arguments));
-	}
+    return _possibleConstructorReturn(this, (Orders.__proto__ || Object.getPrototypeOf(Orders)).apply(this, arguments));
+  }
 
-	_createClass(Orders, [{
-		key: 'render',
-		value: function render() {
-			return React.createElement(
-				'div',
-				{ className: 'Orders' },
-				React.createElement(_Topbar.Topbar, { name: '\u5168\u90E8\u8BA2\u5355' })
-			);
-		}
-	}]);
+  _createClass(Orders, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        { className: 'Orders' },
+        React.createElement(_Topbar.Topbar, { name: '\u5168\u90E8\u8BA2\u5355' })
+      );
+    }
+  }]);
 
-	return Orders;
+  return Orders;
 }(_react.Component);
 
 /***/ }),
