@@ -117,6 +117,10 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 var state = {
   inited: false,
+  box: {
+    tabs: ['简书', 'Echojs', 'Cnode'],
+    current: 0
+  },
   items: [],
   jianshu: {
     inited: false,
@@ -166,6 +170,18 @@ var actions = {
         (_state$what$items = state[what].items).push.apply(_state$what$items, _toConsumableArray(res.data.data));
       });
     };
+  },
+  switch_tab: function switch_tab(_ref4, _ref5) {
+    var state = _ref4.state,
+        dispatch = _ref4.dispatch;
+    var i = _ref5.i;
+
+    state.box.current = i;
+    if (i === 0) {
+      dispatch('fetch', { what: 'jianshu' });
+    } else if (i === 1) {
+      dispatch('fetch', { what: 'echojs' });
+    }
   }
 };
 
@@ -272,6 +288,9 @@ exports.default = {
     // Slider: require('./Slider.vue')
   },
   computed: {
+    home: function home() {
+      return this.$store.state.main.home;
+    },
     user: function user() {
       return this.$store.state.app.user;
     }
@@ -320,6 +339,11 @@ exports.default = {
     }
   }
 }; //
+//
+//
+//
+//
+//
 //
 //
 //
@@ -627,13 +651,9 @@ exports.default = {
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "News panel panel-default"
-  }, [_c('div', {
-    staticClass: "panel-heading"
-  }, [_vm._v("\n      News\n    ")]), _c('ul', {
-    staticClass: "list-group"
-  }, _vm._l((_vm.news.items), function(a) {
+  return _c('ul', {
+    staticClass: "News list-group"
+  }, [_vm._l((_vm.news.items), function(a) {
     return _c('li', {
       staticClass: "list-group-item"
     }, [_c('div', {
@@ -654,8 +674,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._v(_vm._s(a.title))]), _c('span', {
       staticClass: "badge pull-right"
     }, [_vm._v(_vm._s(a.reply_count))])], 1), _vm._v("\n          " + _vm._s(a.author.loginname) + "\n        ")])])
-  })), _c('div', {
-    staticClass: "panel-body"
+  }), _c('li', {
+    staticClass: "list-group-item"
   }, [_c('nav', {
     staticClass: "Page navigation"
   }, [_c('ul', {
@@ -679,7 +699,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }, [_c('a', [_vm._v(_vm._s(a))])])
-  })], 2)])])])
+  })], 2)])])], 2)
 },staticRenderFns: []}
 
 /***/ }),
@@ -1459,8 +1479,27 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "panel panel-default tabbed"
   }, [_c('div', {
     staticClass: "panel-heading"
-  }, [_c('span', [_vm._v("简书")]), _c('span', [_vm._v("豆瓣")]), _c('span', [_vm._v("贴吧")]), _c('span', [_vm._v("知乎")])]), _c('div', {
-    staticClass: "panel-body form-inline"
+  }, _vm._l((_vm.home.box.tabs), function(a, i) {
+    return _c('span', {
+      class: i === _vm.home.box.current ? 'active' : '',
+      on: {
+        "click": function($event) {
+          _vm.$store.dispatch('main/home/switch_tab', {
+            i: i
+          })
+        }
+      }
+    }, [_vm._v(_vm._s(a))])
+  })), _c('ul', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.home.box.current === 0),
+      expression: " home.box.current === 0 "
+    }],
+    staticClass: "list-group"
+  }, [_c('li', {
+    staticClass: "list-group-item form-inline"
   }, [_c('input', {
     staticClass: "form-control input-sm",
     staticStyle: {
@@ -1470,9 +1509,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _c('div', {
     staticClass: "btn btn-primary btn-sm"
-  }, [_vm._v("Search")])]), _c('ul', {
-    staticClass: "list-group"
-  }, [_c('li', {
+  }, [_vm._v("Search")])]), _c('li', {
     directives: [{
       name: "show",
       rawName: "v-show",
@@ -1498,14 +1535,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_vm._v(_vm._s(a.title))])]), _c('p', [_vm._v(_vm._s(a.abstract))])])
   })], 2), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.home.box.current === 0),
+      expression: " home.box.current === 0 "
+    }],
     staticClass: "panel-body"
   }, [_c('div', {
-    staticClass: "btn btn-primary"
-  }, [_vm._v("加载更多")])])]), _c('div', {
-    staticClass: "panel panel-default"
-  }, [_c('div', {
-    staticClass: "panel-heading"
-  }, [_vm._v("\n              EchoJS\n            ")]), _c('ul', {
+    staticClass: "btn btn-primary btn-sm"
+  }, [_vm._v("加载更多")])]), _c('ul', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.home.box.current === 1),
+      expression: " home.box.current === 1 "
+    }],
     staticClass: "list-group"
   }, _vm._l((_vm.$store.state.main.home.echojs.items), function(a) {
     return _c('a', {
@@ -1515,10 +1560,23 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_c('p', [_vm._v(_vm._s(a.author.name) + " " + _vm._s(a.time))]), _c('h4', [_vm._v(_vm._s(a.title))])])
   })), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.home.box.current === 1),
+      expression: " home.box.current === 1 "
+    }],
     staticClass: "panel-body"
   }, [_c('div', {
-    staticClass: "btn btn-primary"
-  }, [_vm._v("加载更多")])])]), _c('news')], 1), _c('div', {
+    staticClass: "btn btn-primary btn-sm"
+  }, [_vm._v("加载更多")])]), _c('news', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.home.box.current === 2),
+      expression: " home.box.current === 2 "
+    }]
+  })], 1)]), _c('div', {
     staticClass: "col-sm-4"
   }, [_c('div', {
     staticClass: "form-group"

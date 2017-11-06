@@ -803,9 +803,12 @@ a {
   background: #eff2f7;
 }
 /*@pink: #e91e63;*/
-.Home .tabbed .panel-heading span[data-v-7f7ff48e] {
+.Home .panel-heading span[data-v-7f7ff48e] {
   margin-right: 15px;
   cursor: pointer;
+}
+.Home .panel-heading span.active[data-v-7f7ff48e] {
+  color: #0f88eb;
 }
 /*@pink: #e91e63;*/
 /*@pink: #e91e63;*/
