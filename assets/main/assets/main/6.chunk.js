@@ -4,6 +4,20 @@ webpackJsonp([6],{
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    ref: "container",
+    staticClass: "Matrix"
+  }, [_c('canvas', {
+    ref: "matrix"
+  })])
+},staticRenderFns: []}
+
+/***/ }),
+
+/***/ 101:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('transition', {
     attrs: {
       "name": "fade-in"
@@ -55,18 +69,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 38:
+/***/ 39:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(93)
+__webpack_require__(94)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(94),
+  __webpack_require__(95),
   /* template */
-  __webpack_require__(100),
+  __webpack_require__(101),
   /* scopeId */
   null,
   /* cssModules */
@@ -78,14 +92,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 93:
+/***/ 94:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 94:
+/***/ 95:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -95,7 +109,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Canvas = __webpack_require__(95);
+var _Canvas = __webpack_require__(96);
 
 var _Canvas2 = _interopRequireDefault(_Canvas);
 
@@ -103,7 +117,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = {
   components: {
-    matrix: __webpack_require__(96)
+    matrix: __webpack_require__(97)
   },
   data: function data() {
     return {
@@ -211,7 +225,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 95:
+/***/ 96:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -276,18 +290,18 @@ exports.default = {
 
 /***/ }),
 
-/***/ 96:
+/***/ 97:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(97)
+__webpack_require__(98)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(98),
-  /* template */
   __webpack_require__(99),
+  /* template */
+  __webpack_require__(100),
   /* scopeId */
   null,
   /* cssModules */
@@ -299,14 +313,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 97:
+/***/ 98:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 98:
+/***/ 99:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -428,20 +442,6 @@ exports.default = {
   },
   methods: {}
 };
-
-/***/ }),
-
-/***/ 99:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    ref: "container",
-    staticClass: "Matrix"
-  }, [_c('canvas', {
-    ref: "matrix"
-  })])
-},staticRenderFns: []}
 
 /***/ })
 

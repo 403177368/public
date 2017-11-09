@@ -220,7 +220,7 @@ var _vue = __webpack_require__(3);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _vueRouter = __webpack_require__(24);
+var _vueRouter = __webpack_require__(25);
 
 var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
@@ -240,80 +240,80 @@ var routes = [{
 }, {
   path: '/main',
   component: function component() {
-    return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 35));
+    return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 36));
   },
   children: [{
     path: 'home',
     component: function component() {
-      return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 36));
+      return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 37));
     }
   }, {
     path: 'projects',
     component: function component() {
-      return __webpack_require__.e/* import() */(0/* limit */).then(__webpack_require__.bind(null, 37));
+      return __webpack_require__.e/* import() */(0/* limit */).then(__webpack_require__.bind(null, 38));
     }
   }, {
     path: 'canvas',
     component: function component() {
-      return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, 38));
+      return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, 39));
     }
   }, {
     path: 'blog',
     component: function component() {
-      return __webpack_require__.e/* import() */(0/* limit */).then(__webpack_require__.bind(null, 39));
+      return __webpack_require__.e/* import() */(0/* limit */).then(__webpack_require__.bind(null, 40));
     }
   }, {
     path: 'post/:id',
     component: function component() {
-      return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 40));
+      return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 41));
     }
   }, {
     path: 'signin',
     component: function component() {
-      return __webpack_require__.e/* import() */(0/* limit */).then(__webpack_require__.bind(null, 41));
+      return __webpack_require__.e/* import() */(0/* limit */).then(__webpack_require__.bind(null, 42));
     }
   }, {
     path: 'cnode_post/:id',
     component: function component() {
-      return __webpack_require__.e/* import() */(8).then(__webpack_require__.bind(null, 42));
+      return __webpack_require__.e/* import() */(8).then(__webpack_require__.bind(null, 43));
     }
   }]
 }, {
   path: '/mall',
   component: function component() {
-    return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 43));
+    return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 44));
   },
   children: [{
     path: 'cart',
     component: function component() {
-      return __webpack_require__.e/* import() */(2/* limit */).then(__webpack_require__.bind(null, 44));
+      return __webpack_require__.e/* import() */(2/* limit */).then(__webpack_require__.bind(null, 45));
     }
   }]
 }, {
   path: '/admin',
   component: function component() {
-    return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 45));
+    return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 46));
   },
   children: [{
     path: 'deployment',
     component: function component() {
-      return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 46));
+      return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 47));
     }
   }, {
     path: 'lowdb',
     alias: '',
     component: function component() {
-      return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 47));
+      return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 48));
     }
   }, {
     path: 'sequelize',
     component: function component() {
-      return __webpack_require__.e/* import() */(1/* limit */).then(__webpack_require__.bind(null, 48));
+      return __webpack_require__.e/* import() */(1/* limit */).then(__webpack_require__.bind(null, 49));
     }
   }, {
     path: 'tables',
     component: function component() {
-      return __webpack_require__.e/* import() */(3/* limit */).then(__webpack_require__.bind(null, 49));
+      return __webpack_require__.e/* import() */(3/* limit */).then(__webpack_require__.bind(null, 50));
     }
   }]
 }];
@@ -361,7 +361,7 @@ var _vue = __webpack_require__(3);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _vuex = __webpack_require__(27);
+var _vuex = __webpack_require__(28);
 
 var _vuex2 = _interopRequireDefault(_vuex);
 
@@ -448,7 +448,7 @@ if (typeof window === 'undefined') {
 
 var store = new _vuex2.default.Store({
   modules: {
-    app: __webpack_require__(28).default,
+    app: __webpack_require__(29).default,
 
     // main: require('./main/main.store.js').default,
     admin: __webpack_require__(5).default
@@ -513,8 +513,8 @@ exports.default = {
     height: 0
   },
   modules: {
-    items: __webpack_require__(25).default,
-    tip: __webpack_require__(26).default
+    items: __webpack_require__(26).default,
+    tip: __webpack_require__(27).default
   },
   action: {
     init: function init(_ref) {
@@ -558,7 +558,7 @@ var _store2 = _interopRequireDefault(_store);
 
 var _router = __webpack_require__(2);
 
-var _a = __webpack_require__(34);
+var _a = __webpack_require__(35);
 
 var _a2 = _interopRequireDefault(_a);
 
@@ -598,7 +598,7 @@ var _vue = __webpack_require__(3);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _components = __webpack_require__(15);
+var _components = __webpack_require__(16);
 
 var _components2 = _interopRequireDefault(_components);
 
@@ -619,7 +619,7 @@ var app = new _vue2.default({
   store: _store2.default,
   router: _router.router,
   components: {
-    App: __webpack_require__(30)
+    App: __webpack_require__(31)
   },
   template: '<app></app>'
 });
@@ -642,6 +642,8 @@ __webpack_require__(12);
 __webpack_require__(13);
 
 __webpack_require__(14);
+
+__webpack_require__(15);
 
 /***/ }),
 /* 10 */
@@ -675,6 +677,12 @@ __webpack_require__(14);
 
 /***/ }),
 /* 15 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -685,23 +693,23 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function (Vue) {
-  Vue.component('v-slider', __webpack_require__(16));
-  Vue.component('v-calender', __webpack_require__(20));
+  Vue.component('v-slider', __webpack_require__(17));
+  Vue.component('v-calender', __webpack_require__(21));
 };
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(17)
+__webpack_require__(18)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(18),
-  /* template */
   __webpack_require__(19),
+  /* template */
+  __webpack_require__(20),
   /* scopeId */
   null,
   /* cssModules */
@@ -712,13 +720,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -962,7 +970,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1012,18 +1020,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(21)
+__webpack_require__(22)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(22),
-  /* template */
   __webpack_require__(23),
+  /* template */
+  __webpack_require__(24),
   /* scopeId */
   "data-v-4c7cac1a",
   /* cssModules */
@@ -1034,13 +1042,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1453,7 +1461,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1588,13 +1596,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 }]}
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports) {
 
 module.exports = window.VueRouter;
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1867,7 +1875,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1903,13 +1911,13 @@ exports.default = {
 };
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports) {
 
 module.exports = window.Vuex;
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1934,7 +1942,7 @@ var mutations = {};
 exports.default = {
   namespaced: true,
   modules: {
-    user: __webpack_require__(29).default
+    user: __webpack_require__(30).default
   },
   state: state,
   actions: actions,
@@ -1942,7 +1950,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2052,18 +2060,18 @@ exports.default = {
 };
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(31)
+__webpack_require__(32)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(32),
-  /* template */
   __webpack_require__(33),
+  /* template */
+  __webpack_require__(34),
   /* scopeId */
   null,
   /* cssModules */
@@ -2074,13 +2082,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2120,7 +2128,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -2130,7 +2138,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

@@ -209,49 +209,6 @@ a {
   height: 100%;
   background: rgba(255, 255, 255, 0.7);
 }
-.card {
-  margin-left: -15px;
-  margin-right: -15px;
-  margin-bottom: 20px;
-  background: white;
-}
-.card .card-heading {
-  padding: 10px 15px;
-  font-weight: bold;
-}
-.card .card-body {
-  padding: 10px 15px;
-}
-.card .card-body:nth-child(1) {
-  border-top: none;
-}
-.card .card-item {
-  padding: 10px 15px;
-  overflow: hidden;
-}
-.card .card-item:nth-child(1) {
-  border-top: none;
-}
-.panel .panel-heading {
-  font-weight: bold;
-}
-.card {
-  margin-left: -15px;
-  margin-right: -15px;
-  margin-bottom: 20px;
-  background: white;
-}
-.ls-group .ls-group-heading {
-  padding: 10px 0;
-  font-weight: bold;
-}
-.ls-group .ls-group-item {
-  padding: 10px 0;
-  border-top: 1px solid grey;
-}
-.ls-group .ls-group-item:nth-child(1) {
-  border-top: none!important;
-}
 .angulur .navbar {
   background: #4F52BA;
   color: white;
@@ -291,6 +248,52 @@ a {
   clear: both;
 }
 /* Media Queries */
+.card {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 20px;
+  background: white;
+}
+.card .card-heading {
+  padding: 10px 15px;
+  font-weight: bold;
+}
+.card .card-body {
+  padding: 10px 15px;
+}
+.card .card-body:nth-child(1) {
+  border-top: none;
+}
+.card .card-item {
+  padding: 10px 15px;
+  overflow: hidden;
+}
+.card .card-item:nth-child(1) {
+  border-top: none;
+}
+.panel-container {
+  margin-bottom: 20px;
+}
+.panel .panel-heading {
+  font-weight: bold;
+}
+.card {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 20px;
+  background: white;
+}
+.ls-group .ls-group-heading {
+  padding: 10px 0;
+  font-weight: bold;
+}
+.ls-group .ls-group-item {
+  padding: 10px 0;
+  border-top: 1px solid grey;
+}
+.ls-group .ls-group-item:nth-child(1) {
+  border-top: none!important;
+}
 .blue .color-text {
   color: #d2d2d2;
 }
@@ -809,6 +812,10 @@ a {
 }
 .Home .panel-heading span.active[data-v-7f7ff48e] {
   color: #0f88eb;
+}
+.Home .list-group-item span[data-v-7f7ff48e] {
+  display: inline-block;
+  width: 50px;
 }
 /*@pink: #e91e63;*/
 /*@pink: #e91e63;*/
