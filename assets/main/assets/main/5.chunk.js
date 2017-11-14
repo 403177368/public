@@ -551,6 +551,15 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
   data: function data() {
@@ -640,7 +649,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "to": "/"
     }
   }, [_vm._v("MadSoap")]), _c('div', {
-    staticClass: "navbar-toggle",
+    staticClass: "navbar-toggle-- visible-xs",
     on: {
       "click": _vm.toggle
     }

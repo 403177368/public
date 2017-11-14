@@ -271,6 +271,20 @@ var actions = {
     var state = _ref4.state;
     var what = _ref5.what;
 
+    // axios({
+    //   url: `https://www.okex.com/api/v1/ticker.do?symbol=ltc_btc`,
+    //   // this is essential cause a fetch request is without cookie by default
+    //   withCredentials: true,
+    //   method: 'GET',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   mode: 'cors',
+    // }).then(res => {
+    //   // state[what].inited = true;
+    //   // state[what].items.length = 0;
+    //   // state[what].items.push(...res.data.data);
+    // })
     if (state[what].inited === true) {
       return Promise.resolve();
     } else {
@@ -429,7 +443,7 @@ exports.default = {
   mounted: function mounted() {
     this.$store.dispatch('main/home/init');
     this.$store.dispatch('main/home/initWebSocket');
-    this.$store.dispatch('main/home/initOkex');
+    // this.$store.dispatch('main/home/initOkex');
 
     this.$store.dispatch('main/home/fetch', { what: 'jianshu' });
     this.$store.dispatch('main/home/fetch', { what: 'echojs' });
@@ -1643,7 +1657,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "panel panel-default"
   }, [_c('div', {
     staticClass: "panel-heading"
-  }, [_vm._v("\n              Okex\n            ")]), _c('div', {
+  }, [_vm._v("\n              Bitfinex\n            ")]), _c('div', {
     staticClass: "list-group"
   }, _vm._l((_vm.home.coins.pairs), function(a) {
     return _c('div', {
