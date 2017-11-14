@@ -130,15 +130,25 @@ var state = {
     inited: false,
     items: []
   },
-  coins: [{
-    id: 0,
-    key: 'BTC',
-    last_price: 0
-  }, {
-    id: 0,
-    key: 'BTG',
-    last_price: 0
-  }]
+  coins: {
+    status: '',
+    pairs: [{
+      id: 0,
+      key: 'BTC',
+      last_price: 0
+    }, {
+      id: 0,
+      key: 'BTG',
+      last_price: 0
+    }]
+  },
+  okex: {
+    status: '',
+    pairs: [{
+      key: 'BCH/USDT',
+      last_price: 0
+    }]
+  }
 };
 
 var actions = {
@@ -158,56 +168,108 @@ var actions = {
   initWebSocket: function initWebSocket(_ref2) {
     var state = _ref2.state;
 
-    try {
-      var ws = new WebSocket('wss://api.bitfinex.com/ws/2');
-      ws.onopen = function (event) {
-        console.log('Connection established. ' + this.readyState);
+    if (state.coins.status === '') {
+      try {
+        var ws = new WebSocket('wss://api.bitfinex.com/ws/2');
+        ws.onopen = function (event) {
+          state.coins.status = 'connected';
+          console.log('Connection established. ' + this.readyState);
 
-        ws.send(JSON.stringify({
-          event: 'subscribe',
-          channel: 'ticker',
-          symbol: 'tBTCUSD'
-        }));
+          ws.send(JSON.stringify({
+            event: 'subscribe',
+            channel: 'ticker',
+            symbol: 'tBTCUSD'
+          }));
 
-        ws.send(JSON.stringify({
-          event: 'subscribe',
-          channel: 'ticker',
-          symbol: 'tBTGUSD'
-        }));
-      };
-      ws.onmessage = function (event) {
-        // console.log('Received data: ' + event.data);
-        var obj = JSON.parse(event.data);
-        if (obj.pair) {
-          if (obj.pair === 'BTCUSD') {
-            state.coins[0].id = obj.chanId;
+          ws.send(JSON.stringify({
+            event: 'subscribe',
+            channel: 'ticker',
+            symbol: 'tBTGUSD'
+          }));
+        };
+        ws.onmessage = function (event) {
+          // console.log('Received data: ' + event.data);
+          var obj = JSON.parse(event.data);
+          if (obj.pair) {
+            if (obj.pair === 'BTCUSD') {
+              state.coins.pairs[0].id = obj.chanId;
+            }
+            if (obj.pair === 'BTGUSD') {
+              state.coins.pairs[1].id = obj.chanId;
+            }
+          } else {
+            if (Array.isArray(obj[1])) {
+              state.coins.pairs.forEach(function (a) {
+                if (obj[0] === a.id) {
+                  a.last_price = obj[1][6];
+                }
+              });
+            }
           }
-          if (obj.pair === 'BTGUSD') {
-            state.coins[1].id = obj.chanId;
-          }
-        } else {
-          if (Array.isArray(obj[1])) {
-            state.coins.forEach(function (a) {
-              if (obj[0] === a.id) {
-                a.last_price = obj[1][6];
-              }
-            });
-          }
-        }
-      };
-      ws.onclose = function (event) {
-        console.log('Disconnected: ' + this.readyState);
-      };
-      ws.onerror = function (event) {
-        console.log('Errored!');
-      };
-    } catch (e) {
-      alert(e.message);
-    }
+        };
+        ws.onclose = function (event) {
+          state.coins.status = '';
+          console.log('Disconnected: ' + this.readyState);
+        };
+        ws.onerror = function (event) {
+          console.log('Errored!');
+        };
+      } catch (e) {
+        alert(e.message);
+      }
+    };
   },
-  fetch: function fetch(_ref3, _ref4) {
+  initOkex: function initOkex(_ref3) {
     var state = _ref3.state;
-    var what = _ref4.what;
+
+    if (state.okex.status === '') {
+      try {
+        var ws = new WebSocket('wss://real.okex.com:10441/websocket');
+        ws.onopen = function (event) {
+          state.okex.status = 'connected';
+          console.log('Connection established. ' + this.readyState);
+
+          ws.send(JSON.stringify({
+            event: 'addChannel',
+            channel: 'ok_sub_spot_bch_usdt_ticker'
+            // binary: 1
+          }));
+        };
+        ws.onmessage = function (event) {
+          console.log('Received data: ' + event.data);
+          var obj = JSON.parse(event.data);
+          // if (obj.pair) {
+          //   if (obj.pair === 'BTCUSD') {
+          //     state.coins.pairs[0].id = obj.chanId;
+          //   }
+          //   if (obj.pair === 'BTGUSD') {
+          //     state.coins.pairs[1].id = obj.chanId;
+          //   }
+          // } else {
+          //   if (Array.isArray(obj[1])) {
+          //     state.coins.pairs.forEach(a => {
+          //       if (obj[0] === a.id) {
+          //         a.last_price = obj[1][6];
+          //       }
+          //     })
+          //   }
+          // }
+        };
+        ws.onclose = function (event) {
+          state.okex.status = '';
+          console.log('Disconnected: ' + this.readyState);
+        };
+        ws.onerror = function (event) {
+          console.log('Errored!');
+        };
+      } catch (e) {
+        alert(e.message);
+      }
+    };
+  },
+  fetch: function fetch(_ref4, _ref5) {
+    var state = _ref4.state;
+    var what = _ref5.what;
 
     if (state[what].inited === true) {
       return Promise.resolve();
@@ -230,10 +292,10 @@ var actions = {
       });
     };
   },
-  switch_tab: function switch_tab(_ref5, _ref6) {
-    var state = _ref5.state,
-        dispatch = _ref5.dispatch;
-    var i = _ref6.i;
+  switch_tab: function switch_tab(_ref6, _ref7) {
+    var state = _ref6.state,
+        dispatch = _ref6.dispatch;
+    var i = _ref7.i;
 
     state.box.current = i;
     if (i === 0) {
@@ -367,6 +429,7 @@ exports.default = {
   mounted: function mounted() {
     this.$store.dispatch('main/home/init');
     this.$store.dispatch('main/home/initWebSocket');
+    this.$store.dispatch('main/home/initOkex');
 
     this.$store.dispatch('main/home/fetch', { what: 'jianshu' });
     this.$store.dispatch('main/home/fetch', { what: 'echojs' });
@@ -400,6 +463,19 @@ exports.default = {
     }
   }
 }; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1567,9 +1643,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "panel panel-default"
   }, [_c('div', {
     staticClass: "panel-heading"
-  }, [_vm._v("\n              Bitfinex\n            ")]), _c('div', {
+  }, [_vm._v("\n              Okex\n            ")]), _c('div', {
     staticClass: "list-group"
-  }, _vm._l((_vm.home.coins), function(a) {
+  }, _vm._l((_vm.home.coins.pairs), function(a) {
+    return _c('div', {
+      staticClass: "list-group-item"
+    }, [_c('span', [_vm._v(_vm._s(a.key))]), _c('span', [_vm._v("$" + _vm._s(a.last_price.toFixed(2)))])])
+  }))]), _c('div', {
+    staticClass: "panel panel-default"
+  }, [_c('div', {
+    staticClass: "panel-heading"
+  }, [_vm._v("\n              Okex\n            ")]), _c('div', {
+    staticClass: "list-group"
+  }, _vm._l((_vm.home.okex.pairs), function(a) {
     return _c('div', {
       staticClass: "list-group-item"
     }, [_c('span', [_vm._v(_vm._s(a.key))]), _c('span', [_vm._v("$" + _vm._s(a.last_price.toFixed(2)))])])
