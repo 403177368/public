@@ -1,13 +1,13 @@
 webpackJsonp([2],{
 
-/***/ 106:
+/***/ 107:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 107:
+/***/ 108:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -114,7 +114,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 108:
+/***/ 109:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -151,14 +151,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 119:
+/***/ 116:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 120:
+/***/ 117:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -168,25 +168,36 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(121);
+var _index = __webpack_require__(118);
 
 var _index2 = _interopRequireDefault(_index);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  components: {},
-  computed: {},
+  components: {
+    // Slider: require('./Slider.vue')
+  },
+  computed: {
+    items: function items() {
+      return this.$store.state.admin.items.items;
+    }
+  },
   beforeCreate: function beforeCreate() {
-    this.$store.complete(['mall', 'cart'], _index2.default);
+    this.$store.complete(['mall'], _index2.default);
+    console.log(this.$store);
+  },
+  mounted: function mounted() {
+    this.$store.dispatch('admin/items/changeDB', '/sqlite');
+    this.$store.dispatch('admin/items/fetchItems');
   },
 
   methods: {
     register: function register(store) {
-      store.complete(['mall', 'cart'], _index2.default);
+      store.complete(['mall'], _index2.default);
     },
     preFetch: function preFetch(store) {
-      return store.dispatch('mall/cart/fetch');
+      return store.dispatch('mall/fetch');
     }
   }
 }; //
@@ -197,10 +208,42 @@ exports.default = {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 
-/***/ 121:
+/***/ 118:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -228,14 +271,28 @@ exports.default = {
 
 /***/ }),
 
-/***/ 122:
+/***/ 119:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "RouteMallCart"
-  })
-},staticRenderFns: []}
+    staticClass: "RouteMall"
+  }, [_vm._m(0), _c('router-view'), _c('div', {
+    staticClass: "container"
+  }, [_c('div', {
+    staticClass: "form-group"
+  }, [_c('v-slider')], 1), _c('div', {
+    staticClass: "form-group"
+  }, [_c('v-calender')], 1)])], 1)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "navbar"
+  }, [_c('div', {
+    staticClass: "navbar-header"
+  }, [_c('div', {
+    staticClass: "navbar-brand"
+  }, [_vm._v("\n        Brand\n      ")])])])
+}]}
 
 /***/ }),
 
@@ -244,13 +301,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 
 /* styles */
-__webpack_require__(106)
+__webpack_require__(107)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(107),
-  /* template */
   __webpack_require__(108),
+  /* template */
+  __webpack_require__(109),
   /* scopeId */
   null,
   /* cssModules */
@@ -262,20 +319,20 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 45:
+/***/ 44:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(119)
+__webpack_require__(116)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(120),
+  __webpack_require__(117),
   /* template */
-  __webpack_require__(122),
+  __webpack_require__(119),
   /* scopeId */
-  "data-v-8275c764",
+  null,
   /* cssModules */
   null
 )

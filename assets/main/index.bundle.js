@@ -240,7 +240,7 @@ var routes = [{
 }, {
   path: '/main',
   component: function component() {
-    return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 36));
+    return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, 36));
   },
   children: [{
     path: 'home',
@@ -255,7 +255,7 @@ var routes = [{
   }, {
     path: 'canvas',
     component: function component() {
-      return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, 39));
+      return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 39));
     }
   }, {
     path: 'blog',
@@ -281,39 +281,44 @@ var routes = [{
 }, {
   path: '/mall',
   component: function component() {
-    return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 44));
+    return __webpack_require__.e/* import() */(2/* limit */).then(__webpack_require__.bind(null, 44));
   },
   children: [{
     path: 'cart',
     component: function component() {
-      return __webpack_require__.e/* import() */(2/* limit */).then(__webpack_require__.bind(null, 45));
+      return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 45));
     }
   }]
 }, {
   path: '/admin',
   component: function component() {
-    return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 46));
+    return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 46));
   },
   children: [{
+    path: 'dashboard',
+    component: function component() {
+      return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 47));
+    }
+  }, {
     path: 'deployment',
     component: function component() {
-      return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 47));
+      return __webpack_require__.e/* import() */(3/* limit */).then(__webpack_require__.bind(null, 48));
     }
   }, {
     path: 'lowdb',
     alias: '',
     component: function component() {
-      return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 48));
+      return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 49));
     }
   }, {
     path: 'sequelize',
     component: function component() {
-      return __webpack_require__.e/* import() */(1/* limit */).then(__webpack_require__.bind(null, 49));
+      return __webpack_require__.e/* import() */(1/* limit */).then(__webpack_require__.bind(null, 50));
     }
   }, {
     path: 'tables',
     component: function component() {
-      return __webpack_require__.e/* import() */(3/* limit */).then(__webpack_require__.bind(null, 50));
+      return __webpack_require__.e/* import() */(4/* limit */).then(__webpack_require__.bind(null, 51));
     }
   }]
 }];

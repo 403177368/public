@@ -892,6 +892,13 @@ a {
     width: 100%;
 }
 }
+
+.RouteMall .item {
+  display: inline-block;
+}
+.RouteMall img {
+  width: 100%;
+}
 /*@pink: #e91e63;*/
 .RouteCnodePost .post-- img {
   max-width: 100%!important;
@@ -923,11 +930,8 @@ a {
   margin-right: 15px;
 }
 
-.RouteMall .item {
-  display: inline-block;
-}
-.RouteMall img {
-  width: 100%;
+.AdminDeployment[data-v-a67932b0] {
+  padding: 15px 0;
 }
 
 .v-menu[data-v-03f608f6] {
@@ -1132,7 +1136,11 @@ a {
   height: 30px;
 }
 
-.AdminDeployment[data-v-a67932b0] {
+.AdminDashboard[data-v-6434f0a7] {
+  padding: 15px 0;
+}
+
+.RouteLowdb {
   padding: 15px 0;
 }
 
