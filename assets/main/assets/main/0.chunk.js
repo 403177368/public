@@ -136,11 +136,21 @@ var state = {
     pairs: [{
       id: 0,
       key: 'BTC',
-      last_price: 0
+      symbol: 'tBTCUSD',
+      last_price: 0,
+      color: ''
+    }, {
+      id: 0,
+      key: 'BCH',
+      symbol: 'tBCHUSD',
+      last_price: 0,
+      color: ''
     }, {
       id: 0,
       key: 'BTG',
-      last_price: 0
+      symbol: 'tBTGUSD',
+      last_price: 0,
+      color: ''
     }]
   },
   okex: {
@@ -176,33 +186,35 @@ var actions = {
           state.coins.status = 'connected';
           console.log('Connection established. ' + this.readyState);
 
-          ws.send(JSON.stringify({
-            event: 'subscribe',
-            channel: 'ticker',
-            symbol: 'tBTCUSD'
-          }));
-
-          ws.send(JSON.stringify({
-            event: 'subscribe',
-            channel: 'ticker',
-            symbol: 'tBTGUSD'
-          }));
+          state.coins.pairs.forEach(function (a) {
+            ws.send(JSON.stringify({
+              event: 'subscribe',
+              channel: 'ticker',
+              symbol: a.symbol
+              // symbols: ['tBTCUSD', 'tBTGUSD']
+            }));
+          });
         };
         ws.onmessage = function (event) {
           // console.log('Received data: ' + event.data);
           var obj = JSON.parse(event.data);
           if (obj.pair) {
-            if (obj.pair === 'BTCUSD') {
-              state.coins.pairs[0].id = obj.chanId;
-            }
-            if (obj.pair === 'BTGUSD') {
-              state.coins.pairs[1].id = obj.chanId;
-            }
+            state.coins.pairs.forEach(function (a) {
+              if (obj.symbol === a.symbol) {
+                a.id = obj.chanId;
+              }
+            });
           } else {
             if (Array.isArray(obj[1])) {
               state.coins.pairs.forEach(function (a) {
                 if (obj[0] === a.id) {
-                  a.last_price = obj[1][6];
+                  var price = obj[1][6];
+                  if (price > a.last_price) {
+                    a.color = 'green';
+                  } else {
+                    a.color = 'red';
+                  };
+                  a.last_price = price;
                 }
               });
             }
@@ -1663,7 +1675,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, _vm._l((_vm.home.coins.pairs), function(a) {
     return _c('div', {
       staticClass: "list-group-item"
-    }, [_c('span', [_vm._v(_vm._s(a.key))]), _c('span', [_vm._v("$" + _vm._s(a.last_price.toFixed(2)))])])
+    }, [_c('span', [_vm._v(_vm._s(a.key))]), _c('span', {
+      style: ('color: ' + a.color + ';')
+    }, [_vm._v("$" + _vm._s(a.last_price.toFixed(2)))])])
   }))]), _c('div', {
     staticClass: "panel panel-default"
   }, [_c('div', {
