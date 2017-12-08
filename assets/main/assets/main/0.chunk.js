@@ -1028,7 +1028,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "checkbox"
   }, [_vm._v("\n        Invalid username or password.\n      ")])]), _c('div', {
-    staticClass: "btn btn-primary",
+    staticClass: "btn btn-primary btn-sm",
     on: {
       "click": _vm.login
     }
