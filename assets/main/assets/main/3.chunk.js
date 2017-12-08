@@ -143,7 +143,20 @@ exports.default = {
   components: {},
   beforeCreate: function beforeCreate() {},
   created: function created() {},
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    axios({
+      url: '/api/sqlite/deployments',
+      // this is essential cause a fetch request is without cookie by default
+      credentials: 'include',
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      mode: 'cors'
+    }).then(function (res) {
+      console.log(res);
+    });
+  },
 
   computed: {},
   methods: {}
