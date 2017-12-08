@@ -140,10 +140,18 @@ Object.defineProperty(exports, "__esModule", {
 
 
 exports.default = {
+  data: function data() {
+    return {
+      list: []
+    };
+  },
+
   components: {},
   beforeCreate: function beforeCreate() {},
   created: function created() {},
   mounted: function mounted() {
+    var _this = this;
+
     axios({
       url: '/api/sqlite/deployments',
       // this is essential cause a fetch request is without cookie by default
@@ -155,6 +163,8 @@ exports.default = {
       mode: 'cors'
     }).then(function (res) {
       console.log(res);
+      _this.list.length = 0;
+      _this.list.push(res.data.data.items);
     });
   },
 
@@ -168,21 +178,25 @@ exports.default = {
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "AdminDeployment"
   }, [_c('div', {
     staticClass: "container-fluid"
-  }, [_c('ul', {
+  }, [_vm._m(0), _vm._m(1), _c('table', {
+    staticClass: "table table-bordered"
+  }, [_c('thead', _vm._l((_vm.list), function(a) {
+    return _c('tr', [_c('td', [_vm._v(_vm._s(a.createdAt))])])
+  }))])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('ul', {
     staticClass: "breadcrumb"
-  }, [_c('li', [_c('a', [_vm._v("Deployment")])])]), _c('div', {
+  }, [_c('li', [_c('a', [_vm._v("Deployment")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "btn btn-primary"
-  }, [_vm._v("\n        Deploy\n      ")])]), _c('table', {
-    staticClass: "table table-bordered"
-  }, [_c('thead', [_c('tr', [_c('th')])])])])])
+  }, [_vm._v("\n        Deploy\n      ")])])
 }]}
 
 /***/ }),
