@@ -379,7 +379,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // in Node.js environment:
 if (typeof window === 'undefined') {
   _vue2.default.use(_vuex2.default);
-};
+}
 
 // var enhance = function(Vuex, options) {
 // 	var copy = options;
@@ -1293,7 +1293,7 @@ exports.default = {
       document.addEventListener('click', function () {
         if (_this.show) {
           _this.hide_panel();
-        };
+        }
       });
       if (this.initValue) {
         // Generate the calender according to initValue and _pick it.
@@ -1668,7 +1668,7 @@ exports.default = {
         var items = data.data.items;
         if (!Array.isArray(items)) {
           items = [items];
-        };
+        }
         items.forEach(function (a) {
           a._checked = false;
         });
@@ -1680,7 +1680,7 @@ exports.default = {
     },
     updateItems: function updateItems(ctx) {},
     patchItems: function patchItems(ctx) {
-      console.log(state);
+      // console.log(state);
       fetch('/api' + ctx.state.db + '/items/patch', {
         method: 'GET',
         headers: {
@@ -1863,7 +1863,7 @@ exports.default = {
       while (i >= 0) {
         if (state.items[i]._checked === true) {
           state.items.splice(i, 1);
-        };
+        }
         i--;
       }
     },

@@ -786,7 +786,7 @@ module.exports = ReactRedux;
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 exports.Navbar = undefined;
 
@@ -803,88 +803,88 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Navbar = function (_React$Component) {
-	_inherits(Navbar, _React$Component);
+  _inherits(Navbar, _React$Component);
 
-	function Navbar() {
-		_classCallCheck(this, Navbar);
+  function Navbar() {
+    _classCallCheck(this, Navbar);
 
-		var _this = _possibleConstructorReturn(this, (Navbar.__proto__ || Object.getPrototypeOf(Navbar)).call(this));
+    var _this = _possibleConstructorReturn(this, (Navbar.__proto__ || Object.getPrototypeOf(Navbar)).call(this));
 
-		_this.state = {};
-		return _this;
-	}
+    _this.state = {};
+    return _this;
+  }
 
-	_createClass(Navbar, [{
-		key: 'render',
-		value: function render() {
-			return React.createElement(
-				'div',
-				{ className: 'NAVBAR' },
-				React.createElement(
-					'ul',
-					{ className: 'nav' },
-					React.createElement(
-						_reactRouter.Link,
-						{ to: '/home', className: this.props.name === 'home' ? 'active' : '' },
-						React.createElement(
-							'div',
-							{ className: 'icon' },
-							React.createElement('i', { className: 'fa fa-home' })
-						),
-						React.createElement(
-							'p',
-							null,
-							'\u9996\u9875'
-						)
-					),
-					React.createElement(
-						_reactRouter.Link,
-						{ to: '/category', className: this.props.name === 'category' ? 'active' : '' },
-						React.createElement(
-							'div',
-							{ className: 'icon' },
-							React.createElement('i', { className: 'fa fa-th' })
-						),
-						React.createElement(
-							'p',
-							null,
-							'\u5206\u7C7B'
-						)
-					),
-					React.createElement(
-						_reactRouter.Link,
-						{ to: '/shopping_cart', className: this.props.name === 'shoppingCart' ? 'active' : '' },
-						React.createElement(
-							'div',
-							{ className: 'icon' },
-							React.createElement('i', { className: 'fa fa-shopping-cart' })
-						),
-						React.createElement(
-							'p',
-							null,
-							'\u8D2D\u7269\u8F66'
-						)
-					),
-					React.createElement(
-						_reactRouter.Link,
-						{ to: '/member', className: this.props.name === 'mine' ? 'active' : '' },
-						React.createElement(
-							'div',
-							{ className: 'icon' },
-							React.createElement('i', { className: 'fa fa-user' })
-						),
-						React.createElement(
-							'p',
-							null,
-							'\u6211'
-						)
-					)
-				)
-			);
-		}
-	}]);
+  _createClass(Navbar, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        { className: 'NAVBAR' },
+        React.createElement(
+          'ul',
+          { className: 'nav' },
+          React.createElement(
+            _reactRouter.Link,
+            { to: '/home', className: this.props.name === 'home' ? 'active' : '' },
+            React.createElement(
+              'div',
+              { className: 'icon' },
+              React.createElement('i', { className: 'fa fa-home' })
+            ),
+            React.createElement(
+              'p',
+              null,
+              '\u9996\u9875'
+            )
+          ),
+          React.createElement(
+            _reactRouter.Link,
+            { to: '/category', className: this.props.name === 'category' ? 'active' : '' },
+            React.createElement(
+              'div',
+              { className: 'icon' },
+              React.createElement('i', { className: 'fa fa-th' })
+            ),
+            React.createElement(
+              'p',
+              null,
+              '\u5206\u7C7B'
+            )
+          ),
+          React.createElement(
+            _reactRouter.Link,
+            { to: '/shopping_cart', className: this.props.name === 'shoppingCart' ? 'active' : '' },
+            React.createElement(
+              'div',
+              { className: 'icon' },
+              React.createElement('i', { className: 'fa fa-shopping-cart' })
+            ),
+            React.createElement(
+              'p',
+              null,
+              '\u8D2D\u7269\u8F66'
+            )
+          ),
+          React.createElement(
+            _reactRouter.Link,
+            { to: '/member', className: this.props.name === 'mine' ? 'active' : '' },
+            React.createElement(
+              'div',
+              { className: 'icon' },
+              React.createElement('i', { className: 'fa fa-user' })
+            ),
+            React.createElement(
+              'p',
+              null,
+              '\u6211'
+            )
+          )
+        )
+      );
+    }
+  }]);
 
-	return Navbar;
+  return Navbar;
 }(React.Component);
 
 exports.Navbar = Navbar;
@@ -897,7 +897,7 @@ exports.Navbar = Navbar;
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 exports.Topbar = undefined;
 
@@ -912,48 +912,48 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Topbar = function (_React$Component) {
-	_inherits(Topbar, _React$Component);
+  _inherits(Topbar, _React$Component);
 
-	function Topbar(props) {
-		_classCallCheck(this, Topbar);
+  function Topbar(props) {
+    _classCallCheck(this, Topbar);
 
-		return _possibleConstructorReturn(this, (Topbar.__proto__ || Object.getPrototypeOf(Topbar)).call(this, props));
-	}
+    return _possibleConstructorReturn(this, (Topbar.__proto__ || Object.getPrototypeOf(Topbar)).call(this, props));
+  }
 
-	_createClass(Topbar, [{
-		key: "back",
-		value: function back() {
-			history.go(-1);
-		}
-	}, {
-		key: "render",
-		value: function render() {
-			return React.createElement(
-				"div",
-				{ className: "Topbar" },
-				React.createElement(
-					"div",
-					{ className: "content__" },
-					React.createElement(
-						"div",
-						{ className: "c-icon" },
-						React.createElement("i", { className: "fa fa-angle-left", onClick: this.back.bind(this) })
-					),
-					React.createElement(
-						"div",
-						{ className: "c-text" },
-						this.props.name
-					)
-				)
-			);
-		}
-	}]);
+  _createClass(Topbar, [{
+    key: "back",
+    value: function back() {
+      history.go(-1);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        { className: "Topbar" },
+        React.createElement(
+          "div",
+          { className: "content__" },
+          React.createElement(
+            "div",
+            { className: "c-icon" },
+            React.createElement("i", { className: "fa fa-angle-left", onClick: this.back.bind(this) })
+          ),
+          React.createElement(
+            "div",
+            { className: "c-text" },
+            this.props.name
+          )
+        )
+      );
+    }
+  }]);
 
-	return Topbar;
+  return Topbar;
 }(React.Component);
 
 Topbar.defaultProps = {
-	name: ''
+  name: ''
 };
 
 exports.Topbar = Topbar;
@@ -1551,8 +1551,8 @@ exports.default = {
           for (var i = 0; i < state.length; i++) {
             if (!state[i].selected) {
               return false;
-            };
-          };
+            }
+          }
           return true;
         }();
         if (allChecked) {
@@ -1570,7 +1570,7 @@ exports.default = {
         newState.forEach(function (a) {
           if (!a.selected) {
             _newState.push(a);
-          };
+          }
         });
         return _newState;
       case 'ADD_TO_CART':
@@ -1624,51 +1624,51 @@ exports.default = {
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 var items = [{
-	'id': '1609291750',
-	'className': 'watch',
-	'name': 'Issey Miyake/三宅一生 W系列三眼计时中性石英手表',
-	'desc': '--',
-	'price': 4233
+  'id': '1609291750',
+  'className': 'watch',
+  'name': 'Issey Miyake/三宅一生 W系列三眼计时中性石英手表',
+  'desc': '--',
+  'price': 4233
 }, {
-	'id': '1609291813',
-	'className': 'bag',
-	'name': 'HERMES/爱马仕 Birkin 30 CCQ5 草莓红 EPSOM皮 金扣 X刻',
-	'desc': '--',
-	price: 139768
+  'id': '1609291813',
+  'className': 'bag',
+  'name': 'HERMES/爱马仕 Birkin 30 CCQ5 草莓红 EPSOM皮 金扣 X刻',
+  'desc': '--',
+  price: 139768
 }, {
-	'id': '1609301428',
-	'className': 'clothes',
-	'name': 'By Creations Lite/By Creations Lite 桑蚕丝真丝领带 男士斜条纹时尚窄领带',
-	'desc': '--',
-	'price': 320
+  'id': '1609301428',
+  'className': 'clothes',
+  'name': 'By Creations Lite/By Creations Lite 桑蚕丝真丝领带 男士斜条纹时尚窄领带',
+  'desc': '--',
+  'price': 320
 }, {
-	'id': '1609301441',
-	'className': 'jewelry',
-	'name': 'GZUAN/古钻珠宝 初见 2.5克拉紫晶女戒指彩宝首饰古钻品牌商品订单满2000赠送精美品',
-	'desc': '--',
-	'price': 599
+  'id': '1609301441',
+  'className': 'jewelry',
+  'name': 'GZUAN/古钻珠宝 初见 2.5克拉紫晶女戒指彩宝首饰古钻品牌商品订单满2000赠送精美品',
+  'desc': '--',
+  'price': 599
 }, {
-	'id': '1609301449',
-	'className': 'shoes',
-	'name': 'AJ ARMANI JEANS/阿玛尼牛仔酒红色牛皮材质镂空元素男士休闲鞋,B6562 NG LACED ',
-	'desc': '--',
-	'specs': {
-		'尺码': ['41', '42', '43', '44']
-	},
-	'price': 1805
+  'id': '1609301449',
+  'className': 'shoes',
+  'name': 'AJ ARMANI JEANS/阿玛尼牛仔酒红色牛皮材质镂空元素男士休闲鞋,B6562 NG LACED ',
+  'desc': '--',
+  'specs': {
+    '尺码': ['41', '42', '43', '44']
+  },
+  'price': 1805
 }, {
-	'id': '1609301450',
-	'className': 'clothes',
-	'name': 'ARMANI JEANS/阿玛尼牛仔 男士经典时尚圆领套头T恤',
-	'desc': '--',
-	'specs': {
-		'尺码': ['M', 'L', 'XL'],
-		'颜色': ['黑色', '白色', '红色']
-	},
-	'price': 789
+  'id': '1609301450',
+  'className': 'clothes',
+  'name': 'ARMANI JEANS/阿玛尼牛仔 男士经典时尚圆领套头T恤',
+  'desc': '--',
+  'specs': {
+    '尺码': ['M', 'L', 'XL'],
+    '颜色': ['黑色', '白色', '红色']
+  },
+  'price': 789
 }];
 
 exports.default = items;
@@ -1719,7 +1719,7 @@ var Swiper = function (_React$Component) {
     _this.switching = false;
     _this.moveCount = 0;
     _this.canScroll = false;
-    //console.log(this.props)
+    // console.log(this.props)
 
     _this.state = {
       items: _this.getNewItems(_this.props.items),
@@ -1735,7 +1735,7 @@ var Swiper = function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      //console.log(this.props)
+      // console.log(this.props)
       var self = this;
       this.train = this.refs.train;
 
@@ -1748,10 +1748,10 @@ var Swiper = function (_React$Component) {
           if (_this2.cycle === false && _this2.switching === false) {
             _this2.cycle = true;
             _this2.toNext();
-          };
+          }
         }, self.props.interval);
-      };
-      //console.log(this.$currentOne)
+      }
+      // console.log(this.$currentOne)
     }
   }, {
     key: 'componentWillReceiveProps',
@@ -1820,7 +1820,7 @@ var Swiper = function (_React$Component) {
           } else {
             self.$trainOffset = -self.$currentOne * self.width;
           }
-        };
+        }
         self.setState({ currentDot: self.$currentOne });
         self.train.style.transition = self.props.duration + 'ms';
         self.train.style.webkitTransition = self.props.duration + 'ms';
@@ -1833,11 +1833,11 @@ var Swiper = function (_React$Component) {
             self.$trainOffset = 0;
             self.train.style.transform = 'translate3d(0,0,0)';
             self.train.style.webkitTransform = 'translate3d(0,0,0)';
-          };
+          }
           _this3.switching = false;
           _this3.cycle = false;
         }, self.props.duration);
-      };
+      }
     }
   }, {
     key: 'toPrev',
@@ -1856,8 +1856,8 @@ var Swiper = function (_React$Component) {
             self.$trainOffset = self.width;
           } else {
             self.$trainOffset = 0;
-          };
-        };
+          }
+        }
         self.setState({ currentDot: self.$currentOne });
         self.train.style.transition = self.props.duration + 'ms';
         self.train.style.webkitTransition = self.props.duration + 'ms';
@@ -1870,11 +1870,11 @@ var Swiper = function (_React$Component) {
             self.$trainOffset = -(self.state.items.length - 1) * self.width;
             self.train.style.transform = 'translate3d(' + self.$trainOffset + 'px,0,0)';
             self.train.style.webkitTransform = 'translate3d(' + self.$trainOffset + 'px,0,0)';
-          };
+          }
           _this4.switching = false;
           _this4.cycle = false;
         }, self.props.duration);
-      };
+      }
     }
   }, {
     key: 'toItem',
@@ -1897,7 +1897,7 @@ var Swiper = function (_React$Component) {
           _this5.switching = false;
           _this5.cycle = false;
         }, self.props.duration);
-      };
+      }
     }
   }, {
     key: 'handleTouchStart',
@@ -1937,9 +1937,9 @@ var Swiper = function (_React$Component) {
             this.train.style.transform = 'translate3d(' + this.$trainOffset + 'px,0,0)';
             this.train.style.webkitTransform = 'translate3d(' + this.$trainOffset + 'px,0,0)';
             this.X1 = this.X2;
-          };
-        };
-      };
+          }
+        }
+      }
     }
   }, {
     key: 'handleTouchEnd',
@@ -1960,7 +1960,7 @@ var Swiper = function (_React$Component) {
           this.switching = false;
           this.cycle = false;
         }
-      };
+      }
     }
   }, {
     key: 'render',
@@ -2123,7 +2123,7 @@ if (!Object.assign) {
     return dest;
   };
   console.warn('Object.assign polyfilled.');
-};
+}
 
 /***/ }),
 /* 26 */
@@ -2134,24 +2134,24 @@ if (!Object.assign) {
 
 document.addEventListener('DOMContentLoaded', function () {
 
-	var $html = document.querySelector('html');
-	var $body = document.querySelector('body');
-	var $screen = document.createElement('div');
+  var $html = document.querySelector('html');
+  var $body = document.querySelector('body');
+  var $screen = document.createElement('div');
 
-	$screen.style.cssText += 'position:fixed; width:100%; height:100%; display:none;';
-	$body.insertBefore($screen, $body.firstChild);
+  $screen.style.cssText += 'position:fixed; width:100%; height:100%; display:none;';
+  $body.insertBefore($screen, $body.firstChild);
 
-	function setRem() {
-		$screen.style.display = 'block';
-		var w = Number(document.defaultView.getComputedStyle($screen).width.replace(/px/, ''));
-		var h = Number(document.defaultView.getComputedStyle($screen).height.replace(/px/, ''));
-		$screen.style.display = 'none';
-		$html.style.fontSize = 100 * w / 720 + 'px';
-		// document.getElementsByClassName('container')[0].style.height = h+'px';
-		console.debug('rem: Rem reset. Size of the viewport is ' + w + '*' + h + '.');
-	}
-	setRem();
-	window.addEventListener('resize', setRem);
+  function setRem() {
+    $screen.style.display = 'block';
+    var w = Number(document.defaultView.getComputedStyle($screen).width.replace(/px/, ''));
+    var h = Number(document.defaultView.getComputedStyle($screen).height.replace(/px/, ''));
+    $screen.style.display = 'none';
+    $html.style.fontSize = 100 * w / 720 + 'px';
+    // document.getElementsByClassName('container')[0].style.height = h+'px';
+    console.debug('rem: Rem reset. Size of the viewport is ' + w + '*' + h + '.');
+  }
+  setRem();
+  window.addEventListener('resize', setRem);
 });
 
 /***/ }),
@@ -2202,14 +2202,14 @@ exports.push([module.i, "* {\n  margin: 0;\n  padding: 0;\n  -webkit-tap-highlig
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 console.log(location);
 
 var $$production = false;
 
 window.DIR = {
-	img: '../../img/farm'
+  img: '../../img/farm'
 };
 
 exports.$$production = $$production;
@@ -4317,7 +4317,7 @@ exports.default = {
         headers: {
           'Content-Type': 'application/json'
         },
-        mode: "cors",
+        mode: 'cors',
         body: JSON.stringify({
           name: id,
           password: password
@@ -4846,7 +4846,7 @@ exports.push([module.i, ".Showcase {\n  overflow: hidden;\n}\n.Showcase .item-2 
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 exports.Showcase2 = undefined;
 
@@ -4863,57 +4863,57 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Showcase2 = function (_React$Component) {
-	_inherits(Showcase2, _React$Component);
+  _inherits(Showcase2, _React$Component);
 
-	function Showcase2() {
-		_classCallCheck(this, Showcase2);
+  function Showcase2() {
+    _classCallCheck(this, Showcase2);
 
-		return _possibleConstructorReturn(this, (Showcase2.__proto__ || Object.getPrototypeOf(Showcase2)).apply(this, arguments));
-	}
+    return _possibleConstructorReturn(this, (Showcase2.__proto__ || Object.getPrototypeOf(Showcase2)).apply(this, arguments));
+  }
 
-	_createClass(Showcase2, [{
-		key: 'render',
-		value: function render() {
-			return React.createElement(
-				'div',
-				{ className: 'Showcase2' },
-				this.props.items.map(function (item, i) {
-					var href = '/item/' + item.id;
-					// var src = DIR.img+'/items/'+item.id+'/t.jpg';
-					var src = '/img/farm/items/' + item.id + '/t.jpg?raw=true';
-					var style = {
-						float: i % 2 === 0 ? 'left' : 'right'
-					};
-					return React.createElement(
-						'div',
-						{ className: 'item' },
-						React.createElement(
-							_reactRouter.Link,
-							{ to: href },
-							React.createElement('img', { className: 'thumbnail', src: src }),
-							React.createElement(
-								'p',
-								{ className: 'name' },
-								item.name
-							),
-							React.createElement(
-								'p',
-								{ className: 'price' },
-								'\uFFE5',
-								item.price.toFixed(2)
-							)
-						)
-					);
-				})
-			);
-		}
-	}]);
+  _createClass(Showcase2, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        { className: 'Showcase2' },
+        this.props.items.map(function (item, i) {
+          var href = '/item/' + item.id;
+          // var src = DIR.img+'/items/'+item.id+'/t.jpg';
+          var src = '/img/farm/items/' + item.id + '/t.jpg?raw=true';
+          var style = {
+            float: i % 2 === 0 ? 'left' : 'right'
+          };
+          return React.createElement(
+            'div',
+            { className: 'item' },
+            React.createElement(
+              _reactRouter.Link,
+              { to: href },
+              React.createElement('img', { className: 'thumbnail', src: src }),
+              React.createElement(
+                'p',
+                { className: 'name' },
+                item.name
+              ),
+              React.createElement(
+                'p',
+                { className: 'price' },
+                '\uFFE5',
+                item.price.toFixed(2)
+              )
+            )
+          );
+        })
+      );
+    }
+  }]);
 
-	return Showcase2;
+  return Showcase2;
 }(React.Component);
 
 Showcase2.defaultProps = {
-	items: []
+  items: []
 };
 
 exports.Showcase2 = Showcase2;
@@ -5590,7 +5590,7 @@ exports.push([module.i, ".SIGNUP {\n  height: 15rem;\n  background: lightgrey;\n
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 exports.Category = undefined;
 
@@ -5617,48 +5617,48 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Category = function (_React$Component) {
-	_inherits(Category, _React$Component);
+  _inherits(Category, _React$Component);
 
-	function Category(props) {
-		_classCallCheck(this, Category);
+  function Category(props) {
+    _classCallCheck(this, Category);
 
-		var _this = _possibleConstructorReturn(this, (Category.__proto__ || Object.getPrototypeOf(Category)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Category.__proto__ || Object.getPrototypeOf(Category)).call(this, props));
 
-		var self = _this;
-		console.log('<Home/> constructing', self.state);
-		return _this;
-	}
+    var self = _this;
+    console.log('<Home/> constructing', self.state);
+    return _this;
+  }
 
-	_createClass(Category, [{
-		key: 'back',
-		value: function back() {
-			history.go(-1);
-		}
-	}, {
-		key: 'render',
-		value: function render() {
-			window.scroll(0, 0);
-			return _react2.default.createElement(
-				'div',
-				{ className: 'CATEGORY' },
-				_react2.default.createElement(_Topbar.Topbar, { name: '\u5546\u54C1\u5206\u7C7B' }),
-				_react2.default.createElement(_Showcase.Showcase, { items: this.props.items }),
-				_react2.default.createElement(_Navbar.Navbar, { name: 'category' })
-			);
-		}
-	}]);
+  _createClass(Category, [{
+    key: 'back',
+    value: function back() {
+      history.go(-1);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      window.scroll(0, 0);
+      return _react2.default.createElement(
+        'div',
+        { className: 'CATEGORY' },
+        _react2.default.createElement(_Topbar.Topbar, { name: '\u5546\u54C1\u5206\u7C7B' }),
+        _react2.default.createElement(_Showcase.Showcase, { items: this.props.items }),
+        _react2.default.createElement(_Navbar.Navbar, { name: 'category' })
+      );
+    }
+  }]);
 
-	return Category;
+  return Category;
 }(_react2.default.Component);
 
 Category.defaultProps = {
-	items: []
+  items: []
 };
 
 exports.Category = Category = ReactRedux.connect(function (state) {
-	return {
-		items: state.items.items
-	};
+  return {
+    items: state.items.items
+  };
 })(Category);
 
 exports.Category = Category;
@@ -5711,7 +5711,7 @@ exports.push([module.i, ".HOME {\n  background: #ECEBEB;\n}\n.HOME .searchbar {\
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 exports.DIManagement = undefined;
 
@@ -5730,150 +5730,150 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 __webpack_require__(94);
 
 var DIManagement = function (_React$Component) {
-	_inherits(DIManagement, _React$Component);
+  _inherits(DIManagement, _React$Component);
 
-	function DIManagement() {
-		_classCallCheck(this, DIManagement);
+  function DIManagement() {
+    _classCallCheck(this, DIManagement);
 
-		var _this = _possibleConstructorReturn(this, (DIManagement.__proto__ || Object.getPrototypeOf(DIManagement)).call(this));
+    var _this = _possibleConstructorReturn(this, (DIManagement.__proto__ || Object.getPrototypeOf(DIManagement)).call(this));
 
-		_this.state = {};
-		//console.log('<ConfirmOrder/> creating',this.props,this.state);
-		return _this;
-	}
+    _this.state = {};
+    // console.log('<ConfirmOrder/> creating',this.props,this.state);
+    return _this;
+  }
 
-	_createClass(DIManagement, [{
-		key: 'componentWillMount',
-		value: function componentWillMount() {
-			this.setState({
-				user: this.props.user
-			});
-			//console.log('<ConfirmOrder/> will mount',this.props,this.state);
-		}
-	}, {
-		key: 'componentWillReceiveProps',
-		value: function componentWillReceiveProps(newProps) {
-			this.setState({
-				deliveryInformation: newProps.DI
-			});
-		}
-	}, {
-		key: 'componentDidUpdate',
-		value: function componentDidUpdate() {
-			//console.log('<ConfirmOrder/> updated',this.props,this.state);
-		}
-	}, {
-		key: 'getTotal',
-		value: function getTotal() {
-			var total = 0;
-			var items = this.state.items;
-			for (var i = 0; i < items.length; i++) {
-				total += Number(items[i].price) * Number(items[i].quantity);
-			}
-			return total.toFixed(2);
-		}
-	}, {
-		key: 'setConsignee',
-		value: function setConsignee(e) {
-			var targetDI = this.state.targetDI || {};
-			targetDI.consignee = e.target.value;
-			this.setState({
-				targetDI: targetDI
-			});
-		}
-	}, {
-		key: 'setPhoneNumber',
-		value: function setPhoneNumber(e) {
-			var targetDI = this.state.targetDI || {};
-			targetDI.phoneNumber = e.target.value;
-			this.setState({
-				targetDI: targetDI
-			});
-		}
-	}, {
-		key: 'setDeliveryAddress',
-		value: function setDeliveryAddress(e) {
-			var targetDI = this.state.targetDI || {};
-			targetDI.deliveryAddress = e.target.value;
-			this.setState({
-				targetDI: targetDI
-			});
-		}
-	}, {
-		key: 'addDI',
-		value: function addDI() {
-			this.setState({
-				veilVisible: true
-			});
-		}
-	}, {
-		key: 'editDI',
-		value: function editDI(i) {
-			this.setState({
-				veilVisible: true,
-				targetDI: this.props.user.deliveryInformation[i]
-			});
-		}
-	}, {
-		key: 'deleteDI',
-		value: function deleteDI(i) {
-			this.props.act({
-				type: 'DELETE_DI',
-				date: this.props.user.deliveryInformation[i].date
-			});
-		}
-	}, {
-		key: 'savetargetDI',
-		value: function savetargetDI() {
-			if (!this.state.targetDI.consignee || !this.state.targetDI.phoneNumber || !this.state.targetDI.deliveryAddress) {
-				alert('您输入的信息不完整！');
-			} else {
-				this.props.act({
-					type: 'SAVE_NEW_DI',
-					consignee: this.state.targetDI.consignee,
-					phoneNumber: this.state.targetDI.phoneNumber,
-					deliveryAddress: this.state.targetDI.deliveryAddress,
-					date: new Date()
-				});
-				this.hideVeil();
-			};
-		}
-	}, {
-		key: 'hideVeil',
-		value: function hideVeil() {
-			this.setState({
-				veilVisible: false,
-				targetDI: {}
-			});
-		}
-	}, {
-		key: 'back',
-		value: function back() {
-			history.go(-1);
-		}
-	}, {
-		key: 'render',
-		value: function render() {
-			var self = this;
-			console.log('<DIManagement/> rendering');
-			return React.createElement(
-				'div',
-				{ className: 'DIMANAGEMENT' },
-				React.createElement(_Topbar.Topbar, { name: '\u6536\u8D27\u5730\u5740\u7BA1\u7406' }),
-				React.createElement(
-					_reactRouter.Link,
-					{ to: '/di_add' },
-					React.createElement(
-						'div',
-						{ className: 'add' },
-						'\u65B0\u589E\u6536\u8D27\u5730\u5740'
-					)
-				)
-			);
-		}
-	}]);
+  _createClass(DIManagement, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      this.setState({
+        user: this.props.user
+      });
+      // console.log('<ConfirmOrder/> will mount',this.props,this.state);
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(newProps) {
+      this.setState({
+        deliveryInformation: newProps.DI
+      });
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      // console.log('<ConfirmOrder/> updated',this.props,this.state);
+    }
+  }, {
+    key: 'getTotal',
+    value: function getTotal() {
+      var total = 0;
+      var items = this.state.items;
+      for (var i = 0; i < items.length; i++) {
+        total += Number(items[i].price) * Number(items[i].quantity);
+      }
+      return total.toFixed(2);
+    }
+  }, {
+    key: 'setConsignee',
+    value: function setConsignee(e) {
+      var targetDI = this.state.targetDI || {};
+      targetDI.consignee = e.target.value;
+      this.setState({
+        targetDI: targetDI
+      });
+    }
+  }, {
+    key: 'setPhoneNumber',
+    value: function setPhoneNumber(e) {
+      var targetDI = this.state.targetDI || {};
+      targetDI.phoneNumber = e.target.value;
+      this.setState({
+        targetDI: targetDI
+      });
+    }
+  }, {
+    key: 'setDeliveryAddress',
+    value: function setDeliveryAddress(e) {
+      var targetDI = this.state.targetDI || {};
+      targetDI.deliveryAddress = e.target.value;
+      this.setState({
+        targetDI: targetDI
+      });
+    }
+  }, {
+    key: 'addDI',
+    value: function addDI() {
+      this.setState({
+        veilVisible: true
+      });
+    }
+  }, {
+    key: 'editDI',
+    value: function editDI(i) {
+      this.setState({
+        veilVisible: true,
+        targetDI: this.props.user.deliveryInformation[i]
+      });
+    }
+  }, {
+    key: 'deleteDI',
+    value: function deleteDI(i) {
+      this.props.act({
+        type: 'DELETE_DI',
+        date: this.props.user.deliveryInformation[i].date
+      });
+    }
+  }, {
+    key: 'savetargetDI',
+    value: function savetargetDI() {
+      if (!this.state.targetDI.consignee || !this.state.targetDI.phoneNumber || !this.state.targetDI.deliveryAddress) {
+        alert('您输入的信息不完整！');
+      } else {
+        this.props.act({
+          type: 'SAVE_NEW_DI',
+          consignee: this.state.targetDI.consignee,
+          phoneNumber: this.state.targetDI.phoneNumber,
+          deliveryAddress: this.state.targetDI.deliveryAddress,
+          date: new Date()
+        });
+        this.hideVeil();
+      }
+    }
+  }, {
+    key: 'hideVeil',
+    value: function hideVeil() {
+      this.setState({
+        veilVisible: false,
+        targetDI: {}
+      });
+    }
+  }, {
+    key: 'back',
+    value: function back() {
+      history.go(-1);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var self = this;
+      console.log('<DIManagement/> rendering');
+      return React.createElement(
+        'div',
+        { className: 'DIMANAGEMENT' },
+        React.createElement(_Topbar.Topbar, { name: '\u6536\u8D27\u5730\u5740\u7BA1\u7406' }),
+        React.createElement(
+          _reactRouter.Link,
+          { to: '/di_add' },
+          React.createElement(
+            'div',
+            { className: 'add' },
+            '\u65B0\u589E\u6536\u8D27\u5730\u5740'
+          )
+        )
+      );
+    }
+  }]);
 
-	return DIManagement;
+  return DIManagement;
 }(React.Component);
 
 exports.DIManagement = DIManagement;
@@ -5926,7 +5926,7 @@ exports.push([module.i, ".DIMANAGEMENT .add {\n  position: fixed;\n  left: 0;\n 
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 exports.DIAdd = undefined;
 
@@ -5943,141 +5943,141 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 __webpack_require__(97);
 
 var DIAdd = exports.DIAdd = function (_React$Component) {
-	_inherits(DIAdd, _React$Component);
+  _inherits(DIAdd, _React$Component);
 
-	function DIAdd() {
-		_classCallCheck(this, DIAdd);
+  function DIAdd() {
+    _classCallCheck(this, DIAdd);
 
-		var _this = _possibleConstructorReturn(this, (DIAdd.__proto__ || Object.getPrototypeOf(DIAdd)).call(this));
+    var _this = _possibleConstructorReturn(this, (DIAdd.__proto__ || Object.getPrototypeOf(DIAdd)).call(this));
 
-		_this.state = {};
-		//console.log('<ConfirmOrder/> creating',this.props,this.state);
-		return _this;
-	}
+    _this.state = {};
+    // console.log('<ConfirmOrder/> creating',this.props,this.state);
+    return _this;
+  }
 
-	_createClass(DIAdd, [{
-		key: 'componentWillMount',
-		value: function componentWillMount() {
-			this.setState({
-				user: this.props.user
-			});
-			//console.log('<ConfirmOrder/> will mount',this.props,this.state);
-		}
-	}, {
-		key: 'componentWillReceiveProps',
-		value: function componentWillReceiveProps(newProps) {
-			this.setState({
-				deliveryInformation: newProps.DI
-			});
-		}
-	}, {
-		key: 'componentDidUpdate',
-		value: function componentDidUpdate() {
-			//console.log('<ConfirmOrder/> updated',this.props,this.state);
-		}
-	}, {
-		key: 'getTotal',
-		value: function getTotal() {
-			var total = 0;
-			var items = this.state.items;
-			for (var i = 0; i < items.length; i++) {
-				total += Number(items[i].price) * Number(items[i].quantity);
-			}
-			return total.toFixed(2);
-		}
-	}, {
-		key: 'setConsignee',
-		value: function setConsignee(e) {
-			var targetDI = this.state.targetDI || {};
-			targetDI.consignee = e.target.value;
-			this.setState({
-				targetDI: targetDI
-			});
-		}
-	}, {
-		key: 'setPhoneNumber',
-		value: function setPhoneNumber(e) {
-			var targetDI = this.state.targetDI || {};
-			targetDI.phoneNumber = e.target.value;
-			this.setState({
-				targetDI: targetDI
-			});
-		}
-	}, {
-		key: 'setDeliveryAddress',
-		value: function setDeliveryAddress(e) {
-			var targetDI = this.state.targetDI || {};
-			targetDI.deliveryAddress = e.target.value;
-			this.setState({
-				targetDI: targetDI
-			});
-		}
-	}, {
-		key: 'addDI',
-		value: function addDI() {
-			this.setState({
-				veilVisible: true
-			});
-		}
-	}, {
-		key: 'editDI',
-		value: function editDI(i) {
-			this.setState({
-				veilVisible: true,
-				targetDI: this.props.user.deliveryInformation[i]
-			});
-		}
-	}, {
-		key: 'deleteDI',
-		value: function deleteDI(i) {
-			this.props.act({
-				type: 'DELETE_DI',
-				date: this.props.user.deliveryInformation[i].date
-			});
-		}
-	}, {
-		key: 'savetargetDI',
-		value: function savetargetDI() {
-			if (!this.state.targetDI.consignee || !this.state.targetDI.phoneNumber || !this.state.targetDI.deliveryAddress) {
-				alert('您输入的信息不完整！');
-			} else {
-				this.props.act({
-					type: 'SAVE_NEW_DI',
-					consignee: this.state.targetDI.consignee,
-					phoneNumber: this.state.targetDI.phoneNumber,
-					deliveryAddress: this.state.targetDI.deliveryAddress,
-					date: new Date()
-				});
-				this.hideVeil();
-			};
-		}
-	}, {
-		key: 'hideVeil',
-		value: function hideVeil() {
-			this.setState({
-				veilVisible: false,
-				targetDI: {}
-			});
-		}
-	}, {
-		key: 'back',
-		value: function back() {
-			history.go(-1);
-		}
-	}, {
-		key: 'render',
-		value: function render() {
-			var self = this;
-			console.log('<DIManagement/> rendering');
-			return React.createElement(
-				'div',
-				{ className: 'DIAdd' },
-				React.createElement(_Topbar.Topbar, { name: '\u65B0\u589E\u6536\u8D27\u5730\u5740' })
-			);
-		}
-	}]);
+  _createClass(DIAdd, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      this.setState({
+        user: this.props.user
+      });
+      // console.log('<ConfirmOrder/> will mount',this.props,this.state);
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(newProps) {
+      this.setState({
+        deliveryInformation: newProps.DI
+      });
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      // console.log('<ConfirmOrder/> updated',this.props,this.state);
+    }
+  }, {
+    key: 'getTotal',
+    value: function getTotal() {
+      var total = 0;
+      var items = this.state.items;
+      for (var i = 0; i < items.length; i++) {
+        total += Number(items[i].price) * Number(items[i].quantity);
+      }
+      return total.toFixed(2);
+    }
+  }, {
+    key: 'setConsignee',
+    value: function setConsignee(e) {
+      var targetDI = this.state.targetDI || {};
+      targetDI.consignee = e.target.value;
+      this.setState({
+        targetDI: targetDI
+      });
+    }
+  }, {
+    key: 'setPhoneNumber',
+    value: function setPhoneNumber(e) {
+      var targetDI = this.state.targetDI || {};
+      targetDI.phoneNumber = e.target.value;
+      this.setState({
+        targetDI: targetDI
+      });
+    }
+  }, {
+    key: 'setDeliveryAddress',
+    value: function setDeliveryAddress(e) {
+      var targetDI = this.state.targetDI || {};
+      targetDI.deliveryAddress = e.target.value;
+      this.setState({
+        targetDI: targetDI
+      });
+    }
+  }, {
+    key: 'addDI',
+    value: function addDI() {
+      this.setState({
+        veilVisible: true
+      });
+    }
+  }, {
+    key: 'editDI',
+    value: function editDI(i) {
+      this.setState({
+        veilVisible: true,
+        targetDI: this.props.user.deliveryInformation[i]
+      });
+    }
+  }, {
+    key: 'deleteDI',
+    value: function deleteDI(i) {
+      this.props.act({
+        type: 'DELETE_DI',
+        date: this.props.user.deliveryInformation[i].date
+      });
+    }
+  }, {
+    key: 'savetargetDI',
+    value: function savetargetDI() {
+      if (!this.state.targetDI.consignee || !this.state.targetDI.phoneNumber || !this.state.targetDI.deliveryAddress) {
+        alert('您输入的信息不完整！');
+      } else {
+        this.props.act({
+          type: 'SAVE_NEW_DI',
+          consignee: this.state.targetDI.consignee,
+          phoneNumber: this.state.targetDI.phoneNumber,
+          deliveryAddress: this.state.targetDI.deliveryAddress,
+          date: new Date()
+        });
+        this.hideVeil();
+      }
+    }
+  }, {
+    key: 'hideVeil',
+    value: function hideVeil() {
+      this.setState({
+        veilVisible: false,
+        targetDI: {}
+      });
+    }
+  }, {
+    key: 'back',
+    value: function back() {
+      history.go(-1);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var self = this;
+      console.log('<DIManagement/> rendering');
+      return React.createElement(
+        'div',
+        { className: 'DIAdd' },
+        React.createElement(_Topbar.Topbar, { name: '\u65B0\u589E\u6536\u8D27\u5730\u5740' })
+      );
+    }
+  }]);
 
-	return DIAdd;
+  return DIAdd;
 }(React.Component);
 
 /***/ }),
@@ -6128,7 +6128,7 @@ exports.push([module.i, "", ""]);
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 exports.Test = undefined;
 
@@ -6143,27 +6143,27 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Test = exports.Test = function (_Component) {
-	_inherits(Test, _Component);
+  _inherits(Test, _Component);
 
-	function Test() {
-		_classCallCheck(this, Test);
+  function Test() {
+    _classCallCheck(this, Test);
 
-		return _possibleConstructorReturn(this, (Test.__proto__ || Object.getPrototypeOf(Test)).apply(this, arguments));
-	}
+    return _possibleConstructorReturn(this, (Test.__proto__ || Object.getPrototypeOf(Test)).apply(this, arguments));
+  }
 
-	_createClass(Test, [{
-		key: "render",
-		value: function render() {
-			return React.createElement(
-				"div",
-				{ className: "Test" },
-				"Test",
-				this.props.children
-			);
-		}
-	}]);
+  _createClass(Test, [{
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        { className: "Test" },
+        "Test",
+        this.props.children
+      );
+    }
+  }]);
 
-	return Test;
+  return Test;
 }(_react.Component);
 
 /***/ })

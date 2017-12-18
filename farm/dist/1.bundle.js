@@ -74,8 +74,8 @@ var ShoppingCart = function (_React$Component) {
       for (var i = 0; i < this.props.items.length; i++) {
         if (!this.props.items[i].selected) {
           return false;
-        };
-      };
+        }
+      }
       return true;
     }
   }, {
@@ -85,7 +85,7 @@ var ShoppingCart = function (_React$Component) {
       for (var i = 0; i < this.props.items.length; i++) {
         if (this.props.items[i].selected === true) {
           totalPrice += this.props.items[i].price * this.props.items[i].quantity;
-        };
+        }
       }
       return totalPrice;
     }
@@ -96,7 +96,7 @@ var ShoppingCart = function (_React$Component) {
       for (var i = 0; i < items.length; i++) {
         if (items[i].selected === true) {
           totalQuantity++;
-        };
+        }
       }
       return totalQuantity;
     }

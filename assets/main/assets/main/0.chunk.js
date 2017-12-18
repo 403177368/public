@@ -119,7 +119,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 var state = {
   inited: false,
   box: {
-    tabs: ['简书', 'Echojs', 'Cnode'],
+    tabs: ['Echojs', '简书', 'Cnode'],
     current: 0
   },
   items: [],
@@ -174,7 +174,7 @@ var actions = {
       ]).then(function () {
         state.inited = true;
       });
-    };
+    }
   },
   initWebSocket: function initWebSocket(_ref2) {
     var state = _ref2.state;
@@ -213,7 +213,7 @@ var actions = {
                     a.color = 'green';
                   } else {
                     a.color = 'red';
-                  };
+                  }
                   a.last_price = price;
                 }
               });
@@ -230,7 +230,7 @@ var actions = {
       } catch (e) {
         alert(e.message);
       }
-    };
+    }
   },
   initOkex: function initOkex(_ref3) {
     var state = _ref3.state;
@@ -278,7 +278,7 @@ var actions = {
       } catch (e) {
         alert(e.message);
       }
-    };
+    }
   },
   fetch: function fetch(_ref4, _ref5) {
     var state = _ref4.state;
@@ -317,7 +317,7 @@ var actions = {
         state[what].items.length = 0;
         (_state$what$items = state[what].items).push.apply(_state$what$items, _toConsumableArray(res.data.data));
       });
-    };
+    }
   },
   switch_tab: function switch_tab(_ref6, _ref7) {
     var state = _ref6.state,
@@ -425,7 +425,205 @@ var _home = __webpack_require__(52);
 
 var _home2 = _interopRequireDefault(_home);
 
+var _axios = __webpack_require__(1);
+
+var _axios2 = _interopRequireDefault(_axios);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
   components: {
@@ -471,7 +669,7 @@ exports.default = {
       return store.dispatch('main/home/init');
     },
     fetch_jianshu: function fetch_jianshu() {
-      axios({
+      (0, _axios2.default)({
         url: 'http://www.jianshu.com',
         // this is essential cause a fetch request is without cookie by default
         credentials: 'include',
@@ -489,199 +687,7 @@ exports.default = {
       });
     }
   }
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+};
 
 /***/ }),
 /* 75 */
@@ -1375,7 +1381,7 @@ exports.default = {
       document.addEventListener('click', function () {
         if (_this.show) {
           _this.hide_panel();
-        };
+        }
       });
       this.today();
     },
@@ -2042,7 +2048,7 @@ var actions = {
       ctx.dispatch('fetchProjects').then(function (projects) {
         ctx.commit('SET_PROJECTS', projects);
       });
-    };
+    }
   },
   fetchProjects: function fetchProjects(ctx) {
     return new Promise(function (resolve, reject) {

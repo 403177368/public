@@ -381,11 +381,11 @@ exports.default = {
           if (res.status === 200) {
             ctx.state.initialized = true;
             ctx.state.canvas = res.data;
-          };
+          }
         }).catch(function (err) {
           console.log(err);
         });
-      };
+      }
     },
     fetch: function fetch(ctx) {
       return (0, _axios2.default)({

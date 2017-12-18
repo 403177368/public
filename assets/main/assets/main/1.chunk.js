@@ -229,7 +229,7 @@ exports.default = {
         this.$store.dispatch('admin/items/addItem', JSON.stringify(this.item));
       } else {
         this.$store.dispatch('admin/items/saveItem', JSON.stringify(this.item));
-      };
+      }
       this.reset();
     },
     // DELETE_ITEMS: function() {

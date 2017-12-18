@@ -83,7 +83,7 @@ var Item = function (_React$Component) {
         for (var key in new_props.item.specs) {
           new_options[key] = '';
         }
-      };
+      }
       this.setState({
         options: new_options
       });
@@ -117,7 +117,7 @@ var Item = function (_React$Component) {
         this.setState({
           quantity: this.state.quantity - 1
         });
-      };
+      }
     }
   }, {
     key: 'toImg',
@@ -503,7 +503,7 @@ exports.default = {
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -517,136 +517,136 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var title = 'I am read-only.';
 
 var CommentBoxStyle = {
-	width: "300px",
-	padding: "15px",
-	border: "1px solid black",
-	background: "lightblue",
-	color: "red"
+  width: '300px',
+  padding: '15px',
+  border: '1px solid black',
+  background: 'lightblue',
+  color: 'red'
 };
 
 var CommentStyle = {
-	marginBottom: "5px",
-	background: "white"
+  marginBottom: '5px',
+  background: 'white'
 };
 
 var CommentList = function (_React$Component) {
-	_inherits(CommentList, _React$Component);
+  _inherits(CommentList, _React$Component);
 
-	function CommentList() {
-		_classCallCheck(this, CommentList);
+  function CommentList() {
+    _classCallCheck(this, CommentList);
 
-		return _possibleConstructorReturn(this, (CommentList.__proto__ || Object.getPrototypeOf(CommentList)).apply(this, arguments));
-	}
+    return _possibleConstructorReturn(this, (CommentList.__proto__ || Object.getPrototypeOf(CommentList)).apply(this, arguments));
+  }
 
-	_createClass(CommentList, [{
-		key: "render",
-		value: function render() {
-			function renderComment(comment) {
-				return React.createElement(
-					"li",
-					{ key: comment.id, style: CommentStyle },
-					comment.id,
-					React.createElement(
-						"span",
-						{ style: { color: "blue" } },
-						comment.author
-					),
-					comment.time,
-					React.createElement("br", null),
-					comment.text
-				);
-			};
-			return React.createElement(
-				"ul",
-				null,
-				this.props.comments.map(renderComment)
-			);
-		}
-	}]);
+  _createClass(CommentList, [{
+    key: 'render',
+    value: function render() {
+      function renderComment(comment) {
+        return React.createElement(
+          'li',
+          { key: comment.id, style: CommentStyle },
+          comment.id,
+          React.createElement(
+            'span',
+            { style: { color: 'blue' } },
+            comment.author
+          ),
+          comment.time,
+          React.createElement('br', null),
+          comment.text
+        );
+      }
+      return React.createElement(
+        'ul',
+        null,
+        this.props.comments.map(renderComment)
+      );
+    }
+  }]);
 
-	return CommentList;
+  return CommentList;
 }(React.Component);
 
 var CommentBox = function (_React$Component2) {
-	_inherits(CommentBox, _React$Component2);
+  _inherits(CommentBox, _React$Component2);
 
-	function CommentBox(props) {
-		_classCallCheck(this, CommentBox);
+  function CommentBox(props) {
+    _classCallCheck(this, CommentBox);
 
-		var _this2 = _possibleConstructorReturn(this, (CommentBox.__proto__ || Object.getPrototypeOf(CommentBox)).call(this, props));
+    var _this2 = _possibleConstructorReturn(this, (CommentBox.__proto__ || Object.getPrototypeOf(CommentBox)).call(this, props));
 
-		_this2.state = { //MODEL //this.state={}
-			comments: [{
-				author: "Ned",
-				time: "2016-03-01 10:11:33",
-				text: "Good!",
-				id: 1
-			}, {
-				author: "Rob",
-				time: "2016-03-01 13:11:33",
-				text: "Nice!",
-				id: 2
-			}],
-			text: ""
-		};
-		return _this2;
-	}
+    _this2.state = { // MODEL //this.state={}
+      comments: [{
+        author: 'Ned',
+        time: '2016-03-01 10:11:33',
+        text: 'Good!',
+        id: 1
+      }, {
+        author: 'Rob',
+        time: '2016-03-01 13:11:33',
+        text: 'Nice!',
+        id: 2
+      }],
+      text: ''
+    };
+    return _this2;
+  }
 
-	_createClass(CommentBox, [{
-		key: "handleChange",
-		value: function handleChange(e) {
-			this.setState({
-				text: e.target.value
-			});
-		}
-	}, {
-		key: "submitComment",
-		value: function submitComment(e) {
-			e.preventDefault();
-			var updatedComments = this.state.comments.concat([{
-				author: "Jon",
-				time: "",
-				text: this.state.text,
-				id: this.state.comments.length + 1
-			}]);
-			this.setState({ //MODEL
-				comments: updatedComments,
-				text: ""
-			});
-		}
-	}, {
-		key: "render",
-		value: function render() {
-			return (//VIEW virtual DOM
-				React.createElement(
-					"div",
-					{ className: "container" },
-					React.createElement(
-						"div",
-						{ style: CommentBoxStyle },
-						React.createElement(
-							"h3",
-							null,
-							"CommentBox"
-						),
-						React.createElement(CommentList, { comments: this.state.comments }),
-						React.createElement(
-							"form",
-							{ onSubmit: this.submitComment.bind(this) },
-							React.createElement("input", { value: this.state.text, onChange: this.handleChange.bind(this), placeholder: "Your comment here..." }),
-							React.createElement(
-								"button",
-								null,
-								"comment"
-							)
-						)
-					)
-				)
-			);
-		}
-	}]);
+  _createClass(CommentBox, [{
+    key: 'handleChange',
+    value: function handleChange(e) {
+      this.setState({
+        text: e.target.value
+      });
+    }
+  }, {
+    key: 'submitComment',
+    value: function submitComment(e) {
+      e.preventDefault();
+      var updatedComments = this.state.comments.concat([{
+        author: 'Jon',
+        time: '',
+        text: this.state.text,
+        id: this.state.comments.length + 1
+      }]);
+      this.setState({ // MODEL
+        comments: updatedComments,
+        text: ''
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return (// VIEW virtual DOM
+        React.createElement(
+          'div',
+          { className: 'container' },
+          React.createElement(
+            'div',
+            { style: CommentBoxStyle },
+            React.createElement(
+              'h3',
+              null,
+              'CommentBox'
+            ),
+            React.createElement(CommentList, { comments: this.state.comments }),
+            React.createElement(
+              'form',
+              { onSubmit: this.submitComment.bind(this) },
+              React.createElement('input', { value: this.state.text, onChange: this.handleChange.bind(this), placeholder: 'Your comment here...' }),
+              React.createElement(
+                'button',
+                null,
+                'comment'
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
 
-	return CommentBox;
+  return CommentBox;
 }(React.Component);
 
 exports.CommentBox = CommentBox;
