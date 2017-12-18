@@ -164,12 +164,24 @@ var state = {
       last_price: 0,
       color: ''
     }, {
-      id: 0,
-      key: 'BCX / USDT',
-      symbol: 'tBCXUSD',
-      last_price: 0,
-      color: ''
-    }, {
+      //   id: 0,
+      //   key: 'SNT / USDT',
+      //   symbol: 'tSNTUSD',
+      //   last_price: 0,
+      //   color: ''
+      // }, {
+      //   id: 0,
+      //   key: 'MANA / USDT',
+      //   symbol: 'tMANUSD',
+      //   last_price: 0,
+      //   color: ''
+      // }, {
+      //   id: 0,
+      //   key: 'BCX / USDT',
+      //   symbol: 'tBCXUSD',
+      //   last_price: 0,
+      //   color: ''
+      // }, {
       id: 0,
       key: 'BCH / USDT',
       symbol: 'tBCHUSD',
