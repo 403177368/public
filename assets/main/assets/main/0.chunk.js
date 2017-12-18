@@ -135,19 +135,49 @@ var state = {
     status: '',
     pairs: [{
       id: 0,
-      key: 'BTC',
+      key: 'BTC / USDT',
       symbol: 'tBTCUSD',
       last_price: 0,
       color: ''
     }, {
       id: 0,
-      key: 'BCH',
+      key: 'LTC / USDT',
+      symbol: 'tLTCUSD',
+      last_price: 0,
+      color: ''
+    }, {
+      id: 0,
+      key: 'ETH / USDT',
+      symbol: 'tETHUSD',
+      last_price: 0,
+      color: ''
+    }, {
+      id: 0,
+      key: 'EOS / USDT',
+      symbol: 'tEOSUSD',
+      last_price: 0,
+      color: ''
+    }, {
+      id: 0,
+      key: 'IOTA / USDT',
+      symbol: 'tIOTUSD',
+      last_price: 0,
+      color: ''
+    }, {
+      id: 0,
+      key: 'BCX / USDT',
+      symbol: 'tBCXUSD',
+      last_price: 0,
+      color: ''
+    }, {
+      id: 0,
+      key: 'BCH / USDT',
       symbol: 'tBCHUSD',
       last_price: 0,
       color: ''
     }, {
       id: 0,
-      key: 'BTG',
+      key: 'BTG / USDT',
       symbol: 'tBTGUSD',
       last_price: 0,
       color: ''
@@ -654,7 +684,7 @@ exports.default = {
   mounted: function mounted() {
     this.$store.dispatch('main/home/init');
     this.$store.dispatch('main/home/initWebSocket');
-    // this.$store.dispatch('main/home/initOkex');
+    this.$store.dispatch('main/home/initOkex');
 
     this.$store.dispatch('main/home/fetch', { what: 'jianshu' });
     this.$store.dispatch('main/home/fetch', { what: 'echojs' });
