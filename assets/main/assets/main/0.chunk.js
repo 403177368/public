@@ -1711,6 +1711,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._v(_vm._s(a))])
   })), (_vm.home.box.current === 0) ? _c('ul', {
     staticClass: "list-group"
+  }, _vm._l((_vm.$store.state.main.home.echojs.items), function(a) {
+    return _c('a', {
+      staticClass: "list-group-item",
+      attrs: {
+        "href": a.href
+      }
+    }, [_c('p', [_vm._v(_vm._s(a.author.name) + " " + _vm._s(a.time))]), _c('h4', [_vm._v(_vm._s(a.title))])])
+  })) : _vm._e(), (_vm.home.box.current === 0) ? _c('div', {
+    staticClass: "panel-body"
+  }, [_c('div', {
+    staticClass: "btn btn-primary btn-sm"
+  }, [_vm._v("加载更多")])]) : _vm._e(), (_vm.home.box.current === 1) ? _c('ul', {
+    staticClass: "list-group"
   }, [_c('li', {
     staticClass: "list-group-item form-inline"
   }, [_c('input', {
@@ -1747,20 +1760,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "href": a.href
       }
     }, [_vm._v(_vm._s(a.title))])]), _c('p', [_vm._v(_vm._s(a.abstract))])])
-  })], 2) : _vm._e(), (_vm.home.box.current === 0) ? _c('div', {
-    staticClass: "panel-body"
-  }, [_c('div', {
-    staticClass: "btn btn-primary btn-sm"
-  }, [_vm._v("加载更多")])]) : _vm._e(), (_vm.home.box.current === 1) ? _c('ul', {
-    staticClass: "list-group"
-  }, _vm._l((_vm.$store.state.main.home.echojs.items), function(a) {
-    return _c('a', {
-      staticClass: "list-group-item",
-      attrs: {
-        "href": a.href
-      }
-    }, [_c('p', [_vm._v(_vm._s(a.author.name) + " " + _vm._s(a.time))]), _c('h4', [_vm._v(_vm._s(a.title))])])
-  })) : _vm._e(), (_vm.home.box.current === 1) ? _c('div', {
+  })], 2) : _vm._e(), (_vm.home.box.current === 1) ? _c('div', {
     staticClass: "panel-body"
   }, [_c('div', {
     staticClass: "btn btn-primary btn-sm"
