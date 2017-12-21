@@ -9,6 +9,227 @@ webpackJsonp([7],{
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _Canvas = __webpack_require__(101);
+
+var _Canvas2 = _interopRequireDefault(_Canvas);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  components: {
+    matrix: __webpack_require__(102)
+  },
+  data: function data() {
+    return {
+      src: '',
+      websites: [{
+        name: 'Three.js',
+        href: '//threejs.org/examples/'
+      }, {
+        name: 'Codepen',
+        href: '//codepen.io'
+      }, {
+        name: 'Phaser.js',
+        href: '//www.phaser.io/'
+      }]
+    };
+  },
+
+  computed: {
+    canvas: function canvas() {
+      return this.$store.state.main.Canvas;
+    }
+  },
+  beforeCreate: function beforeCreate() {
+    this.$store.complete(['main', 'Canvas'], _Canvas2.default);
+  },
+  mounted: function mounted() {
+    this.$store.dispatch('main/Canvas/init');
+  },
+
+  methods: {
+    register: function register(store) {
+      store.complete(['main', 'Canvas'], _Canvas2.default);
+    },
+    preFetch: function preFetch(store) {
+      return store.dispatch('main/Canvas/init');
+    },
+    to: function to(src) {
+      this.src = src;
+    }
+  }
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+
+/***/ 101:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _axios = __webpack_require__(1);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+exports.default = {
+  namespaced: true,
+  state: {
+    initialized: false,
+    canvas: {}
+  },
+  actions: {
+    init: function init(ctx) {
+      if (ctx.state.initialized === false) {
+        return ctx.dispatch('fetch').then(function (res) {
+          if (res.status === 200) {
+            ctx.state.initialized = true;
+            ctx.state.canvas = res.data;
+          }
+        }).catch(function (err) {
+          console.log(err);
+        });
+      }
+    },
+    fetch: function fetch(ctx) {
+      return (0, _axios2.default)({
+        method: 'GET',
+        url: '/api/canvas/',
+        // this is essential cause a fetch request is without cookie by default
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        mode: 'cors'
+      });
+    }
+  },
+  mutations: {
+    INIT_CANVAS: function INIT_CANVAS(state, arr) {
+      state.initialized = true;
+    },
+    SET_CANVAS: function SET_CANVAS(state, arr) {
+      var _state$items;
+
+      state.items.length = 0;
+      (_state$items = state.items).push.apply(_state$items, _toConsumableArray(arr));
+    }
+  }
+};
+
+/***/ }),
+
+/***/ 102:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(103)
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(104),
+  /* template */
+  __webpack_require__(105),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 103:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 104:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 //
 //
 //
@@ -125,7 +346,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 101:
+/***/ 105:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -139,7 +360,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 102:
+/***/ 106:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -199,234 +420,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 
 /* styles */
-__webpack_require__(95)
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(96),
-  /* template */
-  __webpack_require__(102),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 95:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 96:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _Canvas = __webpack_require__(97);
-
-var _Canvas2 = _interopRequireDefault(_Canvas);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  components: {
-    matrix: __webpack_require__(98)
-  },
-  data: function data() {
-    return {
-      src: '',
-      websites: [{
-        name: 'Three.js',
-        href: '//threejs.org/examples/'
-      }, {
-        name: 'Codepen',
-        href: '//codepen.io'
-      }, {
-        name: 'Phaser.js',
-        href: '//www.phaser.io/'
-      }]
-    };
-  },
-
-  computed: {
-    canvas: function canvas() {
-      return this.$store.state.main.Canvas;
-    }
-  },
-  beforeCreate: function beforeCreate() {
-    this.$store.complete(['main', 'Canvas'], _Canvas2.default);
-  },
-  mounted: function mounted() {
-    this.$store.dispatch('main/Canvas/init');
-  },
-
-  methods: {
-    register: function register(store) {
-      store.complete(['main', 'Canvas'], _Canvas2.default);
-    },
-    preFetch: function preFetch(store) {
-      return store.dispatch('main/Canvas/init');
-    },
-    to: function to(src) {
-      this.src = src;
-    }
-  }
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/***/ }),
-
-/***/ 97:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _axios = __webpack_require__(1);
-
-var _axios2 = _interopRequireDefault(_axios);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-exports.default = {
-  namespaced: true,
-  state: {
-    initialized: false,
-    canvas: {}
-  },
-  actions: {
-    init: function init(ctx) {
-      if (ctx.state.initialized === false) {
-        return ctx.dispatch('fetch').then(function (res) {
-          if (res.status === 200) {
-            ctx.state.initialized = true;
-            ctx.state.canvas = res.data;
-          }
-        }).catch(function (err) {
-          console.log(err);
-        });
-      }
-    },
-    fetch: function fetch(ctx) {
-      return (0, _axios2.default)({
-        method: 'GET',
-        url: '/api/canvas/',
-        // this is essential cause a fetch request is without cookie by default
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        mode: 'cors'
-      });
-    }
-  },
-  mutations: {
-    INIT_CANVAS: function INIT_CANVAS(state, arr) {
-      state.initialized = true;
-    },
-    SET_CANVAS: function SET_CANVAS(state, arr) {
-      var _state$items;
-
-      state.items.length = 0;
-      (_state$items = state.items).push.apply(_state$items, _toConsumableArray(arr));
-    }
-  }
-};
-
-/***/ }),
-
-/***/ 98:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
 __webpack_require__(99)
 
 var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(100),
   /* template */
-  __webpack_require__(101),
+  __webpack_require__(106),
   /* scopeId */
   null,
   /* cssModules */

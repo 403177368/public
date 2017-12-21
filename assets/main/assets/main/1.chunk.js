@@ -1,13 +1,13 @@
 webpackJsonp([1],{
 
-/***/ 153:
+/***/ 157:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 154:
+/***/ 158:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49,14 +49,14 @@ exports.default = {
 
 /***/ }),
 
-/***/ 155:
+/***/ 159:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 156:
+/***/ 160:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -173,8 +173,8 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = {
   components: {
-    TitleBar: __webpack_require__(157),
-    MyForm: __webpack_require__(161)
+    TitleBar: __webpack_require__(161),
+    MyForm: __webpack_require__(165)
     // Editing: require('./Editing.vue'),
     // Edit: require('./Edit.vue')
   },
@@ -255,18 +255,18 @@ exports.default = {
 
 /***/ }),
 
-/***/ 157:
+/***/ 161:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(158)
+__webpack_require__(162)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(159),
+  __webpack_require__(163),
   /* template */
-  __webpack_require__(160),
+  __webpack_require__(164),
   /* scopeId */
   null,
   /* cssModules */
@@ -278,14 +278,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 158:
+/***/ 162:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 159:
+/***/ 163:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -320,7 +320,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 160:
+/***/ 164:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -331,18 +331,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 161:
+/***/ 165:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(162)
+__webpack_require__(166)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(163),
+  __webpack_require__(167),
   /* template */
-  __webpack_require__(164),
+  __webpack_require__(168),
   /* scopeId */
   "data-v-2c970050",
   /* cssModules */
@@ -354,14 +354,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 162:
+/***/ 166:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 163:
+/***/ 167:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -408,7 +408,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 164:
+/***/ 168:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -433,7 +433,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 165:
+/***/ 169:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -521,7 +521,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 166:
+/***/ 170:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -540,14 +540,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 167:
+/***/ 171:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 168:
+/***/ 172:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -588,7 +588,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 169:
+/***/ 173:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -608,13 +608,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 
 /* styles */
-__webpack_require__(153)
+__webpack_require__(157)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(154),
+  __webpack_require__(158),
   /* template */
-  __webpack_require__(166),
+  __webpack_require__(170),
   /* scopeId */
   null,
   /* cssModules */
@@ -631,13 +631,13 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(167)
+__webpack_require__(171)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(168),
+  __webpack_require__(172),
   /* template */
-  __webpack_require__(169),
+  __webpack_require__(173),
   /* scopeId */
   "data-v-7a9c0b86",
   /* cssModules */
@@ -654,13 +654,13 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(155)
+__webpack_require__(159)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(156),
+  __webpack_require__(160),
   /* template */
-  __webpack_require__(165),
+  __webpack_require__(169),
   /* scopeId */
   null,
   /* cssModules */

@@ -745,6 +745,17 @@ a {
 .Signin .signin_box .btn {
   width: 100%;
 }
+
+.TabbedPanel777 .panel-heading span {
+  margin-right: 15px;
+  cursor: pointer;
+}
+.TabbedPanel777 .panel-heading span.active {
+  color: #0f88eb;
+}
+.TabbedPanel777 .list-group {
+  margin-bottom: 0;
+}
 /*@pink: #e91e63;*/
 .Posts .panel-heading {
   vertical-align: middle;
@@ -819,9 +830,23 @@ a {
 .Home .panel-heading span.active[data-v-7f7ff48e] {
   color: #0f88eb;
 }
-.Home .list-group-item span[data-v-7f7ff48e] {
+.Home .list-group-item .label-[data-v-7f7ff48e] {
   display: inline-block;
   width: 100px;
+}
+.Home .list-group-item .sum[data-v-7f7ff48e] {
+  display: inline-block;
+  text-align: right;
+}
+.Home .list-group-item .price-[data-v-7f7ff48e] {
+  display: inline-block;
+  width: 70px;
+  color: orange;
+}
+.Home .list-group-item .percent[data-v-7f7ff48e] {
+  display: inline-block;
+  width: 46px;
+  text-align: center;
 }
 /*@pink: #e91e63;*/
 /*@pink: #e91e63;*/

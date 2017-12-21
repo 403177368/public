@@ -10,7 +10,7 @@ var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(74),
   /* template */
-  __webpack_require__(89),
+  __webpack_require__(93),
   /* scopeId */
   "data-v-7f7ff48e",
   /* cssModules */
@@ -26,13 +26,13 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(90)
+__webpack_require__(94)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(91),
+  __webpack_require__(95),
   /* template */
-  __webpack_require__(94),
+  __webpack_require__(98),
   /* scopeId */
   "data-v-2fa9fa19",
   /* cssModules */
@@ -49,13 +49,13 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(103)
+__webpack_require__(107)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(104),
+  __webpack_require__(108),
   /* template */
-  __webpack_require__(106),
+  __webpack_require__(110),
   /* scopeId */
   null,
   /* cssModules */
@@ -72,13 +72,13 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(110)
+__webpack_require__(114)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(111),
+  __webpack_require__(115),
   /* template */
-  __webpack_require__(112),
+  __webpack_require__(116),
   /* scopeId */
   null,
   /* cssModules */
@@ -132,68 +132,52 @@ var state = {
     items: []
   },
   coins: {
-    status: '',
-    pairs: [{
-      id: 0,
-      key: 'BTC / USDT',
-      symbol: 'tBTCUSD',
-      last_price: 0,
-      color: ''
-    }, {
-      id: 0,
-      key: 'LTC / USDT',
-      symbol: 'tLTCUSD',
-      last_price: 0,
-      color: ''
-    }, {
-      id: 0,
-      key: 'ETH / USDT',
-      symbol: 'tETHUSD',
-      last_price: 0,
-      color: ''
-    }, {
-      id: 0,
-      key: 'EOS / USDT',
-      symbol: 'tEOSUSD',
-      last_price: 0,
-      color: ''
-    }, {
-      id: 0,
-      key: 'IOTA / USDT',
-      symbol: 'tIOTUSD',
-      last_price: 0,
-      color: ''
-    }, {
-      //   id: 0,
-      //   key: 'SNT / USDT',
-      //   symbol: 'tSNTUSD',
-      //   last_price: 0,
-      //   color: ''
-      // }, {
-      //   id: 0,
-      //   key: 'MANA / USDT',
-      //   symbol: 'tMANUSD',
-      //   last_price: 0,
-      //   color: ''
-      // }, {
-      //   id: 0,
-      //   key: 'BCX / USDT',
-      //   symbol: 'tBCXUSD',
-      //   last_price: 0,
-      //   color: ''
-      // }, {
-      id: 0,
-      key: 'BCH / USDT',
-      symbol: 'tBCHUSD',
-      last_price: 0,
-      color: ''
-    }, {
-      id: 0,
-      key: 'BTG / USDT',
-      symbol: 'tBTGUSD',
-      last_price: 0,
-      color: ''
-    }]
+    status: 'Waiting',
+    start_time: null,
+    pairs: function () {
+      return [{
+        key: 'BTC / USDT',
+        symbol: 'tBTCUSD'
+      }, {
+        key: 'BCH / USDT',
+        symbol: 'tBCHUSD'
+      }, {
+        key: 'LTC / USDT',
+        symbol: 'tLTCUSD'
+      }, {
+        key: 'ETH / USDT',
+        symbol: 'tETHUSD'
+      }, {
+        key: 'EOS / USDT',
+        symbol: 'tEOSUSD'
+      }, {
+        key: 'IOTA / USDT',
+        symbol: 'tIOTUSD'
+      }, {
+        key: 'ETC / USDT',
+        symbol: 'tETCUSD'
+      }, {
+        key: 'NEO / USDT',
+        symbol: 'tNEOUSD'
+      }, {
+        key: 'QTUM / USDT',
+        symbol: 'tQTMUSD'
+      }, {
+        key: 'BTG / USDT',
+        symbol: 'tBTGUSD'
+      }].map(function (a) {
+        return {
+          id: 0,
+          key: a.key,
+          symbol: a.symbol,
+          last_price: 0,
+          prices: [],
+          sum: 0,
+          percent: [],
+          color: ''
+        };
+      });
+    }()
   },
   okex: {
     status: '',
@@ -204,184 +188,222 @@ var state = {
   }
 };
 
-var actions = {
-  init: function init(_ref) {
-    var state = _ref.state,
-        dispatch = _ref.dispatch;
-
-    if (state.inited === false) {
-      return _axios2.default.all([
-        // dispatch('main/posts/init', null, { root: true }),
-        // dispatch('fetch_jianshu')
-      ]).then(function () {
-        state.inited = true;
-      });
-    }
-  },
-  initWebSocket: function initWebSocket(_ref2) {
-    var state = _ref2.state;
-
-    if (state.coins.status === '') {
-      try {
-        var ws = new WebSocket('wss://api.bitfinex.com/ws/2');
-        ws.onopen = function (event) {
-          state.coins.status = 'connected';
-          console.log('Connection established. ' + this.readyState);
-
-          state.coins.pairs.forEach(function (a) {
-            ws.send(JSON.stringify({
-              event: 'subscribe',
-              channel: 'ticker',
-              symbol: a.symbol
-              // symbols: ['tBTCUSD', 'tBTGUSD']
-            }));
-          });
-        };
-        ws.onmessage = function (event) {
-          // console.log('Received data: ' + event.data);
-          var obj = JSON.parse(event.data);
-          if (obj.pair) {
-            state.coins.pairs.forEach(function (a) {
-              if (obj.symbol === a.symbol) {
-                a.id = obj.chanId;
-              }
-            });
-          } else {
-            if (Array.isArray(obj[1])) {
-              state.coins.pairs.forEach(function (a) {
-                if (obj[0] === a.id) {
-                  var price = obj[1][6];
-                  if (price > a.last_price) {
-                    a.color = 'green';
-                  } else {
-                    a.color = 'red';
-                  }
-                  a.last_price = price;
-                }
-              });
-            }
-          }
-        };
-        ws.onclose = function (event) {
-          state.coins.status = '';
-          console.log('Disconnected: ' + this.readyState);
-        };
-        ws.onerror = function (event) {
-          console.log('Errored!');
-        };
-      } catch (e) {
-        alert(e.message);
-      }
-    }
-  },
-  initOkex: function initOkex(_ref3) {
-    var state = _ref3.state;
-
-    if (state.okex.status === '') {
-      try {
-        var ws = new WebSocket('wss://real.okex.com:10441/websocket');
-        ws.onopen = function (event) {
-          state.okex.status = 'connected';
-          console.log('Connection established. ' + this.readyState);
-
-          ws.send(JSON.stringify({
-            event: 'addChannel',
-            channel: 'ok_sub_spot_bch_usdt_ticker'
-            // binary: 1
-          }));
-        };
-        ws.onmessage = function (event) {
-          console.log('Received data: ' + event.data);
-          var obj = JSON.parse(event.data);
-          // if (obj.pair) {
-          //   if (obj.pair === 'BTCUSD') {
-          //     state.coins.pairs[0].id = obj.chanId;
-          //   }
-          //   if (obj.pair === 'BTGUSD') {
-          //     state.coins.pairs[1].id = obj.chanId;
-          //   }
-          // } else {
-          //   if (Array.isArray(obj[1])) {
-          //     state.coins.pairs.forEach(a => {
-          //       if (obj[0] === a.id) {
-          //         a.last_price = obj[1][6];
-          //       }
-          //     })
-          //   }
-          // }
-        };
-        ws.onclose = function (event) {
-          state.okex.status = '';
-          console.log('Disconnected: ' + this.readyState);
-        };
-        ws.onerror = function (event) {
-          console.log('Errored!');
-        };
-      } catch (e) {
-        alert(e.message);
-      }
-    }
-  },
-  fetch: function fetch(_ref4, _ref5) {
-    var state = _ref4.state;
-    var what = _ref5.what;
-
-    // axios({
-    //   url: `https://www.okex.com/api/v1/ticker.do?symbol=ltc_btc`,
-    //   // this is essential cause a fetch request is without cookie by default
-    //   withCredentials: true,
-    //   method: 'GET',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   mode: 'cors',
-    // }).then(res => {
-    //   // state[what].inited = true;
-    //   // state[what].items.length = 0;
-    //   // state[what].items.push(...res.data.data);
-    // })
-    if (state[what].inited === true) {
-      return Promise.resolve();
-    } else {
-      return (0, _axios2.default)({
-        url: '/api/crawler/' + what + '/',
-        // this is essential cause a fetch request is without cookie by default
-        withCredentials: true,
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        mode: 'cors'
-      }).then(function (res) {
-        var _state$what$items;
-
-        state[what].inited = true;
-        state[what].items.length = 0;
-        (_state$what$items = state[what].items).push.apply(_state$what$items, _toConsumableArray(res.data.data));
-      });
-    }
-  },
-  switch_tab: function switch_tab(_ref6, _ref7) {
-    var state = _ref6.state,
-        dispatch = _ref6.dispatch;
-    var i = _ref7.i;
-
-    state.box.current = i;
-    if (i === 0) {
-      dispatch('fetch', { what: 'jianshu' });
-    } else if (i === 1) {
-      dispatch('fetch', { what: 'echojs' });
-    }
-  }
-};
-
-var mutations = {};
-
 exports.default = {
   namespaced: true,
   state: state,
-  actions: actions,
-  mutations: mutations
+  actions: {
+    init: function init(_ref) {
+      var state = _ref.state,
+          dispatch = _ref.dispatch;
+
+      if (state.inited === false) {
+        return _axios2.default.all([
+          // dispatch('main/posts/init', null, { root: true }),
+          // dispatch('fetch_jianshu')
+        ]).then(function () {
+          state.inited = true;
+        });
+      }
+    },
+    initWebSocket: function initWebSocket(_ref2) {
+      var state = _ref2.state,
+          dispatch = _ref2.dispatch;
+
+      if (state.coins.status === 'Waiting') {
+        try {
+          //  Try to establish the WebSocket connection
+          var ws = new WebSocket('wss://api.bitfinex.com/ws/2');
+          ws.onopen = function (event) {
+            state.coins.status = 'Connected';
+            console.log('Connection established. ' + this.readyState);
+
+            // Send messages
+            state.coins.pairs.forEach(function (a) {
+              ws.send(JSON.stringify({
+                event: 'subscribe',
+                channel: 'ticker',
+                symbol: a.symbol
+                // symbols: ['tBTCUSD', 'tBTGUSD']
+              }));
+            });
+          };
+          ws.onmessage = function (event) {
+            // console.log('Received data: ' + event.data);
+            var obj = JSON.parse(event.data);
+            if (obj.pair) {
+              state.coins.pairs.forEach(function (a) {
+                if (obj.symbol === a.symbol) {
+                  a.id = obj.chanId;
+                }
+              });
+            } else {
+              if (Array.isArray(obj[1])) {
+                // Update 
+                var update = function update() {
+                  state.coins.pairs.forEach(function (a) {
+                    a.prices.length = 0;
+                    a.percent.push('');
+                    if (a.percent.length > 5) {
+                      a.percent.shift();
+                    }
+                  });
+                  state.coins.start_time = now;
+                };
+
+                var last = state.coins.start_time;
+                var now = new Date().getTime();
+                if (!last) {
+                  update();
+                } else if (now - last > 180000) {
+                  update();
+                }
+
+                state.coins.pairs.forEach(function (a) {
+                  if (obj[0] === a.id) {
+                    var price = obj[1][6];
+                    if (price > a.last_price) {
+                      a.color = 'green';
+                    } else {
+                      a.color = 'red';
+                    }
+                    a.last_price = price;
+                    a.prices.push(price);
+                    if (a.prices.length > 1) {
+                      var start = a.prices[0];
+                      var end = a.prices[a.prices.length - 1];
+                      a.percent[a.percent.length - 1] = ((end - start) / start * 100).toFixed(2);
+                      // console.log(a.percent);
+                    }
+                    a.sum = a.percent.reduce(function (sum, b) {
+                      return sum + Number(b);
+                    }, 0).toFixed(2);
+                  }
+                });
+              }
+            }
+          };
+          ws.onclose = function (event) {
+            state.coins.status = 'Disconnected';
+            state.coins.pairs.forEach(function (a) {
+              a.last_price = 0;
+              a.color = 'black';
+            });
+            console.log('Disconnected: ' + this.readyState);
+          };
+          ws.onerror = function (event) {
+            state.coins.pairs.forEach(function (a) {
+              a.last_price = 0;
+              a.color = 'black';
+            });
+            state.coins.status = 'Errored';
+            console.log('Errored!');
+          };
+        } catch (e) {
+          alert(e.message);
+        }
+      }
+    },
+    initOkex: function initOkex(_ref3) {
+      var state = _ref3.state;
+
+      if (state.okex.status === '') {
+        try {
+          var ws = new WebSocket('wss://real.okex.com:10441/websocket');
+          ws.onopen = function (event) {
+            state.okex.status = 'connected';
+            console.log('Connection established. ' + this.readyState);
+
+            ws.send(JSON.stringify({
+              event: 'addChannel',
+              channel: 'ok_sub_spot_bch_usdt_ticker'
+              // binary: 1
+            }));
+          };
+          ws.onmessage = function (event) {
+            console.log('Received data: ' + event.data);
+            var obj = JSON.parse(event.data);
+            // if (obj.pair) {
+            //   if (obj.pair === 'BTCUSD') {
+            //     state.coins.pairs[0].id = obj.chanId;
+            //   }
+            //   if (obj.pair === 'BTGUSD') {
+            //     state.coins.pairs[1].id = obj.chanId;
+            //   }
+            // } else {
+            //   if (Array.isArray(obj[1])) {
+            //     state.coins.pairs.forEach(a => {
+            //       if (obj[0] === a.id) {
+            //         a.last_price = obj[1][6];
+            //       }
+            //     })
+            //   }
+            // }
+          };
+          ws.onclose = function (event) {
+            state.okex.status = '';
+            console.log('Disconnected: ' + this.readyState);
+          };
+          ws.onerror = function (event) {
+            console.log('Errored!');
+          };
+        } catch (e) {
+          alert(e.message);
+        }
+      }
+    },
+    fetch: function fetch(_ref4, _ref5) {
+      var state = _ref4.state;
+      var what = _ref5.what;
+
+      // axios({
+      //   url: `https://www.okex.com/api/v1/ticker.do?symbol=ltc_btc`,
+      //   // this is essential cause a fetch request is without cookie by default
+      //   withCredentials: true,
+      //   method: 'GET',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   mode: 'cors',
+      // }).then(res => {
+      //   // state[what].inited = true;
+      //   // state[what].items.length = 0;
+      //   // state[what].items.push(...res.data.data);
+      // })
+      if (state[what].inited === true) {
+        return Promise.resolve();
+      } else {
+        return (0, _axios2.default)({
+          url: '/api/crawler/' + what + '/',
+          // this is essential cause a fetch request is without cookie by default
+          withCredentials: true,
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          mode: 'cors'
+        }).then(function (res) {
+          var _state$what$items;
+
+          state[what].inited = true;
+          state[what].items.length = 0;
+          (_state$what$items = state[what].items).push.apply(_state$what$items, _toConsumableArray(res.data.data));
+        });
+      }
+    },
+    switch_tab: function switch_tab(_ref6, _ref7) {
+      var state = _ref6.state,
+          dispatch = _ref6.dispatch;
+      var i = _ref7.i;
+
+      state.box.current = i;
+      if (i === 0) {
+        dispatch('fetch', { what: 'jianshu' });
+      } else if (i === 1) {
+        dispatch('fetch', { what: 'echojs' });
+      }
+    }
+  },
+  mutations: {}
 };
 
 /***/ }),
@@ -666,13 +688,36 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
   components: {
     News: __webpack_require__(75),
     BoxSignin: __webpack_require__(53),
     Posts: __webpack_require__(54),
-    DatePicker: __webpack_require__(85)
+    DatePicker: __webpack_require__(85),
+    'tabbed-panel': __webpack_require__(89)
     // Slider: require('./Slider.vue')
   },
   computed: {
@@ -1699,6 +1744,135 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 /* 89 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(90)
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(91),
+  /* template */
+  __webpack_require__(92),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 90 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 91 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+exports.default = {
+  props: {
+    tabs: {
+      default: function _default() {
+        return [];
+      }
+    }
+  },
+  data: function data() {
+    return {
+      current: 0
+    };
+  },
+
+  components: {},
+  mounted: function mounted() {
+    // console.log(this);
+    this.change(0);
+  },
+
+  methods: {
+    change: function change(i) {
+      this.current = i;
+      // for (let key in this.$slots) {
+      //   this.$slots[key][0].elm.style.display = 'none';          
+      // };
+      // this.$slots['body_' + i][0].elm.style.display = '';
+    }
+  }
+};
+
+/***/ }),
+/* 92 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "TabbedPanel777 panel panel-default"
+  }, [_c('div', {
+    staticClass: "panel-heading"
+  }, _vm._l((_vm.tabs), function(a, i) {
+    return _c('span', {
+      class: i === _vm.current ? 'active' : '',
+      on: {
+        "click": function($event) {
+          _vm.change(i)
+        }
+      }
+    }, [_vm._v(_vm._s(a))])
+  })), _vm._l((_vm.tabs), function(a, i) {
+    return (_vm.current === i) ? _vm._t('body_' + i) : _vm._e()
+  })], 2)
+},staticRenderFns: []}
+
+/***/ }),
+/* 93 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1714,44 +1888,63 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col-sm-8"
+  }, [_c('tabbed-panel', {
+    attrs: {
+      "tabs": ['Bitfinex', 'Okex', 'Binance']
+    }
   }, [_c('div', {
-    staticClass: "panel panel-default"
+    staticClass: "list-group",
+    attrs: {
+      "slot": "body_0"
+    },
+    slot: "body_0"
   }, [_c('div', {
-    staticClass: "panel-heading"
-  }, [_vm._v("\n              Bitfinex\n            ")]), _c('div', {
-    staticClass: "list-group"
-  }, _vm._l((_vm.home.coins.pairs), function(a) {
+    staticClass: "list-group-item"
+  }, [_c('strong', [_vm._v("Bitfinex(" + _vm._s(_vm.home.coins.status) + ")")])]), _vm._l((_vm.home.coins.pairs), function(a) {
     return _c('div', {
       staticClass: "list-group-item"
-    }, [_c('span', [_vm._v(_vm._s(a.key))]), _c('span', {
-      style: ('color: ' + a.color + ';')
-    }, [_vm._v("$" + _vm._s(a.last_price.toFixed(2)))])])
-  }))]), _c('div', {
-    staticClass: "panel panel-default"
+    }, [_c('div', {
+      staticClass: "row"
+    }, [_c('div', {
+      staticClass: "col-md-4"
+    }, [_c('span', {
+      staticClass: "label-"
+    }, [_vm._v(_vm._s(a.key))]), _c('span', {
+      staticClass: "price-",
+      style: ('color: orange;')
+    }, [_vm._v("$" + _vm._s(a.last_price.toFixed(2)))])]), _c('div', {
+      staticClass: "col-md-8"
+    }, [_vm._l((a.percent), function(b) {
+      return _c('span', {
+        staticClass: "percent",
+        style: ('color: ' + (b > 0 ? 'green' : 'red') + ';')
+      }, [_vm._v(_vm._s(b))])
+    }), _c('span', {
+      staticClass: "sum pull-right",
+      style: ('color: ' + (a.sum > 0 ? 'green' : 'red') + ';')
+    }, [_vm._v("\n                      " + _vm._s(a.sum) + "%\n                    ")])], 2)])])
+  })], 2), _c('div', {
+    staticClass: "list-group",
+    attrs: {
+      "slot": "body_1"
+    },
+    slot: "body_1"
   }, [_c('div', {
-    staticClass: "panel-heading"
-  }, [_vm._v("\n              Okex\n            ")]), _c('div', {
-    staticClass: "list-group"
-  }, _vm._l((_vm.home.okex.pairs), function(a) {
+    staticClass: "list-group-item"
+  }, [_c('strong', [_vm._v("Okex")])]), _vm._l((_vm.home.okex.pairs), function(a) {
     return _c('div', {
       staticClass: "list-group-item"
     }, [_c('span', [_vm._v(_vm._s(a.key))]), _c('span', [_vm._v("$" + _vm._s(a.last_price.toFixed(2)))])])
-  }))]), _c('div', {
-    staticClass: "panel panel-default tabbed"
-  }, [_c('div', {
-    staticClass: "panel-heading"
-  }, _vm._l((_vm.home.box.tabs), function(a, i) {
-    return _c('span', {
-      class: i === _vm.home.box.current ? 'active' : '',
-      on: {
-        "click": function($event) {
-          _vm.$store.dispatch('main/home/switch_tab', {
-            i: i
-          })
-        }
-      }
-    }, [_vm._v(_vm._s(a))])
-  })), (_vm.home.box.current === 0) ? _c('ul', {
+  })], 2)]), _c('tabbed-panel', {
+    attrs: {
+      "tabs": _vm.home.box.tabs
+    }
+  }, [_c('template', {
+    attrs: {
+      "slot": "body_0"
+    },
+    slot: "body_0"
+  }, [_c('ul', {
     staticClass: "list-group"
   }, _vm._l((_vm.$store.state.main.home.echojs.items), function(a) {
     return _c('a', {
@@ -1760,11 +1953,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "href": a.href
       }
     }, [_c('p', [_vm._v(_vm._s(a.author.name) + " " + _vm._s(a.time))]), _c('h4', [_vm._v(_vm._s(a.title))])])
-  })) : _vm._e(), (_vm.home.box.current === 0) ? _c('div', {
+  })), _c('div', {
     staticClass: "panel-body"
   }, [_c('div', {
     staticClass: "btn btn-primary btn-sm"
-  }, [_vm._v("加载更多")])]) : _vm._e(), (_vm.home.box.current === 1) ? _c('ul', {
+  }, [_vm._v("加载更多")])])]), _c('template', {
+    attrs: {
+      "slot": "body_1"
+    },
+    slot: "body_1"
+  }, [_c('ul', {
     staticClass: "list-group"
   }, [_c('li', {
     staticClass: "list-group-item form-inline"
@@ -1788,7 +1986,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticStyle: {
       "text-align": "center"
     }
-  }, [_vm._v("\n                Loading...\n              ")]), _vm._l((_vm.$store.state.main.home.jianshu.items), function(a) {
+  }, [_vm._v("\n                  Loading...\n                ")]), _vm._l((_vm.$store.state.main.home.jianshu.items), function(a) {
     return _c('li', {
       staticClass: "list-group-item",
       attrs: {
@@ -1802,11 +2000,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "href": a.href
       }
     }, [_vm._v(_vm._s(a.title))])]), _c('p', [_vm._v(_vm._s(a.abstract))])])
-  })], 2) : _vm._e(), (_vm.home.box.current === 1) ? _c('div', {
+  })], 2), _c('div', {
     staticClass: "panel-body"
   }, [_c('div', {
     staticClass: "btn btn-primary btn-sm"
-  }, [_vm._v("加载更多")])]) : _vm._e(), (_vm.home.box.current === 2) ? _c('news') : _vm._e()], 1)]), _c('div', {
+  }, [_vm._v("加载更多")])])]), _c('news', {
+    attrs: {
+      "slot": "body_2"
+    },
+    slot: "body_2"
+  })], 2)], 1), _c('div', {
     staticClass: "col-sm-4"
   }, [_c('div', {
     staticClass: "panel-container"
@@ -1896,13 +2099,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 90 */
+/* 94 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 91 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1912,7 +2115,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _projects = __webpack_require__(92);
+var _projects = __webpack_require__(96);
 
 var _projects2 = _interopRequireDefault(_projects);
 
@@ -2067,7 +2270,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 92 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2094,7 +2297,7 @@ var actions = {
   },
   fetchProjects: function fetchProjects(ctx) {
     return new Promise(function (resolve, reject) {
-      var projects = __webpack_require__(93).default;
+      var projects = __webpack_require__(97).default;
       resolve(projects);
     });
   }
@@ -2117,7 +2320,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 93 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2153,7 +2356,7 @@ exports.default = [{
 }];
 
 /***/ }),
-/* 94 */
+/* 98 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -2254,21 +2457,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
 /* 99 */,
 /* 100 */,
 /* 101 */,
 /* 102 */,
-/* 103 */
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 104 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2278,7 +2481,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _blog = __webpack_require__(105);
+var _blog = __webpack_require__(109);
 
 var _blog2 = _interopRequireDefault(_blog);
 
@@ -2351,7 +2554,7 @@ exports.default = {
 //
 
 /***/ }),
-/* 105 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2466,7 +2669,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 106 */
+/* 110 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -2502,16 +2705,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 107 */,
-/* 108 */,
-/* 109 */,
-/* 110 */
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 111 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2567,7 +2770,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 112 */
+/* 116 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

@@ -456,6 +456,12 @@ function updateLink(linkElement, obj) {
 /***/ }),
 /* 2 */,
 /* 3 */
+/***/ (function(module, exports) {
+
+module.exports = window.React;
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -761,22 +767,16 @@ module.exports = {
 
 
 /***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-module.exports = window.React;
-
-/***/ }),
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = window.ReactRouter;
+module.exports = ReactRedux;
 
 /***/ }),
 /* 6 */
 /***/ (function(module, exports) {
 
-module.exports = ReactRedux;
+module.exports = window.ReactRouter;
 
 /***/ }),
 /* 7 */
@@ -792,9 +792,15 @@ exports.Navbar = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _reactRouter = __webpack_require__(5);
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouter = __webpack_require__(6);
 
 __webpack_require__(69);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -817,63 +823,63 @@ var Navbar = function (_React$Component) {
   _createClass(Navbar, [{
     key: 'render',
     value: function render() {
-      return React.createElement(
+      return _react2.default.createElement(
         'div',
         { className: 'NAVBAR' },
-        React.createElement(
+        _react2.default.createElement(
           'ul',
           { className: 'nav' },
-          React.createElement(
+          _react2.default.createElement(
             _reactRouter.Link,
             { to: '/home', className: this.props.name === 'home' ? 'active' : '' },
-            React.createElement(
+            _react2.default.createElement(
               'div',
               { className: 'icon' },
-              React.createElement('i', { className: 'fa fa-home' })
+              _react2.default.createElement('i', { className: 'fa fa-home' })
             ),
-            React.createElement(
+            _react2.default.createElement(
               'p',
               null,
               '\u9996\u9875'
             )
           ),
-          React.createElement(
+          _react2.default.createElement(
             _reactRouter.Link,
             { to: '/category', className: this.props.name === 'category' ? 'active' : '' },
-            React.createElement(
+            _react2.default.createElement(
               'div',
               { className: 'icon' },
-              React.createElement('i', { className: 'fa fa-th' })
+              _react2.default.createElement('i', { className: 'fa fa-th' })
             ),
-            React.createElement(
+            _react2.default.createElement(
               'p',
               null,
               '\u5206\u7C7B'
             )
           ),
-          React.createElement(
+          _react2.default.createElement(
             _reactRouter.Link,
             { to: '/shopping_cart', className: this.props.name === 'shoppingCart' ? 'active' : '' },
-            React.createElement(
+            _react2.default.createElement(
               'div',
               { className: 'icon' },
-              React.createElement('i', { className: 'fa fa-shopping-cart' })
+              _react2.default.createElement('i', { className: 'fa fa-shopping-cart' })
             ),
-            React.createElement(
+            _react2.default.createElement(
               'p',
               null,
               '\u8D2D\u7269\u8F66'
             )
           ),
-          React.createElement(
+          _react2.default.createElement(
             _reactRouter.Link,
             { to: '/member', className: this.props.name === 'mine' ? 'active' : '' },
-            React.createElement(
+            _react2.default.createElement(
               'div',
               { className: 'icon' },
-              React.createElement('i', { className: 'fa fa-user' })
+              _react2.default.createElement('i', { className: 'fa fa-user' })
             ),
-            React.createElement(
+            _react2.default.createElement(
               'p',
               null,
               '\u6211'
@@ -885,7 +891,7 @@ var Navbar = function (_React$Component) {
   }]);
 
   return Navbar;
-}(React.Component);
+}(_react2.default.Component);
 
 exports.Navbar = Navbar;
 
@@ -971,7 +977,7 @@ module.exports = __webpack_require__(43);
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 var normalizeHeaderName = __webpack_require__(46);
 
 var PROTECTION_PREFIX = /^\)\]\}',?\n/;
@@ -1171,7 +1177,7 @@ module.exports = function bind(fn, thisArg) {
 "use strict";
 
 
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 var settle = __webpack_require__(47);
 var buildURL = __webpack_require__(49);
 var parseHeaders = __webpack_require__(50);
@@ -1424,7 +1430,7 @@ exports.Showcase = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _reactRouter = __webpack_require__(5);
+var _reactRouter = __webpack_require__(6);
 
 __webpack_require__(73);
 
@@ -2231,9 +2237,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = __webpack_require__(4);
+var _react = __webpack_require__(3);
 
-var _reactRouter = __webpack_require__(5);
+var _reactRouter = __webpack_require__(6);
 
 var _App = __webpack_require__(32);
 
@@ -2257,7 +2263,7 @@ var _DIAdd = __webpack_require__(96);
 
 var _Test = __webpack_require__(99);
 
-var _reactRedux = __webpack_require__(6);
+var _reactRedux = __webpack_require__(5);
 
 var _store = __webpack_require__(11);
 
@@ -2339,11 +2345,11 @@ exports.App = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(4);
+var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(6);
+var _reactRedux = __webpack_require__(5);
 
 var _log = __webpack_require__(12);
 
@@ -2423,13 +2429,13 @@ exports.Mask = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(4);
+var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
 __webpack_require__(34);
 
-var _reactRedux = __webpack_require__(6);
+var _reactRedux = __webpack_require__(5);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2570,13 +2576,13 @@ exports.Notice = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(4);
+var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
 __webpack_require__(37);
 
-var _reactRedux = __webpack_require__(6);
+var _reactRedux = __webpack_require__(5);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2706,7 +2712,7 @@ exports.NoticePretty = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _reactRedux = __webpack_require__(6);
+var _reactRedux = __webpack_require__(5);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -2936,6 +2942,7 @@ function createStore(options) {
             var arr = action.type.split('/');
             var name = arr.pop();
             var path = arr.join('/');
+            var nextState;
 
             if (path === self.path) {
               console.log('[revuex] matched action: ' + action.type);
@@ -2946,7 +2953,7 @@ function createStore(options) {
               action.type = rawType;
               childrenState = self.childrenReducer(childrenState, action);
 
-              var nextState = self.mergeState(indexState, childrenState);
+              nextState = self.mergeState(indexState, childrenState);
 
               return self.state = nextState;
             } else {
@@ -2955,7 +2962,7 @@ function createStore(options) {
 
               childrenState = self.childrenReducer(childrenState, action);
 
-              var nextState = self.mergeState(indexState, childrenState);
+              nextState = self.mergeState(indexState, childrenState);
               return self.state = nextState;
               // throw new Error('[revuex] Invalid action type: ' + action.type + '.');
             }
@@ -3160,7 +3167,7 @@ var _axios = __webpack_require__(9);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _reactRouter = __webpack_require__(5);
+var _reactRouter = __webpack_require__(6);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3211,7 +3218,7 @@ exports.default = {
 "use strict";
 
 
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 var bind = __webpack_require__(13);
 var Axios = __webpack_require__(44);
 var defaults = __webpack_require__(10);
@@ -3271,7 +3278,7 @@ module.exports.default = axios;
 
 
 var defaults = __webpack_require__(10);
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 var InterceptorManager = __webpack_require__(54);
 var dispatchRequest = __webpack_require__(55);
 var isAbsoluteURL = __webpack_require__(57);
@@ -3552,7 +3559,7 @@ process.umask = function() { return 0; };
 "use strict";
 
 
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 
 module.exports = function normalizeHeaderName(headers, normalizedName) {
   utils.forEach(headers, function processHeader(value, name) {
@@ -3629,7 +3636,7 @@ module.exports = function enhanceError(error, config, code, response) {
 "use strict";
 
 
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 
 function encode(val) {
   return encodeURIComponent(val).
@@ -3704,7 +3711,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 "use strict";
 
 
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 
 /**
  * Parse headers into an object
@@ -3748,7 +3755,7 @@ module.exports = function parseHeaders(headers) {
 "use strict";
 
 
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -3866,7 +3873,7 @@ module.exports = btoa;
 "use strict";
 
 
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -3926,7 +3933,7 @@ module.exports = (
 "use strict";
 
 
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 
 function InterceptorManager() {
   this.handlers = [];
@@ -3985,7 +3992,7 @@ module.exports = InterceptorManager;
 "use strict";
 
 
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 var transformData = __webpack_require__(56);
 var isCancel = __webpack_require__(16);
 var defaults = __webpack_require__(10);
@@ -4071,7 +4078,7 @@ module.exports = function dispatchRequest(config) {
 "use strict";
 
 
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 
 /**
  * Transform the data for a request or a response
@@ -4244,7 +4251,7 @@ var _axios = __webpack_require__(9);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _reactRouter = __webpack_require__(5);
+var _reactRouter = __webpack_require__(6);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -4500,11 +4507,11 @@ exports.RouteIndex = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(4);
+var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(6);
+var _reactRedux = __webpack_require__(5);
 
 var _log = __webpack_require__(12);
 
@@ -4557,7 +4564,7 @@ exports.Home = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(4);
+var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -4852,7 +4859,7 @@ exports.Showcase2 = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _reactRouter = __webpack_require__(5);
+var _reactRouter = __webpack_require__(6);
 
 __webpack_require__(76);
 
@@ -4974,13 +4981,13 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 __webpack_require__(79);
 
-var _react = __webpack_require__(4);
+var _react = __webpack_require__(3);
 
-var _reactRedux = __webpack_require__(6);
+var _reactRedux = __webpack_require__(5);
 
 var _Navbar = __webpack_require__(7);
 
-var _reactRouter = __webpack_require__(5);
+var _reactRouter = __webpack_require__(6);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -5154,7 +5161,7 @@ exports.Orders = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(4);
+var _react = __webpack_require__(3);
 
 var _Topbar = __webpack_require__(8);
 
@@ -5241,9 +5248,9 @@ exports.Signin = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(4);
+var _react = __webpack_require__(3);
 
-var _reactRedux = __webpack_require__(6);
+var _reactRedux = __webpack_require__(5);
 
 __webpack_require__(85);
 
@@ -5596,9 +5603,11 @@ exports.Category = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(4);
+var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(5);
 
 __webpack_require__(91);
 
@@ -5655,7 +5664,7 @@ Category.defaultProps = {
   items: []
 };
 
-exports.Category = Category = ReactRedux.connect(function (state) {
+exports.Category = Category = (0, _reactRedux.connect)(function (state) {
   return {
     items: state.items.items
   };
@@ -5719,7 +5728,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _Topbar = __webpack_require__(8);
 
-var _reactRouter = __webpack_require__(5);
+var _reactRouter = __webpack_require__(6);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -6134,7 +6143,7 @@ exports.Test = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(4);
+var _react = __webpack_require__(3);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
