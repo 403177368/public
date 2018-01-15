@@ -1754,6 +1754,7 @@ var state = {
   status: 'Waiting',
   ratio: 0,
   alerting: false,
+  alert_text: '',
   items: function () {
     var obj = {
       btcusdt: {
@@ -1963,7 +1964,8 @@ exports.default = {
       //     state.pairs[0].trading.balance[key] = obj.balance[key];
       //   }
       // }
-      function warn() {
+      function warn(str) {
+        state.alert_text = str;
         var el = document.createElement('audio');
         el.setAttribute('src', 'http://ptsolomo.reader.qq.com/book_res/event/act170201/adr/farm.mp3');
         el.setAttribute('autoplay', 'autoplay');
@@ -2009,16 +2011,14 @@ exports.default = {
               if (state.alerting === false) {
                 if (a.lower && Number(a.last_price) < Number(a.lower)) {
                   state.alerting = true;
-                  console.warn(a.symbol + ' is too low!!!');
-                  warn();
+                  warn(a.symbol + ' is too low!!!');
                   // if (navigator.vibrate) {
                   //   navigator.vibrate(60 * 1000);
                   // }
                 }
                 if (a.upper && Number(a.last_price) > Number(a.upper)) {
                   state.alerting = true;
-                  console.warn(a.symbol + ' is too high!!!');
-                  warn();
+                  warn(a.symbol + ' is too high!!!');
                   // if (navigator.vibrate) {
                   //   navigator.vibrate(60 * 1000);
                   // }
@@ -4391,6 +4391,11 @@ exports.default = {
 //
 //
 //
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 124 */
@@ -4403,7 +4408,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "panel panel-default"
   }, [_c('div', {
     staticClass: "panel-heading"
-  }, [_vm._v("\n        Binance (" + _vm._s(_vm.home.binance.status) + ")\n      ")]), _vm._m(0), _c('div', {
+  }, [_vm._v("\n        Binance (" + _vm._s(_vm.home.binance.status) + ")\n      ")]), _c('div', {
+    staticClass: "panel-body"
+  }, [_vm._m(0), (_vm.home.binance.alert_text) ? _c('div', {
+    staticClass: "alert alert-danger"
+  }, [_vm._v("\n          " + _vm._s(_vm.home.binance.alert_text) + "\n        ")]) : _vm._e()]), _c('div', {
     staticClass: "list-group"
   }, _vm._l((_vm.picked), function(a) {
     return _c('div', {
@@ -4416,9 +4425,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "row"
     }, [_c('div', {
       staticClass: "col-xs-4 col-sm-6"
-    }, [_vm._v("\n                    " + _vm._s(a.key) + "\n                  ")]), _c('div', {
+    }, [_vm._v("\n                  " + _vm._s(a.key) + "\n                ")]), _c('div', {
       staticClass: "col-xs-6"
-    }, [_vm._v("\n                    " + _vm._s(a.stream.match(/usdt/) ? Number(a.open_price).toFixed(2) : a.open_price) + "\n                  ")])])]), _c('div', {
+    }, [_vm._v("\n                  " + _vm._s(a.stream.match(/usdt/) ? Number(a.open_price).toFixed(2) : a.open_price) + "\n                ")])])]), _c('div', {
       staticClass: "col-sm-4"
     }, [_c('div', {
       staticClass: "row",
@@ -4427,12 +4436,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_c('div', {
       staticClass: "col-xs-4",
       style: ('color: ' + (a.percent > 0 ? 'green' : 'red') + ';')
-    }, [_vm._v("\n                    " + _vm._s(a.stream.match(/usdt/) ? Number(a.last_price).toFixed(2) : a.last_price) + "\n                  ")]), _c('div', {
+    }, [_vm._v("\n                  " + _vm._s(a.stream.match(/usdt/) ? Number(a.last_price).toFixed(2) : a.last_price) + "\n                ")]), _c('div', {
       staticClass: "col-xs-4",
       style: ('color: ' + (a.percent > 0 ? 'green' : 'red') + ';')
-    }, [_vm._v("\n                    (" + _vm._s(a.percent) + "%)\n                  ")]), _c('div', {
+    }, [_vm._v("\n                  (" + _vm._s(a.percent) + "%)\n                ")]), _c('div', {
       staticClass: "col-xs-4"
-    }, [_vm._v(" \n                    $" + _vm._s(a.stream.match(/usdt/) ? '--' : (a.last_price * _vm.home.binance.ratio).toFixed(2)) + " \n                  ")])])]), _c('div', {
+    }, [_vm._v(" \n                  $" + _vm._s(a.stream.match(/usdt/) ? '--' : (a.last_price * _vm.home.binance.ratio).toFixed(2)) + " \n                ")])])]), _c('div', {
       staticClass: "col-sm-5"
     }, [_c('div', {
       staticClass: "row"
@@ -4561,10 +4570,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }))])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "panel-body"
-  }, [_c('div', {
     staticClass: "alert alert-danger"
-  }, [_vm._v("\n          Tips:"), _c('br'), _vm._v("\n          1. The only right moment to buy is when the price is falling hard. "), _c('br'), _vm._v("\n          2. The price always soar up all of a sudden. All you need to do is wait. "), _c('br'), _vm._v("\n          3. Sell half of your holdings near the top to refund. "), _c('br')])])
+  }, [_vm._v("\n          Tips:"), _c('br'), _vm._v("\n          1. The only right moment to buy is when the price is falling hard. "), _c('br'), _vm._v("\n          2. The price always soar up all of a sudden. All you need to do is wait. "), _c('br'), _vm._v("\n          3. Sell half of your holdings near the top to refund. "), _c('br')])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('thead', [_c('tr', [_c('th', [_vm._v("\n                  Pair\n                ")]), _c('th', [_vm._v("Open Price")]), _c('th', [_vm._v("Last Price")]), _c('th', [_vm._v("Lower Limit")]), _c('th', [_vm._v("Upper Limit")]), _c('th', [_vm._v("Target")]), _c('th', [_vm._v("Volume")]), _c('th', [_vm._v("Start Time")])])])
 }]}
