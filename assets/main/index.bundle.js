@@ -142,7 +142,7 @@
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -220,7 +220,7 @@ var _vue = __webpack_require__(3);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _vueRouter = __webpack_require__(25);
+var _vueRouter = __webpack_require__(26);
 
 var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
@@ -377,7 +377,7 @@ var _vue = __webpack_require__(3);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _vuex = __webpack_require__(28);
+var _vuex = __webpack_require__(5);
 
 var _vuex2 = _interopRequireDefault(_vuex);
 
@@ -467,7 +467,7 @@ var store = new _vuex2.default.Store({
     app: __webpack_require__(29).default,
 
     // main: require('./main/main.store.js').default,
-    admin: __webpack_require__(5).default
+    admin: __webpack_require__(6).default
   },
   state: {},
   actions: {
@@ -514,6 +514,12 @@ exports.default = store;
 
 /***/ }),
 /* 5 */
+/***/ (function(module, exports) {
+
+module.exports = window.Vuex;
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -529,8 +535,8 @@ exports.default = {
     height: 0
   },
   modules: {
-    items: __webpack_require__(26).default,
-    tip: __webpack_require__(27).default
+    items: __webpack_require__(27).default,
+    tip: __webpack_require__(28).default
   },
   action: {
     init: function init(_ref) {
@@ -551,20 +557,20 @@ exports.default = {
 };
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(7);
+module.exports = __webpack_require__(8);
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _app = __webpack_require__(8);
+var _app = __webpack_require__(9);
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -598,7 +604,7 @@ if (false) {
 }
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -608,13 +614,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-__webpack_require__(9);
+__webpack_require__(10);
 
 var _vue = __webpack_require__(3);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _components = __webpack_require__(16);
+var _components = __webpack_require__(17);
 
 var _components2 = _interopRequireDefault(_components);
 
@@ -643,13 +649,11 @@ var app = new _vue2.default({
 exports.default = app;
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-
-__webpack_require__(10);
 
 __webpack_require__(11);
 
@@ -661,11 +665,7 @@ __webpack_require__(14);
 
 __webpack_require__(15);
 
-/***/ }),
-/* 10 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
+__webpack_require__(16);
 
 /***/ }),
 /* 11 */
@@ -699,6 +699,12 @@ __webpack_require__(15);
 
 /***/ }),
 /* 16 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -709,23 +715,23 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function (Vue) {
-  Vue.component('v-slider', __webpack_require__(17));
-  Vue.component('v-calender', __webpack_require__(21));
+  Vue.component('v-slider', __webpack_require__(18));
+  Vue.component('v-calender', __webpack_require__(22));
 };
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(18)
+__webpack_require__(19)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(19),
-  /* template */
   __webpack_require__(20),
+  /* template */
+  __webpack_require__(21),
   /* scopeId */
   null,
   /* cssModules */
@@ -736,13 +742,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -986,7 +992,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1036,18 +1042,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(22)
+__webpack_require__(23)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(23),
-  /* template */
   __webpack_require__(24),
+  /* template */
+  __webpack_require__(25),
   /* scopeId */
   "data-v-54ec0e2b",
   /* cssModules */
@@ -1058,13 +1064,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1477,7 +1483,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1612,13 +1618,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 }]}
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports) {
 
 module.exports = window.VueRouter;
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1891,7 +1897,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1925,12 +1931,6 @@ exports.default = {
   },
   mutations: {}
 };
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports) {
-
-module.exports = window.Vuex;
 
 /***/ }),
 /* 29 */
