@@ -621,78 +621,6 @@ a {
   opacity: 0;
 }
 /*@pink: #e91e63;*/
-.Footer[data-v-2dce59a1] {
-  padding: 12px 0;
-  text-align: center;
-  font-size: 14px;
-  clear: both;
-}
-/*@pink: #e91e63;*/
-.Navbar {
-  position: relative;
-  height: 50px;
-  margin-bottom: 20px;
-}
-.Navbar .navbar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 50px;
-  z-index: 99;
-}
-.Navbar .navbar .navbar-header .navbar-toggle-- {
-  float: right;
-  height: 50px;
-  padding: 15px 20px 15px 15px;
-}
-.Navbar .box {
-  position: absolute;
-  left: 0;
-  top: 100%;
-  width: 100%;
-  z-index: 99;
-}
-.Navbar .hidden-one {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 30%;
-}
-.Navbar .navbar-menu .nav {
-  float: left;
-  width: 50%;
-}
-.Navbar .navbar-menu .nav i {
-  width: 18px;
-}
-/*@pink: #e91e63;*/
-.Menu[data-v-ae7bca36] {
-  position: fixed;
-  bottom: 50px;
-  right: -200px;
-  width: 200px;
-  height: 400px;
-  background: white;
-  z-index: 999;
-  transition: 300ms;
-}
-.Menu.active[data-v-ae7bca36] {
-  right: 0;
-}
-.Menu .tag--[data-v-ae7bca36] {
-  position: absolute;
-  left: -20px;
-  bottom: 20px;
-  width: 20px;
-  height: 44px;
-  background: black;
-}
-
-.bg[data-v-c94ba8e8] {
-  min-height: 100vh;
-}
-/*@pink: #e91e63;*/
 /*@pink: #e91e63;*/
 .News .pagination {
   display: table;
@@ -735,6 +663,13 @@ a {
   vertical-align: middle;
 }
 /*@pink: #e91e63;*/
+.Footer[data-v-2dce59a1] {
+  padding: 12px 0;
+  text-align: center;
+  font-size: 14px;
+  clear: both;
+}
+/*@pink: #e91e63;*/
 .Projects .card .card-heading span[data-v-2fa9fa19] {
   margin-right: 15px;
 }
@@ -765,6 +700,45 @@ a {
 }
 .Posts .title a {
   text-decoration: none;
+}
+/*@pink: #e91e63;*/
+.Navbar[data-v-66ff04d4] {
+  position: relative;
+  height: 50px;
+  margin-bottom: 20px;
+}
+.Navbar .navbar[data-v-66ff04d4] {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 99;
+}
+.Navbar .navbar .navbar-header .navbar-toggle--[data-v-66ff04d4] {
+  float: right;
+  height: 50px;
+  padding: 15px 20px 15px 15px;
+}
+.Navbar .box[data-v-66ff04d4] {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  z-index: 99;
+}
+.Navbar .hidden-one[data-v-66ff04d4] {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 30%;
+}
+.Navbar .navbar-menu .nav[data-v-66ff04d4] {
+  float: left;
+  width: 50%;
+}
+.Navbar .navbar-menu .nav i[data-v-66ff04d4] {
+  width: 18px;
 }
 
 .DatePicker[data-v-79915ab6] {
@@ -849,6 +823,37 @@ a {
   text-align: center;
 }
 /*@pink: #e91e63;*/
+.Menu[data-v-ae7bca36] {
+  position: fixed;
+  bottom: 50px;
+  right: -200px;
+  width: 200px;
+  height: 400px;
+  background: white;
+  z-index: 999;
+  transition: 300ms;
+}
+.Menu.active[data-v-ae7bca36] {
+  right: 0;
+}
+.Menu .tag--[data-v-ae7bca36] {
+  position: absolute;
+  left: -20px;
+  bottom: 20px;
+  width: 20px;
+  height: 44px;
+  background: black;
+}
+
+.Binance th[data-v-bd9c99de],
+.Binance td[data-v-bd9c99de] {
+  vertical-align: middle;
+}
+
+.bg[data-v-c94ba8e8] {
+  min-height: 100vh;
+}
+/*@pink: #e91e63;*/
 /*@pink: #e91e63;*/
 .RouteCanvas .title_ {
   padding: 15px 0;
@@ -917,13 +922,6 @@ a {
     width: 100%;
 }
 }
-
-.RouteMall .item {
-  display: inline-block;
-}
-.RouteMall img {
-  width: 100%;
-}
 /*@pink: #e91e63;*/
 .RouteCnodePost .post-- img {
   max-width: 100%!important;
@@ -953,6 +951,13 @@ a {
 }
 .RouteCnodePost .comments .card-item .details span {
   margin-right: 15px;
+}
+
+.RouteMall .item {
+  display: inline-block;
+}
+.RouteMall img {
+  width: 100%;
 }
 
 .AdminDeployment[data-v-a67932b0] {
@@ -1029,22 +1034,22 @@ a {
   background: #38A7F1;
 }
 
-.NavLeft {
+.NavLeft[data-v-1524cd8c] {
   float: left;
   overflow: hidden;
   width: 200px;
   height: 100%;
   background: #1C2B36;
 }
-.NavLeft .first-container {
+.NavLeft .first-container[data-v-1524cd8c] {
   width: 100%;
   max-height: 50px;
   overflow: hidden;
 }
-.NavLeft .first-container.active {
+.NavLeft .first-container.active[data-v-1524cd8c] {
   max-height: 10000px;
 }
-.NavLeft .first-container a {
+.NavLeft .first-container a[data-v-1524cd8c] {
   box-sizing: border-box;
   display: block;
   height: 50px;
@@ -1055,16 +1060,19 @@ a {
   cursor: pointer;
   text-decoration: none;
 }
-.NavLeft .first-container a:hover {
-  background: black;
+.NavLeft .first-container a[data-v-1524cd8c]:hover {
   color: white;
 }
-.NavLeft .first-container a i {
+.NavLeft .first-container a i[data-v-1524cd8c] {
   height: 50px;
   line-height: 50px;
 }
-.NavLeft .first-container .second-container a {
+.NavLeft .first-container .second-container[data-v-1524cd8c] {
+  background: black;
+}
+.NavLeft .first-container .second-container a[data-v-1524cd8c] {
   padding: 0 30px;
+  background: black;
 }
 
 .Mask {

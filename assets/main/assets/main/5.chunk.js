@@ -1,13 +1,13 @@
 webpackJsonp([5],{
 
-/***/ 128:
+/***/ 101:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 129:
+/***/ 102:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17,47 +17,54 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(5);
+var _Canvas = __webpack_require__(103);
 
-var _index2 = _interopRequireDefault(_index);
+var _Canvas2 = _interopRequireDefault(_Canvas);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
   components: {
-    MaskEdit: __webpack_require__(130),
-    Tip: __webpack_require__(134),
-    NavLeft: __webpack_require__(138),
-    'v-menu': __webpack_require__(142),
-    Navbar: __webpack_require__(146)
+    matrix: __webpack_require__(104)
   },
-  beforeCreate: function beforeCreate() {
-    if (!this.$store._modulesNamespaceMap['admin/']) {
-      this.$store.registerModule(['admin'], _index2.default);
-    }
-  },
-
-  created: function created() {
-    // this.$store.dispatch('admin/items/fetchItems');
-    // this.$store.dispatch('PLUS');
-  },
-  mounted: function mounted() {
-    this.$store.dispatch('admin/items/fetchItems');
+  data: function data() {
+    return {
+      src: '',
+      websites: [{
+        name: 'Three.js',
+        href: '//threejs.org/examples/'
+      }, {
+        name: 'Codepen',
+        href: '//codepen.io'
+      }, {
+        name: 'Phaser.js',
+        href: '//www.phaser.io/'
+      }]
+    };
   },
 
   computed: {
-    items: function items() {
-      return this.$store.state.admin.items;
+    canvas: function canvas() {
+      return this.$store.state.main.Canvas;
     }
   },
+  beforeCreate: function beforeCreate() {
+    this.$store.complete(['main', 'Canvas'], _Canvas2.default);
+  },
+  mounted: function mounted() {
+    this.$store.dispatch('main/Canvas/init');
+  },
+
   methods: {
     register: function register(store) {
-      store.registerModule(['admin'], _index2.default);
+      store.complete(['main', 'Canvas'], _Canvas2.default);
+    },
+    preFetch: function preFetch(store) {
+      return store.dispatch('main/Canvas/init');
+    },
+    to: function to(src) {
+      this.src = src;
     }
-    // preFetch(store) {
-    //   store.dispatch('admin/items/fetchItems');
-    // }
-
   }
 }; //
 //
@@ -97,40 +104,36 @@ exports.default = {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 
-/***/ 130:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(131)
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(132),
-  /* template */
-  __webpack_require__(133),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 131:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 132:
+/***/ 103:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -139,805 +142,300 @@ module.exports = Component.exports
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+var _axios = __webpack_require__(1);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 exports.default = {
-  data: function data() {
-    return {
-      patch: {}
-    };
+  namespaced: true,
+  state: {
+    initialized: false,
+    canvas: {}
   },
-  computed: {
-    beingEditted: function beingEditted() {
-      return this.$store.state.admin.items.beingEditted;
+  actions: {
+    init: function init(ctx) {
+      if (ctx.state.initialized === false) {
+        return ctx.dispatch('fetch').then(function (res) {
+          if (res.status === 200) {
+            ctx.state.initialized = true;
+            ctx.state.canvas = res.data;
+          }
+        }).catch(function (err) {
+          console.log(err);
+        });
+      }
     },
-    item: function item() {
-      // console.log(this.$store.getters)
-      return this.$store.getters['admin/items/item'];
-    }
-  },
-  watch: {},
-  methods: {
-    EDIT_ITEM_VALUE: function EDIT_ITEM_VALUE(key, e) {
-      this.patch[key] = e.target.value;
-      // this.$store.commit('EDIT_ITEM_VALUE',{
-      //   key: key,
-      //   val: e.target.value
-      // })
-    },
-
-    // saveItem() {
-    //   this.$store.dispatch('saveItem', JSON.stringify(this.item))
-    // },
-    close: function close() {
-      this.patch = {};
-      this.$store.commit('admin/items/EDIT_ITEM_OVER');
-    },
-    patchItem: function patchItem() {
-      this.$store.dispatch('admin/items/patchItem', {
-        id: this.item.id,
-        patch_json: JSON.stringify(this.patch)
+    fetch: function fetch(ctx) {
+      return (0, _axios2.default)({
+        method: 'GET',
+        url: '/api/canvas/',
+        // this is essential cause a fetch request is without cookie by default
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        mode: 'cors'
       });
     }
+  },
+  mutations: {
+    INIT_CANVAS: function INIT_CANVAS(state, arr) {
+      state.initialized = true;
+    },
+    SET_CANVAS: function SET_CANVAS(state, arr) {
+      var _state$items;
+
+      state.items.length = 0;
+      (_state$items = state.items).push.apply(_state$items, _toConsumableArray(arr));
+    }
   }
 };
 
 /***/ }),
 
-/***/ 133:
+/***/ 104:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(105)
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(106),
+  /* template */
+  __webpack_require__(107),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 105:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 106:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  data: function data() {
+    return {};
+  },
+
+  computed: {},
+  mounted: function mounted() {
+    var self = this;
+    var canvas = this.$refs.matrix;
+    var ctx = canvas.getContext('2d');
+    var fontSize = 14;
+    var chars = generateChars();
+    var columns;
+    var drops; // Current position of last letter (for each column)
+    var drawnToBottom;
+
+    // Generate Matrix code characters
+    function generateChars() {
+      var chars = '0123456789';
+
+      // Get ALL half-width katakana characters by unicode value
+      for (var i = 0; i <= 55; i++) {
+        chars += String.fromCharCode(i + 65382);
+      }
+
+      return chars.split('');
+    }
+
+    // Initialize default canvas state
+    function initCanvas() {
+      setSize();
+
+      columns = Math.round(canvas.width / fontSize);
+      drops = [];
+
+      // Set initial position on y coordinate for each column
+      for (var i = 0; i < columns; i++) {
+        drops[i] = 1;
+      }
+
+      drawnToBottom = false;
+    }
+
+    // Resize canvas to fit window
+    window.addEventListener('resize', function () {
+      initCanvas();
+    });
+
+    function setSize() {
+      var container = self.$refs.container;
+      if (container) {
+        var w = Number(document.defaultView.getComputedStyle(container).width.replace('px', ''));
+        if (canvas.width !== w) {
+          canvas.width = w;
+          canvas.height = 300;
+        }
+      }
+    }
+
+    function draw() {
+      // Set nearly transparent background so character trail is visible
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Set color and font of falling letters
+      ctx.fillStyle = '#19FF19';
+      ctx.font = 'bold ' + fontSize + 'px monospace';
+
+      var dropCount = drops.length;
+      var charCount = chars.length;
+
+      for (var i = 0; i < dropCount; i++) {
+        // Choose a random letter
+        var text = chars[Math.floor(Math.random() * charCount)];
+        // Get the y position of the letter
+        var rowNum = drops[i] * fontSize;
+        // Draw it!
+        ctx.fillText(text, i * fontSize, rowNum);
+
+        // Check if the canvas has been drawn to the bottom
+        if (rowNum > canvas.height) drawnToBottom = true;
+
+        // Randomly reset the y position of a column
+        if (!drawnToBottom && Math.random() > 0.925 || drawnToBottom && Math.random() > 0.95) drops[i] = 0;
+
+        drops[i]++;
+      }
+    }
+
+    setTimeout(function () {
+      initCanvas();
+      setInterval(draw, 45);
+    }, 300);
+  },
+  methods: {}
+};
+
+/***/ }),
+
+/***/ 107:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.beingEditted >= 0),
-      expression: " beingEditted>=0 "
-    }],
-    staticClass: "Mask"
+    ref: "container",
+    staticClass: "Matrix"
+  }, [_c('canvas', {
+    ref: "matrix"
+  })])
+},staticRenderFns: []}
+
+/***/ }),
+
+/***/ 108:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('transition', {
+    attrs: {
+      "name": "fade-in"
+    }
   }, [_c('div', {
-    staticClass: "cell"
+    staticClass: "RouteCanvas"
+  }, [_c('matrix'), _c('div', {
+    staticClass: "container"
   }, [_c('div', {
-    staticClass: "Edit panel panel-default"
+    staticClass: "row"
+  }), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-sm-4"
+  }, [_c('div', {
+    staticClass: "panel panel-default"
   }, [_c('div', {
     staticClass: "panel-heading"
-  }, [_vm._v("\n          " + _vm._s(_vm.item.id) + "\n          "), _c('span', {
-    staticClass: "pull-right close"
-  }, [_c('i', {
-    staticClass: "fa fa-close",
-    on: {
-      "click": _vm.close
-    }
-  })])]), _c('div', {
+  }, [_vm._v("\n              Canvas\n            ")]), _c('div', {
     staticClass: "panel-body"
-  }, [_c('form', {
-    staticClass: "form-horizontal"
-  }, [_c('div', {
-    staticClass: "container-fluid"
-  }, _vm._l((_vm.item), function(val, key) {
-    return _c('div', {
-      key: "key",
-      staticClass: "row"
-    }, [_c('div', {
-      staticClass: "form-group"
-    }, [_c('div', {
-      staticClass: "col-sm-2"
-    }, [_c('label', {
-      staticClass: "control-label"
-    }, [_vm._v("\n                      " + _vm._s(key) + "\n                    ")])]), _c('div', {
-      staticClass: "col-sm-10"
-    }, [(key !== 'id') ? _c('input', {
-      staticClass: "form-control input-sm",
+  }, [_vm._l((_vm.canvas.canvas.left), function(a) {
+    return _c('p', [_c('a', {
       attrs: {
-        "type": "text"
-      },
-      domProps: {
-        "value": val
-      },
-      on: {
-        "change": function($event) {
-          _vm.EDIT_ITEM_VALUE(key, $event)
-        }
+        "href": a.href
       }
-    }) : _vm._e()])])])
-  }))])]), _c('div', {
-    staticClass: "panel-footer"
+    }, [_vm._v(_vm._s(a.name))])])
+  }), _vm._l((_vm.canvas.canvas.right), function(a) {
+    return _c('p', [_c('a', {
+      attrs: {
+        "href": a.href
+      }
+    }, [_vm._v(_vm._s(a.name))])])
+  })], 2)])]), _c('div', {
+    staticClass: "col-sm-4"
   }, [_c('div', {
-    staticClass: "btn btn-success",
-    on: {
-      "click": _vm.patchItem
-    }
-  }, [_vm._v("\n            save\n          ")]), _c('div', {
-    staticClass: "btn btn-danger"
-  }, [_vm._v("\n            new\n          ")])])])])])
+    staticClass: "panel panel-default"
+  }, [_c('div', {
+    staticClass: "panel-heading"
+  }, [_vm._v("Websites")]), _c('div', {
+    staticClass: "panel-body"
+  }, _vm._l((_vm.websites), function(a) {
+    return _c('p', [_c('a', {
+      attrs: {
+        "href": a.href
+      }
+    }, [_vm._v(_vm._s(a.name))])])
+  }))])])])])], 1)])
 },staticRenderFns: []}
 
 /***/ }),
 
-/***/ 134:
+/***/ 39:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(135)
+__webpack_require__(101)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(136),
+  __webpack_require__(102),
   /* template */
-  __webpack_require__(137),
+  __webpack_require__(108),
   /* scopeId */
   null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 135:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 136:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-  computed: {
-    tip: function tip() {
-      return this.$store.state.admin.tip;
-    }
-  }
-};
-
-/***/ }),
-
-/***/ 137:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.tip.show),
-      expression: " tip.show "
-    }],
-    staticClass: "Tip alert alert-danger"
-  }, [_vm._v("\n  " + _vm._s(_vm.tip.msg) + "\n")])
-},staticRenderFns: []}
-
-/***/ }),
-
-/***/ 138:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(139)
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(140),
-  /* template */
-  __webpack_require__(141),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 139:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 140:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-  data: function data() {
-    return {
-      tabs: [{
-        name: 'Dashboard',
-        href: '/admin/dashboard'
-      }, {
-        name: 'Deployment',
-        href: '/admin/deployment',
-        active: false
-        // children: [{
-        //   name: 'aaa'
-        // }, {
-        //   name: 'bbb'
-        // }]
-      }, {
-        name: 'Lowdb',
-        href: '/admin/lowdb',
-        subs: []
-      }, {
-        name: 'Sequelize',
-        href: '',
-        active: false,
-        children: [{
-          href: '/admin/sequelize',
-          name: 'items'
-        }]
-      }, {
-        name: 'Posts',
-        href: '/admin/posts',
-        subs: []
-      }, {
-        name: 'Focus',
-        href: '/admin/focus',
-        subs: []
-      }, {
-        name: 'Tables',
-        href: '/admin/tables',
-        subs: []
-      }, {
-        name: 'Mongo',
-        href: '/admin/mongo'
-      }]
-    };
-  },
-
-  methods: {
-    toggle: function toggle(i) {
-      console.log(i);
-      this.tabs[i].active = !this.tabs[i].active;
-    }
-  }
-};
-
-/***/ }),
-
-/***/ 141:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "NavLeft"
-  }, _vm._l((_vm.tabs), function(a, i) {
-    return _c('div', {
-      staticClass: "first-container",
-      class: a.active ? 'active' : ''
-    }, [_c('div', {
-      staticClass: "first-body",
-      on: {
-        "click": function($event) {
-          _vm.toggle(i)
-        }
-      }
-    }, [_c('router-link', {
-      attrs: {
-        "to": a.href
-      }
-    }, [_vm._v("\n        " + _vm._s(a.name) + "\n        "), (a.children) ? _c('i', {
-      staticClass: "fa fa-chevron-down pull-right"
-    }) : _vm._e()])], 1), (a.children) ? _c('div', {
-      staticClass: "second-container"
-    }, _vm._l((a.children), function(b) {
-      return _c('div', {
-        staticClass: "second-body"
-      }, [_c('router-link', {
-        attrs: {
-          "to": b.href
-        }
-      }, [_vm._v(_vm._s(b.name))])], 1)
-    })) : _vm._e()])
-  }))
-},staticRenderFns: []}
-
-/***/ }),
-
-/***/ 142:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(143)
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(144),
-  /* template */
-  __webpack_require__(145),
-  /* scopeId */
-  "data-v-03f608f6",
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 143:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 144:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-  props: {
-    css: {
-      default: function _default() {
-        return '';
-      }
-    },
-    list: {
-      default: function _default() {
-        return [{
-          name: 'Lowdb',
-          href: '/admin/lowdb',
-          children: []
-        }, {
-          name: 'Sequelize',
-          href: '/admin/sequelize',
-          children: []
-        }, {
-          name: 'Posts',
-          href: '/admin/posts',
-          children: []
-        }, {
-          name: 'Focus',
-          href: '/admin/focus',
-          children: []
-        }, {
-          name: 'Tables',
-          href: '/admin/tables',
-          children: []
-        }, {
-          name: 'Mongo',
-          href: '/admin/mongo'
-        }];
-      }
-    }
-  },
-  computed: {}
-};
-
-/***/ }),
-
-/***/ 145:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('ul', {
-    staticClass: "v-menu",
-    style: (_vm.css)
-  }, _vm._l((_vm.list), function(a) {
-    return _c('li', [_c('router-link', {
-      attrs: {
-        "to": a.href
-      }
-    }, [_c('i', {
-      staticClass: "fa fa-eye"
-    }), _vm._v("\n      " + _vm._s(a.name) + "\n      "), _c('i', {
-      staticClass: "fa fa-caret-right"
-    })]), _c('ul', {
-      staticClass: "v-menu-second"
-    }, _vm._l((a.children), function(b) {
-      return _c('li', [_c('p', [_vm._v("电站分布地图")]), _c('ul', {
-        staticClass: "v-menu-third"
-      }, [_vm._l((b.children), function(c) {
-        return _c('li', [_vm._v("三级列表1")])
-      }), _c('li', [_vm._v("三级列表2")])], 2)])
-    }))], 1)
-  }))
-},staticRenderFns: []}
-
-/***/ }),
-
-/***/ 146:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(147)
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(148),
-  /* template */
-  __webpack_require__(149),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 147:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 148:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-  data: function data() {
-    return {
-      tabs: [{
-        name: 'users',
-        href: '#/admin/users',
-        subs: []
-      }, {
-        name: 'items',
-        href: '#/admin/items',
-        subs: []
-      }, {
-        name: 'signin',
-        href: '#/admin/signin',
-        subs: []
-      }]
-    };
-  },
-  computed: {}
-};
-
-/***/ }),
-
-/***/ 149:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "MyNavbar navbar navbar-inverse"
-  }, [_c('div', {
-    staticClass: "navbar-header"
-  }, [_c('div', {
-    staticClass: "navbar-brand"
-  }, [_c('router-link', {
-    attrs: {
-      "to": "/main/home"
-    }
-  }, [_vm._v("Madsoap")])], 1)])])
-},staticRenderFns: []}
-
-/***/ }),
-
-/***/ 150:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "RouteAdmin"
-  }, [_c('navbar'), _c('mask-edit'), _c('tip'), _c('div', {
-    staticClass: "main-part"
-  }, [_c('nav-left'), _c('div', {
-    staticClass: "right-part"
-  }, [_c('router-view')], 1)], 1)], 1)
-},staticRenderFns: []}
-
-/***/ }),
-
-/***/ 46:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(128)
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(129),
-  /* template */
-  __webpack_require__(150),
-  /* scopeId */
-  "data-v-690b9843",
   /* cssModules */
   null
 )

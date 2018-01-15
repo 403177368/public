@@ -1,16 +1,38 @@
-webpackJsonp([0],Array(37).concat([
+webpackJsonp([0],Array(36).concat([
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(58)
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(59),
+  /* template */
+  __webpack_require__(73),
+  /* scopeId */
+  "data-v-c94ba8e8",
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
 /* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(73)
+__webpack_require__(74)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(74),
+  __webpack_require__(75),
   /* template */
-  __webpack_require__(93),
+  __webpack_require__(95),
   /* scopeId */
   "data-v-7f7ff48e",
   /* cssModules */
@@ -26,13 +48,13 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(94)
+__webpack_require__(96)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(95),
+  __webpack_require__(97),
   /* template */
-  __webpack_require__(98),
+  __webpack_require__(100),
   /* scopeId */
   "data-v-2fa9fa19",
   /* cssModules */
@@ -49,13 +71,13 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(107)
+__webpack_require__(109)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(108),
-  /* template */
   __webpack_require__(110),
+  /* template */
+  __webpack_require__(112),
   /* scopeId */
   null,
   /* cssModules */
@@ -72,13 +94,13 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(114)
+__webpack_require__(116)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(115),
+  __webpack_require__(117),
   /* template */
-  __webpack_require__(116),
+  __webpack_require__(118),
   /* scopeId */
   null,
   /* cssModules */
@@ -90,7 +112,28 @@ module.exports = Component.exports
 
 /***/ }),
 /* 43 */,
-/* 44 */,
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(122)
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(123),
+  /* template */
+  __webpack_require__(124),
+  /* scopeId */
+  "data-v-bd9c99de",
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
 /* 45 */,
 /* 46 */,
 /* 47 */,
@@ -98,7 +141,8 @@ module.exports = Component.exports
 /* 49 */,
 /* 50 */,
 /* 51 */,
-/* 52 */
+/* 52 */,
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -108,9 +152,18 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+// import CryptoJS from './hmac-sha256.js';
+// import './enc-base64-min.js';
+
+
 var _axios = __webpack_require__(1);
 
 var _axios2 = _interopRequireDefault(_axios);
+
+var _binance = __webpack_require__(76);
+
+var _binance2 = _interopRequireDefault(_binance);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -148,6 +201,9 @@ var state = {
         key: 'ETH / USDT',
         symbol: 'tETHUSD'
       }, {
+        key: 'XRP / USDT',
+        symbol: 'tXRPUSD'
+      }, {
         key: 'EOS / USDT',
         symbol: 'tEOSUSD'
       }, {
@@ -166,16 +222,14 @@ var state = {
         key: 'BTG / USDT',
         symbol: 'tBTGUSD'
       }].map(function (a) {
-        return {
+        return _extends(a, {
           id: 0,
-          key: a.key,
-          symbol: a.symbol,
           last_price: 0,
           prices: [],
           sum: 0,
           percent: [],
           color: ''
-        };
+        });
       });
     }()
   },
@@ -191,6 +245,9 @@ var state = {
 exports.default = {
   namespaced: true,
   state: state,
+  modules: {
+    binance: _binance2.default
+  },
   actions: {
     init: function init(_ref) {
       var state = _ref.state,
@@ -205,6 +262,7 @@ exports.default = {
         });
       }
     },
+    initAtClient: function initAtClient() {},
     initWebSocket: function initWebSocket(_ref2) {
       var state = _ref2.state,
           dispatch = _ref2.dispatch;
@@ -407,40 +465,106 @@ exports.default = {
 };
 
 /***/ }),
-/* 53 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(79)
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(80),
-  /* template */
-  __webpack_require__(81),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
 /* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  namespaced: true,
+  state: {
+    inited: false,
+    navbar: {
+      options: [{
+        name: 'Home',
+        icon: 'fa-home',
+        to: '/main/home'
+      }, {
+        name: 'Projects',
+        icon: 'fa-code',
+        to: '/main/projects'
+      }, {
+        name: 'Canvas',
+        icon: 'fa-image',
+        to: '/main/canvas'
+      }, {
+        name: 'Blog',
+        icon: 'fa-book',
+        to: '/main/blog'
+      }, {
+        name: 'Farm',
+        icon: 'fa-gamepad',
+        href: '/farm/index.html'
+      }, {
+        name: 'Vue',
+        icon: 'fa-cog',
+        href: '/vue/index.html'
+      }, {
+        name: 'Mall',
+        icon: 'fa-laptop',
+        to: '/mall'
+      }, {
+        name: 'Admin',
+        icon: 'fa-cogs',
+        to: '/admin'
+      }]
+    },
+    theme: {
+      options: ['blue', 'zhihu', 'angulur', 'github'],
+      val: 'blue'
+    }
+  },
+  modules: {
+    // routes
+    // home: require('./home/home.js').default,
+    // blog: require('./blog/blog.js').default,
+    // projects: require('./projects/projects.js').default,
+    post: __webpack_require__(60).default,
+    // Canvas: require('./canvas/Canvas.js').default,
+
+    // data
+    // posts: require('./posts.js').default,
+    // focus: require('./focus.js').default,
+    news: __webpack_require__(61).default
+  },
+  actions: {
+    init: function init(_ref) {
+      var state = _ref.state,
+          dispatch = _ref.dispatch;
+
+      var theme = localStorage.getItem('theme');
+      if (theme) {
+        dispatch('switch_theme', { name: theme });
+      }
+      state.inited = true;
+    },
+    switch_theme: function switch_theme(_ref2, _ref3) {
+      var state = _ref2.state;
+      var name = _ref3.name;
+
+      state.theme.val = name;
+      localStorage.setItem('theme', name);
+    }
+  }
+};
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
 
 /* styles */
-__webpack_require__(82)
+__webpack_require__(81)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(83),
+  __webpack_require__(82),
   /* template */
-  __webpack_require__(84),
+  __webpack_require__(83),
   /* scopeId */
   null,
   /* cssModules */
@@ -451,31 +575,36 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 55 */,
-/* 56 */,
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(84)
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(85),
+  /* template */
+  __webpack_require__(86),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
 /* 57 */,
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */
+/* 58 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 74 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -485,7 +614,770 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _home = __webpack_require__(52);
+var _mainStore = __webpack_require__(54);
+
+var _mainStore2 = _interopRequireDefault(_mainStore);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  components: {
+    Navbar: __webpack_require__(62),
+    MyMenu: __webpack_require__(66),
+    // Slider: require('./Slider.vue'),
+    MyFooter: __webpack_require__(70)
+  },
+  beforeCreate: function beforeCreate() {
+    this.$store.complete(['main'], _mainStore2.default);
+  },
+  mounted: function mounted() {
+    this.$store.dispatch('main/init');
+    // this.$store.dispatch('main/home/fetch', {what: 'jianshu'});
+  },
+
+  methods: {
+    register: function register(store) {
+      store.complete(['main'], _mainStore2.default);
+    }
+  }
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _axios = __webpack_require__(1);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _router = __webpack_require__(2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var state = {
+  firstMount: true,
+  tick: 0,
+  state: 'pending',
+  id: null,
+  html: ''
+};
+
+var actions = {
+  fetchPost: function fetchPost(ctx, _ref) {
+    var id = _ref.id;
+
+    ctx.commit('FETCH_POST_PENDING');
+
+    // var params = router.currentRoute.path.split('/');
+    // var id = params[params.length - 1];
+    // console.log(id)
+
+    return (0, _axios2.default)({
+      url: '/api/marked/' + id,
+      // this is essential cause a fetch request is without cookie by default
+      credentials: 'include',
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      mode: 'cors'
+    }).then(function (res) {
+      ctx.commit('SET_POST', { newPost: res.data, id: id });
+    }).catch(function (err) {
+      console.log(err);
+    });
+  }
+};
+
+var mutations = {
+  FETCH_POST_PENDING: function FETCH_POST_PENDING(state) {
+    state.state = 'pending';
+    state.html = '';
+  },
+  SET_POST: function SET_POST(state, _ref2) {
+    var newPost = _ref2.newPost,
+        id = _ref2.id;
+
+    state.state = 'resolved';
+    state.tick++;
+    state.id = id;
+    state.html = newPost;
+  }
+};
+
+exports.default = {
+  namespaced: true,
+  state: state,
+  actions: actions,
+  mutations: mutations
+};
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _axios = __webpack_require__(1);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+exports.default = {
+  namespaced: true,
+  state: {
+    inited: false,
+    items: [],
+    page: 1
+  },
+  getters: {
+    nav: function nav(state) {
+      var nav = [];
+      var start, end;
+      if (state.page <= 2) {
+        start = 1;
+        end = 5;
+      } else {
+        start = state.page - 2;
+        end = state.page + 2;
+      }
+      for (var i = start; i < end + 1; i++) {
+        nav.push(i);
+      }
+      console.log(nav);
+      return nav;
+    }
+  },
+  actions: {
+    init: function init(_ref) {
+      var state = _ref.state,
+          dispatch = _ref.dispatch;
+
+      if (state.inited === false) {
+        dispatch('fetch', { page: 1 });
+      }
+    },
+    fetch: function fetch(_ref2, _ref3) {
+      var state = _ref2.state;
+      var page = _ref3.page;
+
+      return (0, _axios2.default)({
+        url: '//cnodejs.org/api/v1/topics?page=' + page + '&limit=20',
+        // this is essential cause a fetch request is without cookie by default
+        credentials: 'include',
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        mode: 'cors'
+      }).then(function (res) {
+        var _state$items;
+
+        state.items.length = 0;
+        (_state$items = state.items).push.apply(_state$items, _toConsumableArray(res.data.data));
+        state.inited = true;
+        state.page = page;
+      }).catch(function (err) {
+        var _state$items2;
+
+        state.items.length = 0;
+        (_state$items2 = state.items).push.apply(_state$items2, [{
+          author: {}
+        }]);
+        state.inited = true;
+        state.page = 1;
+        console.log(err);
+      });
+    },
+    to_page: function to_page(_ref4, _ref5) {
+      var state = _ref4.state,
+          dispatch = _ref4.dispatch;
+      var page = _ref5.page;
+
+      dispatch('fetch', { page: page }).then(function () {
+        state.page = page;
+      });
+    }
+  },
+  mutations: {}
+};
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(63)
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(64),
+  /* template */
+  __webpack_require__(65),
+  /* scopeId */
+  "data-v-66ff04d4",
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 64 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  data: function data() {
+    return {
+      show: false
+    };
+  },
+  computed: {
+    user: function user() {
+      return this.$store.state.app.user;
+    }
+  },
+  methods: {
+    toggle: function toggle() {
+      this.show = !this.show;
+    },
+    hide: function hide() {
+      this.show = false;
+    }
+  }
+};
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "Navbar"
+  }, [_c('div', {
+    staticClass: "navbar"
+  }, [_c('transition', {
+    attrs: {
+      "name": "slide-down"
+    }
+  }, [_c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.show),
+      expression: "show"
+    }],
+    staticClass: "navbar-menu box",
+    on: {
+      "click": _vm.hide
+    }
+  }, [_c('ul', {
+    staticClass: "nav visible-xs"
+  }, _vm._l((_vm.$store.state.main.navbar.options), function(a) {
+    return _c('li', [(a.to) ? _c('router-link', {
+      attrs: {
+        "to": a.to
+      }
+    }, [_c('i', {
+      class: 'fa ' + a.icon
+    }), _vm._v(" " + _vm._s(a.name) + "\n            ")]) : _vm._e(), (a.href) ? _c('a', {
+      attrs: {
+        "href": a.href
+      }
+    }, [_c('i', {
+      class: 'fa ' + a.icon
+    }), _vm._v(" " + _vm._s(a.name) + "\n            ")]) : _vm._e()], 1)
+  })), _c('ul', {
+    staticClass: "nav visible-xs"
+  }, [(!_vm.user.name) ? _c('li', [_c('router-link', {
+    attrs: {
+      "to": "/main/signin"
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-sign-in"
+  }), _vm._v(" Signin\n            ")])], 1) : _vm._e(), (_vm.user.name) ? _c('li', {
+    on: {
+      "click": function($event) {
+        _vm.$store.dispatch('user/logout')
+      }
+    }
+  }, [_c('a', [_c('i', {
+    staticClass: "fa fa-sign-out"
+  }), _vm._v(" Logout\n            ")])]) : _vm._e()])])]), _c('div', {
+    staticClass: "container"
+  }, [_c('div', {
+    staticClass: "navbar-header"
+  }, [_c('router-link', {
+    staticClass: "navbar-brand",
+    attrs: {
+      "to": "/"
+    }
+  }, [_vm._v("MadSoap")]), _c('div', {
+    staticClass: "navbar-toggle-- visible-xs",
+    on: {
+      "click": _vm.toggle
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-navicon"
+  })])], 1), _c('ul', {
+    staticClass: "nav navbar-nav hidden-xs"
+  }, _vm._l((_vm.$store.state.main.navbar.options), function(a) {
+    return _c('li', [(a.to) ? _c('router-link', {
+      attrs: {
+        "to": a.to
+      }
+    }, [_vm._v(_vm._s(a.name))]) : _vm._e(), (a.href) ? _c('a', {
+      attrs: {
+        "href": a.href
+      }
+    }, [_vm._v(_vm._s(a.name))]) : _vm._e()], 1)
+  })), _c('ul', {
+    staticClass: "nav navbar-nav pull-right hidden-xs"
+  }, [_c('li', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (!_vm.user.name),
+      expression: "!user.name"
+    }]
+  }, [_c('router-link', {
+    attrs: {
+      "to": "/main/signin"
+    }
+  }, [_vm._v("Signin")])], 1), _c('li', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.user.name),
+      expression: "user.name"
+    }],
+    on: {
+      "click": function($event) {
+        _vm.$store.dispatch('user/logout')
+      }
+    }
+  }, [_c('a', [_vm._v("Logout")])])])])], 1)])
+},staticRenderFns: []}
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(67)
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(68),
+  /* template */
+  __webpack_require__(69),
+  /* scopeId */
+  "data-v-ae7bca36",
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 67 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 68 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  data: function data() {
+    return {
+      active: false
+    };
+  },
+
+  computed: {
+    theme: function theme() {
+      return this.$store.state.main.theme;
+    }
+  },
+  methods: {
+    toggle: function toggle() {
+      this.active = !this.active;
+    }
+  }
+};
+
+/***/ }),
+/* 69 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "Menu container-fluid",
+    class: _vm.active ? 'active' : ''
+  }, [_c('div', {
+    staticClass: "tag--",
+    on: {
+      "click": _vm.toggle
+    }
+  }), _c('ul', {
+    staticClass: "ls-group"
+  }, [_c('li', {
+    staticClass: "ls-group-heading"
+  }, [_vm._v("\n      Themes\n    ")]), _vm._l((_vm.theme.options), function(a) {
+    return _c('li', {
+      staticClass: "ls-group-item"
+    }, [_c('a', {
+      on: {
+        "click": function($event) {
+          _vm.$store.dispatch('main/switch_theme', {
+            name: a
+          })
+        }
+      }
+    }, [_vm._v(_vm._s(a))])])
+  })], 2)])
+},staticRenderFns: []}
+
+/***/ }),
+/* 70 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(71)
+
+var Component = __webpack_require__(0)(
+  /* script */
+  null,
+  /* template */
+  __webpack_require__(72),
+  /* scopeId */
+  "data-v-2dce59a1",
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 71 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 72 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('footer', {
+    staticClass: "Footer"
+  }, [_vm._v("\n\tCopyright ©2016 SoapTech\n")])
+},staticRenderFns: []}
+
+/***/ }),
+/* 73 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.$store.state.main.inited),
+      expression: " $store.state.main.inited "
+    }],
+    staticClass: "RouteMain",
+    class: _vm.$store.state.main.theme.val
+  }, [_c('div', {
+    staticClass: "bg"
+  }, [_c('navbar'), _c('router-view'), _c('my-menu'), _c('my-footer')], 1)])
+},staticRenderFns: []}
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 75 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _home = __webpack_require__(53);
 
 var _home2 = _interopRequireDefault(_home);
 
@@ -710,14 +1602,75 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
   components: {
-    News: __webpack_require__(75),
-    BoxSignin: __webpack_require__(53),
-    Posts: __webpack_require__(54),
-    DatePicker: __webpack_require__(85),
-    'tabbed-panel': __webpack_require__(89)
+    News: __webpack_require__(77),
+    BoxSignin: __webpack_require__(55),
+    Posts: __webpack_require__(56),
+    DatePicker: __webpack_require__(87),
+    'tabbed-panel': __webpack_require__(91)
     // Slider: require('./Slider.vue')
   },
   computed: {
@@ -742,6 +1695,7 @@ exports.default = {
     this.$store.dispatch('main/home/init');
     this.$store.dispatch('main/home/initWebSocket');
     this.$store.dispatch('main/home/initOkex');
+    this.$store.dispatch('main/home/binance/init');
 
     this.$store.dispatch('main/home/fetch', { what: 'jianshu' });
     this.$store.dispatch('main/home/fetch', { what: 'echojs' });
@@ -777,18 +1731,394 @@ exports.default = {
 };
 
 /***/ }),
-/* 75 */
+/* 76 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _axios = __webpack_require__(1);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var state = {
+  inited: false,
+  status: 'Waiting',
+  ratio: 0,
+  items: function () {
+    var obj = {
+      btcusdt: {
+        key: 'BTC / USDT',
+        symbol: 'BTCUSDT'
+      },
+      bccusdt: {
+        key: 'BCC / USDT',
+        symbol: 'BCCUSDT',
+        target: 2389
+      },
+      ethusdt: {
+        key: 'ETH / USDT',
+        symbol: 'ETHUSDT'
+      },
+      ltcusdt: {
+        key: 'LTC / USDT',
+        symbol: 'LTCUSDT'
+      },
+
+      ethbtc: {
+        key: 'ETH / BTC',
+        symbol: 'ETHBTC',
+        target: 0.09
+      },
+      xvgbtc: {
+        key: 'XVG / BTC',
+        symbol: 'XVGBTC'
+      },
+
+      sntbtc: {
+        key: 'SNT / BTC',
+        symbol: 'SNTBTC'
+      },
+      mthbtc: {
+        key: 'MTH / BTC',
+        symbol: 'MTHBTC'
+      },
+      gxsbtc: {
+        key: 'GXS / BTC',
+        symbol: 'GXSBTC'
+      },
+      iotabtc: {
+        key: 'IOTA / BTC',
+        symbol: 'IOTABTC'
+      },
+      eosbtc: {
+        key: 'EOS / BTC',
+        symbol: 'EOSBTC'
+      }
+
+    };
+    var keys = Object.keys(obj);
+    keys.forEach(function (key) {
+      _extends(obj[key], {
+        stream: key + '@kline_30m',
+        start_time: '',
+        open_price: 0,
+        last_price: 0,
+        upper: null,
+        lower: null,
+        percent: 0,
+        volume: 0
+      });
+    });
+    return obj;
+  }(),
+  pairs: [{
+    stream: 'btcusdt',
+    key: 'BTC / USDT',
+    symbol: 'BTCUSDT'
+  }, {
+    stream: 'ethbtc',
+    key: 'ETH / BTC',
+    symbol: 'ETHBTC'
+  }, {
+    stream: 'xvgbtc',
+    key: 'XVG / BTC',
+    symbol: 'XVGBTC',
+    target: 0.000012
+  }, {
+    stream: 'sntbtc',
+    key: 'SNT / BTC',
+    symbol: 'SNTBTC',
+    target: 0.000038
+  }, {
+    stream: 'iotabtc',
+    key: 'IOTA / BTC',
+    symbol: 'IOTABTC'
+    // target: 0.000260
+  }, {
+
+    stream: '--'
+
+  }, {
+    stream: 'bccusdt',
+    key: 'BCC / USDT',
+    symbol: 'BCCUSDT',
+    target: 2389
+  }, {
+    stream: 'ethusdt',
+    key: 'ETH / USDT',
+    symbol: 'ETHUSDT'
+  }, {
+    stream: 'ltcusdt',
+    key: 'LTC / USDT',
+    symbol: 'LTCUSDT'
+  }, {
+    stream: '--'
+  }, {
+
+    stream: 'xrpbtc',
+    key: 'XRP / BTC',
+    symbol: 'XRPBTC'
+  }, {
+    stream: 'xlmbtc',
+    key: 'XLM / BTC',
+    symbol: 'XLMBTC'
+  }, {
+    stream: '--'
+  }, {}, {
+    stream: 'gxsbtc',
+    key: 'GXS / BTC',
+    symbol: 'GXSBTC'
+  }, {
+    stream: 'trxbtc',
+    key: 'TRX / BTC',
+    symbol: 'TRXBTC'
+  }, {
+
+    stream: 'rdnbtc',
+    key: 'RDN / BTC',
+    symbol: 'RDNBTC'
+  }, {
+    stream: 'lendbtc',
+    key: 'LEND / BTC',
+    symbol: 'LENDBTC'
+  }, {
+    stream: 'mthbtc',
+    key: 'MTH / BTC',
+    symbol: 'MTHBTC'
+    // target: 0.00002522
+
+  }, {
+    stream: 'saltbtc',
+    key: 'SALT / BTC',
+    symbol: 'SALTBTC'
+    // target: 0.000904
+  }, {
+    stream: 'iotabtc',
+    key: 'IOTA / BTC',
+    symbol: 'IOTABTC'
+    // target: 0.000260
+  }, {
+    stream: 'funbtc',
+    key: 'FUN / BTC',
+    symbol: 'FUNBTC'
+  }, {
+
+    stream: 'eosbtc',
+    key: 'EOS / BTC',
+    symbol: 'EOSBTC'
+  }, {
+
+    stream: 'manabtc',
+    key: 'MANA / BTC',
+    symbol: 'MANABTC'
+    // }, {
+    //   stream: 'xrpbtc',
+    //   key: 'XRP / BTC',
+    //   symbol: 'XRPBTC'
+  }].map(function (a) {
+    a.stream += '@kline_30m';
+    return _extends(a, {
+      start_time: '',
+      open_price: 0,
+      last_price: 0,
+      upper: null,
+      lower: null,
+      percent: 0,
+      volume: 0
+    });
+  })
+};
+
+exports.default = {
+  namespaced: true,
+  state: state,
+  getters: {
+    picked: function picked(state) {
+      return ['btcusdt', 'ethbtc', 'xvgbtc', 'sntbtc', 'mthbtc', 'gxsbtc', 'iotabtc', 'eosbtc'].map(function (a) {
+        return state.items[a];
+      });
+    }
+  },
+  actions: {
+    init: function init(_ref) {
+      var state = _ref.state;
+
+
+      // var trading = localStorage.getItem('trading');
+      // if (trading) {
+      //   var obj = JSON.parse(trading);
+      //   console.log(obj);
+      //   state.pairs[0].trading.usdt = obj.usdt;
+      //   for (let key in obj.balance) {
+      //     state.pairs[0].trading.balance[key] = obj.balance[key];
+      //   }
+      // }
+
+      if (state.status === 'Waiting') {
+        try {
+          //  Try to establish the WebSocket connection
+          // var ws = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@ticker');
+          var streams = function () {
+            var str = '';
+            // state.pairs.forEach(a => {
+            //   str += a.stream + '/';
+            // });
+            for (var key in state.items) {
+              str += state.items[key].stream + '/';
+            }
+            return str;
+          }();
+          // var ws = new WebSocket('wss://stream.binance.com:9443/stream?streams=' + streams);
+          var ws = new WebSocket('wss://stream.binance.com:9443/stream?streams=' + streams);
+          ws.onopen = function (event) {
+            state.status = 'Connected';
+            console.log('Binance Connection established. ' + this.readyState);
+          };
+          ws.onmessage = function (event) {
+            // console.log('Received data: ' + event.data);
+            var obj = JSON.parse(event.data);
+            // console.log(obj);
+            function save(trading) {
+              localStorage.setItem('trading', JSON.stringify(trading));
+            }
+            if (obj.stream) {
+              var a = state.items[obj.stream.split('@')[0]];
+              a.start_time = new Date(obj.data.k.t).getMinutes();
+              a.open_price = obj.data.k.o;
+              a.last_price = obj.data.k.c;
+              if (a.lower && Number(a.last_price) < Number(a.lower)) {
+                console.warn(a.symbol + ' is too low!!!');
+                if (navigator.vibrate) {
+                  navigator.vibrate(60 * 1000);
+                }
+              }
+              a.volume = obj.data.k.q;
+              a.percent = ((obj.data.k.c - obj.data.k.o) / obj.data.k.c * 100).toFixed(2);
+              if (obj.data.s === 'BTCUSDT') {
+                state.ratio = obj.data.k.c;
+              }
+              // state.pairs.forEach(a => {
+              //   if (a.stream === obj.stream) {
+              //     a.start_time = new Date(obj.data.k.t).getMinutes();
+              //     a.open_price = obj.data.k.o;
+              //     a.last_price = obj.data.k.c;
+              //     a.volume = obj.data.k.q;
+              //     a.percent = ((obj.data.k.c - obj.data.k.o) / obj.data.k.c * 100).toFixed(2);
+              //   }
+              //   if (obj.data.s === 'BTCUSDT') {
+              //     state.ratio = obj.data.k.c;
+              //   }
+              // });
+            } else {
+                // if (Array.isArray(obj[1])) {
+                //   var last = state.coins.start_time;
+                //   var now = new Date().getTime();
+                //   // Update 
+                //   function update() {
+                //     state.coins.pairs.forEach(a => {
+                //       a.prices.length = 0;
+                //       a.percent.push('');
+                //       if (a.percent.length > 5) {
+                //         a.percent.shift();
+                //       }
+                //     });
+                //     state.coins.start_time = now;
+                //   }
+                //   if (!last) {
+                //     update();
+                //   } else if (now - last > 180000) {
+                //     update();
+                //   }
+
+                //   state.coins.pairs.forEach(a => {
+                //     if (obj[0] === a.id) {
+                //       var price = obj[1][6];
+                //       if (price > a.last_price) {
+                //         a.color = 'green';
+                //       }
+                //       else {
+                //         a.color = 'red';
+                //       }
+                //       a.last_price = price;
+                //       a.prices.push(price);
+                //       if (a.prices.length > 1) {
+                //         var start = a.prices[0];
+                //         var end = a.prices[a.prices.length - 1];
+                //         a.percent[a.percent.length - 1] = ((end - start) / start * 100).toFixed(2);
+                //         // console.log(a.percent);
+                //       }
+                //       a.sum = a.percent.reduce((sum, b) => {
+                //         return sum + Number(b);
+                //       }, 0).toFixed(2);
+                //     }
+                //   });
+                // }
+              }
+          };
+          ws.onclose = function (event) {
+            // state.coins.status = 'Disconnected';
+            // state.coins.pairs.forEach(a => {
+            //   a.last_price = 0;
+            //   a.color = 'black';
+            // });
+            // console.log('Disconnected: ' + this.readyState);
+          };
+          ws.onerror = function (event) {
+            // state.coins.pairs.forEach(a => {
+            //   a.last_price = 0;
+            //   a.color = 'black';
+            // });
+            // state.coins.status = 'Errored';
+            // console.log('Errored!');
+          };
+        } catch (e) {
+          alert(e.message);
+        }
+      }
+      // var hash = CryptoJS.HmacSHA256('', 'zhRco1KqyFSHBg7f46IxkGYk90Cq6uueascgK8onGVvW9chd5nrrKmk5S55cunCB');
+      // var signature = CryptoJS.enc.Base64.stringify(hash);
+      // console.log(signature);
+      // axios({
+      //   // url: `https://api.binance.com/api/v3/account?signature=${signature}`,
+      //   url: `https://api.binance.com/api/v1/ping`,
+      //   // this is essential cause a fetch request is without cookie by default
+      //   withCredentials: true,
+      //   method: 'GET',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //     'X-MBX-APIKEY': 'hoJJNqGnwueeGPjdajf7h54HttIdV8kfGeKuTnxGRDmGpmDfeklp27Smc4WVTL8l'
+      //   },
+      //   mode: 'cors',
+      // }).then(res => {
+      //   console.log(res);
+      // });
+    }
+  },
+  mutations: {}
+};
+
+/***/ }),
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(76)
+__webpack_require__(78)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(77),
+  __webpack_require__(79),
   /* template */
-  __webpack_require__(78),
+  __webpack_require__(80),
   /* scopeId */
   null,
   /* cssModules */
@@ -799,13 +2129,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 76 */
+/* 78 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 77 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -931,7 +2261,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 78 */
+/* 80 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -987,13 +2317,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 79 */
+/* 81 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 80 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1062,7 +2392,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 81 */
+/* 83 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1129,13 +2459,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 82 */
+/* 84 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 83 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1198,7 +2528,7 @@ exports.default = _defineProperty({
 }, "methods", {});
 
 /***/ }),
-/* 84 */
+/* 86 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1235,18 +2565,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 85 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(86)
+__webpack_require__(88)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(87),
+  __webpack_require__(89),
   /* template */
-  __webpack_require__(88),
+  __webpack_require__(90),
   /* scopeId */
   "data-v-79915ab6",
   /* cssModules */
@@ -1257,13 +2587,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 86 */
+/* 88 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 87 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1606,7 +2936,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 88 */
+/* 90 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1743,18 +3073,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 }]}
 
 /***/ }),
-/* 89 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(90)
+__webpack_require__(92)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(91),
+  __webpack_require__(93),
   /* template */
-  __webpack_require__(92),
+  __webpack_require__(94),
   /* scopeId */
   null,
   /* cssModules */
@@ -1765,13 +3095,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 90 */
+/* 92 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 91 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1849,7 +3179,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 92 */
+/* 94 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1872,7 +3202,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 93 */
+/* 95 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1911,17 +3241,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "label-"
     }, [_vm._v(_vm._s(a.key))]), _c('span', {
       staticClass: "price-",
-      style: ('color: orange;')
+      style: ('color: #FF9900;')
     }, [_vm._v("$" + _vm._s(a.last_price.toFixed(2)))])]), _c('div', {
       staticClass: "col-md-8"
     }, [_vm._l((a.percent), function(b) {
       return _c('span', {
         staticClass: "percent",
-        style: ('color: ' + (b > 0 ? 'green' : 'red') + ';')
+        style: ('color: ' + (b > 0 ? '#009933' : '#CC0033') + ';')
       }, [_vm._v(_vm._s(b))])
     }), _c('span', {
       staticClass: "sum pull-right",
-      style: ('color: ' + (a.sum > 0 ? 'green' : 'red') + ';')
+      style: ('color: ' + (a.sum > 0 ? '#009933' : '#CC0033') + ';')
     }, [_vm._v("\n                      " + _vm._s(a.sum) + "%\n                    ")])], 2)])])
   })], 2), _c('div', {
     staticClass: "list-group",
@@ -2099,13 +3429,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 94 */
+/* 96 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 95 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2115,11 +3445,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _projects = __webpack_require__(96);
+var _projects = __webpack_require__(98);
 
 var _projects2 = _interopRequireDefault(_projects);
 
-var _home = __webpack_require__(52);
+var _home = __webpack_require__(53);
 
 var _home2 = _interopRequireDefault(_home);
 
@@ -2270,7 +3600,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 96 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2297,7 +3627,7 @@ var actions = {
   },
   fetchProjects: function fetchProjects(ctx) {
     return new Promise(function (resolve, reject) {
-      var projects = __webpack_require__(97).default;
+      var projects = __webpack_require__(99).default;
       resolve(projects);
     });
   }
@@ -2320,7 +3650,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 97 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2356,7 +3686,7 @@ exports.default = [{
 }];
 
 /***/ }),
-/* 98 */
+/* 100 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -2457,21 +3787,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 99 */,
-/* 100 */,
 /* 101 */,
 /* 102 */,
 /* 103 */,
 /* 104 */,
 /* 105 */,
 /* 106 */,
-/* 107 */
+/* 107 */,
+/* 108 */,
+/* 109 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 108 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2481,7 +3811,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _blog = __webpack_require__(109);
+var _blog = __webpack_require__(111);
 
 var _blog2 = _interopRequireDefault(_blog);
 
@@ -2489,7 +3819,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = {
   components: {
-    Posts: __webpack_require__(54)
+    Posts: __webpack_require__(56)
   },
   computed: {
     list: function list() {
@@ -2554,7 +3884,7 @@ exports.default = {
 //
 
 /***/ }),
-/* 109 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2669,7 +3999,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 110 */
+/* 112 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -2705,16 +4035,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 111 */,
-/* 112 */,
 /* 113 */,
-/* 114 */
+/* 114 */,
+/* 115 */,
+/* 116 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 115 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2759,7 +4089,7 @@ exports.default = {
     return {};
   },
   components: {
-    BoxSignin: __webpack_require__(53)
+    BoxSignin: __webpack_require__(55)
   },
   computed: {
     user: function user() {
@@ -2770,7 +4100,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 116 */
+/* 118 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -2790,6 +4120,377 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "alert alert-danger"
   }, [_vm._v("\n            Incorrect username or password.\n          ")]) : _vm._e()]), _c('box-signin')], 1)])])
 },staticRenderFns: []}
+
+/***/ }),
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 123 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _mainStore = __webpack_require__(54);
+
+var _mainStore2 = _interopRequireDefault(_mainStore);
+
+var _home = __webpack_require__(53);
+
+var _home2 = _interopRequireDefault(_home);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  components: {},
+  computed: {
+    picked: function picked() {
+      // console.log(this.$store.getters['main/home/binance/picked']);
+      return this.$store.getters['main/home/binance/picked'];
+    },
+    home: function home() {
+      return this.$store.state.main.home;
+    },
+    user: function user() {
+      return this.$store.state.app.user;
+    }
+  },
+  beforeCreate: function beforeCreate() {
+    this.$store.complete(['main'], _mainStore2.default);
+    this.$store.complete(['main', 'home'], _home2.default);
+  },
+
+  mounted: function mounted() {
+    this.$store.dispatch('main/home/binance/init');
+  },
+  methods: {
+    // register(store) {
+    //   store.complete(['main', 'home'], rawModule);
+    // },
+    // preFetch(store) {
+    //   return store.dispatch('main/home/init');
+    // },
+  }
+};
+
+/***/ }),
+/* 124 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "Binance container-fluid"
+  }, [_vm._m(0), _c('div', {
+    staticClass: "panel panel-default"
+  }, [_c('div', {
+    staticClass: "panel-heading"
+  }, [_vm._v("\n        Binance (" + _vm._s(_vm.home.binance.status) + ")\n      ")]), _c('div', {
+    staticClass: "panel-body"
+  }, [_vm._m(1), _c('table', {
+    staticClass: "table table-bordered"
+  }, [_vm._m(2), _c('tbody', _vm._l((_vm.picked), function(a) {
+    return _c('tr', [_c('td', [_vm._v(_vm._s(a.key))]), _c('td', [_vm._v("\n                " + _vm._s(a.open_price) + "\n              ")]), _c('td', {
+      class: (a.percent > 1 ? 'bg-success' : '') + ' ' +
+        (a.percent < -1 ? 'bg-danger' : '')
+    }, [_c('div', {
+      staticClass: "row"
+    }, [_c('div', {
+      staticClass: "col-md-4",
+      style: ('color: ' + (a.percent > 0 ? 'green' : 'red') + ';')
+    }, [_vm._v("\n                    " + _vm._s(a.stream.match(/usdt/) ? Number(a.last_price).toFixed(2) : a.last_price) + "\n                  ")]), _c('div', {
+      staticClass: "col-md-4",
+      style: ('color: ' + (a.percent > 0 ? 'green' : 'red') + ';')
+    }, [_vm._v("\n                    (" + _vm._s(a.percent) + "%)\n                  ")]), _c('div', {
+      staticClass: "col-md-4"
+    }, [_vm._v(" \n                    $" + _vm._s(a.stream.match(/usdt/) ? '--' : (a.last_price * _vm.home.binance.ratio).toFixed(2)) + " \n                  ")])])]), _c('td', [_c('input', {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
+        value: (a.lower),
+        expression: "a.lower"
+      }],
+      staticClass: "input-sm form-control",
+      domProps: {
+        "value": (a.lower)
+      },
+      on: {
+        "input": function($event) {
+          if ($event.target.composing) { return; }
+          a.lower = $event.target.value
+        }
+      }
+    })]), _c('td', [_c('input', {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
+        value: (a.upper),
+        expression: "a.upper"
+      }],
+      staticClass: "input-sm form-control",
+      domProps: {
+        "value": (a.upper)
+      },
+      on: {
+        "input": function($event) {
+          if ($event.target.composing) { return; }
+          a.upper = $event.target.value
+        }
+      }
+    })]), _c('td', {
+      style: ('color: ' + (a.last_price < a.target ? 'red' : 'green') + ';')
+    }, [_vm._v("\n                " + _vm._s(a.target) + "\n              ")]), _c('td', [_vm._v(_vm._s(parseInt(a.volume)))]), _c('td', [_vm._v("\n                " + _vm._s((a.last_price * _vm.home.binance.ratio).toFixed(2)) + "\n              ")]), _c('td', [_vm._v(_vm._s(a.start_time))]), _c('td', [_vm._v(_vm._s(a.percent))])])
+  }))])]), _c('div', {
+    staticClass: "list-group"
+  }, _vm._l((_vm.home.binance.pairs), function(a) {
+    return _c('div', {
+      staticClass: "list-group-item"
+    }, [_c('div', {
+      staticClass: "row"
+    }, [_c('div', {
+      staticClass: "col-xs-3"
+    }, [_vm._v("\n              " + _vm._s(a.key) + "\n            ")]), _c('div', {
+      staticClass: "col-xs-3"
+    }, [_vm._v("\n              " + _vm._s(a.open_price) + "\n            ")]), _c('div', {
+      staticClass: "col-xs-3"
+    }, [_vm._v("\n              " + _vm._s(a.last_price) + "\n            ")]), _c('div', {
+      staticClass: "col-xs-1"
+    }, [_vm._v("\n              " + _vm._s(a.start_time) + "\n            ")]), _c('div', {
+      staticClass: "col-xs-2"
+    }, [_vm._v("\n              " + _vm._s(a.percent) + "\n            ")])])])
+  }))])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "ptShow_1 ptShow form-horizontal",
+    staticStyle: {
+      "display": "block",
+      "overflow": "hidden"
+    },
+    attrs: {
+      "datatype": "7"
+    }
+  }, [_c('div', {
+    staticClass: "col-xs-4"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('label', {
+    staticClass: "col-xs-4"
+  }, [_c('strong', [_vm._v("*")]), _vm._v("最小(分)\n          ")]), _c('div', {
+    staticClass: "col-xs-8",
+    staticStyle: {
+      "display": "inline-block"
+    }
+  }, [_c('input', {
+    staticClass: "form-control",
+    attrs: {
+      "type": "text",
+      "name": "balance",
+      "value": "",
+      "dataname": "prize_type"
+    }
+  })])])]), _c('div', {
+    staticClass: "col-xs-4"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('label', {
+    staticClass: "col-xs-4"
+  }, [_c('strong', [_vm._v("*")]), _vm._v("最大(分)\n          ")]), _c('div', {
+    staticClass: "col-xs-8"
+  }, [_c('input', {
+    staticClass: "form-control rqTip",
+    attrs: {
+      "type": "text",
+      "name": "max_balance",
+      "value": "",
+      "dataname": "prize_type"
+    }
+  })])])]), _c('div', {
+    staticClass: "col-xs-4"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('label', {
+    staticClass: "col-xs-4"
+  }, [_c('strong', [_vm._v("*")]), _vm._v("余额id\n          ")]), _c('div', {
+    staticClass: "col-xs-8"
+  }, [_c('input', {
+    staticClass: "form-control rqTip",
+    attrs: {
+      "type": "text",
+      "name": "balance_source_id",
+      "value": "",
+      "dataname": "prize_type"
+    }
+  })])])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "alert alert-danger"
+  }, [_vm._v("\n          Tips:"), _c('br'), _vm._v("\n          1. The only right moment to buy is when the price is falling hard. "), _c('br'), _vm._v("\n          2. The price always soar up all of a sudden. All you need to do is wait. "), _c('br'), _vm._v("\n          3. Sell half of your holdings near the top to refund. "), _c('br')])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('thead', [_c('tr', [_c('th', [_vm._v("\n                Pair\n              ")]), _c('th', [_vm._v("Open Price")]), _c('th', [_vm._v("Last Price")]), _c('th', [_vm._v("Lower Limit")]), _c('th', [_vm._v("Upper Limit")]), _c('th', [_vm._v("Target")]), _c('th', [_vm._v("Volume")]), _c('th', [_vm._v("Dollar Price")]), _c('th', [_vm._v("Start Time")]), _c('th', [_vm._v("Change Percent")])])])
+}]}
 
 /***/ })
 ]));

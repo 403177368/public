@@ -238,14 +238,15 @@ var routes = [{
   path: '/',
   redirect: '/main/home'
 }, {
+
   path: '/main',
   component: function component() {
-    return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, 36));
+    return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 36));
   },
   children: [{
     path: 'home',
     component: function component() {
-      return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 37));
+      return __webpack_require__.e/* import() */(0/* limit */).then(__webpack_require__.bind(null, 37));
     }
   }, {
     path: 'projects',
@@ -255,7 +256,7 @@ var routes = [{
   }, {
     path: 'canvas',
     component: function component() {
-      return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 39));
+      return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 39));
     }
   }, {
     path: 'blog',
@@ -265,7 +266,7 @@ var routes = [{
   }, {
     path: 'post/:id',
     component: function component() {
-      return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 41));
+      return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 41));
     }
   }, {
     path: 'signin',
@@ -278,47 +279,57 @@ var routes = [{
       return __webpack_require__.e/* import() */(8).then(__webpack_require__.bind(null, 43));
     }
   }]
+
 }, {
+
+  path: '/binance',
+  component: function component() {
+    return __webpack_require__.e/* import() */(0/* limit */).then(__webpack_require__.bind(null, 44));
+  }
+
+}, {
+
   path: '/mall',
   component: function component() {
-    return __webpack_require__.e/* import() */(2/* limit */).then(__webpack_require__.bind(null, 44));
+    return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, 45));
   },
   children: [{
     path: 'cart',
     component: function component() {
-      return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 45));
+      return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 46));
     }
   }]
+
 }, {
   path: '/admin',
   component: function component() {
-    return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 46));
+    return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 47));
   },
   children: [{
     path: 'dashboard',
     component: function component() {
-      return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 47));
+      return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 48));
     }
   }, {
     path: 'deployment',
     component: function component() {
-      return __webpack_require__.e/* import() */(3/* limit */).then(__webpack_require__.bind(null, 48));
+      return __webpack_require__.e/* import() */(2/* limit */).then(__webpack_require__.bind(null, 49));
     }
   }, {
     path: 'lowdb',
     alias: '',
     component: function component() {
-      return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 49));
+      return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 50));
     }
   }, {
     path: 'sequelize',
     component: function component() {
-      return __webpack_require__.e/* import() */(1/* limit */).then(__webpack_require__.bind(null, 50));
+      return __webpack_require__.e/* import() */(1/* limit */).then(__webpack_require__.bind(null, 51));
     }
   }, {
     path: 'tables',
     component: function component() {
-      return __webpack_require__.e/* import() */(4/* limit */).then(__webpack_require__.bind(null, 51));
+      return __webpack_require__.e/* import() */(3/* limit */).then(__webpack_require__.bind(null, 52));
     }
   }]
 }];

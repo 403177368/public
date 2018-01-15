@@ -1,227 +1,13 @@
 webpackJsonp([7],{
 
-/***/ 100:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _Canvas = __webpack_require__(101);
-
-var _Canvas2 = _interopRequireDefault(_Canvas);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  components: {
-    matrix: __webpack_require__(102)
-  },
-  data: function data() {
-    return {
-      src: '',
-      websites: [{
-        name: 'Three.js',
-        href: '//threejs.org/examples/'
-      }, {
-        name: 'Codepen',
-        href: '//codepen.io'
-      }, {
-        name: 'Phaser.js',
-        href: '//www.phaser.io/'
-      }]
-    };
-  },
-
-  computed: {
-    canvas: function canvas() {
-      return this.$store.state.main.Canvas;
-    }
-  },
-  beforeCreate: function beforeCreate() {
-    this.$store.complete(['main', 'Canvas'], _Canvas2.default);
-  },
-  mounted: function mounted() {
-    this.$store.dispatch('main/Canvas/init');
-  },
-
-  methods: {
-    register: function register(store) {
-      store.complete(['main', 'Canvas'], _Canvas2.default);
-    },
-    preFetch: function preFetch(store) {
-      return store.dispatch('main/Canvas/init');
-    },
-    to: function to(src) {
-      this.src = src;
-    }
-  }
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/***/ }),
-
-/***/ 101:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _axios = __webpack_require__(1);
-
-var _axios2 = _interopRequireDefault(_axios);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-exports.default = {
-  namespaced: true,
-  state: {
-    initialized: false,
-    canvas: {}
-  },
-  actions: {
-    init: function init(ctx) {
-      if (ctx.state.initialized === false) {
-        return ctx.dispatch('fetch').then(function (res) {
-          if (res.status === 200) {
-            ctx.state.initialized = true;
-            ctx.state.canvas = res.data;
-          }
-        }).catch(function (err) {
-          console.log(err);
-        });
-      }
-    },
-    fetch: function fetch(ctx) {
-      return (0, _axios2.default)({
-        method: 'GET',
-        url: '/api/canvas/',
-        // this is essential cause a fetch request is without cookie by default
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        mode: 'cors'
-      });
-    }
-  },
-  mutations: {
-    INIT_CANVAS: function INIT_CANVAS(state, arr) {
-      state.initialized = true;
-    },
-    SET_CANVAS: function SET_CANVAS(state, arr) {
-      var _state$items;
-
-      state.items.length = 0;
-      (_state$items = state.items).push.apply(_state$items, _toConsumableArray(arr));
-    }
-  }
-};
-
-/***/ }),
-
-/***/ 102:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(103)
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(104),
-  /* template */
-  __webpack_require__(105),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 103:
+/***/ 113:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 104:
+/***/ 114:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -246,121 +32,89 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
-  data: function data() {
-    return {};
+  computed: {
+    post: function post() {
+      return this.$store.state.main.post;
+    }
   },
-
-  computed: {},
+  watch: {
+    '$store.state.main.post': function $storeStateMainPost(nv) {}
+  },
   mounted: function mounted() {
-    var self = this;
-    var canvas = this.$refs.matrix;
-    var ctx = canvas.getContext('2d');
-    var fontSize = 14;
-    var chars = generateChars();
-    var columns;
-    var drops; // Current position of last letter (for each column)
-    var drawnToBottom;
+    var id = this.$route.params.id;
 
-    // Generate Matrix code characters
-    function generateChars() {
-      var chars = '0123456789';
-
-      // Get ALL half-width katakana characters by unicode value
-      for (var i = 0; i <= 55; i++) {
-        chars += String.fromCharCode(i + 65382);
-      }
-
-      return chars.split('');
+    var state_id = this.$store.state.main.post.id;
+    if (state_id === null || state_id !== id) {
+      this.$store.dispatch('main/post/fetchPost', { id: id });
     }
-
-    // Initialize default canvas state
-    function initCanvas() {
-      setSize();
-
-      columns = Math.round(canvas.width / fontSize);
-      drops = [];
-
-      // Set initial position on y coordinate for each column
-      for (var i = 0; i < columns; i++) {
-        drops[i] = 1;
-      }
-
-      drawnToBottom = false;
-    }
-
-    // Resize canvas to fit window
-    window.addEventListener('resize', function () {
-      initCanvas();
-    });
-
-    function setSize() {
-      var container = self.$refs.container;
-      if (container) {
-        var w = Number(document.defaultView.getComputedStyle(container).width.replace('px', ''));
-        if (canvas.width !== w) {
-          canvas.width = w;
-          canvas.height = 300;
-        }
-      }
-    }
-
-    function draw() {
-      // Set nearly transparent background so character trail is visible
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      // Set color and font of falling letters
-      ctx.fillStyle = '#19FF19';
-      ctx.font = 'bold ' + fontSize + 'px monospace';
-
-      var dropCount = drops.length;
-      var charCount = chars.length;
-
-      for (var i = 0; i < dropCount; i++) {
-        // Choose a random letter
-        var text = chars[Math.floor(Math.random() * charCount)];
-        // Get the y position of the letter
-        var rowNum = drops[i] * fontSize;
-        // Draw it!
-        ctx.fillText(text, i * fontSize, rowNum);
-
-        // Check if the canvas has been drawn to the bottom
-        if (rowNum > canvas.height) drawnToBottom = true;
-
-        // Randomly reset the y position of a column
-        if (!drawnToBottom && Math.random() > 0.925 || drawnToBottom && Math.random() > 0.95) drops[i] = 0;
-
-        drops[i]++;
-      }
-    }
-
-    setTimeout(function () {
-      initCanvas();
-      setInterval(draw, 45);
-    }, 300);
   },
-  methods: {}
+  methods: {
+    preFetch: function preFetch(store, router) {
+      // console.log(router.history.current.params.id);
+      return store.dispatch('main/post/fetchPost', { id: router.history.current.params.id });
+    }
+  }
 };
 
 /***/ }),
 
-/***/ 105:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    ref: "container",
-    staticClass: "Matrix"
-  }, [_c('canvas', {
-    ref: "matrix"
-  })])
-},staticRenderFns: []}
-
-/***/ }),
-
-/***/ 106:
+/***/ 115:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -369,64 +123,46 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "name": "fade-in"
     }
   }, [_c('div', {
-    staticClass: "RouteCanvas"
-  }, [_c('matrix'), _c('div', {
+    ref: "Post",
+    staticClass: "Post"
+  }, [_c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.post.state === 'pending'),
+      expression: "post.state==='pending'"
+    }]
+  }, [_vm._v("loading...")]), _c('div', {
     staticClass: "container"
   }, [_c('div', {
     staticClass: "row"
-  }), _c('div', {
-    staticClass: "row"
   }, [_c('div', {
-    staticClass: "col-sm-4"
+    staticClass: "col-sm-8 col-sm-offset-2"
   }, [_c('div', {
-    staticClass: "panel panel-default"
+    staticClass: "card"
   }, [_c('div', {
-    staticClass: "panel-heading"
-  }, [_vm._v("\n              Canvas\n            ")]), _c('div', {
-    staticClass: "panel-body"
-  }, [_vm._l((_vm.canvas.canvas.left), function(a) {
-    return _c('p', [_c('a', {
-      attrs: {
-        "href": a.href
-      }
-    }, [_vm._v(_vm._s(a.name))])])
-  }), _vm._l((_vm.canvas.canvas.right), function(a) {
-    return _c('p', [_c('a', {
-      attrs: {
-        "href": a.href
-      }
-    }, [_vm._v(_vm._s(a.name))])])
-  })], 2)])]), _c('div', {
-    staticClass: "col-sm-4"
-  }, [_c('div', {
-    staticClass: "panel panel-default"
-  }, [_c('div', {
-    staticClass: "panel-heading"
-  }, [_vm._v("Websites")]), _c('div', {
-    staticClass: "panel-body"
-  }, _vm._l((_vm.websites), function(a) {
-    return _c('p', [_c('a', {
-      attrs: {
-        "href": a.href
-      }
-    }, [_vm._v(_vm._s(a.name))])])
-  }))])])])])], 1)])
+    ref: "post_main",
+    staticClass: "card-body",
+    domProps: {
+      "innerHTML": _vm._s(_vm.post.html)
+    }
+  })])])])])])])
 },staticRenderFns: []}
 
 /***/ }),
 
-/***/ 39:
+/***/ 41:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(99)
+__webpack_require__(113)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(100),
+  __webpack_require__(114),
   /* template */
-  __webpack_require__(106),
+  __webpack_require__(115),
   /* scopeId */
   null,
   /* cssModules */
@@ -435,13 +171,6 @@ var Component = __webpack_require__(0)(
 
 module.exports = Component.exports
 
-
-/***/ }),
-
-/***/ 99:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ })
 

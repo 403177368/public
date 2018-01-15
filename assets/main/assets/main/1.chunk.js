@@ -1,13 +1,13 @@
 webpackJsonp([1],{
 
-/***/ 157:
+/***/ 162:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 158:
+/***/ 163:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40,7 +40,7 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = {
   components: {
-    Management: __webpack_require__(55)
+    Management: __webpack_require__(57)
   },
   mounted: function mounted() {
     this.$store.dispatch('admin/items/changeDB', '/lowdb');
@@ -49,14 +49,14 @@ exports.default = {
 
 /***/ }),
 
-/***/ 159:
+/***/ 164:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 160:
+/***/ 165:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -173,8 +173,8 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = {
   components: {
-    TitleBar: __webpack_require__(161),
-    MyForm: __webpack_require__(165)
+    TitleBar: __webpack_require__(166),
+    MyForm: __webpack_require__(170)
     // Editing: require('./Editing.vue'),
     // Edit: require('./Edit.vue')
   },
@@ -255,18 +255,18 @@ exports.default = {
 
 /***/ }),
 
-/***/ 161:
+/***/ 166:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(162)
+__webpack_require__(167)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(163),
+  __webpack_require__(168),
   /* template */
-  __webpack_require__(164),
+  __webpack_require__(169),
   /* scopeId */
   null,
   /* cssModules */
@@ -278,14 +278,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 162:
+/***/ 167:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 163:
+/***/ 168:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -320,7 +320,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 164:
+/***/ 169:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -331,18 +331,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 165:
+/***/ 170:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(166)
+__webpack_require__(171)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(167),
+  __webpack_require__(172),
   /* template */
-  __webpack_require__(168),
+  __webpack_require__(173),
   /* scopeId */
   "data-v-2c970050",
   /* cssModules */
@@ -354,14 +354,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 166:
+/***/ 171:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 167:
+/***/ 172:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -408,7 +408,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 168:
+/***/ 173:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -433,7 +433,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 169:
+/***/ 174:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -521,7 +521,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 170:
+/***/ 175:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -540,14 +540,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 171:
+/***/ 176:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 172:
+/***/ 177:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -579,7 +579,7 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = {
   components: {
-    Management: __webpack_require__(55)
+    Management: __webpack_require__(57)
   },
   mounted: function mounted() {
     this.$store.dispatch('admin/items/changeDB', '/sqlite');
@@ -588,7 +588,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 173:
+/***/ 178:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -603,18 +603,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 49:
+/***/ 50:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(157)
+__webpack_require__(162)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(158),
+  __webpack_require__(163),
   /* template */
-  __webpack_require__(170),
+  __webpack_require__(175),
   /* scopeId */
   null,
   /* cssModules */
@@ -626,18 +626,18 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 50:
+/***/ 51:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(171)
+__webpack_require__(176)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(172),
+  __webpack_require__(177),
   /* template */
-  __webpack_require__(173),
+  __webpack_require__(178),
   /* scopeId */
   "data-v-7a9c0b86",
   /* cssModules */
@@ -649,18 +649,18 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 55:
+/***/ 57:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(159)
+__webpack_require__(164)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(160),
+  __webpack_require__(165),
   /* template */
-  __webpack_require__(169),
+  __webpack_require__(174),
   /* scopeId */
   null,
   /* cssModules */
