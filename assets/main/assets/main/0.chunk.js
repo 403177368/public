@@ -1753,6 +1753,7 @@ var state = {
   inited: false,
   status: 'Waiting',
   ratio: 0,
+  watching: false,
   alerting: false,
   alert_text: '',
   items: function () {
@@ -1951,8 +1952,13 @@ exports.default = {
     }
   },
   actions: {
-    init: function init(_ref) {
+    watch: function watch(_ref) {
       var state = _ref.state;
+
+      state.watching = true;
+    },
+    init: function init(_ref2) {
+      var state = _ref2.state;
 
 
       // var trading = localStorage.getItem('trading');
@@ -1965,6 +1971,7 @@ exports.default = {
       //   }
       // }
       function warn(str) {
+        console.warn(str);
         state.alert_text = str;
         var el = document.createElement('audio');
         el.setAttribute('src', 'http://ptsolomo.reader.qq.com/book_res/event/act170201/adr/farm.mp3');
@@ -2008,7 +2015,7 @@ exports.default = {
               a.start_time = new Date(obj.data.k.t).getMinutes();
               a.open_price = obj.data.k.o;
               a.last_price = obj.data.k.c;
-              if (state.alerting === false) {
+              if (state.watching && state.alerting === false) {
                 if (a.lower && Number(a.last_price) < Number(a.lower)) {
                   state.alerting = true;
                   warn(a.symbol + ' is too low!!!');
@@ -4396,6 +4403,25 @@ exports.default = {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 124 */
@@ -4416,7 +4442,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "list-group"
   }, _vm._l((_vm.picked), function(a) {
     return _c('div', {
-      staticClass: "list-group-item"
+      staticClass: "list-group-item",
+      style: ((a.percent > 1 ? 'background: #dff0d8;' : '') +
+        (a.percent < -1 ? 'background: #f2dede;' : ''))
     }, [_c('div', {
       staticClass: "row"
     }, [_c('div', {
@@ -4440,7 +4468,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "col-xs-4",
       style: ('color: ' + (a.percent > 0 ? 'green' : 'red') + ';')
     }, [_vm._v("\n                  (" + _vm._s(a.percent) + "%)\n                ")]), _c('div', {
-      staticClass: "col-xs-4"
+      staticClass: "col-xs-4",
+      style: ('color: ' + (a.percent > 0 ? 'green' : 'red') + ';')
     }, [_vm._v(" \n                  $" + _vm._s(a.stream.match(/usdt/) ? '--' : (a.last_price * _vm.home.binance.ratio).toFixed(2)) + " \n                ")])])]), _c('div', {
       staticClass: "col-sm-5"
     }, [_c('div', {
@@ -4473,25 +4502,46 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       directives: [{
         name: "model",
         rawName: "v-model",
-        value: (a.higher),
-        expression: "a.higher"
+        value: (a.upper),
+        expression: "a.upper"
       }],
       staticClass: "input-sm form-control",
       attrs: {
         "placeholder": "Upper limit"
       },
       domProps: {
-        "value": (a.higher)
+        "value": (a.upper)
       },
       on: {
         "input": function($event) {
           if ($event.target.composing) { return; }
-          a.higher = $event.target.value
+          a.upper = $event.target.value
         }
       }
     })]), _c('div', {
       staticClass: "col-xs-4"
-    })])])])])
+    }, [_c('div', {
+      directives: [{
+        name: "show",
+        rawName: "v-show",
+        value: (_vm.home.binance.watching === false),
+        expression: " home.binance.watching === false "
+      }],
+      staticClass: "btn btn-primary btn-sm",
+      on: {
+        "click": function($event) {
+          _vm.$store.dispatch('main/home/binance/watch')
+        }
+      }
+    }, [_vm._v("\n                    Watch\n                  ")]), _c('div', {
+      directives: [{
+        name: "show",
+        rawName: "v-show",
+        value: (_vm.home.binance.watching === true),
+        expression: " home.binance.watching === true "
+      }],
+      staticClass: "btn btn-success btn-sm"
+    }, [_vm._v("\n                    Watching\n                  ")])])])])])])
   })), _c('div', {
     staticClass: "panel-body"
   }, [_c('div', {

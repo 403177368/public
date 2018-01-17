@@ -849,6 +849,10 @@ a {
 .Binance td[data-v-bd9c99de] {
   vertical-align: middle;
 }
+.Binance .min-30[data-v-bd9c99de] {
+  min-height: 30px;
+  line-height: 30px;
+}
 
 .bg[data-v-c94ba8e8] {
   min-height: 100vh;

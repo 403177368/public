@@ -170,6 +170,8 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
 
 exports.default = {
   components: {
@@ -459,7 +461,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }, [_vm._v(_vm._s(a))])])
-  })], 2)]), _c('table', {
+  })], 2)]), _c('div', {
+    staticClass: "table-responsive"
+  }, [_c('table', {
     staticClass: "table table-hover"
   }, [_vm._m(0), _c('tbody', _vm._l((_vm.items.items), function(a, i) {
     return _c('tr', {
@@ -491,7 +495,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }, [_vm._v("edit")])])])
-  }))]), _c('div', {
+  }))])]), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "manipulation"
