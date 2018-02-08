@@ -674,6 +674,10 @@ a {
   margin-right: 15px;
 }
 
+.bg[data-v-4f860d3b] {
+  min-height: 100vh;
+}
+
 .Signin .signin_box {
   margin: auto;
 }
@@ -853,10 +857,6 @@ a {
   min-height: 30px;
   line-height: 30px;
 }
-
-.bg[data-v-c94ba8e8] {
-  min-height: 100vh;
-}
 /*@pink: #e91e63;*/
 /*@pink: #e91e63;*/
 .RouteCanvas .title_ {
@@ -926,6 +926,10 @@ a {
     width: 100%;
 }
 }
+
+.AdminDeployment[data-v-a67932b0] {
+  padding: 15px 0;
+}
 /*@pink: #e91e63;*/
 .RouteCnodePost .post-- img {
   max-width: 100%!important;
@@ -964,7 +968,7 @@ a {
   width: 100%;
 }
 
-.AdminDeployment[data-v-a67932b0] {
+.RouteGraphql {
   padding: 15px 0;
 }
 

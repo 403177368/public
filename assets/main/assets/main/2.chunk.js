@@ -1,13 +1,13 @@
 webpackJsonp([2],{
 
-/***/ 129:
+/***/ 131:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 130:
+/***/ 132:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(131);
+var _index = __webpack_require__(133);
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -49,7 +49,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 131:
+/***/ 133:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -77,7 +77,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 132:
+/***/ 134:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -88,14 +88,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 159:
+/***/ 184:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 160:
+/***/ 185:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -104,115 +104,92 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
+var _axios = __webpack_require__(1);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  data: function data() {
-    return {
-      list: []
-    };
+  components: {
+    // Management: require('../Management.vue')
   },
-
-  components: {},
-  beforeCreate: function beforeCreate() {},
-  created: function created() {},
   mounted: function mounted() {
-    var _this = this;
-
-    axios({
-      url: '/api/sqlite/deployments',
+    var data = {
+      query: '\n        mutation HaHa(\n          $id: [Int]\n          $brand: [String]\n        ) {\n          items_1: getItems(\n            id: $id\n            brand: $brand\n          ) {\n            id\n            name\n            price\n            brand\n          }\n          items_2: getItems {\n            id\n            name\n            brand\n          }\n        }\n      ',
+      variables: {
+        id: [137, 173],
+        brand: ['CK', 'Apple']
+      }
+    };
+    (0, _axios2.default)({
+      url: '/api/v1',
       // this is essential cause a fetch request is without cookie by default
       credentials: 'include',
-      method: 'GET',
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      mode: 'cors'
-    }).then(function (res) {
-      console.log(res);
-      _this.list.length = 0;
-      _this.list.push(res.data.data.items);
-    });
-  },
-
-  computed: {},
-  methods: {}
-};
+      mode: 'cors',
+      data: data
+    }).then(function (res) {}).catch(function (err) {});
+  }
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 
-/***/ 161:
+/***/ 186:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "AdminDeployment"
+  return _c('transition', {
+    attrs: {
+      "name": "fade"
+    }
+  }, [_c('div', {
+    staticClass: "RouteGraphql"
   }, [_c('div', {
     staticClass: "container-fluid"
-  }, [_vm._m(0), _vm._m(1), _c('table', {
-    staticClass: "table table-bordered"
-  }, [_c('thead', _vm._l((_vm.list), function(a) {
-    return _c('tr', [_c('td', [_vm._v(_vm._s(a.createdAt))])])
-  }))])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('ul', {
+  }, [_c('ul', {
     staticClass: "breadcrumb"
-  }, [_c('li', [_c('a', [_vm._v("Deployment")])])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "form-group"
-  }, [_c('div', {
-    staticClass: "btn btn-primary"
-  }, [_vm._v("\n        Deploy\n      ")])])
-}]}
+  }, [_c('li', [_c('a', [_vm._v("Graphql")])])])])])])
+},staticRenderFns: []}
 
 /***/ }),
 
-/***/ 46:
+/***/ 47:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(129)
+__webpack_require__(131)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(130),
-  /* template */
   __webpack_require__(132),
+  /* template */
+  __webpack_require__(134),
   /* scopeId */
   "data-v-8275c764",
   /* cssModules */
@@ -224,20 +201,20 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 49:
+/***/ 54:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(159)
+__webpack_require__(184)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(160),
+  __webpack_require__(185),
   /* template */
-  __webpack_require__(161),
+  __webpack_require__(186),
   /* scopeId */
-  "data-v-a67932b0",
+  null,
   /* cssModules */
   null
 )

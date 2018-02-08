@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/hot/dist/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 80);
+/******/ 	return __webpack_require__(__webpack_require__.s = 81);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -133,21 +133,21 @@ module.exports = window.Vue;
 
 /***/ }),
 
-/***/ 80:
+/***/ 81:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(81);
+module.exports = __webpack_require__(82);
 
 
 /***/ }),
 
-/***/ 81:
+/***/ 82:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(82);
+__webpack_require__(83);
 
 __webpack_require__(2);
 
@@ -155,7 +155,7 @@ var _vue = __webpack_require__(1);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _App = __webpack_require__(83);
+var _App = __webpack_require__(84);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -171,7 +171,7 @@ new _vue2.default({
 
 /***/ }),
 
-/***/ 82:
+/***/ 83:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -201,18 +201,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /***/ }),
 
-/***/ 83:
+/***/ 84:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(84)
+__webpack_require__(85)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(85),
+  __webpack_require__(86),
   /* template */
-  __webpack_require__(98),
+  __webpack_require__(99),
   /* scopeId */
   "data-v-6d8f0809",
   /* cssModules */
@@ -224,14 +224,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 84:
+/***/ 85:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 85:
+/***/ 86:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -283,25 +283,25 @@ exports.default = {
 		};
 	},
 	components: {
-		Chips: __webpack_require__(86),
-		ButtonOrange: __webpack_require__(90)
+		Chips: __webpack_require__(87),
+		ButtonOrange: __webpack_require__(91)
 	}
 };
 
 /***/ }),
 
-/***/ 86:
+/***/ 87:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(87)
+__webpack_require__(88)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(88),
-  /* template */
   __webpack_require__(89),
+  /* template */
+  __webpack_require__(90),
   /* scopeId */
   "data-v-7c27b3dc",
   /* cssModules */
@@ -313,14 +313,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 87:
+/***/ 88:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 88:
+/***/ 89:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -510,7 +510,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 89:
+/***/ 90:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -528,18 +528,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 90:
+/***/ 91:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(91)
+__webpack_require__(92)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(92),
+  __webpack_require__(93),
   /* template */
-  __webpack_require__(97),
+  __webpack_require__(98),
   /* scopeId */
   "data-v-4b7301e5",
   /* cssModules */
@@ -551,14 +551,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 91:
+/***/ 92:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 92:
+/***/ 93:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -603,7 +603,7 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = {
 	components: {
-		Arrows: __webpack_require__(93)
+		Arrows: __webpack_require__(94)
 	},
 	props: {
 		img: {}
@@ -628,18 +628,18 @@ exports.default = {
 
 /***/ }),
 
-/***/ 93:
+/***/ 94:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(94)
+__webpack_require__(95)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(95),
-  /* template */
   __webpack_require__(96),
+  /* template */
+  __webpack_require__(97),
   /* scopeId */
   "data-v-4b9527a2",
   /* cssModules */
@@ -651,14 +651,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 94:
+/***/ 95:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 95:
+/***/ 96:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -743,7 +743,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 96:
+/***/ 97:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -769,7 +769,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 97:
+/***/ 98:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -802,7 +802,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 98:
+/***/ 99:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

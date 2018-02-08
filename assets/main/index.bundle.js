@@ -241,42 +241,42 @@ var routes = [{
 
   path: '/main',
   component: function component() {
-    return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 36));
+    return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 37));
   },
   children: [{
     path: 'home',
     component: function component() {
-      return __webpack_require__.e/* import() */(0/* limit */).then(__webpack_require__.bind(null, 37));
+      return __webpack_require__.e/* import() */(0/* limit */).then(__webpack_require__.bind(null, 38));
     }
   }, {
     path: 'projects',
     component: function component() {
-      return __webpack_require__.e/* import() */(0/* limit */).then(__webpack_require__.bind(null, 38));
+      return __webpack_require__.e/* import() */(0/* limit */).then(__webpack_require__.bind(null, 39));
     }
   }, {
     path: 'canvas',
     component: function component() {
-      return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 39));
+      return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, 40));
     }
   }, {
     path: 'blog',
     component: function component() {
-      return __webpack_require__.e/* import() */(0/* limit */).then(__webpack_require__.bind(null, 40));
+      return __webpack_require__.e/* import() */(0/* limit */).then(__webpack_require__.bind(null, 41));
     }
   }, {
     path: 'post/:id',
     component: function component() {
-      return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 41));
+      return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 42));
     }
   }, {
     path: 'signin',
     component: function component() {
-      return __webpack_require__.e/* import() */(0/* limit */).then(__webpack_require__.bind(null, 42));
+      return __webpack_require__.e/* import() */(0/* limit */).then(__webpack_require__.bind(null, 43));
     }
   }, {
     path: 'cnode_post/:id',
     component: function component() {
-      return __webpack_require__.e/* import() */(8).then(__webpack_require__.bind(null, 43));
+      return __webpack_require__.e/* import() */(8).then(__webpack_require__.bind(null, 44));
     }
   }]
 
@@ -284,52 +284,57 @@ var routes = [{
 
   path: '/binance',
   component: function component() {
-    return __webpack_require__.e/* import() */(0/* limit */).then(__webpack_require__.bind(null, 44));
+    return __webpack_require__.e/* import() */(0/* limit */).then(__webpack_require__.bind(null, 45));
   }
 
 }, {
 
   path: '/mall',
   component: function component() {
-    return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, 45));
+    return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 46));
   },
   children: [{
     path: 'cart',
     component: function component() {
-      return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 46));
+      return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 47));
     }
   }]
 
 }, {
   path: '/admin',
   component: function component() {
-    return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 47));
+    return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 48));
   },
   children: [{
     path: 'dashboard',
     component: function component() {
-      return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 48));
+      return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 49));
     }
   }, {
     path: 'deployment',
     component: function component() {
-      return __webpack_require__.e/* import() */(2/* limit */).then(__webpack_require__.bind(null, 49));
+      return __webpack_require__.e/* import() */(3/* limit */).then(__webpack_require__.bind(null, 50));
     }
   }, {
     path: 'lowdb',
     alias: '',
     component: function component() {
-      return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 50));
+      return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 51));
     }
   }, {
     path: 'sequelize',
     component: function component() {
-      return __webpack_require__.e/* import() */(1/* limit */).then(__webpack_require__.bind(null, 51));
+      return __webpack_require__.e/* import() */(1/* limit */).then(__webpack_require__.bind(null, 52));
     }
   }, {
     path: 'tables',
     component: function component() {
-      return __webpack_require__.e/* import() */(3/* limit */).then(__webpack_require__.bind(null, 52));
+      return __webpack_require__.e/* import() */(4/* limit */).then(__webpack_require__.bind(null, 53));
+    }
+  }, {
+    path: 'graphql',
+    component: function component() {
+      return __webpack_require__.e/* import() */(2/* limit */).then(__webpack_require__.bind(null, 54));
     }
   }]
 }];
@@ -464,7 +469,7 @@ if (typeof window === 'undefined') {
 
 var store = new _vuex2.default.Store({
   modules: {
-    app: __webpack_require__(29).default,
+    app: __webpack_require__(30).default,
 
     // main: require('./main/main.store.js').default,
     admin: __webpack_require__(6).default
@@ -536,7 +541,9 @@ exports.default = {
   },
   modules: {
     items: __webpack_require__(27).default,
-    tip: __webpack_require__(28).default
+    tip: __webpack_require__(28).default,
+
+    graphql: __webpack_require__(29).default
   },
   action: {
     init: function init(_ref) {
@@ -580,7 +587,7 @@ var _store2 = _interopRequireDefault(_store);
 
 var _router = __webpack_require__(2);
 
-var _a = __webpack_require__(35);
+var _a = __webpack_require__(36);
 
 var _a2 = _interopRequireDefault(_a);
 
@@ -641,7 +648,7 @@ var app = new _vue2.default({
   store: _store2.default,
   router: _router.router,
   components: {
-    App: __webpack_require__(31)
+    App: __webpack_require__(32)
   },
   template: '<app></app>'
 });
@@ -1942,6 +1949,41 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = {
+  namespaced: true,
+  state: {
+    inited: false,
+    height: 0
+  },
+  modules: {},
+  action: {
+    init: function init(_ref) {
+      var state = _ref.state,
+          dispatch = _ref.dispatch;
+
+      if (state.inited === false) {
+        dispatch('set_height');
+      }
+    },
+    set_height: function set_height(_ref2) {
+      var state = _ref2.state;
+
+      var height = window.innerHeight - 50;
+      state.height = height;
+    }
+  }
+};
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
 var _axios = __webpack_require__(1);
 
@@ -1958,7 +2000,7 @@ var mutations = {};
 exports.default = {
   namespaced: true,
   modules: {
-    user: __webpack_require__(30).default
+    user: __webpack_require__(31).default
   },
   state: state,
   actions: actions,
@@ -1966,7 +2008,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2076,18 +2118,18 @@ exports.default = {
 };
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(32)
+__webpack_require__(33)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(33),
-  /* template */
   __webpack_require__(34),
+  /* template */
+  __webpack_require__(35),
   /* scopeId */
   null,
   /* cssModules */
@@ -2098,13 +2140,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2144,7 +2186,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -2154,7 +2196,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

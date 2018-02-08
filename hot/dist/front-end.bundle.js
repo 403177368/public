@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/hot/dist/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 27);
+/******/ 	return __webpack_require__(__webpack_require__.s = 28);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -153,14 +153,15 @@ module.exports = window.Vue;
 /* 24 */,
 /* 25 */,
 /* 26 */,
-/* 27 */
+/* 27 */,
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(28);
+module.exports = __webpack_require__(29);
 
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -177,24 +178,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 new _vue2.default({
 	el: '#app',
 	components: {
-		App: __webpack_require__(29)
+		App: __webpack_require__(30)
 	},
 	template: '<app></app>'
 });
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(30)
+__webpack_require__(31)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(31),
+  __webpack_require__(32),
   /* template */
-  __webpack_require__(33),
+  __webpack_require__(34),
   /* scopeId */
   "data-v-5b0221a0",
   /* cssModules */
@@ -205,13 +206,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -277,13 +278,13 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
 	data: function data() {
 		return {
-			items: __webpack_require__(32).default
+			items: __webpack_require__(33).default
 		};
 	}
 };
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -375,7 +376,7 @@ exports.default = [{
 }];
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
