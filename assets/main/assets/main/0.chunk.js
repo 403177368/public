@@ -1664,6 +1664,22 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
   components: {
@@ -1691,7 +1707,6 @@ exports.default = {
   beforeCreate: function beforeCreate() {
     this.$store.complete(['main', 'home'], _home2.default);
   },
-
   mounted: function mounted() {
     this.$store.dispatch('main/home/init');
     this.$store.dispatch('main/home/initWebSocket');
@@ -1703,6 +1718,7 @@ exports.default = {
     // console.log(__webpack_public_path__);
     // console.log(VENDOR);
   },
+
   methods: {
     register: function register(store) {
       store.complete(['main', 'home'], _home2.default);
@@ -3279,54 +3295,45 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col-sm-8"
-  }, [_c('tabbed-panel', {
+  }, [_c('div', {
+    staticClass: "panel panel-default"
+  }, [_c('div', {
+    staticClass: "panel-heading"
+  }, [_vm._v("\n              Showcase\n            ")]), _c('div', {
+    staticClass: "panel-body"
+  }, [_c('a', {
     attrs: {
-      "tabs": ['Bitfinex', 'Okex', 'Binance']
+      "href": "/hot/huge.html"
     }
-  }, [_c('div', {
-    staticClass: "list-group",
+  }, [_vm._v("Huge")]), _c('br'), _c('a', {
     attrs: {
-      "slot": "body_0"
-    },
-    slot: "body_0"
-  }, [_c('div', {
-    staticClass: "list-group-item"
-  }, [_c('strong', [_vm._v("Bitfinex(" + _vm._s(_vm.home.coins.status) + ")")])]), _vm._l((_vm.home.coins.pairs), function(a) {
-    return _c('div', {
-      staticClass: "list-group-item"
-    }, [_c('div', {
-      staticClass: "row"
-    }, [_c('div', {
-      staticClass: "col-md-4"
-    }, [_c('span', {
-      staticClass: "label-"
-    }, [_vm._v(_vm._s(a.key))]), _c('span', {
-      staticClass: "price-",
-      style: ('color: #FF9900;')
-    }, [_vm._v("$" + _vm._s(a.last_price.toFixed(2)))])]), _c('div', {
-      staticClass: "col-md-8"
-    }, [_vm._l((a.percent), function(b) {
-      return _c('span', {
-        staticClass: "percent",
-        style: ('color: ' + (b > 0 ? '#009933' : '#CC0033') + ';')
-      }, [_vm._v(_vm._s(b))])
-    }), _c('span', {
-      staticClass: "sum pull-right",
-      style: ('color: ' + (a.sum > 0 ? '#009933' : '#CC0033') + ';')
-    }, [_vm._v("\n                      " + _vm._s(a.sum) + "%\n                    ")])], 2)])])
-  })], 2), _c('div', {
-    staticClass: "list-group",
+      "href": "/hot/wolf.html"
+    }
+  }, [_vm._v("Wolf")]), _c('br'), _c('a', {
     attrs: {
-      "slot": "body_1"
-    },
-    slot: "body_1"
-  }, [_c('div', {
-    staticClass: "list-group-item"
-  }, [_c('strong', [_vm._v("Okex")])]), _vm._l((_vm.home.okex.pairs), function(a) {
-    return _c('div', {
-      staticClass: "list-group-item"
-    }, [_c('span', [_vm._v(_vm._s(a.key))]), _c('span', [_vm._v("$" + _vm._s(a.last_price.toFixed(2)))])])
-  })], 2)]), _c('tabbed-panel', {
+      "href": "/hot/six_anniversary.html"
+    }
+  }, [_vm._v("six_anniversary")]), _c('br'), _c('a', {
+    attrs: {
+      "href": "/hot/new_year.html"
+    }
+  }, [_vm._v("new_year")]), _c('br'), _c('a', {
+    attrs: {
+      "href": "//ptsolomo.reader.qq.com/book_res/event/act170201/adr/farm.html?tf=1"
+    }
+  }, [_vm._v("冬牧场")]), _c('br'), _c('a', {
+    attrs: {
+      "href": "/canvas/alien_invasion.html"
+    }
+  }, [_vm._v("Alien Invasion")]), _c('br'), _c('a', {
+    attrs: {
+      "href": "/canvas/phaser.html"
+    }
+  }, [_vm._v("Phaser")]), _c('br'), _c('a', {
+    attrs: {
+      "href": "/canvas/three.html"
+    }
+  }, [_vm._v("Three")]), _c('br')])]), _c('tabbed-panel', {
     attrs: {
       "tabs": _vm.home.box.tabs
     }
@@ -3400,7 +3407,54 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "slot": "body_2"
     },
     slot: "body_2"
-  })], 2)], 1), _c('div', {
+  })], 2), _c('tabbed-panel', {
+    attrs: {
+      "tabs": ['Bitfinex', 'Okex', 'Binance']
+    }
+  }, [_c('div', {
+    staticClass: "list-group",
+    attrs: {
+      "slot": "body_0"
+    },
+    slot: "body_0"
+  }, [_c('div', {
+    staticClass: "list-group-item"
+  }, [_c('strong', [_vm._v("Bitfinex(" + _vm._s(_vm.home.coins.status) + ")")])]), _vm._l((_vm.home.coins.pairs), function(a) {
+    return _c('div', {
+      staticClass: "list-group-item"
+    }, [_c('div', {
+      staticClass: "row"
+    }, [_c('div', {
+      staticClass: "col-md-4"
+    }, [_c('span', {
+      staticClass: "label-"
+    }, [_vm._v(_vm._s(a.key))]), _c('span', {
+      staticClass: "price-",
+      style: ('color: #FF9900;')
+    }, [_vm._v("$" + _vm._s(a.last_price.toFixed(2)))])]), _c('div', {
+      staticClass: "col-md-8"
+    }, [_vm._l((a.percent), function(b) {
+      return _c('span', {
+        staticClass: "percent",
+        style: ('color: ' + (b > 0 ? '#009933' : '#CC0033') + ';')
+      }, [_vm._v(_vm._s(b))])
+    }), _c('span', {
+      staticClass: "sum pull-right",
+      style: ('color: ' + (a.sum > 0 ? '#009933' : '#CC0033') + ';')
+    }, [_vm._v("\n                      " + _vm._s(a.sum) + "%\n                    ")])], 2)])])
+  })], 2), _c('div', {
+    staticClass: "list-group",
+    attrs: {
+      "slot": "body_1"
+    },
+    slot: "body_1"
+  }, [_c('div', {
+    staticClass: "list-group-item"
+  }, [_c('strong', [_vm._v("Okex")])]), _vm._l((_vm.home.okex.pairs), function(a) {
+    return _c('div', {
+      staticClass: "list-group-item"
+    }, [_c('span', [_vm._v(_vm._s(a.key))]), _c('span', [_vm._v("$" + _vm._s(a.last_price.toFixed(2)))])])
+  })], 2)])], 1), _c('div', {
     staticClass: "col-sm-4"
   }, [_c('div', {
     staticClass: "panel-container"
