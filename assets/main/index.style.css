@@ -248,6 +248,25 @@ a {
   clear: both;
 }
 /* Media Queries */
+/*
+0 767
+*/
+@media (max-width: 767px) {
+  .panel.panel-full-sm {
+    border-left: none;
+    border-right: none;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+}
+@media (max-width: 991px) {
+  .panel.panel-full-md {
+    border-left: none;
+    border-right: none;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+}
 .card {
   margin-left: -15px;
   margin-right: -15px;
@@ -620,6 +639,14 @@ a {
           transform: scale(0.8);
   opacity: 0;
 }
+
+.RouteGraphql {
+  padding: 15px 0;
+}
+
+.AdminDashboard[data-v-6434f0a7] {
+  padding: 15px 0;
+}
 /*@pink: #e91e63;*/
 /*@pink: #e91e63;*/
 .News .pagination {
@@ -857,6 +884,11 @@ a {
   min-height: 30px;
   line-height: 30px;
 }
+
+svg[data-v-e2f22a1c] {
+  box-sizing: border-box;
+  width: 100%;
+}
 /*@pink: #e91e63;*/
 /*@pink: #e91e63;*/
 .RouteCanvas .title_ {
@@ -968,8 +1000,26 @@ a {
   width: 100%;
 }
 
-.RouteGraphql {
-  padding: 15px 0;
+.TableRoute[data-v-304f6735] {
+  margin-left: 200px;
+  overflow: hidden;
+}
+.TableRoute table[data-v-304f6735] {
+  border-collapse: collapse;
+  border: none;
+  border-color: lightgrey;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.TableRoute table thead th[data-v-304f6735] {
+  border-left: none;
+  border-right: none;
+}
+.TableRoute table th[data-v-304f6735] {
+  font-size: 14px;
+  font-weight: normal;
+  width: 200px;
+  height: 30px;
 }
 
 .v-menu[data-v-03f608f6] {
@@ -1153,32 +1203,6 @@ a {
   margin-left: 200px;
   height: 100vh;
   overflow: scroll;
-}
-
-.TableRoute[data-v-304f6735] {
-  margin-left: 200px;
-  overflow: hidden;
-}
-.TableRoute table[data-v-304f6735] {
-  border-collapse: collapse;
-  border: none;
-  border-color: lightgrey;
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-.TableRoute table thead th[data-v-304f6735] {
-  border-left: none;
-  border-right: none;
-}
-.TableRoute table th[data-v-304f6735] {
-  font-size: 14px;
-  font-weight: normal;
-  width: 200px;
-  height: 30px;
-}
-
-.AdminDashboard[data-v-6434f0a7] {
-  padding: 15px 0;
 }
 
 .RouteLowdb {

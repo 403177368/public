@@ -1,13 +1,36 @@
 webpackJsonp([7],{
 
-/***/ 127:
+/***/ 131:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(226)
+
+var Component = __webpack_require__(14)(
+  /* script */
+  __webpack_require__(227),
+  /* template */
+  __webpack_require__(229),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 226:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 128:
+/***/ 227:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17,7 +40,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(129);
+var _index = __webpack_require__(228);
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -92,7 +115,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 129:
+/***/ 228:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101,6 +124,13 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _promise = __webpack_require__(49);
+
+var _promise2 = _interopRequireDefault(_promise);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 exports.default = {
   namespaced: true,
   state: {
@@ -110,7 +140,7 @@ exports.default = {
     fetch: function fetch(_ref) {
       var state = _ref.state;
 
-      return new Promise(function (resolve, reject) {
+      return new _promise2.default(function (resolve, reject) {
         state.fetched = true;
         resolve();
       });
@@ -120,7 +150,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 130:
+/***/ 229:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -142,29 +172,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "navbar-brand"
   }, [_vm._v("\n        Brand\n      ")])])])
 }]}
-
-/***/ }),
-
-/***/ 46:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(127)
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(128),
-  /* template */
-  __webpack_require__(130),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
 
 /***/ })
 

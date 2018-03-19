@@ -1,13 +1,36 @@
 webpackJsonp([8],{
 
-/***/ 121:
+/***/ 129:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(220)
+
+var Component = __webpack_require__(14)(
+  /* script */
+  __webpack_require__(221),
+  /* template */
+  __webpack_require__(222),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 220:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 122:
+/***/ 221:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17,7 +40,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+var _toConsumableArray2 = __webpack_require__(50);
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //
 //
@@ -175,7 +202,7 @@ exports.default = {
       _this.post.author = res.data.data.author;
       _this.post.create_at = res.data.data.create_at;
       _this.post.comments.length = 0;
-      (_post$comments = _this.post.comments).push.apply(_post$comments, _toConsumableArray(res.data.data.replies.slice()));
+      (_post$comments = _this.post.comments).push.apply(_post$comments, (0, _toConsumableArray3.default)(res.data.data.replies.slice()));
       console.log(_this.post);
     }).catch(function (err) {
       // this.post.title = 'A Post';
@@ -196,7 +223,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 123:
+/***/ 222:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -286,29 +313,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card-item text-center"
   }, [_vm._v("\n                No comments.\n              ")])], 2)])])])])])
 },staticRenderFns: []}
-
-/***/ }),
-
-/***/ 44:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(121)
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(122),
-  /* template */
-  __webpack_require__(123),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
 
 /***/ })
 

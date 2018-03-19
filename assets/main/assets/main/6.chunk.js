@@ -1,13 +1,36 @@
 webpackJsonp([6],{
 
-/***/ 103:
+/***/ 125:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(202)
+
+var Component = __webpack_require__(14)(
+  /* script */
+  __webpack_require__(203),
+  /* template */
+  __webpack_require__(209),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 202:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 104:
+/***/ 203:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17,7 +40,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Canvas = __webpack_require__(105);
+var _Canvas = __webpack_require__(204);
 
 var _Canvas2 = _interopRequireDefault(_Canvas);
 
@@ -25,7 +48,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = {
   components: {
-    matrix: __webpack_require__(106)
+    matrix: __webpack_require__(205)
   },
   data: function data() {
     return {
@@ -133,7 +156,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 105:
+/***/ 204:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -143,13 +166,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _axios = __webpack_require__(1);
+var _toConsumableArray2 = __webpack_require__(50);
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
+var _axios = __webpack_require__(15);
 
 var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 exports.default = {
   namespaced: true,
@@ -191,25 +216,25 @@ exports.default = {
       var _state$items;
 
       state.items.length = 0;
-      (_state$items = state.items).push.apply(_state$items, _toConsumableArray(arr));
+      (_state$items = state.items).push.apply(_state$items, (0, _toConsumableArray3.default)(arr));
     }
   }
 };
 
 /***/ }),
 
-/***/ 106:
+/***/ 205:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(107)
+__webpack_require__(206)
 
-var Component = __webpack_require__(0)(
+var Component = __webpack_require__(14)(
   /* script */
-  __webpack_require__(108),
+  __webpack_require__(207),
   /* template */
-  __webpack_require__(109),
+  __webpack_require__(208),
   /* scopeId */
   null,
   /* cssModules */
@@ -221,14 +246,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 107:
+/***/ 206:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 108:
+/***/ 207:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -353,7 +378,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 109:
+/***/ 208:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -367,7 +392,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 110:
+/***/ 209:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -386,7 +411,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "col-sm-4"
   }, [_c('div', {
-    staticClass: "panel panel-default"
+    staticClass: "panel panel-default panel-full-md"
   }, [_c('div', {
     staticClass: "panel-heading"
   }, [_vm._v("\n              Canvas\n            ")]), _c('div', {
@@ -419,29 +444,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._v(_vm._s(a.name))])])
   }))])])])])], 1)])
 },staticRenderFns: []}
-
-/***/ }),
-
-/***/ 40:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(103)
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(104),
-  /* template */
-  __webpack_require__(110),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
 
 /***/ })
 
