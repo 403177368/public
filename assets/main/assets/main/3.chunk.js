@@ -1,19 +1,19 @@
 webpackJsonp([3],{
 
-/***/ 132:
+/***/ 127:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(230)
+__webpack_require__(214)
 
 var Component = __webpack_require__(14)(
   /* script */
-  __webpack_require__(231),
+  __webpack_require__(215),
   /* template */
-  __webpack_require__(233),
+  __webpack_require__(216),
   /* scopeId */
-  "data-v-8275c764",
+  null,
   /* cssModules */
   null
 )
@@ -23,20 +23,20 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 139:
+/***/ 131:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(285)
+__webpack_require__(226)
 
 var Component = __webpack_require__(14)(
   /* script */
-  __webpack_require__(286),
+  __webpack_require__(227),
   /* template */
-  __webpack_require__(287),
+  __webpack_require__(229),
   /* scopeId */
-  "data-v-304f6735",
+  null,
   /* cssModules */
   null
 )
@@ -46,14 +46,165 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 230:
+/***/ 214:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 231:
+/***/ 215:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  computed: {
+    post: function post() {
+      return this.$store.state.main.post;
+    }
+  },
+  watch: {
+    '$store.state.main.post': function $storeStateMainPost(nv) {}
+  },
+  mounted: function mounted() {
+    var id = this.$route.params.id;
+
+    var state_id = this.$store.state.main.post.id;
+    if (state_id === null || state_id !== id) {
+      this.$store.dispatch('main/post/fetchPost', { id: id });
+    }
+  },
+  methods: {
+    preFetch: function preFetch(store, router) {
+      // console.log(router.history.current.params.id);
+      return store.dispatch('main/post/fetchPost', { id: router.history.current.params.id });
+    }
+  }
+};
+
+/***/ }),
+
+/***/ 216:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('transition', {
+    attrs: {
+      "name": "fade-in"
+    }
+  }, [_c('div', {
+    ref: "Post",
+    staticClass: "Post"
+  }, [_c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.post.state === 'pending'),
+      expression: "post.state==='pending'"
+    }]
+  }, [_vm._v("loading...")]), _c('div', {
+    staticClass: "container"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-sm-8 col-sm-offset-2"
+  }, [_c('div', {
+    staticClass: "panel panel-full-sm"
+  }, [_c('div', {
+    ref: "post_main",
+    staticClass: "panel-body",
+    domProps: {
+      "innerHTML": _vm._s(_vm.post.html)
+    }
+  })])])])])])])
+},staticRenderFns: []}
+
+/***/ }),
+
+/***/ 226:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 227:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63,25 +214,36 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(232);
+var _index = __webpack_require__(228);
 
 var _index2 = _interopRequireDefault(_index);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  components: {},
-  computed: {},
+  components: {
+    // Slider: require('./Slider.vue')
+  },
+  computed: {
+    items: function items() {
+      return this.$store.state.admin.items.items;
+    }
+  },
   beforeCreate: function beforeCreate() {
-    this.$store.complete(['mall', 'cart'], _index2.default);
+    this.$store.complete(['mall'], _index2.default);
+    console.log(this.$store);
+  },
+  mounted: function mounted() {
+    this.$store.dispatch('admin/items/changeDB', '/sqlite');
+    this.$store.dispatch('admin/items/fetchItems');
   },
 
   methods: {
     register: function register(store) {
-      store.complete(['mall', 'cart'], _index2.default);
+      store.complete(['mall'], _index2.default);
     },
     preFetch: function preFetch(store) {
-      return store.dispatch('mall/cart/fetch');
+      return store.dispatch('mall/fetch');
     }
   }
 }; //
@@ -92,10 +254,42 @@ exports.default = {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 
-/***/ 232:
+/***/ 228:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -130,99 +324,27 @@ exports.default = {
 
 /***/ }),
 
-/***/ 233:
+/***/ 229:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "RouteMallCart"
-  })
-},staticRenderFns: []}
-
-/***/ }),
-
-/***/ 285:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 286:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {};
-
-/***/ }),
-
-/***/ 287:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
+    staticClass: "RouteMall"
+  }, [_vm._m(0), _c('router-view'), _c('div', {
+    staticClass: "container"
+  }, [_c('div', {
+    staticClass: "form-group"
+  }, [_c('v-slider')], 1), _c('div', {
+    staticClass: "form-group"
+  }, [_c('v-calender')], 1)])], 1)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "TableRoute"
-  }, [_c('table', {
-    attrs: {
-      "border": "1"
-    }
-  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("ID")]), _c('th', [_vm._v("Name")]), _c('th', [_vm._v("Price")])])]), _c('tbody', [_c('tr', [_c('th', [_vm._v("0001")]), _c('th', [_vm._v("iPhone 7")]), _c('th', [_vm._v("6000")])])])])])
+    staticClass: "navbar"
+  }, [_c('div', {
+    staticClass: "navbar-header"
+  }, [_c('div', {
+    staticClass: "navbar-brand"
+  }, [_vm._v("\n        Brand\n      ")])])])
 }]}
 
 /***/ })

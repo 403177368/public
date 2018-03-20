@@ -1,19 +1,19 @@
 webpackJsonp([4],{
 
-/***/ 127:
+/***/ 132:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(214)
+__webpack_require__(230)
 
 var Component = __webpack_require__(14)(
   /* script */
-  __webpack_require__(215),
+  __webpack_require__(231),
   /* template */
-  __webpack_require__(216),
+  __webpack_require__(233),
   /* scopeId */
-  null,
+  "data-v-8275c764",
   /* cssModules */
   null
 )
@@ -23,20 +23,20 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 136:
+/***/ 139:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(265)
+__webpack_require__(285)
 
 var Component = __webpack_require__(14)(
   /* script */
-  __webpack_require__(266),
+  __webpack_require__(286),
   /* template */
-  __webpack_require__(267),
+  __webpack_require__(287),
   /* scopeId */
-  "data-v-a67932b0",
+  "data-v-304f6735",
   /* cssModules */
   null
 )
@@ -46,14 +46,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 214:
+/***/ 230:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 215:
+/***/ 231:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62,149 +62,93 @@ module.exports = Component.exports
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+var _index = __webpack_require__(232);
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  computed: {
-    post: function post() {
-      return this.$store.state.main.post;
-    }
+  components: {},
+  computed: {},
+  beforeCreate: function beforeCreate() {
+    this.$store.complete(['mall', 'cart'], _index2.default);
   },
-  watch: {
-    '$store.state.main.post': function $storeStateMainPost(nv) {}
-  },
-  mounted: function mounted() {
-    var id = this.$route.params.id;
 
-    var state_id = this.$store.state.main.post.id;
-    if (state_id === null || state_id !== id) {
-      this.$store.dispatch('main/post/fetchPost', { id: id });
-    }
-  },
   methods: {
-    preFetch: function preFetch(store, router) {
-      // console.log(router.history.current.params.id);
-      return store.dispatch('main/post/fetchPost', { id: router.history.current.params.id });
+    register: function register(store) {
+      store.complete(['mall', 'cart'], _index2.default);
+    },
+    preFetch: function preFetch(store) {
+      return store.dispatch('mall/cart/fetch');
+    }
+  }
+}; //
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+
+/***/ 232:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _promise = __webpack_require__(49);
+
+var _promise2 = _interopRequireDefault(_promise);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  namespaced: true,
+  state: {
+    fetched: false
+  },
+  actions: {
+    fetch: function fetch(_ref) {
+      var state = _ref.state;
+
+      return new _promise2.default(function (resolve, reject) {
+        state.fetched = true;
+        resolve();
+      });
     }
   }
 };
 
 /***/ }),
 
-/***/ 216:
+/***/ 233:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('transition', {
-    attrs: {
-      "name": "fade-in"
-    }
-  }, [_c('div', {
-    ref: "Post",
-    staticClass: "Post"
-  }, [_c('span', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.post.state === 'pending'),
-      expression: "post.state==='pending'"
-    }]
-  }, [_vm._v("loading...")]), _c('div', {
-    staticClass: "container"
-  }, [_c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col-sm-8 col-sm-offset-2"
-  }, [_c('div', {
-    staticClass: "panel panel-full-sm"
-  }, [_c('div', {
-    ref: "post_main",
-    staticClass: "panel-body",
-    domProps: {
-      "innerHTML": _vm._s(_vm.post.html)
-    }
-  })])])])])])])
+  return _c('div', {
+    staticClass: "RouteMallCart"
+  })
 },staticRenderFns: []}
 
 /***/ }),
 
-/***/ 265:
+/***/ 285:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 266:
+/***/ 286:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -246,66 +190,39 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-
-exports.default = {
-  data: function data() {
-    return {
-      list: []
-    };
-  },
-
-  components: {},
-  beforeCreate: function beforeCreate() {},
-  created: function created() {},
-  mounted: function mounted() {
-    var _this = this;
-
-    axios({
-      url: '/api/sqlite/deployments',
-      // this is essential cause a fetch request is without cookie by default
-      credentials: 'include',
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      mode: 'cors'
-    }).then(function (res) {
-      console.log(res);
-      _this.list.length = 0;
-      _this.list.push(res.data.data.items);
-    });
-  },
-
-  computed: {},
-  methods: {}
-};
+exports.default = {};
 
 /***/ }),
 
-/***/ 267:
+/***/ 287:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "AdminDeployment"
-  }, [_c('div', {
-    staticClass: "container-fluid"
-  }, [_vm._m(0), _vm._m(1), _c('table', {
-    staticClass: "table table-bordered"
-  }, [_c('thead', _vm._l((_vm.list), function(a) {
-    return _c('tr', [_c('td', [_vm._v(_vm._s(a.createdAt))])])
-  }))])])])
+  return _vm._m(0)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('ul', {
-    staticClass: "breadcrumb"
-  }, [_c('li', [_c('a', [_vm._v("Deployment")])])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "form-group"
-  }, [_c('div', {
-    staticClass: "btn btn-primary"
-  }, [_vm._v("\n        Deploy\n      ")])])
+    staticClass: "TableRoute"
+  }, [_c('table', {
+    attrs: {
+      "border": "1"
+    }
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("ID")]), _c('th', [_vm._v("Name")]), _c('th', [_vm._v("Price")])])]), _c('tbody', [_c('tr', [_c('th', [_vm._v("0001")]), _c('th', [_vm._v("iPhone 7")]), _c('th', [_vm._v("6000")])])])])])
 }]}
 
 /***/ })

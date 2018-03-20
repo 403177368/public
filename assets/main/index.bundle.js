@@ -505,7 +505,7 @@ var routes = [{
   }, {
     path: 'post/:id',
     component: function component() {
-      return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 127));
+      return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 127));
     }
   }, {
     path: 'signin',
@@ -515,7 +515,7 @@ var routes = [{
   }, {
     path: 'cnode_post/:id',
     component: function component() {
-      return __webpack_require__.e/* import() */(8).then(__webpack_require__.bind(null, 129));
+      return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 129));
     }
   }]
 
@@ -530,12 +530,12 @@ var routes = [{
 
   path: '/mall',
   component: function component() {
-    return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 131));
+    return __webpack_require__.e/* import() */(3/* limit */).then(__webpack_require__.bind(null, 131));
   },
   children: [{
     path: 'cart',
     component: function component() {
-      return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 132));
+      return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 132));
     }
   }]
 
@@ -559,7 +559,7 @@ var routes = [{
   }, {
     path: 'deployment',
     component: function component() {
-      return __webpack_require__.e/* import() */(4/* limit */).then(__webpack_require__.bind(null, 136));
+      return __webpack_require__.e/* import() */(8).then(__webpack_require__.bind(null, 136));
     }
   }, {
     path: 'lowdb',
@@ -575,7 +575,7 @@ var routes = [{
   }, {
     path: 'tables',
     component: function component() {
-      return __webpack_require__.e/* import() */(3/* limit */).then(__webpack_require__.bind(null, 139));
+      return __webpack_require__.e/* import() */(4/* limit */).then(__webpack_require__.bind(null, 139));
     }
   }, {
     path: 'graphql',

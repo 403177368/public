@@ -959,8 +959,11 @@ svg[data-v-e2f22a1c] {
 }
 }
 
-.AdminDeployment[data-v-a67932b0] {
-  padding: 15px 0;
+.RouteMall .item {
+  display: inline-block;
+}
+.RouteMall img {
+  width: 100%;
 }
 /*@pink: #e91e63;*/
 .RouteCnodePost .post-- img {
@@ -991,13 +994,6 @@ svg[data-v-e2f22a1c] {
 }
 .RouteCnodePost .comments .card-item .details span {
   margin-right: 15px;
-}
-
-.RouteMall .item {
-  display: inline-block;
-}
-.RouteMall img {
-  width: 100%;
 }
 
 .TableRoute[data-v-304f6735] {
@@ -1203,6 +1199,10 @@ svg[data-v-e2f22a1c] {
   margin-left: 200px;
   height: 100vh;
   overflow: scroll;
+}
+
+.AdminDeployment[data-v-a67932b0] {
+  padding: 15px 0;
 }
 
 .RouteLowdb {

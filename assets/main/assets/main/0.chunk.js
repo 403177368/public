@@ -1666,6 +1666,7 @@ exports.default = {
   namespaced: true,
   state: {
     inited: false,
+    status: '',
     items: [],
     page: 1
   },
@@ -1700,6 +1701,7 @@ exports.default = {
       var state = _ref2.state;
       var page = _ref3.page;
 
+      state.status = 'loading';
       return (0, _axios2.default)({
         url: '//cnodejs.org/api/v1/topics?page=' + page + '&limit=20',
         // this is essential cause a fetch request is without cookie by default
@@ -1712,13 +1714,17 @@ exports.default = {
       }).then(function (res) {
         var _state$items;
 
+        // var el = document.querySelector('#container-1996');
+        // window.scroll(0, el.offsetTop);
         state.items.length = 0;
         (_state$items = state.items).push.apply(_state$items, (0, _toConsumableArray3.default)(res.data.data));
         state.inited = true;
         state.page = page;
+        state.status = 'success';
       }).catch(function (err) {
         var _state$items2;
 
+        state.status = 'error';
         state.items.length = 0;
         (_state$items2 = state.items).push.apply(_state$items2, [{
           author: {}
@@ -3281,6 +3287,14 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
   data: function data() {
@@ -3307,9 +3321,20 @@ exports.default = {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('ul', {
-    staticClass: "News list-group"
-  }, [_vm._l((_vm.news.items), function(a) {
+    staticClass: "News list-group",
+    attrs: {
+      "id": "container-1996"
+    }
+  }, [(_vm.news.status === 'loading') ? _c('li', {
+    staticClass: "list-group-item text-center"
+  }, [_vm._v("\n        Loading...\n      ")]) : _vm._e(), _vm._l((_vm.news.items), function(a) {
     return _c('li', {
+      directives: [{
+        name: "show",
+        rawName: "v-show",
+        value: (_vm.news.status === 'success'),
+        expression: " news.status === 'success' "
+      }],
       staticClass: "list-group-item"
     }, [_c('div', {
       staticClass: "left-part pull-left"
