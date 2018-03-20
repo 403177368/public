@@ -79,7 +79,7 @@ exports.default = {
   methods: {
     deploy: function deploy() {
       (0, _axios2.default)({
-        url: '/admin/deploy',
+        url: '/api/admin/deploy',
         // this is essential cause a fetch request is without cookie by default
         credentials: 'include',
         method: 'GET',
@@ -91,7 +91,7 @@ exports.default = {
     },
     reload: function reload() {
       (0, _axios2.default)({
-        url: '/admin/reload',
+        url: '/api/admin/reload',
         // this is essential cause a fetch request is without cookie by default
         credentials: 'include',
         method: 'GET',
