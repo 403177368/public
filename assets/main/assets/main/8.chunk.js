@@ -90,16 +90,17 @@ exports.default = {
       }).then(function (res) {});
     },
     reload: function reload() {
-      (0, _axios2.default)({
-        url: '/api/admin/reload',
-        // this is essential cause a fetch request is without cookie by default
-        credentials: 'include',
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        mode: 'cors'
-      }).then(function (res) {});
+      // axios({
+      //   url: '/api/admin/reload',
+      //   // this is essential cause a fetch request is without cookie by default
+      //   credentials: 'include',
+      //   method: 'GET',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   mode: 'cors',
+      // }).then(res => {
+      // });
     }
   }
 }; //
