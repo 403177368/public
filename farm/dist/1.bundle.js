@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 100:
+/***/ 220:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11,43 +11,58 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.ShoppingCart = undefined;
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _stringify = __webpack_require__(37);
 
-__webpack_require__(103);
+var _stringify2 = _interopRequireDefault(_stringify);
 
-var _Navbar = __webpack_require__(7);
+var _getPrototypeOf = __webpack_require__(2);
 
-var _config = __webpack_require__(102);
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(0);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(1);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(3);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = __webpack_require__(4);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+__webpack_require__(223);
+
+var _Navbar = __webpack_require__(30);
+
+var _config = __webpack_require__(222);
 
 var _config2 = _interopRequireDefault(_config);
 
-var _index = __webpack_require__(19);
+var _index = __webpack_require__(85);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _store = __webpack_require__(11);
+var _store = __webpack_require__(54);
 
 var _store2 = _interopRequireDefault(_store);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 var ShoppingCart = function (_React$Component) {
-  _inherits(ShoppingCart, _React$Component);
+  (0, _inherits3.default)(ShoppingCart, _React$Component);
 
   function ShoppingCart(props) {
-    _classCallCheck(this, ShoppingCart);
-
-    return _possibleConstructorReturn(this, (ShoppingCart.__proto__ || Object.getPrototypeOf(ShoppingCart)).call(this, props));
+    (0, _classCallCheck3.default)(this, ShoppingCart);
+    return (0, _possibleConstructorReturn3.default)(this, (ShoppingCart.__proto__ || (0, _getPrototypeOf2.default)(ShoppingCart)).call(this, props));
     // console.log('<ShoppingCart/> constructing');
   }
 
-  _createClass(ShoppingCart, [{
+  (0, _createClass3.default)(ShoppingCart, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
       _store2.default.ensure(['shoppingCart'], _index2.default);
@@ -64,7 +79,7 @@ var ShoppingCart = function (_React$Component) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      sessionStorage.shoppingCart = JSON.stringify(this.props.items);
+      sessionStorage.shoppingCart = (0, _stringify2.default)(this.props.items);
     }
     // computed
 
@@ -266,7 +281,6 @@ var ShoppingCart = function (_React$Component) {
       );
     }
   }]);
-
   return ShoppingCart;
 }(React.Component);
 
@@ -286,7 +300,7 @@ exports.ShoppingCart = ShoppingCart;
 
 /***/ }),
 
-/***/ 102:
+/***/ 222:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -306,16 +320,16 @@ exports.default = dir;
 
 /***/ }),
 
-/***/ 103:
+/***/ 223:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(104);
+var content = __webpack_require__(224);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(1)(content, {});
+var update = __webpack_require__(7)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -333,10 +347,10 @@ if(false) {
 
 /***/ }),
 
-/***/ 104:
+/***/ 224:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(0)();
+exports = module.exports = __webpack_require__(6)();
 // imports
 
 
