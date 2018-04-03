@@ -3649,6 +3649,7 @@ var ShoppingCart = function ShoppingCart(nextState, cb) {
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 
+
 var MyApp = function MyApp() {
   return React.createElement(
     _reactRedux.Provider,
@@ -5228,6 +5229,7 @@ function createStore(options) {
   // store.dispatch.ensure = registerModule;
   return store;
 }
+
 
 var Revuex = {
   createStore: createStore
