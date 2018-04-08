@@ -916,7 +916,9 @@ var mutators = {
     // 	state.page = 'ready';
 
     // }
-    state.page = 'ready';
+    window.addEventListener('load', function () {
+      state.page = 'ready';
+    });
   },
   CLOSE_WINDOW: function CLOSE_WINDOW(_ref2, action) {
     var state = _ref2.state,
