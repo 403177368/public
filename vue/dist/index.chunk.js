@@ -2263,15 +2263,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 var map = {
 	"./3dCube.vue": [
 		60,
-		5
+		0
 	],
 	"./BookBlock.vue": [
 		61,
-		4
+		5
 	],
 	"./BookCalender.vue": [
 		62,
-		4
+		5
 	],
 	"./ButtonRaised.vue": [
 		63,
@@ -2291,7 +2291,7 @@ var map = {
 	],
 	"./CardsTwo.vue": [
 		67,
-		0
+		4
 	],
 	"./Carousel.vue": [
 		68,
@@ -2339,7 +2339,7 @@ var map = {
 	],
 	"./Scope - 副本.vue": [
 		79,
-		5
+		4
 	],
 	"./StackBoth.vue": [
 		80,
@@ -2363,11 +2363,11 @@ var map = {
 	],
 	"./Wave.vue": [
 		85,
-		5
+		4
 	],
 	"./swiper.vue": [
 		86,
-		4
+		5
 	]
 };
 function webpackAsyncContext(req) {

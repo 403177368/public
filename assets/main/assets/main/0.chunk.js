@@ -1539,6 +1539,25 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
   name: 'main-home',
@@ -2508,16 +2527,38 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "panel-heading"
   }, [_vm._v("\n              Showcase\n            ")]), _c('div', {
+    staticClass: "list-group"
+  }, [_c('div', {
+    staticClass: "list-group-item"
+  }, [_c('a', {
+    attrs: {
+      "href": "/canvas/alien_invasion.html"
+    }
+  }, [_c('strong', [_vm._v("Alien Invasion")])]), _c('br'), _vm._v("\n                A space shooter game written in TypeScript."), _c('br'), _c('a', {
+    attrs: {
+      "href": "//github.com/403177368/all/tree/master/src/canvas/src/pages/alien_invasion"
+    }
+  }, [_vm._v("Source Code")])]), _c('div', {
+    staticClass: "list-group-item"
+  }, [_c('a', {
+    attrs: {
+      "href": "/canvas/alien_invasion.html"
+    }
+  }, [_c('strong', [_vm._v("Alien Invasion")])]), _c('br'), _vm._v("\n                A space shooter game written in TypeScript."), _c('br'), _c('a', {
+    attrs: {
+      "href": "//github.com/403177368/all/tree/master/src/canvas/src/pages/alien_invasion"
+    }
+  }, [_vm._v("Source Code")])])])]), _c('div', {
+    staticClass: "panel panel-default"
+  }, [_c('div', {
+    staticClass: "panel-heading"
+  }, [_vm._v("\n              Showcase\n            ")]), _c('div', {
     staticClass: "panel-body"
   }, [_c('router-link', {
     attrs: {
       "to": "/admin"
     }
   }, [_vm._v("admin")]), _c('br'), _c('router-link', {
-    attrs: {
-      "to": "/binance"
-    }
-  }, [_vm._v("binance")]), _c('br'), _c('router-link', {
     attrs: {
       "to": "/d3"
     }
@@ -2627,7 +2668,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "slot": "body_2"
     },
     slot: "body_2"
-  })], 2), _c('tabbed-panel', {
+  })], 2), (false) ? _c('tabbed-panel', {
     attrs: {
       "tabs": ['Bitfinex', 'Okex', 'Binance']
     }
@@ -2674,7 +2715,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     return _c('div', {
       staticClass: "list-group-item"
     }, [_c('span', [_vm._v(_vm._s(a.key))]), _c('span', [_vm._v("$" + _vm._s(a.last_price.toFixed(2)))])])
-  })], 2)])], 1), _c('div', {
+  })], 2)]) : _vm._e()], 1), _c('div', {
     staticClass: "col-sm-4"
   }, [_c('div', {
     staticClass: "panel-container"

@@ -1,225 +1,5 @@
 webpackJsonp([0],{
 
-/***/ 106:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 107:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-	props: ['act'],
-	data: function data() {
-		return {
-			papers: [{
-				status: ''
-			}, {
-				status: ''
-			}],
-
-			moveCount: 0,
-			canScroll: true,
-
-			X0: null,
-			X1: null,
-			Y0: null,
-			Y1: null
-		};
-	},
-	mounted: function mounted() {
-		var self = this;
-		self.papers[0].status = 'next';
-		self.papers[1].status = 'first';
-	},
-	methods: {
-		touchstart: function touchstart(e) {
-			this.moveCount = 0;
-			this.canScroll = true;
-			this.X0 = e.changedTouches[0].pageX;
-			this.Y0 = e.changedTouches[0].pageY;
-			console.log(this.X0);
-		},
-		touchmove: function touchmove(e) {
-			this.moveCount++;
-			if (this.moveCount === 1) {
-				this.X1 = e.changedTouches[0].pageX;
-				this.Y1 = e.changedTouches[0].pageY;
-				var dY = this.Y1 - this.Y0;
-				var dX = this.X1 - this.X0;
-				if (Math.abs(dY) > Math.abs(dX)) {
-					this.canScroll = true;
-				} else {
-					this.canScroll = false;
-				}
-			};
-			if (!this.canScroll) {
-				e.preventDefault();
-			}
-		},
-		touchend: function touchend(e) {
-			if (!this.canScroll) {
-				this.X1 = e.changedTouches[0].pageX;
-				var dX = this.X1 - this.X0;
-				if (dX < 0) {
-					this.switch__();
-				}
-			}
-		},
-		switch__: function switch__() {
-			if (this.papers[0].status === 'enter') {
-				this.papers[0].status = 'leave';
-				this.papers[1].status = 'enter';
-			} else {
-				this.papers[0].status = 'enter';
-				this.papers[1].status = 'leave';
-			}
-		}
-	}
-};
-
-/***/ }),
-
-/***/ 108:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "CardsTwo",
-    on: {
-      "touchstart": function($event) {
-        _vm.touchstart($event)
-      },
-      "touchmove": function($event) {
-        _vm.touchmove($event)
-      },
-      "touchend": function($event) {
-        _vm.touchend($event)
-      },
-      "touchcancel": function($event) {
-        _vm.touchend($event)
-      }
-    }
-  }, _vm._l((_vm.papers), function(a, i) {
-    return _c('div', {
-      staticClass: "paper__",
-      class: a.status
-    })
-  }))
-},staticRenderFns: []}
-
-/***/ }),
-
 /***/ 124:
 /***/ (function(module, exports) {
 
@@ -936,20 +716,20 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 67:
+/***/ 60:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(106)
+__webpack_require__(88)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(107),
+  __webpack_require__(89),
   /* template */
-  __webpack_require__(108),
+  __webpack_require__(90),
   /* scopeId */
-  "data-v-4f392ae4",
+  "data-v-45db51ab",
   /* cssModules */
   null
 )
@@ -1071,6 +851,198 @@ var Component = __webpack_require__(0)(
 
 module.exports = Component.exports
 
+
+/***/ }),
+
+/***/ 88:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 89:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  data: function data() {
+    return {
+      rotationRate: {
+        alpha: '111'
+      },
+      rotateX: 0,
+      rotateY: 0,
+      recalibrating: false
+    };
+  },
+  created: function created() {
+    var self = this;
+    if (window.DeviceMotionEvent) {
+      window.addEventListener('devicemotion', self.handler.bind(self), false);
+    } else {
+      alert('Sorry, your browser doesn\'t support DeviceMotionEvent.');
+    }
+  },
+  methods: {
+    recalibrate: function recalibrate(e) {
+      var _this = this;
+
+      this.recalibrating = true;
+      this.rotateX = 0;
+      this.rotateY = 0;
+      setTimeout(function () {
+        _this.recalibrating = false;
+      }, 1000);
+    },
+    handler: function handler(e) {
+      if (!this.recalibrating) {
+        this.rotationRate.alpha = e.rotationRate.alpha;
+
+        var nextX = this.rotateX - e.rotationRate.alpha * 3;
+        // if(nextX>=45){
+        //  nextX = 45;
+        // }else if(nextX<=-45){
+        //  nextX = -45;
+        // }
+        this.rotateX = nextX;
+
+        var nextY = this.rotateY + e.rotationRate.beta * 3;
+        // if(nextY>=45){
+        //  nextY = 45;
+        // }else if(nextY<=-45){
+        //  nextY = -45;
+        // }
+        this.rotateY = nextY;
+      }
+    }
+  }
+};
+
+/***/ }),
+
+/***/ 90:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "CubeWhite"
+  }, [_c('div', {
+    staticClass: "space3d"
+  }, [_c('div', {
+    staticClass: "cube",
+    class: _vm.recalibrating ? 'recalibrating' : '',
+    style: ('transform: rotateX(' + _vm.rotateX + 'deg) rotateY(' + _vm.rotateY + 'deg);-webkit-transform:rotateX(' + _vm.rotateX + 'deg) rotateY(' + _vm.rotateY + 'deg);'),
+    on: {
+      "click": _vm.recalibrate
+    }
+  }, [_c('div', {
+    staticClass: "face face-front"
+  }), _c('div', {
+    staticClass: "face face-top"
+  }), _c('div', {
+    staticClass: "face face-bottom"
+  }), _c('div', {
+    staticClass: "face face-left"
+  }), _c('div', {
+    staticClass: "face face-right"
+  }), _c('div', {
+    staticClass: "face face-back"
+  })])])])
+},staticRenderFns: []}
 
 /***/ })
 

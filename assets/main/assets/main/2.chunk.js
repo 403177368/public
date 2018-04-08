@@ -913,7 +913,7 @@ exports.default = {
     },
     theme: {
       options: ['blue', 'zhihu', 'angulur', 'github'],
-      val: 'blue'
+      val: 'zhihu'
     }
   },
   modules: {

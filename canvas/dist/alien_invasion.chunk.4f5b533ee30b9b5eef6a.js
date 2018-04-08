@@ -431,6 +431,7 @@ var ShooterGame = /** @class */ (function (_super) {
         this.maxStage = 2;
         // !!!
         this.player = new Sprite_1.PlayerShip(this);
+        console.log(this.player);
         this.level = new Level(this, level_1, this.stageClear.bind(this));
         board.add(this.player);
         board.add(this.level);
