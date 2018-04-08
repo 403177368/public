@@ -818,6 +818,18 @@ to {
           transform: rotate(-360deg) translate(5px, 5px) scale(0.9);
 }
 
+@-webkit-keyframes cube_spin {
+100% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+}
+}
+@keyframes cube_spin {
+100% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+}
+}
 .CubeWhite[data-v-45db51ab] {
   width: 100%;
   padding: 2rem 0;
@@ -838,6 +850,8 @@ to {
   height: 100%;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
+  -webkit-animation: cube_spin 5s infinite;
+          animation: cube_spin 5s infinite;
 }
 .CubeWhite .space3d .cube.recalibrating[data-v-45db51ab] {
   transition: all 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275);

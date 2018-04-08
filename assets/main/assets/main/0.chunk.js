@@ -1558,6 +1558,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
   name: 'main-home',
@@ -2530,6 +2538,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "list-group"
   }, [_c('div', {
     staticClass: "list-group-item"
+  }, [_vm._v("\n                本站前端使用Vue技术栈搭建，后端使用了Node.js，并使用了服务端渲染。可打开浏览器控制台查看后端返回的HTML。\n              ")]), _c('div', {
+    staticClass: "list-group-item"
   }, [_c('a', {
     attrs: {
       "href": "/canvas/alien_invasion.html"
@@ -2542,11 +2552,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "list-group-item"
   }, [_c('a', {
     attrs: {
-      "href": "/canvas/alien_invasion.html"
+      "href": "/vue/index.html"
     }
-  }, [_c('strong', [_vm._v("Alien Invasion")])]), _c('br'), _vm._v("\n                A space shooter game written in TypeScript."), _c('br'), _c('a', {
+  }, [_c('strong', [_vm._v("Yux动效库")])]), _c('br'), _vm._v("\n                各种动画效果组件。"), _c('br'), _c('a', {
     attrs: {
-      "href": "//github.com/403177368/all/tree/master/src/canvas/src/pages/alien_invasion"
+      "href": "//github.com/403177368/all/tree/master/src/vue"
+    }
+  }, [_vm._v("Source Code")])]), _c('div', {
+    staticClass: "list-group-item"
+  }, [_c('a', {
+    attrs: {
+      "href": "/farm/index.html"
+    }
+  }, [_c('strong', [_vm._v("Mall")])]), _c('br'), _vm._v("\n                一个移动端商城，使用了react技术栈和自己开发的revuex库。"), _c('br'), _c('a', {
+    attrs: {
+      "href": "//github.com/403177368/all/tree/master/src/vue"
     }
   }, [_vm._v("Source Code")])])])]), _c('div', {
     staticClass: "panel panel-default"

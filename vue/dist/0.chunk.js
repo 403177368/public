@@ -957,6 +957,13 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
   data: function data() {
@@ -1025,7 +1032,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "cube",
     class: _vm.recalibrating ? 'recalibrating' : '',
-    style: ('transform: rotateX(' + _vm.rotateX + 'deg) rotateY(' + _vm.rotateY + 'deg);-webkit-transform:rotateX(' + _vm.rotateX + 'deg) rotateY(' + _vm.rotateY + 'deg);'),
+    style: ('color:red;' || 'transform: rotateX(' + _vm.rotateX + 'deg) rotateY(' + _vm.rotateY + 'deg);-webkit-transform:rotateX(' + _vm.rotateX + 'deg) rotateY(' + _vm.rotateY + 'deg);'),
     on: {
       "click": _vm.recalibrate
     }
