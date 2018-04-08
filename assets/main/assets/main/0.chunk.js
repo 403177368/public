@@ -2634,8 +2634,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_c('p', [_vm._v(_vm._s(a.author.name) + " " + _vm._s(a.time))]), _c('div', {
       staticStyle: {
-        "font-size": "20px",
-        "font-weight": "bold"
+        "font-size": "18px"
       }
     }, [_vm._v(_vm._s(a.title))])])
   })), _c('div', {
