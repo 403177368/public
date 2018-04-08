@@ -2636,7 +2636,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticStyle: {
         "font-size": "20px"
       }
-    }, [_c('strong', [_vm._v(_vm._s(a.title))])])])
+    }, [_vm._v(_vm._s(a.title))])])
   })), _c('div', {
     staticClass: "panel-body"
   }, [_c('div', {
