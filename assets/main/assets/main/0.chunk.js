@@ -1566,6 +1566,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
 
 exports.default = {
   name: 'main-home',
@@ -2631,7 +2632,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       attrs: {
         "href": a.href
       }
-    }, [_c('p', [_vm._v(_vm._s(a.author.name) + " " + _vm._s(a.time))]), _c('div', [_c('strong', [_vm._v(_vm._s(a.title))])])])
+    }, [_c('p', [_vm._v(_vm._s(a.author.name) + " " + _vm._s(a.time))]), _c('div', {
+      staticStyle: {
+        "font-size": "20px"
+      }
+    }, [_c('strong', [_vm._v(_vm._s(a.title))])])])
   })), _c('div', {
     staticClass: "panel-body"
   }, [_c('div', {
