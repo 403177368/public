@@ -1,17 +1,17 @@
 webpackJsonp([8],{
 
-/***/ 124:
+/***/ 133:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(208)
+__webpack_require__(254)
 
 var Component = __webpack_require__(14)(
   /* script */
-  __webpack_require__(209),
+  __webpack_require__(255),
   /* template */
-  __webpack_require__(212),
+  __webpack_require__(258),
   /* scopeId */
   "data-v-2fa9fa19",
   /* cssModules */
@@ -23,7 +23,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 145:
+/***/ 147:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33,7 +33,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _toConsumableArray2 = __webpack_require__(50);
+var _toConsumableArray2 = __webpack_require__(51);
 
 var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
@@ -41,7 +41,7 @@ var _promise = __webpack_require__(49);
 
 var _promise2 = _interopRequireDefault(_promise);
 
-var _stringify = __webpack_require__(51);
+var _stringify = __webpack_require__(50);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
@@ -53,7 +53,7 @@ var _axios = __webpack_require__(15);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _binance = __webpack_require__(146);
+var _binance = __webpack_require__(148);
 
 var _binance2 = _interopRequireDefault(_binance);
 
@@ -357,7 +357,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 146:
+/***/ 148:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -367,7 +367,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _stringify = __webpack_require__(51);
+var _stringify = __webpack_require__(50);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
@@ -375,7 +375,7 @@ var _extends2 = __webpack_require__(29);
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _keys = __webpack_require__(147);
+var _keys = __webpack_require__(149);
 
 var _keys2 = _interopRequireDefault(_keys);
 
@@ -804,30 +804,30 @@ exports.default = {
 
 /***/ }),
 
-/***/ 147:
+/***/ 149:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(148), __esModule: true };
+module.exports = { "default": __webpack_require__(150), __esModule: true };
 
 /***/ }),
 
-/***/ 148:
+/***/ 150:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(149);
+__webpack_require__(151);
 module.exports = __webpack_require__(2).Object.keys;
 
 
 /***/ }),
 
-/***/ 149:
+/***/ 151:
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 Object.keys(O)
 var toObject = __webpack_require__(17);
 var $keys = __webpack_require__(30);
 
-__webpack_require__(150)('keys', function () {
+__webpack_require__(152)('keys', function () {
   return function keys(it) {
     return $keys(toObject(it));
   };
@@ -836,7 +836,7 @@ __webpack_require__(150)('keys', function () {
 
 /***/ }),
 
-/***/ 150:
+/***/ 152:
 /***/ (function(module, exports, __webpack_require__) {
 
 // most Object methods by ES6 should accept primitives
@@ -853,14 +853,14 @@ module.exports = function (KEY, exec) {
 
 /***/ }),
 
-/***/ 208:
+/***/ 254:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 209:
+/***/ 255:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -870,11 +870,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _projects = __webpack_require__(210);
+var _projects = __webpack_require__(256);
 
 var _projects2 = _interopRequireDefault(_projects);
 
-var _home = __webpack_require__(145);
+var _home = __webpack_require__(147);
 
 var _home2 = _interopRequireDefault(_home);
 
@@ -1026,7 +1026,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 210:
+/***/ 256:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1036,7 +1036,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _toConsumableArray2 = __webpack_require__(50);
+var _toConsumableArray2 = __webpack_require__(51);
 
 var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
@@ -1061,7 +1061,7 @@ var actions = {
   },
   fetchProjects: function fetchProjects(ctx) {
     return new _promise2.default(function (resolve, reject) {
-      var projects = __webpack_require__(211).default;
+      var projects = __webpack_require__(257).default;
       resolve(projects);
     });
   }
@@ -1085,7 +1085,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 211:
+/***/ 257:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1122,7 +1122,7 @@ exports.default = [{
 
 /***/ }),
 
-/***/ 212:
+/***/ 258:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

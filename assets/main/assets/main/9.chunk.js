@@ -1,17 +1,17 @@
 webpackJsonp([9],{
 
-/***/ 125:
+/***/ 134:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(213)
+__webpack_require__(259)
 
 var Component = __webpack_require__(14)(
   /* script */
-  __webpack_require__(214),
+  __webpack_require__(260),
   /* template */
-  __webpack_require__(220),
+  __webpack_require__(266),
   /* scopeId */
   null,
   /* cssModules */
@@ -23,14 +23,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 213:
+/***/ 259:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 214:
+/***/ 260:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40,7 +40,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Canvas = __webpack_require__(215);
+var _Canvas = __webpack_require__(261);
 
 var _Canvas2 = _interopRequireDefault(_Canvas);
 
@@ -48,7 +48,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = {
   components: {
-    matrix: __webpack_require__(216)
+    matrix: __webpack_require__(262)
   },
   data: function data() {
     return {
@@ -156,7 +156,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 215:
+/***/ 261:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -166,7 +166,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _toConsumableArray2 = __webpack_require__(50);
+var _toConsumableArray2 = __webpack_require__(51);
 
 var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
@@ -223,18 +223,18 @@ exports.default = {
 
 /***/ }),
 
-/***/ 216:
+/***/ 262:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(217)
+__webpack_require__(263)
 
 var Component = __webpack_require__(14)(
   /* script */
-  __webpack_require__(218),
+  __webpack_require__(264),
   /* template */
-  __webpack_require__(219),
+  __webpack_require__(265),
   /* scopeId */
   null,
   /* cssModules */
@@ -246,14 +246,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 217:
+/***/ 263:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 218:
+/***/ 264:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -378,7 +378,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 219:
+/***/ 265:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -392,7 +392,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 220:
+/***/ 266:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

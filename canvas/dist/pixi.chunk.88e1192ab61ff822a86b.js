@@ -219,7 +219,7 @@ function canMove(app, sprite) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -426,7 +426,7 @@ exports.Plane = Plane;
 
 var _Sprite = __webpack_require__(0);
 
-var _Missile = __webpack_require__(2);
+var _Missile = __webpack_require__(3);
 
 function Plane(options) {
   var _this = this;
@@ -519,7 +519,7 @@ exports.AnimatedPlane = AnimatedPlane;
 
 var _Sprite = __webpack_require__(0);
 
-var _Missile = __webpack_require__(2);
+var _Missile = __webpack_require__(3);
 
 function AnimatedPlane(options) {
   var self = this;

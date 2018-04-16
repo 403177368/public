@@ -1,17 +1,17 @@
 webpackJsonp([2],{
 
-/***/ 122:
+/***/ 131:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(179)
+__webpack_require__(225)
 
 var Component = __webpack_require__(14)(
   /* script */
-  __webpack_require__(180),
+  __webpack_require__(226),
   /* template */
-  __webpack_require__(192),
+  __webpack_require__(238),
   /* scopeId */
   "data-v-4f860d3b",
   /* cssModules */
@@ -23,15 +23,15 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 141:
+/***/ 143:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(142);
+module.exports = __webpack_require__(144);
 
 
 /***/ }),
 
-/***/ 142:
+/***/ 144:
 /***/ (function(module, exports, __webpack_require__) {
 
 // This method of obtaining a reference to the global object needs to be
@@ -49,7 +49,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(143);
+module.exports = __webpack_require__(145);
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -66,7 +66,7 @@ if (hadRuntime) {
 
 /***/ }),
 
-/***/ 143:
+/***/ 145:
 /***/ (function(module, exports) {
 
 /**
@@ -803,7 +803,7 @@ if (hadRuntime) {
 
 /***/ }),
 
-/***/ 144:
+/***/ 146:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -848,7 +848,7 @@ exports.default = function (fn) {
 
 /***/ }),
 
-/***/ 154:
+/***/ 168:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -858,7 +858,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _regenerator = __webpack_require__(141);
+var _regenerator = __webpack_require__(143);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
@@ -866,7 +866,7 @@ var _promise = __webpack_require__(49);
 
 var _promise2 = _interopRequireDefault(_promise);
 
-var _asyncToGenerator2 = __webpack_require__(144);
+var _asyncToGenerator2 = __webpack_require__(146);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -921,13 +921,13 @@ exports.default = {
     // home: require('./home/home.js').default,
     // blog: require('./blog/blog.js').default,
     // projects: require('./projects/projects.js').default,
-    post: __webpack_require__(155).default,
+    post: __webpack_require__(169).default,
     // Canvas: require('./canvas/Canvas.js').default,
 
     // data
     // posts: require('./posts.js').default,
     // focus: require('./focus.js').default,
-    news: __webpack_require__(156).default
+    news: __webpack_require__(170).default
   },
   actions: {
     init: function init(_ref) {
@@ -977,7 +977,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 155:
+/***/ 169:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1055,7 +1055,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 156:
+/***/ 170:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1065,7 +1065,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _toConsumableArray2 = __webpack_require__(50);
+var _toConsumableArray2 = __webpack_require__(51);
 
 var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
@@ -1162,14 +1162,14 @@ exports.default = {
 
 /***/ }),
 
-/***/ 179:
+/***/ 225:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 180:
+/***/ 226:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1179,7 +1179,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _indexMain = __webpack_require__(154);
+var _indexMain = __webpack_require__(168);
 
 var _indexMain2 = _interopRequireDefault(_indexMain);
 
@@ -1187,10 +1187,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = {
   components: {
-    Navbar: __webpack_require__(181),
-    MyMenu: __webpack_require__(185),
+    Navbar: __webpack_require__(227),
+    MyMenu: __webpack_require__(231),
     // Slider: require('./Slider.vue'),
-    MyFooter: __webpack_require__(189)
+    MyFooter: __webpack_require__(235)
   },
   beforeCreate: function beforeCreate() {
     this.$store.complete(['main'], _indexMain2.default);
@@ -1230,18 +1230,18 @@ exports.default = {
 
 /***/ }),
 
-/***/ 181:
+/***/ 227:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(182)
+__webpack_require__(228)
 
 var Component = __webpack_require__(14)(
   /* script */
-  __webpack_require__(183),
+  __webpack_require__(229),
   /* template */
-  __webpack_require__(184),
+  __webpack_require__(230),
   /* scopeId */
   "data-v-66ff04d4",
   /* cssModules */
@@ -1253,14 +1253,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 182:
+/***/ 228:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 183:
+/***/ 229:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1460,7 +1460,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 184:
+/***/ 230:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1573,18 +1573,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 185:
+/***/ 231:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(186)
+__webpack_require__(232)
 
 var Component = __webpack_require__(14)(
   /* script */
-  __webpack_require__(187),
+  __webpack_require__(233),
   /* template */
-  __webpack_require__(188),
+  __webpack_require__(234),
   /* scopeId */
   "data-v-ae7bca36",
   /* cssModules */
@@ -1596,14 +1596,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 186:
+/***/ 232:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 187:
+/***/ 233:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1673,7 +1673,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 188:
+/***/ 234:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1706,18 +1706,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 189:
+/***/ 235:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(190)
+__webpack_require__(236)
 
 var Component = __webpack_require__(14)(
   /* script */
   null,
   /* template */
-  __webpack_require__(191),
+  __webpack_require__(237),
   /* scopeId */
   "data-v-2dce59a1",
   /* cssModules */
@@ -1729,14 +1729,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 190:
+/***/ 236:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 191:
+/***/ 237:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1747,7 +1747,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 192:
+/***/ 238:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

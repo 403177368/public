@@ -1,17 +1,17 @@
 webpackJsonp([16],{
 
-/***/ 140:
+/***/ 128:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(288)
+__webpack_require__(218)
 
 var Component = __webpack_require__(14)(
   /* script */
-  __webpack_require__(289),
+  __webpack_require__(219),
   /* template */
-  __webpack_require__(290),
+  __webpack_require__(220),
   /* scopeId */
   null,
   /* cssModules */
@@ -23,14 +23,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 288:
+/***/ 218:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 289:
+/***/ 219:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51,24 +51,44 @@ exports.default = {
     // Management: require('../Management.vue')
   },
   mounted: function mounted() {
-    var data = {
-      query: '\n        mutation HaHa(\n          $id: [Int]\n          $brand: [String]\n        ) {\n          items_1: getItems(\n            id: $id\n            brand: $brand\n          ) {\n            id\n            name\n            price\n            brand\n          }\n          items_2: getItems {\n            id\n            name\n            brand\n          }\n        }\n      ',
-      variables: {
-        id: [137, 173],
-        brand: ['CK', 'Apple']
-      }
-    };
-    (0, _axios2.default)({
-      url: '/api/v1',
-      // this is essential cause a fetch request is without cookie by default
-      credentials: 'include',
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      mode: 'cors',
-      data: data
-    }).then(function (res) {}).catch(function (err) {});
+    this.query();
+    this.mutate();
+  },
+
+  methods: {
+    query: function query() {
+      var str = '\n        query {\n          user {\n            items {\n              id\n              name\n            }\n          }\n        }\n      ';
+      (0, _axios2.default)({
+        url: '/api/v1?query=' + str,
+        // this is essential cause a fetch request is without cookie by default
+        credentials: 'include',
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        mode: 'cors'
+      }).then(function (res) {}).catch(function (err) {});
+    },
+    mutate: function mutate() {
+      var data = {
+        query: '\n          mutation HaHa(\n            $id: [Int]\n            $brand: [String]\n          ) {\n            items_1: getItems(\n              id: $id\n              brand: $brand\n            ) {\n              id\n              name\n              price\n              brand\n            }\n            items_2: getItems {\n              id\n              name\n              brand\n            }\n          }\n        ',
+        variables: {
+          id: [137, 173],
+          brand: ['CK', 'Apple']
+        }
+      };
+      (0, _axios2.default)({
+        url: '/api/v1',
+        // this is essential cause a fetch request is without cookie by default
+        credentials: 'include',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        mode: 'cors',
+        data: data
+      }).then(function (res) {}).catch(function (err) {});
+    }
   }
 }; //
 //
@@ -94,7 +114,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 290:
+/***/ 220:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

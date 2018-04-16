@@ -1,15 +1,19 @@
 webpackJsonp([19],{
 
-/***/ 121:
+/***/ 129:
 /***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(221)
 
 var Component = __webpack_require__(14)(
   /* script */
-  null,
+  __webpack_require__(222),
   /* template */
-  __webpack_require__(178),
+  __webpack_require__(223),
   /* scopeId */
-  null,
+  "data-v-d1f1f1b2",
   /* cssModules */
   null
 )
@@ -19,13 +23,114 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 178:
+/***/ 221:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 222:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _stringify = __webpack_require__(50);
+
+var _stringify2 = _interopRequireDefault(_stringify);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  components: {},
+  data: function data() {
+    return {
+      data: ''
+    };
+  },
+
+  computed: {},
+  mounted: function mounted() {},
+  methods: {
+    get: function get(url) {
+      var _this = this;
+
+      this.data = 'Loading...';
+      this.$store.dispatch('get', { url: url }).then(function (res) {
+        _this.data = (0, _stringify2.default)(res, null, 2).replace(/\n/g, '<br/>');
+      });
+    }
+  }
+};
+
+/***/ }),
+
+/***/ 223:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "Route404 text-center"
-  }, [_vm._v("404: This route doesn\\'t exist.")])
+    staticClass: "route-crawler"
+  }, [_c('div', {
+    staticClass: "btn-group btn-group-sm",
+    staticStyle: {
+      "margin-bottom": "20px"
+    }
+  }, [_c('div', {
+    staticClass: "btn btn-default",
+    on: {
+      "click": function($event) {
+        _vm.get('/api/crawler/echojs')
+      }
+    }
+  }, [_vm._v("\n      Echojs\n    ")]), _c('div', {
+    staticClass: "btn btn-default",
+    on: {
+      "click": function($event) {
+        _vm.get('/api/crawler/tieba')
+      }
+    }
+  }, [_vm._v("\n      Tie-ba\n    ")])]), _c('div', {
+    staticClass: "panel panel-default"
+  }, [_c('div', {
+    staticClass: "panel-body",
+    domProps: {
+      "innerHTML": _vm._s(_vm.data)
+    }
+  }, [_vm._v("\n      " + _vm._s(_vm.data) + "\n    ")])])])
 },staticRenderFns: []}
 
 /***/ })
