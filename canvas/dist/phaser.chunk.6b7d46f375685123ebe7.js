@@ -83,6 +83,8 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+var Phaser = window.Phaser;
+
 var App = function () {
   function App() {
     _classCallCheck(this, App);
@@ -302,11 +304,9 @@ var App = function () {
   }, {
     key: 'render',
     value: function render() {
-
       // game.debug.text(game.time.physicsElapsed, 32, 32);
       // game.debug.body(player);
       // game.debug.bodyInfo(player, 16, 24);
-
     }
   }]);
 

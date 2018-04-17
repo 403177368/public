@@ -121,12 +121,12 @@ var Game = /** @class */ (function () {
         this.boards = [];
         this.keys = {};
     }
-    Game.prototype.initialize = function (canvasElementId, sprite_data) {
+    Game.prototype.initialize = function (options) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        this.canvas = document.getElementById(canvasElementId);
+                        this.canvas = document.getElementById(options.canvasElementId);
                         // this.canvas.style.display = 'none';
                         this.playerOffset = 10;
                         this.canvasMultiplier = 1;
@@ -145,7 +145,7 @@ var Game = /** @class */ (function () {
                             this.setBoard(4, new TouchControlsBoard(this));
                         }
                         this.spriteSheet = new Sprite_1.SpriteSheet();
-                        return [4 /*yield*/, this.spriteSheet.load(sprite_data)];
+                        return [4 /*yield*/, this.spriteSheet.load(options.spritesImage, options.sprites)];
                     case 1: 
                     // Load the sprite image
                     return [2 /*return*/, _a.sent()];
@@ -442,13 +442,13 @@ var SpriteSheet = /** @class */ (function () {
     function SpriteSheet() {
         this.map = {};
     }
-    SpriteSheet.prototype.load = function (spriteData, callback) {
+    SpriteSheet.prototype.load = function (spritesImage, sprites, callback) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.map = spriteData;
+            _this.map = sprites;
             _this.image = new Image();
             _this.image.onload = function () { return resolve(); };
-            _this.image.src = __webpack_require__(15);
+            _this.image.src = spritesImage;
         });
     };
     // Draw a sprite
@@ -490,10 +490,11 @@ var Sprite = /** @class */ (function () {
 exports.Sprite = Sprite;
 var PlayerShip = /** @class */ (function (_super) {
     __extends(PlayerShip, _super);
-    function PlayerShip(game) {
+    function PlayerShip(game, hp) {
         var _this = _super.call(this, game) || this;
-        _this.game = game;
         _this.hp = 3;
+        _this.game = game;
+        _this.hp = hp;
         _this.missiles = 6;
         _this.setup('ship', {
             vx: 0,
@@ -576,7 +577,7 @@ var PlayerShip = /** @class */ (function (_super) {
     };
     PlayerShip = __decorate([
         SpriteType(OBJECT_PLAYER),
-        __metadata("design:paramtypes", [Game_1.Game])
+        __metadata("design:paramtypes", [Game_1.Game, Number])
     ], PlayerShip);
     return PlayerShip;
 }(Sprite));
@@ -798,61 +799,72 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(13);
 __webpack_require__(14);
 var Game_1 = __webpack_require__(1);
 var Sprite_1 = __webpack_require__(2);
-var Layers_1 = __webpack_require__(16);
+var Layers_1 = __webpack_require__(15);
 var ShooterGame = /** @class */ (function (_super) {
     __extends(ShooterGame, _super);
     function ShooterGame() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    ShooterGame.prototype.startGame = function () {
-        var ua = navigator.userAgent.toLowerCase();
-        // Only 1 row of stars
-        // boards: {
-        //   0: 'starfield',
-        //   1: 'starfield',
-        //   2: 'startfild',
-        //   3: 'gameBoard',
-        //   4: 'controlsBoard',
-        //   5: 'layerPoints',
-        //   6: 'layerTitle'
-        // }
-        if (ua.match(/android/)) {
-            this.setBoard(0, new Layers_1.LayerStarfield(this, 50, 0.6, 100, true));
-        }
-        else {
-            // Add the boards of starfield
-            this.setBoard(0, new Layers_1.LayerStarfield(this, 20, 0.4, 100, true));
-            this.setBoard(1, new Layers_1.LayerStarfield(this, 50, 0.6, 100, false));
-            this.setBoard(2, new Layers_1.LayerStarfield(this, 100, 1.0, 50, false));
-        }
-        // Add the board of title
-        this.setBoard(3, new Layers_1.LayerTitle(this, "Alien Invasion", "Press fire to start playing", this.playGame.bind(this)));
+    ShooterGame.prototype.startGame = function (options) {
+        return __awaiter(this, void 0, void 0, function () {
+            var ua;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.options = options;
+                        return [4 /*yield*/, game.initialize(options)];
+                    case 1:
+                        _a.sent();
+                        this.levels = options.levels;
+                        ua = navigator.userAgent.toLowerCase();
+                        // Only 1 row of stars
+                        // boards: {
+                        //   0: 'starfield',
+                        //   1: 'starfield',
+                        //   2: 'startfild',
+                        //   3: 'gameBoard',
+                        //   4: 'controlsBoard',
+                        //   5: 'layerPoints',
+                        //   6: 'layerTitle'
+                        // }
+                        if (ua.match(/android/)) {
+                            this.setBoard(0, new Layers_1.LayerStarfield(this, 50, 0.6, 100, true));
+                        }
+                        else {
+                            // Add the boards of starfield
+                            this.setBoard(0, new Layers_1.LayerStarfield(this, 20, 0.4, 100, true));
+                            this.setBoard(1, new Layers_1.LayerStarfield(this, 50, 0.6, 100, false));
+                            this.setBoard(2, new Layers_1.LayerStarfield(this, 100, 1.0, 50, false));
+                        }
+                        // Add the board of title
+                        this.setBoard(3, new Layers_1.LayerTitle(this, 'Alien Invasion', 'Press fire to start playing', this.playGame.bind(this)));
+                        return [2 /*return*/];
+                }
+            });
+        });
     };
     ShooterGame.prototype.playGame = function () {
         var _this = this;
         var board = new Game_1.GameBoard();
         this.stage = 1;
         this.maxStage = 2;
-        // !!!
-        this.player = new Sprite_1.PlayerShip(this);
-        console.log(this.player);
-        this.level = new Level(this, level_1, this.stageClear.bind(this));
+        // Add the player to gameBoard
+        this.player = new Sprite_1.PlayerShip(this, this.options.playerHp);
         board.add(this.player);
+        console.log(this.player);
+        // Add level 1 to board
+        this.level = new Level(this, this.levels[this.stage - 1], this.stageClear.bind(this));
         board.add(this.level);
-        // setTimeout(() => {
-        //   board.add(new Level(this, level2, this.winGame.bind(this)));
-        // }, 2000);
         // Add the board of game
         this.setBoard(3, board);
         // Add the board of points
         this.setBoard(5, new Layers_1.LayerPoints(this));
-        document.addEventListener("click", function () {
+        document.addEventListener('click', function () {
             _this.stageClear();
             // console.log(this.levelData.length, this.board.cnt)
         });
@@ -861,8 +873,8 @@ var ShooterGame = /** @class */ (function (_super) {
         var _this = this;
         setTimeout(function () {
             _this.level.end();
-            if (_this.stage !== _this.maxStage) {
-                _this.setBoard(6, new Layers_1.LayerTitle(_this, "STAGE CLEAR!", "Press fire to next stage", _this.nextStage.bind(_this)));
+            if (_this.stage !== _this.levels.length) {
+                _this.setBoard(6, new Layers_1.LayerTitle(_this, 'STAGE CLEAR!', 'Press fire to next stage', _this.nextStage.bind(_this)));
             }
             else {
                 _this.winGame();
@@ -872,15 +884,15 @@ var ShooterGame = /** @class */ (function (_super) {
     ShooterGame.prototype.nextStage = function () {
         this.stage++;
         this.boards[6] = null;
-        this.level = new Level(this, level_2, this.stageClear.bind(this));
+        this.level = new Level(this, this.levels[this.stage - 1], this.stageClear.bind(this));
         this.boards[3].add(this.level);
         // this.setBoard(3, board);
     };
     ShooterGame.prototype.winGame = function () {
-        this.setBoard(3, new Layers_1.LayerTitle(this, "You win!", "Press fire to play again", this.playGame.bind(this)));
+        this.setBoard(3, new Layers_1.LayerTitle(this, 'You win!', 'Press fire to play again', this.playGame.bind(this)));
     };
     ShooterGame.prototype.loseGame = function () {
-        this.setBoard(3, new Layers_1.LayerTitle(this, "You lose!", "Press fire to play again", this.playGame.bind(this)));
+        this.setBoard(3, new Layers_1.LayerTitle(this, 'You lose!', 'Press fire to play again', this.playGame.bind(this)));
     };
     return ShooterGame;
 }(Game_1.Game));
@@ -963,14 +975,14 @@ var enemies = {
     straight: {
         x: 0,
         y: -50,
-        sprite: "enemy_ship",
+        sprite: 'enemy_ship',
         health: 10,
         E: 100
     },
     ltr: {
         x: 0,
         y: -100,
-        sprite: "enemy_purple",
+        sprite: 'enemy_purple',
         health: 10,
         B: 75,
         C: 1,
@@ -980,7 +992,7 @@ var enemies = {
     circle: {
         x: 250,
         y: -50,
-        sprite: "enemy_circle",
+        sprite: 'enemy_circle',
         health: 10,
         A: 0,
         B: -100,
@@ -993,7 +1005,7 @@ var enemies = {
     wiggle: {
         x: 100,
         y: -50,
-        sprite: "enemy_bee",
+        sprite: 'enemy_bee',
         health: 20,
         B: 100,
         C: 4,
@@ -1004,7 +1016,7 @@ var enemies = {
     step: {
         x: 0,
         y: -50,
-        sprite: "enemy_ship",
+        sprite: 'enemy_ship',
         health: 30,
         B: 150,
         C: 1.2,
@@ -1013,7 +1025,7 @@ var enemies = {
     lord: {
         x: 0,
         y: -50,
-        sprite: "enemy_bee",
+        sprite: 'enemy_bee',
         health: 20,
         B: 250,
         C: 2.2,
@@ -1022,7 +1034,7 @@ var enemies = {
     green: {
         x: 250,
         y: -50,
-        sprite: "enemy_ship",
+        sprite: 'enemy_ship',
         health: 20,
         A: 0,
         B: -100,
@@ -1035,29 +1047,27 @@ var enemies = {
 };
 var level_1 = [
     // Start,   End, Gap,  Type,   Override
-    [0, 4000, 500, "step"],
-    [6000, 13000, 800, "ltr"],
-    [10000, 16000, 400, "circle"],
-    [17800, 20000, 500, "straight", { x: 50 }],
-    [18200, 20000, 500, "straight", { x: 90 }],
-    [18200, 20000, 500, "straight", { x: 10 }],
-    [22000, 25000, 400, "wiggle", { x: 150 }],
-    [22000, 25000, 400, "wiggle", { x: 100 }]
+    [0, 4000, 500, 'step'],
+    [6000, 13000, 800, 'ltr'],
+    [10000, 16000, 400, 'circle'],
+    [17800, 20000, 500, 'straight', { x: 50 }],
+    [18200, 20000, 500, 'straight', { x: 90 }],
+    [18200, 20000, 500, 'straight', { x: 10 }],
+    [22000, 25000, 400, 'wiggle', { x: 150 }],
+    [22000, 25000, 400, 'wiggle', { x: 100 }]
 ];
-var level_2 = [[0, 8000, 500, "lord"], [0, 8000, 500, "circle"]];
+var level_2 = [[0, 8000, 500, 'lord'], [0, 8000, 500, 'circle']];
 var game = new ShooterGame();
-window.addEventListener("load", function () {
-    setTimeout(function () { return __awaiter(_this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, game.initialize("game", sprites)];
-                case 1:
-                    _a.sent();
-                    game.startGame();
-                    return [2 /*return*/];
-            }
+window.addEventListener('load', function () {
+    setTimeout(function () {
+        game.startGame({
+            canvasElementId: 'game',
+            spritesImage: __webpack_require__(16),
+            sprites: sprites,
+            levels: [level_1, level_2, level_1],
+            playerHp: 20
         });
-    }); }, 500);
+    }, 500);
 });
 if (false) {
     module.hot.accept();
@@ -1102,12 +1112,6 @@ if (false) {
 
 /***/ }),
 /* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "img/sprites.6b1347de.png";
-
-/***/ }),
-/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1218,6 +1222,12 @@ var LayerPoints = /** @class */ (function () {
 }());
 exports.LayerPoints = LayerPoints;
 
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/sprites.6b1347de.png";
 
 /***/ })
 /******/ ]);
