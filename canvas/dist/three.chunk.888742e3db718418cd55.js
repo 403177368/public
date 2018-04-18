@@ -60,20 +60,20 @@
 /******/ 	__webpack_require__.p = "/canvas/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 42);
+/******/ 	return __webpack_require__(__webpack_require__.s = 48);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 42:
+/***/ 48:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(43);
+module.exports = __webpack_require__(49);
 
 
 /***/ }),
 
-/***/ 43:
+/***/ 49:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81,13 +81,13 @@ module.exports = __webpack_require__(43);
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); //THREEJS RELATED VARIABLES 
 
-var _Cow = __webpack_require__(44);
+var _Cow = __webpack_require__(50);
 
-var _User = __webpack_require__(46);
+var _User = __webpack_require__(52);
 
-var _Block = __webpack_require__(47);
+var _Block = __webpack_require__(53);
 
-var _ControlLayer = __webpack_require__(48);
+var _ControlLayer = __webpack_require__(54);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -574,7 +574,7 @@ function clamp(v, min, max) {
 
 /***/ }),
 
-/***/ 44:
+/***/ 50:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -585,7 +585,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Cow = undefined;
 
-var _Sprite2 = __webpack_require__(45);
+var _Sprite2 = __webpack_require__(51);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -964,7 +964,7 @@ exports.Cow = Cow;
 
 /***/ }),
 
-/***/ 45:
+/***/ 51:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1032,7 +1032,7 @@ var Sprite = exports.Sprite = function () {
 
 /***/ }),
 
-/***/ 46:
+/***/ 52:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1116,7 +1116,7 @@ var User = exports.User = function () {
 
 /***/ }),
 
-/***/ 47:
+/***/ 53:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1157,7 +1157,7 @@ var Block = exports.Block = function () {
 
 /***/ }),
 
-/***/ 48:
+/***/ 54:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

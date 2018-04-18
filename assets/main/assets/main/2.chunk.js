@@ -1762,7 +1762,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     class: _vm.$store.state.main.theme.val
   }, [_c('div', {
     staticClass: "bg"
-  }, [_c('navbar'), _c('keep-alive', [(_vm.$route.meta.keepAlive) ? _c('router-view') : _vm._e()], 1), (!_vm.$route.meta.keepAlive) ? _c('router-view') : _vm._e(), _c('my-menu'), _c('my-footer')], 1)])
+  }, [_c('navbar'), _c('keep-alive', [(_vm.$route.meta.keepAlive) ? _c('router-view') : _vm._e()], 1), (!_vm.$route.meta.keepAlive) ? _c('router-view') : _vm._e(), _c('my-footer')], 1)])
 },staticRenderFns: []}
 
 /***/ })

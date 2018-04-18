@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/canvas/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 36);
+/******/ 	return __webpack_require__(__webpack_require__.s = 42);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -219,7 +219,7 @@ function canMove(app, sprite) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -267,27 +267,27 @@ var Missile = exports.Missile = function (_Sprite) {
 
 /***/ }),
 
-/***/ 36:
+/***/ 42:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(37);
+module.exports = __webpack_require__(43);
 
 
 /***/ }),
 
-/***/ 37:
+/***/ 43:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _createPlane = __webpack_require__(38);
+var _createPlane = __webpack_require__(44);
 
-var _Plane = __webpack_require__(39);
+var _Plane = __webpack_require__(45);
 
-var _createText = __webpack_require__(40);
+var _createText = __webpack_require__(46);
 
-var _AnimatedPlane = __webpack_require__(41);
+var _AnimatedPlane = __webpack_require__(47);
 
 var app = new PIXI.Application(500, 800, { backgroundColor: 0x1099bb });
 document.body.appendChild(app.view);
@@ -352,7 +352,7 @@ new _AnimatedPlane.AnimatedPlane({
 
 /***/ }),
 
-/***/ 38:
+/***/ 44:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -413,7 +413,7 @@ function fadeOut(sprite) {}
 
 /***/ }),
 
-/***/ 39:
+/***/ 45:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -426,7 +426,7 @@ exports.Plane = Plane;
 
 var _Sprite = __webpack_require__(0);
 
-var _Missile = __webpack_require__(3);
+var _Missile = __webpack_require__(4);
 
 function Plane(options) {
   var _this = this;
@@ -469,7 +469,7 @@ Object.assign(Plane.prototype, {
 
 /***/ }),
 
-/***/ 40:
+/***/ 46:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -506,7 +506,7 @@ function createText(app) {
 
 /***/ }),
 
-/***/ 41:
+/***/ 47:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -519,7 +519,7 @@ exports.AnimatedPlane = AnimatedPlane;
 
 var _Sprite = __webpack_require__(0);
 
-var _Missile = __webpack_require__(3);
+var _Missile = __webpack_require__(4);
 
 function AnimatedPlane(options) {
   var self = this;
