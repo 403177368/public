@@ -1158,6 +1158,9 @@ svg[data-v-e2f22a1c] {
   width: 100%;
   overflow: hidden;
 }
+.RouteAdmin .my-group[data-v-690b9843] {
+  margin-bottom: 15px!important;
+}
 .RouteAdmin .main-part[data-v-690b9843] {
   box-sizing: border-box;
   width: 100%;
@@ -1215,8 +1218,21 @@ svg[data-v-e2f22a1c] {
   margin-bottom: 15px;
 }
 
-.RouteSequelize[data-v-7a9c0b86] {
+.RouteSequelize[data-v-050faf6a] {
   padding-top: 15px;
+}
+.RouteSequelize .my-group[data-v-050faf6a] {
+  display: block!important;
+  overflow: hidden;
+  margin-bottom: 15px!important;
+}
+.RouteSequelize td[data-v-050faf6a] {
+  vertical-align: middle!important;
+  word-break: normal;
+  word-wrap: break-word;
+  max-width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .TableRoute[data-v-304f6735] {

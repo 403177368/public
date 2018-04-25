@@ -1,17 +1,17 @@
 webpackJsonp([1],{
 
-/***/ 122:
+/***/ 132:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(180)
+__webpack_require__(170)
 
-var Component = __webpack_require__(14)(
+var Component = __webpack_require__(17)(
   /* script */
-  __webpack_require__(181),
+  __webpack_require__(171),
   /* template */
-  __webpack_require__(202),
+  __webpack_require__(192),
   /* scopeId */
   "data-v-690b9843",
   /* cssModules */
@@ -23,14 +23,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 180:
+/***/ 170:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 181:
+/***/ 171:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40,7 +40,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(52);
+var _index = __webpack_require__(55);
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -48,11 +48,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = {
   components: {
-    MaskEdit: __webpack_require__(182),
-    Tip: __webpack_require__(186),
-    NavLeft: __webpack_require__(190),
-    'v-menu': __webpack_require__(194),
-    Navbar: __webpack_require__(198)
+    MaskEdit: __webpack_require__(172),
+    Tip: __webpack_require__(176),
+    NavLeft: __webpack_require__(180),
+    'v-menu': __webpack_require__(184),
+    Navbar: __webpack_require__(188)
   },
   beforeCreate: function beforeCreate() {
     if (!this.$store._modulesNamespaceMap['admin/']) {
@@ -120,21 +120,24 @@ exports.default = {
 //
 //
 //
+//
+//
+//
 
 /***/ }),
 
-/***/ 182:
+/***/ 172:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(183)
+__webpack_require__(173)
 
-var Component = __webpack_require__(14)(
+var Component = __webpack_require__(17)(
   /* script */
-  __webpack_require__(184),
+  __webpack_require__(174),
   /* template */
-  __webpack_require__(185),
+  __webpack_require__(175),
   /* scopeId */
   null,
   /* cssModules */
@@ -146,14 +149,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 183:
+/***/ 173:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 184:
+/***/ 174:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -163,7 +166,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _stringify = __webpack_require__(50);
+var _stringify = __webpack_require__(53);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
@@ -303,7 +306,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 185:
+/***/ 175:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -374,18 +377,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 186:
+/***/ 176:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(187)
+__webpack_require__(177)
 
-var Component = __webpack_require__(14)(
+var Component = __webpack_require__(17)(
   /* script */
-  __webpack_require__(188),
+  __webpack_require__(178),
   /* template */
-  __webpack_require__(189),
+  __webpack_require__(179),
   /* scopeId */
   null,
   /* cssModules */
@@ -397,14 +400,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 187:
+/***/ 177:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 188:
+/***/ 178:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -438,7 +441,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 189:
+/***/ 179:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -455,18 +458,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 190:
+/***/ 180:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(191)
+__webpack_require__(181)
 
-var Component = __webpack_require__(14)(
+var Component = __webpack_require__(17)(
   /* script */
-  __webpack_require__(192),
+  __webpack_require__(182),
   /* template */
-  __webpack_require__(193),
+  __webpack_require__(183),
   /* scopeId */
   "data-v-1524cd8c",
   /* cssModules */
@@ -478,14 +481,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 191:
+/***/ 181:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 192:
+/***/ 182:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -581,16 +584,18 @@ exports.default = {
         href: '/admin/graphql',
         subs: []
       }, {
-        name: 'Lowdb',
-        href: '/admin/lowdb',
-        subs: []
-      }, {
-        name: 'Sequelize',
+        name: 'Databases',
         href: '',
         active: false,
         children: [{
-          href: '/admin/sequelize',
-          name: 'items'
+          name: 'Sequelize',
+          href: '/admin/sequelize'
+        }, {
+          name: 'MongoDB',
+          href: '/admin/mongo'
+        }, {
+          name: 'Lowdb',
+          href: '/admin/lowdb'
         }]
       }, {
         name: 'Posts',
@@ -604,9 +609,6 @@ exports.default = {
         name: 'Tables',
         href: '/admin/tables',
         subs: []
-      }, {
-        name: 'Mongo',
-        href: '/admin/mongo'
       }]
     };
   },
@@ -621,7 +623,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 193:
+/***/ 183:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -660,18 +662,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 194:
+/***/ 184:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(195)
+__webpack_require__(185)
 
-var Component = __webpack_require__(14)(
+var Component = __webpack_require__(17)(
   /* script */
-  __webpack_require__(196),
+  __webpack_require__(186),
   /* template */
-  __webpack_require__(197),
+  __webpack_require__(187),
   /* scopeId */
   "data-v-03f608f6",
   /* cssModules */
@@ -683,14 +685,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 195:
+/***/ 185:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 196:
+/***/ 186:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -802,7 +804,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 197:
+/***/ 187:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -832,18 +834,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 198:
+/***/ 188:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(199)
+__webpack_require__(189)
 
-var Component = __webpack_require__(14)(
+var Component = __webpack_require__(17)(
   /* script */
-  __webpack_require__(200),
+  __webpack_require__(190),
   /* template */
-  __webpack_require__(201),
+  __webpack_require__(191),
   /* scopeId */
   null,
   /* cssModules */
@@ -855,14 +857,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 199:
+/***/ 189:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 200:
+/***/ 190:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -923,7 +925,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 201:
+/***/ 191:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -942,7 +944,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 202:
+/***/ 192:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

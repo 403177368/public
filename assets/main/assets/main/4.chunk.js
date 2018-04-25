@@ -1,40 +1,17 @@
 webpackJsonp([4],{
 
-/***/ 126:
+/***/ 145:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(212)
+__webpack_require__(269)
 
-var Component = __webpack_require__(14)(
+var Component = __webpack_require__(17)(
   /* script */
-  __webpack_require__(213),
+  __webpack_require__(270),
   /* template */
-  __webpack_require__(214),
-  /* scopeId */
-  "data-v-7a9c0b86",
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 156:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(157)
-
-var Component = __webpack_require__(14)(
-  /* script */
-  __webpack_require__(158),
-  /* template */
-  __webpack_require__(167),
+  __webpack_require__(272),
   /* scopeId */
   null,
   /* cssModules */
@@ -46,14 +23,66 @@ module.exports = Component.exports
 
 /***/ }),
 
+/***/ 155:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(156), __esModule: true };
+
+/***/ }),
+
+/***/ 156:
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(157);
+var $Object = __webpack_require__(0).Object;
+module.exports = function defineProperty(it, key, desc) {
+  return $Object.defineProperty(it, key, desc);
+};
+
+
+/***/ }),
+
 /***/ 157:
+/***/ (function(module, exports, __webpack_require__) {
+
+var $export = __webpack_require__(3);
+// 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
+$export($export.S + $export.F * !__webpack_require__(7), 'Object', { defineProperty: __webpack_require__(6).f });
+
+
+/***/ }),
+
+/***/ 165:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(166)
+
+var Component = __webpack_require__(17)(
+  /* script */
+  __webpack_require__(167),
+  /* template */
+  __webpack_require__(169),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 166:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 158:
+/***/ 167:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63,9 +92,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _stringify = __webpack_require__(50);
+var _defineProperty2 = __webpack_require__(168);
 
-var _stringify2 = _interopRequireDefault(_stringify);
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -108,266 +137,96 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
-exports.default = {
-  components: {
-    TitleBar: __webpack_require__(159),
-    MyForm: __webpack_require__(163)
-    // Editing: require('./Editing.vue'),
-    // Edit: require('./Edit.vue')
-  },
-  data: function data() {
-    return {
-      item: {
-        // id: '',
-        name: '',
-        price: 0,
-        desc_: '',
-        specs: [],
-        class_: '',
-        sub_class: ''
-      },
-      current: -1
-    };
-  },
+exports.default = (0, _defineProperty3.default)({
   computed: {
-    items: function items() {
-      return this.$store.state.admin.items;
+    list: function list() {
+      return this.$store.state.main.blog.posts.items;
     }
   },
-  mounted: function mounted() {
-    // this.$store.dispatch('admin/items/changeDB', '');
-  },
-  methods: {
-    reset: function reset() {
-      for (var key in this.item) {
-        this.item[key] = '';
-      }
-    },
-    TO_ITEM: function TO_ITEM(i) {
-      this.$store.commit('admin/items/SET_ITEM', this.items[i]);
-      location.href = '#/item';
-    },
-    CHECK_TOGGLE: function CHECK_TOGGLE(i) {
-      this.$store.commit('admin/items/CHECK_TOGGLE', i);
-    },
-    edit: function edit(i) {
-      // this.$store.commit('FETCH_ITEM',JSON.parse(
-      //   JSON.stringify(this.items[i])
-      // ));
-      this.$store.commit('admin/items/EDIT_ITEM', { i: i });
-    },
-    postItem: function postItem() {
-      this.$store.dispatch('admin/items/postItem', (0, _stringify2.default)(this.item));
-    },
-
-    SAVE_ITEM: function SAVE_ITEM() {
-      if (!this.item.id) {
-        this.item.id = new Date().getTime() + '';
-        this.$store.dispatch('admin/items/addItem', (0, _stringify2.default)(this.item));
-      } else {
-        this.$store.dispatch('admin/items/saveItem', (0, _stringify2.default)(this.item));
-      }
-      this.reset();
-    },
-    // DELETE_ITEMS: function() {
-    //   var ids = [];
-    //   this.items.items.forEach(a=> {
-    //     if(a._checked){
-    //       ids.push(a.id)
-    //     }
-    //   });
-    //   this.$store.dispatch(
-    //     'items/deleteItems',ids
-    //   );
-    // },
-    getTime: function getTime() {
-      var time = new Date();
-      var fullYear = time.getFullYear();
-      var month = time.getMonth() + 1;
-      time = fullYear + '-' + month;
-      return time;
-    }
-  }
-};
+  methods: {},
+  mounted: function mounted() {}
+}, "methods", {});
 
 /***/ }),
 
-/***/ 159:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(160)
-
-var Component = __webpack_require__(14)(
-  /* script */
-  __webpack_require__(161),
-  /* template */
-  __webpack_require__(162),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 160:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 161:
+/***/ 168:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+exports.__esModule = true;
 
-exports.default = {
-  props: {
-    title: {}
+var _defineProperty = __webpack_require__(155);
+
+var _defineProperty2 = _interopRequireDefault(_defineProperty);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function (obj, key, value) {
+  if (key in obj) {
+    (0, _defineProperty2.default)(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
   }
+
+  return obj;
 };
 
 /***/ }),
 
-/***/ 162:
+/***/ 169:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "TitleBar"
-  }, [_vm._v("\n  " + _vm._s(_vm.title) + "\n")])
+  return _c('transition', {
+    attrs: {
+      "name": "fade-in"
+    }
+  }, [_c('div', {
+    staticClass: "Posts"
+  }, [_c('div', {
+    staticClass: "panel panel-default panel-full-sm"
+  }, [_c('div', {
+    staticClass: "panel-heading"
+  }, [_c('i', {
+    staticClass: "fa fa-book"
+  }), _vm._v(" My Blog\n      ")]), _c('div', {
+    staticClass: "list-group"
+  }, _vm._l((_vm.list), function(a) {
+    return _c('div', {
+      staticClass: "list-group-item"
+    }, [_c('p', {}, [_vm._v(_vm._s(a.author) + " · " + _vm._s(a.time))]), _c('p', {
+      staticClass: "title"
+    }, [_c('router-link', {
+      staticClass: "title",
+      attrs: {
+        "to": '/main/post/' + a.id
+      }
+    }, [_vm._v(_vm._s(a.title) + "\n            ")])], 1), _c('div', {
+      staticClass: "views"
+    }, [_c('i', {
+      staticClass: "fa fa-eye"
+    }), _vm._v(" " + _vm._s(a.views))])])
+  }))])])])
 },staticRenderFns: []}
 
 /***/ }),
 
-/***/ 163:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(164)
-
-var Component = __webpack_require__(14)(
-  /* script */
-  __webpack_require__(165),
-  /* template */
-  __webpack_require__(166),
-  /* scopeId */
-  "data-v-2c970050",
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 164:
+/***/ 269:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 165:
+/***/ 270:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -376,219 +235,237 @@ module.exports = Component.exports
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
-exports.default = {
-  props: {
-    form: {
-      default: function _default() {
-        return {};
-      }
-    }
-  },
-  data: function data() {
-    return {
-      form: {}
-    };
-  }
-};
+var _blog = __webpack_require__(271);
 
-/***/ }),
+var _blog2 = _interopRequireDefault(_blog);
 
-/***/ 166:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('form', {
-    staticClass: "Myform form-horizontal container-fluid"
-  }, [_c('div', {
-    staticClass: "row-fluid"
-  }, [_c('div', {
-    staticClass: "col-xs-2"
-  }, [_c('label', {
-    staticClass: "control-label"
-  }, [_vm._v("aaaaaaaa")])]), _c('div', {
-    staticClass: "col-xs-4"
-  }, [_c('div', {
-    staticClass: "form-group"
-  }, [_c('input', {
-    staticClass: "form-control"
-  })])])])])
-}]}
-
-/***/ }),
-
-/***/ 167:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "Management"
-  }, [_c('div', {
-    staticClass: "form-group"
-  }, [_c('ul', {
-    staticClass: "nav nav-pills"
-  }, [_c('li', [_c('a', {
-    on: {
-      "click": function($event) {
-        _vm.$store.dispatch('admin/items/fetchItems')
-      }
-    }
-  }, [_vm._v("All")])]), _vm._l((_vm.items.brands), function(a) {
-    return _c('li', [_c('a', {
-      on: {
-        "click": function($event) {
-          _vm.$store.dispatch('admin/items/fetchItems', {
-            query: '?brand=' + a
-          })
-        }
-      }
-    }, [_vm._v(_vm._s(a))])])
-  })], 2)]), _c('div', {
-    staticClass: "table-responsive"
-  }, [_c('table', {
-    staticClass: "table table-hover"
-  }, [_vm._m(0), _c('tbody', _vm._l((_vm.items.items), function(a, i) {
-    return _c('tr', {
-      key: "a.id",
-      class: a._checked ? 'info' : ''
-    }, [_c('td', [_c('input', {
-      attrs: {
-        "type": "checkbox"
-      },
-      domProps: {
-        "checked": a._checked
-      },
-      on: {
-        "click": function($event) {
-          _vm.CHECK_TOGGLE(i)
-        }
-      }
-    })]), _c('td', {
-      on: {
-        "click": function($event) {
-          _vm.TO_ITEM(i)
-        }
-      }
-    }, [_vm._v(_vm._s(a.id))]), _c('td', [_vm._v(_vm._s(a.name))]), _c('td', [_vm._v(_vm._s(a.description))]), _c('td', [_vm._v("￥" + _vm._s(Number(a.price).toFixed(2)))]), _c('td', [_c('div', {
-      staticClass: "edit btn btn-primary btn-xs",
-      on: {
-        "click": function($event) {
-          _vm.edit(i)
-        }
-      }
-    }, [_vm._v("edit")])])])
-  }))])]), _c('div', {
-    staticClass: "form-group"
-  }, [_c('div', {
-    staticClass: "manipulation"
-  }, [_c('div', {
-    staticClass: "delete btn btn-primary",
-    on: {
-      "click": function($event) {
-        _vm.$store.dispatch('admin/items/patchItems')
-      }
-    }
-  }, [_vm._v("patch")]), _c('div', {
-    staticClass: "save btn btn-success",
-    on: {
-      "click": _vm.postItem
-    }
-  }, [_vm._v("new")]), _c('div', {
-    staticClass: "delete btn btn-danger",
-    on: {
-      "click": function($event) {
-        _vm.$store.dispatch('admin/items/deleteItemsChecked')
-      }
-    }
-  }, [_vm._v("delete")])])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('thead', [_c('tr', [_c('th'), _c('th', [_vm._v("id")]), _c('th', [_vm._v("name")]), _c('th', [_vm._v("description")]), _c('th', [_vm._v("price")]), _c('th')])])
-}]}
-
-/***/ }),
-
-/***/ 212:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 213:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
   components: {
-    Management: __webpack_require__(156)
+    Posts: __webpack_require__(165)
   },
+  computed: {
+    list: function list() {
+      return this.$store.state.main.blog.items;
+    },
+    focus: function focus() {
+      return this.$store.state.main.blog.focus;
+    }
+  },
+  beforeCreate: function beforeCreate() {
+    this.$store.complete(['main', 'blog'], _blog2.default);
+  },
+
   mounted: function mounted() {
-    this.$store.dispatch('admin/items/changeDB', '/sqlite');
+    this.$store.dispatch('main/blog/init');
+  },
+  methods: {
+    register: function register(store) {
+      store.complete(['main', 'blog'], _blog2.default);
+    },
+    preFetch: function preFetch(store) {
+      return store.dispatch('main/blog/init');
+    },
+    toPost: function toPost(id) {
+      this.$router.go({ path: '/main/main/post/' + id });
+    }
+  }
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+
+/***/ 271:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _toConsumableArray2 = __webpack_require__(30);
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
+var _promise = __webpack_require__(31);
+
+var _promise2 = _interopRequireDefault(_promise);
+
+var _axios = __webpack_require__(11);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  namespaced: true,
+  state: {
+    inited: false,
+    posts: {
+      inited: false,
+      items: []
+    },
+    focus: {
+      inited: false,
+      items: []
+    }
+  },
+  actions: {
+    init: function init(_ref) {
+      var dispatch = _ref.dispatch;
+
+      return _axios2.default.all([dispatch('initPosts'), dispatch('initFocus')]);
+    },
+    initPosts: function initPosts(_ref2) {
+      var state = _ref2.state,
+          dispatch = _ref2.dispatch,
+          commit = _ref2.commit;
+
+      if (state.posts.inited === false) {
+        return dispatch('fetchPosts').then(function (res) {
+          var arr = res.data;
+          commit('SET_POSTS', arr);
+        }).catch(function (err) {
+          console.log(err);
+        });
+      } else {
+        return _promise2.default.resolve();
+      }
+    },
+    fetchPosts: function fetchPosts(ctx) {
+      return (0, _axios2.default)({
+        url: '/api/marked',
+        // this is essential cause a fetch request is without cookie by default
+        credentials: 'include',
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        mode: 'cors'
+      });
+    },
+    initFocus: function initFocus(_ref3) {
+      var state = _ref3.state,
+          dispatch = _ref3.dispatch,
+          commit = _ref3.commit;
+
+      return new _promise2.default(function (resolve, reject) {
+        if (state.focus.inited === false) {
+          dispatch('fetchFocus').then(function (res) {
+            commit('SET_FOCUS', res.data);
+            resolve();
+          }).catch(function (err) {
+            console.log(err);
+          });
+        } else {
+          resolve();
+        }
+      });
+    },
+    fetchFocus: function fetchFocus(ctx) {
+      return (0, _axios2.default)({
+        url: '/api/lowdb/focus',
+        // this is essential cause a fetch request is without cookie by default
+        credentials: 'include',
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        mode: 'cors'
+      });
+    }
+  },
+  mutations: {
+    SET_POSTS: function SET_POSTS(state, arr) {
+      var _state$posts$items;
+
+      state.posts.inited = true;
+      state.posts.items.length = 0;
+      (_state$posts$items = state.posts.items).push.apply(_state$posts$items, (0, _toConsumableArray3.default)(arr));
+    },
+    SET_FOCUS: function SET_FOCUS(state, arr) {
+      var _state$focus$items;
+
+      state.focus.inited = true;
+      state.focus.items.length = 0;
+      (_state$focus$items = state.focus.items).push.apply(_state$focus$items, (0, _toConsumableArray3.default)(arr));
+    }
   }
 };
 
 /***/ }),
 
-/***/ 214:
+/***/ 272:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "RouteSequelize container-fluid"
-  }, [_vm._m(0), _c('management')], 1)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('ul', {
-    staticClass: "breadcrumb"
-  }, [_c('li', [_c('a', [_vm._v("Sequelize")])]), _c('li', [_c('a', [_vm._v("items")])])])
-}]}
+  return _c('transition', {
+    attrs: {
+      "name": "fade-in"
+    }
+  }, [_c('div', {
+    staticClass: "Blog"
+  }, [_c('div', {
+    staticClass: "container"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-sm-8"
+  }, [_c('posts')], 1), _c('div', {
+    staticClass: "col-sm-4"
+  }, [_c('div', {
+    staticClass: "panel panel-default panel-full-sm"
+  }, [_c('div', {
+    staticClass: "panel-heading"
+  }, [_vm._v("\n              Focus\n            ")]), _c('div', {
+    staticClass: "list-group"
+  }, _vm._l((_vm.focus.items), function(a) {
+    return _c('div', {
+      staticClass: "list-group-item"
+    }, [_c('a', {
+      attrs: {
+        "href": a.href
+      }
+    }, [_vm._v(_vm._s(a.title))])])
+  }))])])])])])])
+},staticRenderFns: []}
 
 /***/ })
 

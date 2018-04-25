@@ -1,19 +1,19 @@
 webpackJsonp([11],{
 
-/***/ 140:
+/***/ 151:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(283)
+__webpack_require__(293)
 
-var Component = __webpack_require__(14)(
+var Component = __webpack_require__(17)(
   /* script */
-  __webpack_require__(284),
+  __webpack_require__(294),
   /* template */
-  __webpack_require__(286),
+  __webpack_require__(296),
   /* scopeId */
-  null,
+  "data-v-8275c764",
   /* cssModules */
   null
 )
@@ -23,14 +23,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 283:
+/***/ 293:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 284:
+/***/ 294:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40,36 +40,25 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(285);
+var _index = __webpack_require__(295);
 
 var _index2 = _interopRequireDefault(_index);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  components: {
-    // Slider: require('./Slider.vue')
-  },
-  computed: {
-    items: function items() {
-      return this.$store.state.admin.items.items;
-    }
-  },
+  components: {},
+  computed: {},
   beforeCreate: function beforeCreate() {
-    this.$store.complete(['mall'], _index2.default);
-    console.log(this.$store);
-  },
-  mounted: function mounted() {
-    this.$store.dispatch('admin/items/changeDB', '/sqlite');
-    this.$store.dispatch('admin/items/fetchItems');
+    this.$store.complete(['mall', 'cart'], _index2.default);
   },
 
   methods: {
     register: function register(store) {
-      store.complete(['mall'], _index2.default);
+      store.complete(['mall', 'cart'], _index2.default);
     },
     preFetch: function preFetch(store) {
-      return store.dispatch('mall/fetch');
+      return store.dispatch('mall/cart/fetch');
     }
   }
 }; //
@@ -80,42 +69,10 @@ exports.default = {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /***/ }),
 
-/***/ 285:
+/***/ 295:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -125,7 +82,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _promise = __webpack_require__(49);
+var _promise = __webpack_require__(31);
 
 var _promise2 = _interopRequireDefault(_promise);
 
@@ -150,28 +107,14 @@ exports.default = {
 
 /***/ }),
 
-/***/ 286:
+/***/ 296:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "RouteMall"
-  }, [_vm._m(0), _c('router-view'), _c('div', {
-    staticClass: "container"
-  }, [_c('div', {
-    staticClass: "form-group"
-  }, [_c('v-slider')], 1), _c('div', {
-    staticClass: "form-group"
-  }, [_c('v-calender')], 1)])], 1)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "navbar"
-  }, [_c('div', {
-    staticClass: "navbar-header"
-  }, [_c('div', {
-    staticClass: "navbar-brand"
-  }, [_vm._v("\n        Brand\n      ")])])])
-}]}
+    staticClass: "RouteMallCart"
+  })
+},staticRenderFns: []}
 
 /***/ })
 
