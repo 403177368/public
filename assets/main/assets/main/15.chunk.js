@@ -1,17 +1,17 @@
 webpackJsonp([15],{
 
-/***/ 136:
+/***/ 138:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(214)
+__webpack_require__(220)
 
 var Component = __webpack_require__(17)(
   /* script */
-  __webpack_require__(215),
+  __webpack_require__(221),
   /* template */
-  __webpack_require__(216),
+  __webpack_require__(222),
   /* scopeId */
   "data-v-050faf6a",
   /* cssModules */
@@ -23,14 +23,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 214:
+/***/ 220:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 215:
+/***/ 221:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -168,17 +168,17 @@ exports.default = {
 
 /***/ }),
 
-/***/ 216:
+/***/ 222:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "RouteSequelize container-fluid"
   }, [_vm._m(0), _c('div', [_c('label', [_vm._v("Tables:")]), _c('div', {
-    staticClass: "btn-group my-group"
+    staticClass: "my-group"
   }, _vm._l((_vm.sequelize.tables), function(a) {
     return _c('div', {
-      staticClass: "btn btn-default",
+      staticClass: "btn btn-default btn-sm",
       on: {
         "click": function($event) {
           _vm.$store.dispatch('admin/sequelize/fetchTable', a)
@@ -267,7 +267,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "btn btn-danger"
   }, [_vm._v("Delete")])]), _c('div', {
     staticClass: "my-group"
-  }, [_vm._v("\n      Count: " + _vm._s(_vm.sequelize.result.count) + "\n    ")]), (_vm.sequelize.rows[0]) ? _c('div', {
+  }, [_vm._v("\n      Page: " + _vm._s(_vm.sequelize.result.page) + " - PageCount: " + _vm._s(_vm.sequelize.result.page_count) + " - Count: " + _vm._s(_vm.sequelize.result.count) + "\n    ")]), (_vm.sequelize.rows[0]) ? _c('div', {
     staticClass: "table-responsive"
   }, [_c('table', {
     staticClass: "table table-bordered"

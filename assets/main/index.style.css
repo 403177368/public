@@ -988,6 +988,20 @@ svg[data-v-e2f22a1c] {
   width: 100%;
 }
 
+.mask_nav {
+  display: table;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 9999;
+}
+.mask_nav .inner-- {
+  padding: 15px;
+}
+
 .v-menu[data-v-03f608f6] {
   position: relative;
   background: #34485E;
@@ -1145,6 +1159,13 @@ svg[data-v-e2f22a1c] {
   color: white;
   text-decoration: none;
 }
+.MyNavbar .navicon-- {
+  float: right;
+  line-height: 50px;
+  font-size: 18px;
+  cursor: pointer;
+  padding-right: 15px;
+}
 
 .Tip {
   position: fixed;
@@ -1169,9 +1190,13 @@ svg[data-v-e2f22a1c] {
   overflow: scroll;
 }
 .RouteAdmin .right-part[data-v-690b9843] {
-  margin-left: 200px;
   height: 100vh;
   overflow: scroll;
+}
+@media (min-width: 992px) {
+.RouteAdmin .right-part[data-v-690b9843] {
+    margin-left: 200px;
+}
 }
 
 .AdminDashboard[data-v-6434f0a7] {

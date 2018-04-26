@@ -1,17 +1,17 @@
 webpackJsonp([2],{
 
-/***/ 141:
+/***/ 143:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(227)
+__webpack_require__(233)
 
 var Component = __webpack_require__(17)(
   /* script */
-  __webpack_require__(228),
+  __webpack_require__(234),
   /* template */
-  __webpack_require__(240),
+  __webpack_require__(246),
   /* scopeId */
   "data-v-4f860d3b",
   /* cssModules */
@@ -23,7 +23,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 158:
+/***/ 160:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -96,13 +96,13 @@ exports.default = {
     // home: require('./home/home.js').default,
     // blog: require('./blog/blog.js').default,
     // projects: require('./projects/projects.js').default,
-    post: __webpack_require__(159).default,
+    post: __webpack_require__(161).default,
     // Canvas: require('./canvas/Canvas.js').default,
 
     // data
     // posts: require('./posts.js').default,
     // focus: require('./focus.js').default,
-    news: __webpack_require__(160).default
+    news: __webpack_require__(162).default
   },
   actions: {
     init: function init(_ref) {
@@ -152,7 +152,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 159:
+/***/ 161:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -230,7 +230,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 160:
+/***/ 162:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -337,14 +337,14 @@ exports.default = {
 
 /***/ }),
 
-/***/ 227:
+/***/ 233:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 228:
+/***/ 234:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -354,7 +354,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _indexMain = __webpack_require__(158);
+var _indexMain = __webpack_require__(160);
 
 var _indexMain2 = _interopRequireDefault(_indexMain);
 
@@ -362,10 +362,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = {
   components: {
-    Navbar: __webpack_require__(229),
-    MyMenu: __webpack_require__(233),
+    Navbar: __webpack_require__(235),
+    MyMenu: __webpack_require__(239),
     // Slider: require('./Slider.vue'),
-    MyFooter: __webpack_require__(237)
+    MyFooter: __webpack_require__(243)
   },
   beforeCreate: function beforeCreate() {
     this.$store.complete(['main'], _indexMain2.default);
@@ -405,18 +405,18 @@ exports.default = {
 
 /***/ }),
 
-/***/ 229:
+/***/ 235:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(230)
+__webpack_require__(236)
 
 var Component = __webpack_require__(17)(
   /* script */
-  __webpack_require__(231),
+  __webpack_require__(237),
   /* template */
-  __webpack_require__(232),
+  __webpack_require__(238),
   /* scopeId */
   "data-v-66ff04d4",
   /* cssModules */
@@ -428,14 +428,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 230:
+/***/ 236:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 231:
+/***/ 237:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -635,7 +635,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 232:
+/***/ 238:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -748,18 +748,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 233:
+/***/ 239:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(234)
+__webpack_require__(240)
 
 var Component = __webpack_require__(17)(
   /* script */
-  __webpack_require__(235),
+  __webpack_require__(241),
   /* template */
-  __webpack_require__(236),
+  __webpack_require__(242),
   /* scopeId */
   "data-v-ae7bca36",
   /* cssModules */
@@ -771,14 +771,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 234:
+/***/ 240:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 235:
+/***/ 241:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -848,7 +848,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 236:
+/***/ 242:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -881,18 +881,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 237:
+/***/ 243:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(238)
+__webpack_require__(244)
 
 var Component = __webpack_require__(17)(
   /* script */
   null,
   /* template */
-  __webpack_require__(239),
+  __webpack_require__(245),
   /* scopeId */
   "data-v-2dce59a1",
   /* cssModules */
@@ -904,14 +904,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 238:
+/***/ 244:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 239:
+/***/ 245:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -922,7 +922,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 240:
+/***/ 246:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

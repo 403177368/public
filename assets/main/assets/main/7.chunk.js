@@ -1,17 +1,17 @@
 webpackJsonp([7],{
 
-/***/ 149:
+/***/ 151:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(286)
+__webpack_require__(292)
 
 var Component = __webpack_require__(17)(
   /* script */
-  __webpack_require__(287),
+  __webpack_require__(293),
   /* template */
-  __webpack_require__(288),
+  __webpack_require__(294),
   /* scopeId */
   "data-v-bd9c99de",
   /* cssModules */
@@ -23,7 +23,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 153:
+/***/ 155:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53,7 +53,7 @@ var _axios = __webpack_require__(11);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _binance = __webpack_require__(154);
+var _binance = __webpack_require__(156);
 
 var _binance2 = _interopRequireDefault(_binance);
 
@@ -357,7 +357,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 154:
+/***/ 156:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -804,7 +804,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 158:
+/***/ 160:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -877,13 +877,13 @@ exports.default = {
     // home: require('./home/home.js').default,
     // blog: require('./blog/blog.js').default,
     // projects: require('./projects/projects.js').default,
-    post: __webpack_require__(159).default,
+    post: __webpack_require__(161).default,
     // Canvas: require('./canvas/Canvas.js').default,
 
     // data
     // posts: require('./posts.js').default,
     // focus: require('./focus.js').default,
-    news: __webpack_require__(160).default
+    news: __webpack_require__(162).default
   },
   actions: {
     init: function init(_ref) {
@@ -933,7 +933,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 159:
+/***/ 161:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1011,7 +1011,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 160:
+/***/ 162:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1118,14 +1118,14 @@ exports.default = {
 
 /***/ }),
 
-/***/ 286:
+/***/ 292:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 287:
+/***/ 293:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1135,11 +1135,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _indexMain = __webpack_require__(158);
+var _indexMain = __webpack_require__(160);
 
 var _indexMain2 = _interopRequireDefault(_indexMain);
 
-var _home = __webpack_require__(153);
+var _home = __webpack_require__(155);
 
 var _home2 = _interopRequireDefault(_home);
 
@@ -1390,7 +1390,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 288:
+/***/ 294:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

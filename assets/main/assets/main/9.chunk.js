@@ -1,17 +1,17 @@
 webpackJsonp([9],{
 
-/***/ 143:
+/***/ 145:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(256)
+__webpack_require__(262)
 
 var Component = __webpack_require__(17)(
   /* script */
-  __webpack_require__(257),
+  __webpack_require__(263),
   /* template */
-  __webpack_require__(260),
+  __webpack_require__(266),
   /* scopeId */
   "data-v-2fa9fa19",
   /* cssModules */
@@ -23,7 +23,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 153:
+/***/ 155:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53,7 +53,7 @@ var _axios = __webpack_require__(11);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _binance = __webpack_require__(154);
+var _binance = __webpack_require__(156);
 
 var _binance2 = _interopRequireDefault(_binance);
 
@@ -357,7 +357,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 154:
+/***/ 156:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -804,14 +804,14 @@ exports.default = {
 
 /***/ }),
 
-/***/ 256:
+/***/ 262:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 257:
+/***/ 263:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -821,11 +821,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _projects = __webpack_require__(258);
+var _projects = __webpack_require__(264);
 
 var _projects2 = _interopRequireDefault(_projects);
 
-var _home = __webpack_require__(153);
+var _home = __webpack_require__(155);
 
 var _home2 = _interopRequireDefault(_home);
 
@@ -977,7 +977,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 258:
+/***/ 264:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1012,7 +1012,7 @@ var actions = {
   },
   fetchProjects: function fetchProjects(ctx) {
     return new _promise2.default(function (resolve, reject) {
-      var projects = __webpack_require__(259).default;
+      var projects = __webpack_require__(265).default;
       resolve(projects);
     });
   }
@@ -1036,7 +1036,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 259:
+/***/ 265:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1073,7 +1073,7 @@ exports.default = [{
 
 /***/ }),
 
-/***/ 260:
+/***/ 266:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

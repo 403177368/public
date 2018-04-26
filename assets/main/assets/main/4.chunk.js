@@ -1,17 +1,17 @@
 webpackJsonp([4],{
 
-/***/ 145:
+/***/ 147:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(269)
+__webpack_require__(275)
 
 var Component = __webpack_require__(17)(
   /* script */
-  __webpack_require__(270),
+  __webpack_require__(276),
   /* template */
-  __webpack_require__(272),
+  __webpack_require__(278),
   /* scopeId */
   null,
   /* cssModules */
@@ -23,17 +23,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 155:
+/***/ 157:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(156), __esModule: true };
+module.exports = { "default": __webpack_require__(158), __esModule: true };
 
 /***/ }),
 
-/***/ 156:
+/***/ 158:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(157);
+__webpack_require__(159);
 var $Object = __webpack_require__(0).Object;
 module.exports = function defineProperty(it, key, desc) {
   return $Object.defineProperty(it, key, desc);
@@ -42,7 +42,7 @@ module.exports = function defineProperty(it, key, desc) {
 
 /***/ }),
 
-/***/ 157:
+/***/ 159:
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(3);
@@ -52,18 +52,18 @@ $export($export.S + $export.F * !__webpack_require__(7), 'Object', { definePrope
 
 /***/ }),
 
-/***/ 165:
+/***/ 167:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(166)
+__webpack_require__(168)
 
 var Component = __webpack_require__(17)(
   /* script */
-  __webpack_require__(167),
-  /* template */
   __webpack_require__(169),
+  /* template */
+  __webpack_require__(171),
   /* scopeId */
   null,
   /* cssModules */
@@ -75,14 +75,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 166:
+/***/ 168:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 167:
+/***/ 169:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -92,7 +92,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _defineProperty2 = __webpack_require__(168);
+var _defineProperty2 = __webpack_require__(170);
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
@@ -150,7 +150,7 @@ exports.default = (0, _defineProperty3.default)({
 
 /***/ }),
 
-/***/ 168:
+/***/ 170:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -158,7 +158,7 @@ exports.default = (0, _defineProperty3.default)({
 
 exports.__esModule = true;
 
-var _defineProperty = __webpack_require__(155);
+var _defineProperty = __webpack_require__(157);
 
 var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -181,7 +181,7 @@ exports.default = function (obj, key, value) {
 
 /***/ }),
 
-/***/ 169:
+/***/ 171:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -219,14 +219,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 269:
+/***/ 275:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 270:
+/***/ 276:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -236,7 +236,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _blog = __webpack_require__(271);
+var _blog = __webpack_require__(277);
 
 var _blog2 = _interopRequireDefault(_blog);
 
@@ -244,7 +244,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = {
   components: {
-    Posts: __webpack_require__(165)
+    Posts: __webpack_require__(167)
   },
   computed: {
     list: function list() {
@@ -310,7 +310,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 271:
+/***/ 277:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -389,8 +389,12 @@ exports.default = {
       return new _promise2.default(function (resolve, reject) {
         if (state.focus.inited === false) {
           dispatch('fetchFocus').then(function (res) {
-            commit('SET_FOCUS', res.data);
-            resolve();
+            if (res.data.errno === 0) {
+              commit('SET_FOCUS', res.data.data.items);
+              resolve();
+            } else {
+              reject();
+            }
           }).catch(function (err) {
             console.log(err);
           });
@@ -401,7 +405,7 @@ exports.default = {
     },
     fetchFocus: function fetchFocus(ctx) {
       return (0, _axios2.default)({
-        url: '/api/lowdb/focus',
+        url: '/api/sqlite/posts',
         // this is essential cause a fetch request is without cookie by default
         credentials: 'include',
         method: 'GET',
@@ -432,7 +436,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 272:
+/***/ 278:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -461,7 +465,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "list-group-item"
     }, [_c('a', {
       attrs: {
-        "href": a.href
+        "href": a.url
       }
     }, [_vm._v(_vm._s(a.title))])])
   }))])])])])])])

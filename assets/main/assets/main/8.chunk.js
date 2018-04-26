@@ -1,17 +1,17 @@
 webpackJsonp([8],{
 
-/***/ 144:
+/***/ 146:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(261)
+__webpack_require__(267)
 
 var Component = __webpack_require__(17)(
   /* script */
-  __webpack_require__(262),
-  /* template */
   __webpack_require__(268),
+  /* template */
+  __webpack_require__(274),
   /* scopeId */
   null,
   /* cssModules */
@@ -23,14 +23,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 261:
+/***/ 267:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 262:
+/***/ 268:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40,7 +40,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Canvas = __webpack_require__(263);
+var _Canvas = __webpack_require__(269);
 
 var _Canvas2 = _interopRequireDefault(_Canvas);
 
@@ -48,7 +48,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = {
   components: {
-    matrix: __webpack_require__(264)
+    matrix: __webpack_require__(270)
   },
   data: function data() {
     return {
@@ -156,7 +156,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 263:
+/***/ 269:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -223,18 +223,18 @@ exports.default = {
 
 /***/ }),
 
-/***/ 264:
+/***/ 270:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(265)
+__webpack_require__(271)
 
 var Component = __webpack_require__(17)(
   /* script */
-  __webpack_require__(266),
+  __webpack_require__(272),
   /* template */
-  __webpack_require__(267),
+  __webpack_require__(273),
   /* scopeId */
   null,
   /* cssModules */
@@ -246,14 +246,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 265:
+/***/ 271:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 266:
+/***/ 272:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -378,7 +378,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 267:
+/***/ 273:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -392,7 +392,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 268:
+/***/ 274:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

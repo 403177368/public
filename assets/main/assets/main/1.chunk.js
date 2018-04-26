@@ -1,17 +1,17 @@
 webpackJsonp([1],{
 
-/***/ 132:
+/***/ 134:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(170)
+__webpack_require__(172)
 
 var Component = __webpack_require__(17)(
   /* script */
-  __webpack_require__(171),
+  __webpack_require__(173),
   /* template */
-  __webpack_require__(192),
+  __webpack_require__(198),
   /* scopeId */
   "data-v-690b9843",
   /* cssModules */
@@ -23,14 +23,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 170:
+/***/ 172:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 171:
+/***/ 173:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48,11 +48,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = {
   components: {
-    MaskEdit: __webpack_require__(172),
-    Tip: __webpack_require__(176),
-    NavLeft: __webpack_require__(180),
-    'v-menu': __webpack_require__(184),
-    Navbar: __webpack_require__(188)
+    MaskEdit: __webpack_require__(174),
+    'mask-nav': __webpack_require__(178),
+    Tip: __webpack_require__(182),
+    NavLeft: __webpack_require__(186),
+    'v-menu': __webpack_require__(190),
+    Navbar: __webpack_require__(194)
   },
   beforeCreate: function beforeCreate() {
     if (!this.$store._modulesNamespaceMap['admin/']) {
@@ -123,21 +124,26 @@ exports.default = {
 //
 //
 //
+//
+//
+//
+//
+//
 
 /***/ }),
 
-/***/ 172:
+/***/ 174:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(173)
+__webpack_require__(175)
 
 var Component = __webpack_require__(17)(
   /* script */
-  __webpack_require__(174),
+  __webpack_require__(176),
   /* template */
-  __webpack_require__(175),
+  __webpack_require__(177),
   /* scopeId */
   null,
   /* cssModules */
@@ -149,14 +155,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 173:
+/***/ 175:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 174:
+/***/ 176:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -306,7 +312,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 175:
+/***/ 177:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -377,18 +383,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 176:
+/***/ 178:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(177)
+__webpack_require__(179)
 
 var Component = __webpack_require__(17)(
   /* script */
-  __webpack_require__(178),
+  __webpack_require__(180),
   /* template */
-  __webpack_require__(179),
+  __webpack_require__(181),
   /* scopeId */
   null,
   /* cssModules */
@@ -400,130 +406,22 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 177:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 178:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-  computed: {
-    tip: function tip() {
-      return this.$store.state.admin.tip;
-    }
-  }
-};
-
-/***/ }),
-
 /***/ 179:
 /***/ (function(module, exports) {
 
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.tip.show),
-      expression: " tip.show "
-    }],
-    staticClass: "Tip alert alert-danger"
-  }, [_vm._v("\n  " + _vm._s(_vm.tip.msg) + "\n")])
-},staticRenderFns: []}
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
 /***/ 180:
 /***/ (function(module, exports, __webpack_require__) {
 
-
-/* styles */
-__webpack_require__(181)
-
-var Component = __webpack_require__(17)(
-  /* script */
-  __webpack_require__(182),
-  /* template */
-  __webpack_require__(183),
-  /* scopeId */
-  "data-v-1524cd8c",
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 181:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 182:
-/***/ (function(module, exports, __webpack_require__) {
-
 "use strict";
 
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -562,74 +460,270 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = {
   data: function data() {
-    return {
-      tabs: [{
-        name: 'Dashboard',
-        href: '/admin/dashboard'
-      }, {
-        name: 'Deployment',
-        href: '/admin/deployment',
-        active: false
-        // children: [{
-        //   name: 'aaa'
-        // }, {
-        //   name: 'bbb'
-        // }]
-      }, {
-        name: 'Crawler',
-        href: '/admin/crawler',
-        subs: []
-      }, {
-        name: 'Graphql',
-        href: '/admin/graphql',
-        subs: []
-      }, {
-        name: 'Databases',
-        href: '',
-        active: false,
-        children: [{
-          name: 'Sequelize',
-          href: '/admin/sequelize'
-        }, {
-          name: 'MongoDB',
-          href: '/admin/mongo'
-        }, {
-          name: 'Lowdb',
-          href: '/admin/lowdb'
-        }]
-      }, {
-        name: 'Posts',
-        href: '/admin/posts',
-        subs: []
-      }, {
-        name: 'Focus',
-        href: '/admin/focus',
-        subs: []
-      }, {
-        name: 'Tables',
-        href: '/admin/tables',
-        subs: []
-      }]
-    };
+    return {};
   },
 
-  methods: {
-    toggle: function toggle(i) {
-      console.log(i);
-      this.tabs[i].active = !this.tabs[i].active;
+  computed: {
+    mask: function mask() {
+      return this.$store.state.admin.mask_nav;
+    },
+    menu: function menu() {
+      return this.$store.state.admin.menu;
     }
-  }
+  },
+  watch: {},
+  methods: {}
 };
+
+/***/ }),
+
+/***/ 181:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.mask.show),
+      expression: " mask.show "
+    }],
+    staticClass: "mask_nav",
+    on: {
+      "click": function($event) {
+        _vm.$store.dispatch('admin/mask_nav/toggle')
+      }
+    }
+  }, [_c('div', {
+    staticClass: "inner--"
+  }, [_vm._l((_vm.menu.tabs), function(a) {
+    return [_c('router-link', {
+      attrs: {
+        "to": a.href
+      }
+    }, [_vm._v(_vm._s(a.name))]), _c('br'), (a.children) ? [_vm._l((a.children), function(b) {
+      return [_c('router-link', {
+        staticStyle: {
+          "padding-left": "15px"
+        },
+        attrs: {
+          "to": b.href
+        }
+      }, [_vm._v(_vm._s(b.name))]), _c('br')]
+    })] : _vm._e()]
+  })], 2)])
+},staticRenderFns: []}
+
+/***/ }),
+
+/***/ 182:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(183)
+
+var Component = __webpack_require__(17)(
+  /* script */
+  __webpack_require__(184),
+  /* template */
+  __webpack_require__(185),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
 
 /***/ }),
 
 /***/ 183:
 /***/ (function(module, exports) {
 
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 184:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  computed: {
+    tip: function tip() {
+      return this.$store.state.admin.tip;
+    }
+  }
+};
+
+/***/ }),
+
+/***/ 185:
+/***/ (function(module, exports) {
+
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "NavLeft"
-  }, _vm._l((_vm.tabs), function(a, i) {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.tip.show),
+      expression: " tip.show "
+    }],
+    staticClass: "Tip alert alert-danger"
+  }, [_vm._v("\n  " + _vm._s(_vm.tip.msg) + "\n")])
+},staticRenderFns: []}
+
+/***/ }),
+
+/***/ 186:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(187)
+
+var Component = __webpack_require__(17)(
+  /* script */
+  __webpack_require__(188),
+  /* template */
+  __webpack_require__(189),
+  /* scopeId */
+  "data-v-1524cd8c",
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 187:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 188:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  props: {
+    menu: {}
+  },
+  data: function data() {
+    return {};
+  },
+
+  methods: {
+    toggle: function toggle(i) {
+      console.log(i);
+      this.menu[i].active = !this.menu[i].active;
+    }
+  }
+};
+
+/***/ }),
+
+/***/ 189:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "NavLeft hidden-sm hidden-xs"
+  }, _vm._l((_vm.menu), function(a, i) {
     return _c('div', {
       staticClass: "first-container",
       class: a.active ? 'active' : ''
@@ -662,18 +756,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 184:
+/***/ 190:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(185)
+__webpack_require__(191)
 
 var Component = __webpack_require__(17)(
   /* script */
-  __webpack_require__(186),
+  __webpack_require__(192),
   /* template */
-  __webpack_require__(187),
+  __webpack_require__(193),
   /* scopeId */
   "data-v-03f608f6",
   /* cssModules */
@@ -685,14 +779,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 185:
+/***/ 191:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 186:
+/***/ 192:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -804,7 +898,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 187:
+/***/ 193:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -834,18 +928,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 188:
+/***/ 194:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(189)
+__webpack_require__(195)
 
 var Component = __webpack_require__(17)(
   /* script */
-  __webpack_require__(190),
+  __webpack_require__(196),
   /* template */
-  __webpack_require__(191),
+  __webpack_require__(197),
   /* scopeId */
   null,
   /* cssModules */
@@ -857,14 +951,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 189:
+/***/ 195:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 190:
+/***/ 196:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -873,6 +967,15 @@ module.exports = Component.exports
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -925,34 +1028,48 @@ exports.default = {
 
 /***/ }),
 
-/***/ 191:
+/***/ 197:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "MyNavbar navbar navbar-inverse"
-  }, [_c('div', {
-    staticClass: "navbar-header"
-  }, [_c('div', {
+  }, [_c('div', {}, [_c('div', {
     staticClass: "navbar-brand"
   }, [_c('router-link', {
     attrs: {
       "to": "/main/home"
     }
-  }, [_vm._v("Madsoap")])], 1)])])
+  }, [_vm._v("Madsoap")])], 1)]), _c('div', {
+    staticClass: "navicon-- visible-sm visible-xs"
+  }, [_c('i', {
+    staticClass: "fa fa-navicon",
+    staticStyle: {
+      "color": "white"
+    },
+    on: {
+      "click": function($event) {
+        _vm.$store.dispatch('admin/mask_nav/toggle')
+      }
+    }
+  })])])
 },staticRenderFns: []}
 
 /***/ }),
 
-/***/ 192:
+/***/ 198:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "RouteAdmin"
-  }, [_c('navbar'), _c('mask-edit'), _c('tip'), _c('div', {
+  }, [_c('navbar'), _c('mask-edit'), _c('mask-nav'), _c('tip'), _c('div', {
     staticClass: "main-part"
-  }, [_c('nav-left'), _c('div', {
+  }, [_c('nav-left', {
+    attrs: {
+      "menu": _vm.$store.state.admin.menu.tabs
+    }
+  }), _c('div', {
     staticClass: "right-part"
   }, [_c('router-view')], 1)], 1)], 1)
 },staticRenderFns: []}
