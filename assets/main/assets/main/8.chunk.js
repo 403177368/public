@@ -1,17 +1,17 @@
 webpackJsonp([8],{
 
-/***/ 146:
+/***/ 138:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(267)
+__webpack_require__(281)
 
-var Component = __webpack_require__(17)(
+var Component = __webpack_require__(5)(
   /* script */
-  __webpack_require__(268),
+  __webpack_require__(282),
   /* template */
-  __webpack_require__(274),
+  __webpack_require__(287),
   /* scopeId */
   null,
   /* cssModules */
@@ -23,14 +23,37 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 267:
+/***/ 163:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(164)
+
+var Component = __webpack_require__(5)(
+  /* script */
+  __webpack_require__(165),
+  /* template */
+  __webpack_require__(166),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 164:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 268:
+/***/ 165:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39,221 +62,143 @@ module.exports = Component.exports
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _Canvas = __webpack_require__(269);
-
-var _Canvas2 = _interopRequireDefault(_Canvas);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
-  components: {
-    matrix: __webpack_require__(270)
-  },
   data: function data() {
     return {
-      src: '',
-      websites: [{
-        name: 'Three.js',
-        href: '//threejs.org/examples/'
-      }, {
-        name: 'Codepen',
-        href: '//codepen.io'
-      }, {
-        name: 'Phaser.js',
-        href: '//www.phaser.io/'
-      }]
+      name: '',
+      password: ''
     };
   },
 
+  components: {},
   computed: {
-    canvas: function canvas() {
-      return this.$store.state.main.Canvas;
+    user: function user() {
+      return this.$store.state.app.user;
     }
   },
-  beforeCreate: function beforeCreate() {
-    this.$store.complete(['main', 'Canvas'], _Canvas2.default);
-  },
-  mounted: function mounted() {
-    this.$store.dispatch('main/Canvas/init');
-  },
-
+  mounted: function mounted() {},
   methods: {
-    register: function register(store) {
-      store.complete(['main', 'Canvas'], _Canvas2.default);
-    },
-    preFetch: function preFetch(store) {
-      return store.dispatch('main/Canvas/init');
-    },
-    to: function to(src) {
-      this.src = src;
-    }
-  }
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/***/ }),
-
-/***/ 269:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _toConsumableArray2 = __webpack_require__(30);
-
-var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
-
-var _axios = __webpack_require__(11);
-
-var _axios2 = _interopRequireDefault(_axios);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  namespaced: true,
-  state: {
-    initialized: false,
-    canvas: {}
-  },
-  actions: {
-    init: function init(ctx) {
-      if (ctx.state.initialized === false) {
-        return ctx.dispatch('fetch').then(function (res) {
-          if (res.status === 200) {
-            ctx.state.initialized = true;
-            ctx.state.canvas = res.data;
-          }
-        }).catch(function (err) {
-          console.log(err);
-        });
-      }
-    },
-    fetch: function fetch(ctx) {
-      return (0, _axios2.default)({
-        method: 'GET',
-        url: '/api/canvas/',
-        // this is essential cause a fetch request is without cookie by default
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        mode: 'cors'
+    login: function login() {
+      this.$store.dispatch('app/user/login', {
+        name: this.name,
+        password: this.password
       });
-    }
-  },
-  mutations: {
-    INIT_CANVAS: function INIT_CANVAS(state, arr) {
-      state.initialized = true;
-    },
-    SET_CANVAS: function SET_CANVAS(state, arr) {
-      var _state$items;
-
-      state.items.length = 0;
-      (_state$items = state.items).push.apply(_state$items, (0, _toConsumableArray3.default)(arr));
     }
   }
 };
 
 /***/ }),
 
-/***/ 270:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 166:
+/***/ (function(module, exports) {
 
-
-/* styles */
-__webpack_require__(271)
-
-var Component = __webpack_require__(17)(
-  /* script */
-  __webpack_require__(272),
-  /* template */
-  __webpack_require__(273),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "BoxSignin panel panel-default"
+  }, [_c('div', {
+    staticClass: "panel-heading"
+  }, [_vm._v("\n    Signin\n  ")]), _c('div', {
+    staticClass: "panel-body"
+  }, [_c('div', {
+    staticClass: "form-group"
+  }, [_c('label', [_vm._v("Username")]), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.name),
+      expression: " name "
+    }],
+    staticClass: "form-control input-sm",
+    domProps: {
+      "value": (_vm.name)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.name = $event.target.value
+      }
+    }
+  })]), _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', [_vm._v("Password")]), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.password),
+      expression: " password "
+    }],
+    staticClass: "form-control input-sm",
+    domProps: {
+      "value": (_vm.password)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.password = $event.target.value
+      }
+    }
+  })]), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.user.state === 'failed'),
+      expression: " user.state === 'failed' "
+    }],
+    staticClass: "form-group has-error"
+  }, [_c('div', {
+    staticClass: "checkbox"
+  }, [_vm._v("\n        Invalid username or password.\n      ")])]), _c('div', {
+    staticClass: "btn btn-primary btn-sm",
+    on: {
+      "click": _vm.login
+    }
+  }, [_vm._v("\n      Login\n    ")])])])
+},staticRenderFns: []}
 
 /***/ }),
 
-/***/ 271:
+/***/ 281:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 272:
+/***/ 282:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -278,171 +223,259 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
+  props: {},
   data: function data() {
     return {};
   },
-
-  computed: {},
-  mounted: function mounted() {
-    var self = this;
-    var canvas = this.$refs.matrix;
-    var ctx = canvas.getContext('2d');
-    var fontSize = 14;
-    var chars = generateChars();
-    var columns;
-    var drops; // Current position of last letter (for each column)
-    var drawnToBottom;
-
-    // Generate Matrix code characters
-    function generateChars() {
-      var chars = '0123456789';
-
-      // Get ALL half-width katakana characters by unicode value
-      for (var i = 0; i <= 55; i++) {
-        chars += String.fromCharCode(i + 65382);
-      }
-
-      return chars.split('');
+  components: {
+    BoxSignin: __webpack_require__(163),
+    'signup-box': __webpack_require__(283)
+  },
+  computed: {
+    user: function user() {
+      return this.$store.state.app.user;
     }
-
-    // Initialize default canvas state
-    function initCanvas() {
-      setSize();
-
-      columns = Math.round(canvas.width / fontSize);
-      drops = [];
-
-      // Set initial position on y coordinate for each column
-      for (var i = 0; i < columns; i++) {
-        drops[i] = 1;
-      }
-
-      drawnToBottom = false;
-    }
-
-    // Resize canvas to fit window
-    window.addEventListener('resize', function () {
-      initCanvas();
-    });
-
-    function setSize() {
-      var container = self.$refs.container;
-      if (container) {
-        var w = Number(document.defaultView.getComputedStyle(container).width.replace('px', ''));
-        if (canvas.width !== w) {
-          canvas.width = w;
-          canvas.height = 300;
-        }
-      }
-    }
-
-    function draw() {
-      // Set nearly transparent background so character trail is visible
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      // Set color and font of falling letters
-      ctx.fillStyle = '#19FF19';
-      ctx.font = 'bold ' + fontSize + 'px monospace';
-
-      var dropCount = drops.length;
-      var charCount = chars.length;
-
-      for (var i = 0; i < dropCount; i++) {
-        // Choose a random letter
-        var text = chars[Math.floor(Math.random() * charCount)];
-        // Get the y position of the letter
-        var rowNum = drops[i] * fontSize;
-        // Draw it!
-        ctx.fillText(text, i * fontSize, rowNum);
-
-        // Check if the canvas has been drawn to the bottom
-        if (rowNum > canvas.height) drawnToBottom = true;
-
-        // Randomly reset the y position of a column
-        if (!drawnToBottom && Math.random() > 0.925 || drawnToBottom && Math.random() > 0.95) drops[i] = 0;
-
-        drops[i]++;
-      }
-    }
-
-    setTimeout(function () {
-      initCanvas();
-      setInterval(draw, 45);
-    }, 300);
   },
   methods: {}
 };
 
 /***/ }),
 
-/***/ 273:
+/***/ 283:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(284)
+
+var Component = __webpack_require__(5)(
+  /* script */
+  __webpack_require__(285),
+  /* template */
+  __webpack_require__(286),
+  /* scopeId */
+  "data-v-8a2fd2ec",
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 284:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 285:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _regenerator = __webpack_require__(50);
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
+var _asyncToGenerator2 = __webpack_require__(51);
+
+var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+// import CryptoJS from './hmac-sha256.js';
+// import './home/enc-base64-min.js';
+// import CryptoJS from './home/hmac-sha256.js';
+
+exports.default = {
+  data: function data() {
+    return {
+      name: '',
+      password: '',
+
+      msg: ''
+    };
+  },
+
+  components: {},
+  computed: {},
+  mounted: function mounted() {
+    // var hash = CryptoJS.HmacSHA256('111111', 'rabbit').toString(CryptoJS.enc.Hex);
+  },
+
+  methods: {
+    submit: function submit() {
+      var _this = this;
+
+      return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+        var res;
+        return _regenerator2.default.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return _this.$store.dispatch('app/user/signup', {
+                  name: _this.name,
+                  password: _this.password
+                });
+
+              case 2:
+                res = _context.sent;
+
+                console.log(res);
+                if (res.data.errno !== 0) {
+                  _this.msg = res.data.msg;
+                }
+
+              case 5:
+              case 'end':
+                return _context.stop();
+            }
+          }
+        }, _callee, _this);
+      }))();
+    }
+  }
+};
+
+/***/ }),
+
+/***/ 286:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    ref: "container",
-    staticClass: "Matrix"
-  }, [_c('canvas', {
-    ref: "matrix"
-  })])
+    staticClass: "BoxSignin panel panel-default"
+  }, [_c('div', {
+    staticClass: "panel-heading"
+  }, [_vm._v("\n    Signup\n  ")]), _c('div', {
+    staticClass: "panel-body"
+  }, [_c('div', {
+    staticClass: "form-group"
+  }, [_c('label', [_vm._v("Username")]), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.name),
+      expression: " name "
+    }],
+    staticClass: "form-control input-sm",
+    domProps: {
+      "value": (_vm.name)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.name = $event.target.value
+      }
+    }
+  })]), _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', [_vm._v("Password")]), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.password),
+      expression: " password "
+    }],
+    staticClass: "form-control input-sm",
+    attrs: {
+      "type": "password"
+    },
+    domProps: {
+      "value": (_vm.password)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.password = $event.target.value
+      }
+    }
+  })]), _c('div', {
+    staticClass: "form-group has-error"
+  }, [_c('div', {
+    staticClass: "checkbox"
+  }, [_vm._v("\n        " + _vm._s(_vm.msg) + "\n      ")])]), _c('div', {
+    staticClass: "btn btn-primary btn-sm",
+    on: {
+      "click": _vm.submit
+    }
+  }, [_vm._v("\n      Signup\n    ")])])])
 },staticRenderFns: []}
 
 /***/ }),
 
-/***/ 274:
+/***/ 287:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('transition', {
-    attrs: {
-      "name": "fade-in"
-    }
-  }, [_c('div', {
-    staticClass: "RouteCanvas"
-  }, [_c('matrix'), _c('div', {
-    staticClass: "container"
+  return _c('div', {
+    staticClass: "Signin container"
   }, [_c('div', {
     staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-sm-3"
   }), _c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col-sm-4"
-  }, [_c('div', {
-    staticClass: "panel panel-default panel-full-md"
-  }, [_c('div', {
-    staticClass: "panel-heading"
-  }, [_vm._v("\n              Canvas\n            ")]), _c('div', {
-    staticClass: "panel-body"
-  }, [_vm._l((_vm.canvas.canvas.left), function(a) {
-    return _c('p', [_c('a', {
-      attrs: {
-        "href": a.href
-      }
-    }, [_vm._v(_vm._s(a.name))])])
-  }), _vm._l((_vm.canvas.canvas.right), function(a) {
-    return _c('p', [_c('a', {
-      attrs: {
-        "href": a.href
-      }
-    }, [_vm._v(_vm._s(a.name))])])
-  })], 2)])]), _c('div', {
-    staticClass: "col-sm-4"
-  }, [_c('div', {
-    staticClass: "panel panel-default"
-  }, [_c('div', {
-    staticClass: "panel-heading"
-  }, [_vm._v("Websites")]), _c('div', {
-    staticClass: "panel-body"
-  }, _vm._l((_vm.websites), function(a) {
-    return _c('p', [_c('a', {
-      attrs: {
-        "href": a.href
-      }
-    }, [_vm._v(_vm._s(a.name))])])
-  }))])])])])], 1)])
+    staticClass: "signin_box col-sm-6 col-offset-4"
+  }, [_c('box-signin'), _c('signup-box')], 1)])])
 },staticRenderFns: []}
 
 /***/ })

@@ -3,6 +3,47 @@
   width: 100%;
 }
 
+.v-side-menu[data-v-74a6f318] {
+  float: left;
+  overflow: hidden;
+  width: 200px;
+  height: 100%;
+  background: #1C2B36;
+}
+.v-side-menu .first-container[data-v-74a6f318] {
+  width: 100%;
+  max-height: 50px;
+  overflow: hidden;
+}
+.v-side-menu .first-container.active[data-v-74a6f318] {
+  max-height: 10000px;
+}
+.v-side-menu .first-container a[data-v-74a6f318] {
+  box-sizing: border-box;
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 15px;
+  background: #1C2B36;
+  color: #869fb1;
+  cursor: pointer;
+  text-decoration: none;
+}
+.v-side-menu .first-container a[data-v-74a6f318]:hover {
+  color: white;
+}
+.v-side-menu .first-container a i[data-v-74a6f318] {
+  height: 50px;
+  line-height: 50px;
+}
+.v-side-menu .first-container .second-container[data-v-74a6f318] {
+  background: black;
+}
+.v-side-menu .first-container .second-container a[data-v-74a6f318] {
+  padding: 0 30px;
+  background: black;
+}
+
 .DatePicker[data-v-54ec0e2b] {
   position: relative;
   display: inline-block;
@@ -759,6 +800,8 @@ a {
 }
 .TabbedPanel777 .panel-heading span.active {
   color: #0f88eb;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #0f88eb;
 }
 .TabbedPanel777 .list-group {
   margin-bottom: 0;
@@ -772,62 +815,6 @@ a {
 }
 .Posts .title a {
   text-decoration: none;
-}
-
-.DatePicker[data-v-79915ab6] {
-  position: relative;
-  width: 100%;
-}
-.DatePicker .panel[data-v-79915ab6] {
-  position: absolute;
-  left: 0;
-  top: 120%;
-  width: 300px;
-  box-shadow: 0 0 20px lightgrey;
-  z-index: 999;
-}
-.DatePicker .panel .panel-heading[data-v-79915ab6] {
-  position: relative;
-  overflow: hidden;
-}
-.DatePicker .panel .panel-heading .part-666[data-v-79915ab6] {
-  width: 15%;
-  height: 32px;
-  line-height: 32px;
-  float: left;
-}
-.DatePicker .panel .panel-heading .part-666 i[data-v-79915ab6] {
-  height: 100%;
-  line-height: 32px;
-  font-size: 20px;
-  cursor: pointer;
-}
-.DatePicker .panel .panel-heading .middle-666[data-v-79915ab6] {
-  width: 70%;
-}
-.DatePicker .panel .panel-heading .middle-666 .form-inline[data-v-79915ab6] {
-  display: table;
-  margin: auto;
-}
-.DatePicker .panel .panel-heading .middle-666 input[data-v-79915ab6] {
-  text-align: center;
-}
-.DatePicker .panel .panel-body table[data-v-79915ab6] {
-  margin: 0;
-  border: none;
-}
-.DatePicker .panel .panel-body table th[data-v-79915ab6] {
-  border: none;
-}
-.DatePicker .panel .panel-body table th[data-v-79915ab6],
-.DatePicker .panel .panel-body table td[data-v-79915ab6] {
-  text-align: center;
-}
-.DatePicker .panel .panel-body table td[data-v-79915ab6] {
-  cursor: pointer;
-}
-.DatePicker .panel .panel-body table td[data-v-79915ab6]:hover {
-  background: #eff2f7;
 }
 /*@pink: #e91e63;*/
 .Home .panel-heading span[data-v-7f7ff48e] {
@@ -1072,47 +1059,6 @@ svg[data-v-e2f22a1c] {
   background: #38A7F1;
 }
 
-.NavLeft[data-v-1524cd8c] {
-  float: left;
-  overflow: hidden;
-  width: 200px;
-  height: 100%;
-  background: #1C2B36;
-}
-.NavLeft .first-container[data-v-1524cd8c] {
-  width: 100%;
-  max-height: 50px;
-  overflow: hidden;
-}
-.NavLeft .first-container.active[data-v-1524cd8c] {
-  max-height: 10000px;
-}
-.NavLeft .first-container a[data-v-1524cd8c] {
-  box-sizing: border-box;
-  display: block;
-  height: 50px;
-  line-height: 50px;
-  padding: 0 15px;
-  background: #1C2B36;
-  color: #869fb1;
-  cursor: pointer;
-  text-decoration: none;
-}
-.NavLeft .first-container a[data-v-1524cd8c]:hover {
-  color: white;
-}
-.NavLeft .first-container a i[data-v-1524cd8c] {
-  height: 50px;
-  line-height: 50px;
-}
-.NavLeft .first-container .second-container[data-v-1524cd8c] {
-  background: black;
-}
-.NavLeft .first-container .second-container a[data-v-1524cd8c] {
-  padding: 0 30px;
-  background: black;
-}
-
 .Mask {
   display: table;
   position: fixed;
@@ -1189,8 +1135,16 @@ svg[data-v-e2f22a1c] {
   margin-top: 50px;
   overflow: scroll;
 }
+.RouteAdmin .main-part [data-v-690b9843]::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
 .RouteAdmin .right-part[data-v-690b9843] {
-  height: 100vh;
+  height: 100%;
+  overflow: scroll;
+}
+.RouteAdmin .right-part .container--[data-v-690b9843] {
+  height: 100%;
   overflow: scroll;
 }
 @media (min-width: 992px) {

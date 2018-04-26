@@ -1,17 +1,17 @@
 webpackJsonp([12],{
 
-/***/ 148:
+/***/ 141:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(279)
+__webpack_require__(294)
 
-var Component = __webpack_require__(17)(
+var Component = __webpack_require__(5)(
   /* script */
-  __webpack_require__(280),
+  __webpack_require__(295),
   /* template */
-  __webpack_require__(281),
+  __webpack_require__(297),
   /* scopeId */
   null,
   /* cssModules */
@@ -23,14 +23,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 279:
+/***/ 294:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 280:
+/***/ 295:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39,138 +39,139 @@ module.exports = Component.exports
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+var _index = __webpack_require__(296);
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
+  components: {
+    // Slider: require('./Slider.vue')
+  },
   computed: {
-    post: function post() {
-      return this.$store.state.main.post;
+    items: function items() {
+      return this.$store.state.admin.items.items;
     }
   },
-  watch: {
-    '$store.state.main.post': function $storeStateMainPost(nv) {}
+  beforeCreate: function beforeCreate() {
+    this.$store.complete(['mall'], _index2.default);
+    console.log(this.$store);
   },
   mounted: function mounted() {
-    var id = this.$route.params.id;
-
-    var state_id = this.$store.state.main.post.id;
-    if (state_id === null || state_id !== id) {
-      this.$store.dispatch('main/post/fetchPost', { id: id });
-    }
+    this.$store.dispatch('admin/items/changeDB', '/sqlite');
+    this.$store.dispatch('admin/items/fetchItems');
   },
+
   methods: {
-    preFetch: function preFetch(store, router) {
-      // console.log(router.history.current.params.id);
-      return store.dispatch('main/post/fetchPost', { id: router.history.current.params.id });
+    register: function register(store) {
+      store.complete(['mall'], _index2.default);
+    },
+    preFetch: function preFetch(store) {
+      return store.dispatch('mall/fetch');
+    }
+  }
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+
+/***/ 296:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _promise = __webpack_require__(27);
+
+var _promise2 = _interopRequireDefault(_promise);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  namespaced: true,
+  state: {
+    fetched: false
+  },
+  actions: {
+    fetch: function fetch(_ref) {
+      var state = _ref.state;
+
+      return new _promise2.default(function (resolve, reject) {
+        state.fetched = true;
+        resolve();
+      });
     }
   }
 };
 
 /***/ }),
 
-/***/ 281:
+/***/ 297:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('transition', {
-    attrs: {
-      "name": "fade-in"
-    }
-  }, [_c('div', {
-    ref: "Post",
-    staticClass: "Post"
-  }, [_c('span', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.post.state === 'pending'),
-      expression: "post.state==='pending'"
-    }]
-  }, [_vm._v("loading...")]), _c('div', {
+  return _c('div', {
+    staticClass: "RouteMall"
+  }, [_vm._m(0), _c('router-view'), _c('div', {
     staticClass: "container"
   }, [_c('div', {
-    staticClass: "row"
+    staticClass: "form-group"
+  }, [_c('v-slider')], 1), _c('div', {
+    staticClass: "form-group"
+  }, [_c('v-calender')], 1)])], 1)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "navbar"
   }, [_c('div', {
-    staticClass: "col-sm-8 col-sm-offset-2"
+    staticClass: "navbar-header"
   }, [_c('div', {
-    staticClass: "panel panel-full-sm"
-  }, [_c('div', {
-    ref: "post_main",
-    staticClass: "panel-body",
-    domProps: {
-      "innerHTML": _vm._s(_vm.post.html)
-    }
-  })])])])])])])
-},staticRenderFns: []}
+    staticClass: "navbar-brand"
+  }, [_vm._v("\n        Brand\n      ")])])])
+}]}
 
 /***/ })
 

@@ -1,19 +1,19 @@
 webpackJsonp([11],{
 
-/***/ 153:
+/***/ 130:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(299)
+__webpack_require__(232)
 
-var Component = __webpack_require__(17)(
+var Component = __webpack_require__(5)(
   /* script */
-  __webpack_require__(300),
+  __webpack_require__(233),
   /* template */
-  __webpack_require__(302),
+  __webpack_require__(234),
   /* scopeId */
-  "data-v-8275c764",
+  "data-v-d1f1f1b2",
   /* cssModules */
   null
 )
@@ -23,14 +23,33 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 299:
+/***/ 149:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(150), __esModule: true };
+
+/***/ }),
+
+/***/ 150:
+/***/ (function(module, exports, __webpack_require__) {
+
+var core = __webpack_require__(2);
+var $JSON = core.JSON || (core.JSON = { stringify: JSON.stringify });
+module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
+  return $JSON.stringify.apply($JSON, arguments);
+};
+
+
+/***/ }),
+
+/***/ 232:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 300:
+/***/ 233:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40,66 +59,58 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(301);
+var _stringify = __webpack_require__(149);
 
-var _index2 = _interopRequireDefault(_index);
+var _stringify2 = _interopRequireDefault(_stringify);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
   components: {},
+  data: function data() {
+    return {
+      data: ''
+    };
+  },
+
   computed: {},
-  beforeCreate: function beforeCreate() {
-    this.$store.complete(['mall', 'cart'], _index2.default);
-  },
-
+  mounted: function mounted() {},
   methods: {
-    register: function register(store) {
-      store.complete(['mall', 'cart'], _index2.default);
-    },
-    preFetch: function preFetch(store) {
-      return store.dispatch('mall/cart/fetch');
-    }
-  }
-}; //
-//
-//
-//
-//
-//
-//
-//
+    get: function get(url) {
+      var _this = this;
 
-/***/ }),
-
-/***/ 301:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _promise = __webpack_require__(31);
-
-var _promise2 = _interopRequireDefault(_promise);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  namespaced: true,
-  state: {
-    fetched: false
-  },
-  actions: {
-    fetch: function fetch(_ref) {
-      var state = _ref.state;
-
-      return new _promise2.default(function (resolve, reject) {
-        state.fetched = true;
-        resolve();
+      this.data = 'Loading...';
+      this.$store.dispatch('get', { url: url }).then(function (res) {
+        _this.data = (0, _stringify2.default)(res, null, 2).replace(/\n/g, '<br/>');
       });
     }
   }
@@ -107,13 +118,45 @@ exports.default = {
 
 /***/ }),
 
-/***/ 302:
+/***/ 234:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "RouteMallCart"
-  })
+    staticClass: "route-crawler"
+  }, [_c('v-breadcrumb', {
+    attrs: {
+      "items": [{
+        name: 'Crawler'
+      }]
+    }
+  }), _c('div', {
+    staticClass: "btn-group btn-group-sm",
+    staticStyle: {
+      "margin-bottom": "20px"
+    }
+  }, [_c('div', {
+    staticClass: "btn btn-default",
+    on: {
+      "click": function($event) {
+        _vm.get('/api/crawler/echojs')
+      }
+    }
+  }, [_vm._v("\n      Echojs\n    ")]), _c('div', {
+    staticClass: "btn btn-default",
+    on: {
+      "click": function($event) {
+        _vm.get('/api/crawler/tieba')
+      }
+    }
+  }, [_vm._v("\n      Tie-ba\n    ")])]), _c('div', {
+    staticClass: "panel panel-default"
+  }, [_c('div', {
+    staticClass: "panel-body",
+    domProps: {
+      "innerHTML": _vm._s(_vm.data)
+    }
+  }, [_vm._v("\n      " + _vm._s(_vm.data) + "\n    ")])])], 1)
 },staticRenderFns: []}
 
 /***/ })

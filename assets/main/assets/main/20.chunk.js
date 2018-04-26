@@ -1,13 +1,13 @@
 webpackJsonp([20],{
 
-/***/ 142:
+/***/ 131:
 /***/ (function(module, exports, __webpack_require__) {
 
-var Component = __webpack_require__(17)(
+var Component = __webpack_require__(5)(
   /* script */
   null,
   /* template */
-  __webpack_require__(232),
+  __webpack_require__(235),
   /* scopeId */
   null,
   /* cssModules */
@@ -19,7 +19,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 232:
+/***/ 235:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

@@ -1,19 +1,19 @@
 webpackJsonp([15],{
 
-/***/ 138:
+/***/ 128:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(220)
+__webpack_require__(226)
 
-var Component = __webpack_require__(17)(
+var Component = __webpack_require__(5)(
   /* script */
-  __webpack_require__(221),
+  __webpack_require__(227),
   /* template */
-  __webpack_require__(222),
+  __webpack_require__(228),
   /* scopeId */
-  "data-v-050faf6a",
+  "data-v-304f6735",
   /* cssModules */
   null
 )
@@ -23,14 +23,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 220:
+/***/ 226:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 221:
+/***/ 227:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87,212 +87,24 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
-exports.default = {
-  components: {},
-  computed: {
-    sequelize: function sequelize() {
-      return this.$store.state.admin.sequelize;
-    }
-  },
-  mounted: function mounted() {
-    this.$store.dispatch('admin/items/changeDB', '/sqlite');
-    this.$store.dispatch('admin/sequelize/init');
-  }
-};
+exports.default = {};
 
 /***/ }),
 
-/***/ 222:
+/***/ 228:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "RouteSequelize container-fluid"
-  }, [_vm._m(0), _c('div', [_c('label', [_vm._v("Tables:")]), _c('div', {
-    staticClass: "my-group"
-  }, _vm._l((_vm.sequelize.tables), function(a) {
-    return _c('div', {
-      staticClass: "btn btn-default btn-sm",
-      on: {
-        "click": function($event) {
-          _vm.$store.dispatch('admin/sequelize/fetchTable', a)
-        }
-      }
-    }, [_vm._v("\n        " + _vm._s(a.tableName) + "\n      ")])
-  })), _c('div', {
-    staticClass: "my-group",
-    staticStyle: {
-      "max-width": "600px"
-    }
-  }, [_c('div', {
-    staticClass: "row"
-  }, _vm._l((_vm.sequelize.filter), function(a) {
-    return _c('div', {
-      staticClass: "col-sm-4 col-xs-6"
-    }, [_c('label', [_vm._v(_vm._s(a.key))]), _c('input', {
-      directives: [{
-        name: "model",
-        rawName: "v-model",
-        value: (a.val),
-        expression: " a.val "
-      }],
-      staticClass: "form-control input-sm",
-      domProps: {
-        "value": (a.val)
-      },
-      on: {
-        "input": function($event) {
-          if ($event.target.composing) { return; }
-          a.val = $event.target.value
-        }
-      }
-    })])
-  })), _c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col-sm-4 col-xs-6"
-  }, [_c('label', [_vm._v("Page")]), _c('div', {
-    staticClass: "input-group"
-  }, [_c('div', {
-    staticClass: "input-group-btn"
-  }, [_c('div', {
-    staticClass: "btn btn-success btn-sm",
-    on: {
-      "click": function($event) {
-        _vm.$store.dispatch('admin/sequelize/prev')
-      }
-    }
-  }, [_vm._v("\n                Prev\n              ")])]), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.sequelize.page),
-      expression: " sequelize.page "
-    }],
-    staticClass: "form-control input-sm",
-    domProps: {
-      "value": (_vm.sequelize.page)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.sequelize.page = $event.target.value
-      }
-    }
-  }), _c('div', {
-    staticClass: "input-group-btn"
-  }, [_c('div', {
-    staticClass: "btn btn-success btn-sm",
-    on: {
-      "click": function($event) {
-        _vm.$store.dispatch('admin/sequelize/next')
-      }
-    }
-  }, [_vm._v("\n                Next\n              ")])])])])])]), _c('div', {
-    staticClass: "btn-group my-group"
-  }, [_c('div', {
-    staticClass: "btn btn-primary",
-    on: {
-      "click": function($event) {
-        _vm.$store.dispatch('admin/sequelize/query')
-      }
-    }
-  }, [_vm._v("\n        Search\n      ")]), _c('div', {
-    staticClass: "btn btn-danger"
-  }, [_vm._v("Delete")])]), _c('div', {
-    staticClass: "my-group"
-  }, [_vm._v("\n      Page: " + _vm._s(_vm.sequelize.result.page) + " - PageCount: " + _vm._s(_vm.sequelize.result.page_count) + " - Count: " + _vm._s(_vm.sequelize.result.count) + "\n    ")]), (_vm.sequelize.rows[0]) ? _c('div', {
-    staticClass: "table-responsive"
-  }, [_c('table', {
-    staticClass: "table table-bordered"
-  }, [_c('thead', [_c('tr', {
-    staticClass: "bg-primary"
-  }, [_c('th'), _vm._l((Object.keys(_vm.sequelize.rows[0])), function(a) {
-    return _c('th', [_vm._v(_vm._s(a))])
-  })], 2)]), _c('tbody', _vm._l((_vm.sequelize.rows), function(a) {
-    return _c('tr', [_c('td', [_c('div', {
-      staticClass: "btn btn-danger btn-sm",
-      on: {
-        "click": function($event) {
-          _vm.$store.dispatch('admin/sequelize/delete', {
-            id: a.id
-          })
-        }
-      }
-    }, [_vm._v("\n                Delete\n              ")])]), _vm._l((a), function(b) {
-      return _c('td', [_vm._v(_vm._s(b))])
-    })], 2)
-  }))])]) : _vm._e()])])
+  return _vm._m(0)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('ul', {
-    staticClass: "breadcrumb"
-  }, [_c('li', [_c('a', [_vm._v("Sequelize")])])])
+  return _c('div', {
+    staticClass: "TableRoute"
+  }, [_c('table', {
+    attrs: {
+      "border": "1"
+    }
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("ID")]), _c('th', [_vm._v("Name")]), _c('th', [_vm._v("Price")])])]), _c('tbody', [_c('tr', [_c('th', [_vm._v("0001")]), _c('th', [_vm._v("iPhone 7")]), _c('th', [_vm._v("6000")])])])])])
 }]}
 
 /***/ })

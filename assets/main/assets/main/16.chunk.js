@@ -1,19 +1,19 @@
 webpackJsonp([16],{
 
-/***/ 140:
+/***/ 127:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(226)
+__webpack_require__(223)
 
-var Component = __webpack_require__(17)(
+var Component = __webpack_require__(5)(
   /* script */
-  __webpack_require__(227),
+  __webpack_require__(224),
   /* template */
-  __webpack_require__(228),
+  __webpack_require__(225),
   /* scopeId */
-  null,
+  "data-v-050faf6a",
   /* cssModules */
   null
 )
@@ -23,14 +23,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 226:
+/***/ 223:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 227:
+/***/ 224:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39,96 +39,258 @@ module.exports = Component.exports
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _axios = __webpack_require__(11);
-
-var _axios2 = _interopRequireDefault(_axios);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
-  components: {
-    // Management: require('../Management.vue')
+  components: {},
+  computed: {
+    sequelize: function sequelize() {
+      return this.$store.state.admin.sequelize;
+    }
   },
   mounted: function mounted() {
-    this.query();
-    this.mutate();
-  },
-
-  methods: {
-    query: function query() {
-      var str = '\n        query {\n          user {\n            items {\n              id\n              name\n            }\n          }\n        }\n      ';
-      (0, _axios2.default)({
-        url: '/api/v1?query=' + str,
-        // this is essential cause a fetch request is without cookie by default
-        credentials: 'include',
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        mode: 'cors'
-      }).then(function (res) {}).catch(function (err) {});
-    },
-    mutate: function mutate() {
-      var data = {
-        query: '\n          mutation HaHa(\n            $id: [Int]\n            $brand: [String]\n          ) {\n            items_1: getItems(\n              id: $id\n              brand: $brand\n            ) {\n              id\n              name\n              price\n              brand\n            }\n            items_2: getItems {\n              id\n              name\n              brand\n            }\n          }\n        ',
-        variables: {
-          id: [137, 173],
-          brand: ['CK', 'Apple']
-        }
-      };
-      (0, _axios2.default)({
-        url: '/api/v1',
-        // this is essential cause a fetch request is without cookie by default
-        credentials: 'include',
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        mode: 'cors',
-        data: data
-      }).then(function (res) {}).catch(function (err) {});
-    }
+    this.$store.dispatch('admin/items/changeDB', '/sqlite');
+    this.$store.dispatch('admin/sequelize/init');
   }
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+};
 
 /***/ }),
 
-/***/ 228:
+/***/ 225:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('transition', {
+  return _c('div', {
+    staticClass: "RouteSequelize container-fluid"
+  }, [_c('v-breadcrumb', {
     attrs: {
-      "name": "fade"
+      "items": [{
+        name: 'Sequelize'
+      }]
+    }
+  }), _c('div', [_c('label', [_vm._v("Tables:")]), _c('div', {
+    staticClass: "my-group"
+  }, _vm._l((_vm.sequelize.tables), function(a) {
+    return _c('div', {
+      staticClass: "btn btn-default btn-sm",
+      on: {
+        "click": function($event) {
+          _vm.$store.dispatch('admin/sequelize/fetchTable', a)
+        }
+      }
+    }, [_vm._v("\n        " + _vm._s(a.tableName) + "\n      ")])
+  })), _c('div', {
+    staticClass: "my-group",
+    staticStyle: {
+      "max-width": "600px"
     }
   }, [_c('div', {
-    staticClass: "RouteGraphql"
+    staticClass: "row"
+  }, _vm._l((_vm.sequelize.filter), function(a) {
+    return _c('div', {
+      staticClass: "col-sm-4 col-xs-6"
+    }, [_c('label', [_vm._v(_vm._s(a.key))]), _c('input', {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
+        value: (a.val),
+        expression: " a.val "
+      }],
+      staticClass: "form-control input-sm",
+      domProps: {
+        "value": (a.val)
+      },
+      on: {
+        "input": function($event) {
+          if ($event.target.composing) { return; }
+          a.val = $event.target.value
+        }
+      }
+    })])
+  })), _c('div', {
+    staticClass: "row"
   }, [_c('div', {
-    staticClass: "container-fluid"
-  }, [_c('ul', {
-    staticClass: "breadcrumb"
-  }, [_c('li', [_c('a', [_vm._v("Graphql")])])])])])])
+    staticClass: "col-sm-4 col-xs-6"
+  }, [_c('label', [_vm._v("Page")]), _c('div', {
+    staticClass: "input-group"
+  }, [_c('div', {
+    staticClass: "input-group-btn"
+  }, [_c('div', {
+    staticClass: "btn btn-success btn-sm",
+    on: {
+      "click": function($event) {
+        _vm.$store.dispatch('admin/sequelize/prev')
+      }
+    }
+  }, [_vm._v("\n                Prev\n              ")])]), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.sequelize.page),
+      expression: " sequelize.page "
+    }],
+    staticClass: "form-control input-sm",
+    domProps: {
+      "value": (_vm.sequelize.page)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.sequelize.page = $event.target.value
+      }
+    }
+  }), _c('div', {
+    staticClass: "input-group-btn"
+  }, [_c('div', {
+    staticClass: "btn btn-success btn-sm",
+    on: {
+      "click": function($event) {
+        _vm.$store.dispatch('admin/sequelize/next')
+      }
+    }
+  }, [_vm._v("\n                Next\n              ")])])])])])]), _c('div', {
+    staticClass: "btn-group my-group"
+  }, [_c('div', {
+    staticClass: "btn btn-primary",
+    on: {
+      "click": function($event) {
+        _vm.$store.dispatch('admin/sequelize/query')
+      }
+    }
+  }, [_vm._v("\n        Search\n      ")]), _c('div', {
+    staticClass: "btn btn-danger"
+  }, [_vm._v("Delete")])]), _c('div', {
+    staticClass: "my-group"
+  }, [_vm._v("\n      Page: " + _vm._s(_vm.sequelize.result.page) + " - PageCount: " + _vm._s(_vm.sequelize.result.page_count) + " - Count: " + _vm._s(_vm.sequelize.result.count) + "\n    ")]), (_vm.sequelize.rows[0]) ? _c('div', {
+    staticClass: "table-responsive"
+  }, [_c('table', {
+    staticClass: "table table-bordered"
+  }, [_c('thead', [_c('tr', {
+    staticClass: "bg-primary"
+  }, [_c('th'), _vm._l((Object.keys(_vm.sequelize.rows[0])), function(a) {
+    return _c('th', [_vm._v(_vm._s(a))])
+  })], 2)]), _c('tbody', _vm._l((_vm.sequelize.rows), function(a) {
+    return _c('tr', [_c('td', [_c('div', {
+      staticClass: "btn btn-danger btn-sm",
+      on: {
+        "click": function($event) {
+          _vm.$store.dispatch('admin/sequelize/delete', {
+            id: a.id
+          })
+        }
+      }
+    }, [_vm._v("\n                Delete\n              ")])]), _vm._l((a), function(b) {
+      return _c('td', [_vm._v(_vm._s(b))])
+    })], 2)
+  }))])]) : _vm._e()])], 1)
 },staticRenderFns: []}
 
 /***/ })
