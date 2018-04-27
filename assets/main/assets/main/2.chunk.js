@@ -177,11 +177,11 @@ exports.default = {
       }, {
         name: 'Farm',
         icon: 'fa-gamepad',
-        href: '/farm/index.html'
+        href: '/farm/'
       }, {
         name: 'Vue',
         icon: 'fa-cog',
-        href: '/vue/index.html'
+        href: '/vue/'
       }, {
         name: 'Mall',
         icon: 'fa-laptop',

@@ -2267,7 +2267,7 @@ var map = {
 	],
 	"./BookBlock.vue": [
 		61,
-		5
+		1
 	],
 	"./BookCalender.vue": [
 		62,
@@ -2323,7 +2323,7 @@ var map = {
 	],
 	"./Orientation.vue": [
 		75,
-		1
+		5
 	],
 	"./Panoramic.vue": [
 		76,

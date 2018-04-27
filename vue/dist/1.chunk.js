@@ -222,127 +222,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 130:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 131:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-	data: function data() {
-		return {
-			rotationRate: {
-				alpha: '111'
-			},
-			rotateX: 0,
-			rotateY: 0,
-			recalibrating: false
-		};
-	},
-	created: function created() {
-		var self = this;
-		if (window.DeviceMotionEvent) {
-			window.addEventListener('devicemotion', self.handler.bind(self), false);
-		} else {
-			console.log('');
-		}
-	},
-	methods: {
-		recalibrate: function recalibrate(e) {
-			var _this = this;
-
-			this.recalibrating = true;
-			this.rotateX = 0;
-			this.rotateY = 0;
-			setTimeout(function () {
-				_this.recalibrating = false;
-			}, 1000);
-		},
-		handler: function handler(e) {
-			if (!this.recalibrating) {
-				this.rotationRate.alpha = e.rotationRate.alpha;
-
-				var nextX = this.rotateX + e.rotationRate.alpha * 3;
-				if (nextX >= 45) {
-					nextX = 45;
-				} else if (nextX <= -45) {
-					nextX = -45;
-				}
-				this.rotateX = nextX;
-
-				var nextY = this.rotateY + e.rotationRate.beta * 3;
-				if (nextY >= 45) {
-					nextY = 45;
-				} else if (nextY <= -45) {
-					nextY = -45;
-				}
-				this.rotateY = nextY;
-			}
-		}
-	}
-};
-
-/***/ }),
-
-/***/ 132:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "space"
-  }, [_c('div', {
-    staticClass: "square",
-    class: _vm.recalibrating ? 'recalibrating' : '',
-    style: ('transform: rotateX(' + _vm.rotateX + 'deg) rotateY(' + _vm.rotateY + 'deg);-webkit-transform:rotateX(' + _vm.rotateX + 'deg) rotateY(' + _vm.rotateY + 'deg);'),
-    on: {
-      "click": _vm.recalibrate
-    }
-  }, [_vm._v("\n\t\t" + _vm._s(_vm.rotationRate.alpha)), _c('br'), _vm._v("\n\t\t" + _vm._s(_vm.rotateY) + "\n\t")])])
-},staticRenderFns: []}
-
-/***/ }),
-
 /***/ 139:
 /***/ (function(module, exports) {
 
@@ -364,6 +243,29 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "ribbon"
   }, [_vm._v("This is a ribbon.")])])])
 }]}
+
+/***/ }),
+
+/***/ 61:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(91)
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(92),
+  /* template */
+  __webpack_require__(93),
+  /* scopeId */
+  "data-v-4423c4cf",
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
 
 /***/ }),
 
@@ -432,29 +334,6 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 75:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(130)
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(131),
-  /* template */
-  __webpack_require__(132),
-  /* scopeId */
-  "data-v-432588bb",
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-
 /***/ 78:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -475,6 +354,183 @@ var Component = __webpack_require__(0)(
 
 module.exports = Component.exports
 
+
+/***/ }),
+
+/***/ 91:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 92:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  data: function data() {
+    return {
+      state: '',
+      pages: [{
+        z: 100,
+        state: ''
+      }, {
+        z: 99,
+        state: ''
+      }, {
+        z: 98,
+        state: ''
+      }, {
+        z: 97,
+        state: ''
+      }],
+      current: 0
+    };
+  },
+  watch: {
+    current: function current(nv, ov) {
+      this.pages.forEach(function (a, i) {
+        if (ov === i) {
+          a.state = 'turned';
+          setTimeout(function () {
+            a.z = i;
+          }, 500);
+        }
+      });
+    }
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    document.addEventListener('keydown', function (e) {
+      if (e.keyCode === 39) {
+        _this.state = 'two';
+      } else if (e.keyCode === 37) {
+        _this.state = '';
+      }
+      // console.log(e)
+    });
+  },
+  methods: {
+    handleClick: function handleClick() {
+      this.current++;
+      console.log(this.current);
+    }
+  }
+};
+
+/***/ }),
+
+/***/ 93:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "BookSpace"
+  }, [_c('div', {
+    staticClass: "book",
+    on: {
+      "click": _vm.handleClick
+    }
+  }, _vm._l((_vm.pages), function(a, i) {
+    return _c('div', {
+      staticClass: "page__",
+      class: a.state,
+      style: ('z-index:' + a.z + ';')
+    }, [_c('div', {
+      staticClass: "face front"
+    }, [_c('p', [_vm._v(_vm._s(i))])]), _c('div', {
+      staticClass: "face back"
+    }, [_c('p', [_vm._v(_vm._s(i))])])])
+  }))])
+},staticRenderFns: []}
 
 /***/ }),
 

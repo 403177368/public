@@ -1017,123 +1017,6 @@ to {
           transform: rotateY(180deg);
 }
 
-.swiper[data-v-7be1da86] {
-  position: relative;
-  width: 50%;
-  height: 20vw;
-  background: grey;
-  margin: auto;
-}
-.swiper .train[data-v-7be1da86] {
-  width: 1000%;
-  height: 100%;
-}
-.swiper .train .item[data-v-7be1da86] {
-  float: left;
-  width: 10%;
-  height: 100%;
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
-  opacity: 0.6;
-  transition: 0.5s;
-}
-.swiper .train .item.active[data-v-7be1da86] {
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  opacity: 1;
-}
-
-.BookBlock[data-v-a2230630] {
-  position: relative;
-  width: 5rem;
-  height: 8rem;
-  margin: auto;
-  margin-top: 0.3rem;
-  margin-bottom: 0.24rem;
-  background: orange;
-  -webkit-perspective: 12rem;
-          perspective: 12rem;
-}
-.BookBlock .item[data-v-a2230630] {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: red;
-  display: none;
-}
-.BookBlock .item .upper[data-v-a2230630] {
-  width: 100%;
-  height: 50%;
-}
-.BookBlock .item .lower[data-v-a2230630] {
-  width: 100%;
-  height: 50%;
-}
-.BookBlock .page[data-v-a2230630] {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 4rem;
-  -webkit-transform-origin: 50% 0%;
-          transform-origin: 50% 0%;
-  transition: linear 1s;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-}
-.BookBlock .page .front[data-v-a2230630] {
-  position: absolute;
-  left: 0;
-  top: 0;
-  background: red;
-  width: 100%;
-  height: 100%;
-  z-index: 5;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-}
-.BookBlock .page .back[data-v-a2230630] {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: blue;
-  -webkit-transform: rotateX(180deg);
-          transform: rotateX(180deg);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-}
-.BookBlock .page.active[data-v-a2230630] {
-  -webkit-transform: rotateX(180deg);
-          transform: rotateX(180deg);
-}
-
-.space[data-v-432588bb] {
-  width: 100%;
-  margin-top: 3rem;
-  -webkit-perspective: 1000px;
-          perspective: 1000px;
-}
-.space .square[data-v-432588bb] {
-  width: 3rem;
-  height: 3rem;
-  margin: auto;
-  background: orange;
-  font-size: 14px;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-}
-.space .square.recalibrating[data-v-432588bb] {
-  transition: 1s;
-}
-
 .ButtonRipple[data-v-4f8cbfa7] {
   background: #2196F3;
   overflow: hidden;
@@ -1279,6 +1162,123 @@ to {
   border-style: solid;
   border-left-color: #800000;
   z-index: -1;
+}
+
+.space[data-v-432588bb] {
+  width: 100%;
+  margin-top: 3rem;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+.space .square[data-v-432588bb] {
+  width: 3rem;
+  height: 3rem;
+  margin: auto;
+  background: orange;
+  font-size: 14px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+.space .square.recalibrating[data-v-432588bb] {
+  transition: 1s;
+}
+
+.swiper[data-v-7be1da86] {
+  position: relative;
+  width: 50%;
+  height: 20vw;
+  background: grey;
+  margin: auto;
+}
+.swiper .train[data-v-7be1da86] {
+  width: 1000%;
+  height: 100%;
+}
+.swiper .train .item[data-v-7be1da86] {
+  float: left;
+  width: 10%;
+  height: 100%;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  opacity: 0.6;
+  transition: 0.5s;
+}
+.swiper .train .item.active[data-v-7be1da86] {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+
+.BookBlock[data-v-a2230630] {
+  position: relative;
+  width: 5rem;
+  height: 8rem;
+  margin: auto;
+  margin-top: 0.3rem;
+  margin-bottom: 0.24rem;
+  background: orange;
+  -webkit-perspective: 12rem;
+          perspective: 12rem;
+}
+.BookBlock .item[data-v-a2230630] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: red;
+  display: none;
+}
+.BookBlock .item .upper[data-v-a2230630] {
+  width: 100%;
+  height: 50%;
+}
+.BookBlock .item .lower[data-v-a2230630] {
+  width: 100%;
+  height: 50%;
+}
+.BookBlock .page[data-v-a2230630] {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4rem;
+  -webkit-transform-origin: 50% 0%;
+          transform-origin: 50% 0%;
+  transition: linear 1s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+.BookBlock .page .front[data-v-a2230630] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: red;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+.BookBlock .page .back[data-v-a2230630] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: blue;
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+.BookBlock .page.active[data-v-a2230630] {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
 }
 
 *[data-v-0ded9466] {
