@@ -60,20 +60,20 @@
 /******/ 	__webpack_require__.p = "/canvas/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 24);
+/******/ 	return __webpack_require__(__webpack_require__.s = 25);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 24:
+/***/ 25:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(25);
+module.exports = __webpack_require__(26);
 
 
 /***/ }),
 
-/***/ 25:
+/***/ 26:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -238,7 +238,7 @@ App.prototype = {
 				lineWidth: 3,
 				opacity: 0.8,
 				sprite: {
-					texture: __webpack_require__(26)(this.imgDir + 'trip.png'),
+					texture: __webpack_require__(27)(this.imgDir + 'trip.png'),
 					xScale: 0.5,
 					yScale: 0.5
 				}
@@ -254,7 +254,7 @@ App.prototype = {
 				strokeStyle: 'white',
 				lineWidth: 3,
 				sprite: {
-					texture: __webpack_require__(28)(this.imgDir + 'Prague.png')
+					texture: __webpack_require__(29)(this.imgDir + 'Prague.png')
 				}
 			},
 			density: Math.random() * 0.1,
@@ -267,7 +267,7 @@ App.prototype = {
 				strokeStyle: 'white',
 				lineWidth: 3,
 				sprite: {
-					texture: __webpack_require__(30)(this.imgDir + 'Yunnan.png')
+					texture: __webpack_require__(31)(this.imgDir + 'Yunnan.png')
 				}
 			},
 			density: Math.random() * 0.1,
@@ -280,7 +280,7 @@ App.prototype = {
 				strokeStyle: 'white',
 				lineWidth: 3,
 				sprite: {
-					texture: __webpack_require__(32)(this.imgDir + 'France.png')
+					texture: __webpack_require__(33)(this.imgDir + 'France.png')
 				}
 			},
 			density: Math.random() * 0.1,
@@ -631,11 +631,11 @@ function makePattern(pWidth) {
 
 /***/ }),
 
-/***/ 26:
+/***/ 27:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./image/trip.png": 27
+	"./image/trip.png": 28
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -651,84 +651,53 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 26;
-
-/***/ }),
-
-/***/ 27:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "img/trip.39058a9e.png";
+webpackContext.id = 27;
 
 /***/ }),
 
 /***/ 28:
 /***/ (function(module, exports, __webpack_require__) {
 
-var map = {
-	"./image/Prague.png": 29
-};
-function webpackContext(req) {
-	return __webpack_require__(webpackContextResolve(req));
-};
-function webpackContextResolve(req) {
-	var id = map[req];
-	if(!(id + 1)) // check for number or string
-		throw new Error("Cannot find module '" + req + "'.");
-	return id;
-};
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = 28;
+module.exports = __webpack_require__.p + "img/trip.39058a9e.png";
 
 /***/ }),
 
 /***/ 29:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/Prague.5b91567a.png";
+var map = {
+	"./image/Prague.png": 30
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 29;
 
 /***/ }),
 
 /***/ 30:
 /***/ (function(module, exports, __webpack_require__) {
 
-var map = {
-	"./image/Yunnan.png": 31
-};
-function webpackContext(req) {
-	return __webpack_require__(webpackContextResolve(req));
-};
-function webpackContextResolve(req) {
-	var id = map[req];
-	if(!(id + 1)) // check for number or string
-		throw new Error("Cannot find module '" + req + "'.");
-	return id;
-};
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = 30;
+module.exports = __webpack_require__.p + "img/Prague.5b91567a.png";
 
 /***/ }),
 
 /***/ 31:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/Yunnan.8c6dcb0b.png";
-
-/***/ }),
-
-/***/ 32:
-/***/ (function(module, exports, __webpack_require__) {
-
 var map = {
-	"./image/France.png": 33
+	"./image/Yunnan.png": 32
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -744,11 +713,42 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 32;
+webpackContext.id = 31;
+
+/***/ }),
+
+/***/ 32:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/Yunnan.8c6dcb0b.png";
 
 /***/ }),
 
 /***/ 33:
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./image/France.png": 34
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 33;
+
+/***/ }),
+
+/***/ 34:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/France.0c763524.png";

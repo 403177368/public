@@ -70,8 +70,142 @@
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var Game_1 = __webpack_require__(16);
+var sprites_1 = __webpack_require__(3);
+var Layers_1 = __webpack_require__(17);
+var level_1 = __webpack_require__(18);
+var ShooterGame = /** @class */ (function (_super) {
+    __extends(ShooterGame, _super);
+    function ShooterGame() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    // level: Level;
+    ShooterGame.prototype.startGame = function (options) {
+        return __awaiter(this, void 0, void 0, function () {
+            var ua;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.options = options;
+                        return [4 /*yield*/, this.initialize(options)];
+                    case 1:
+                        _a.sent();
+                        this.levels = options.levels;
+                        ua = navigator.userAgent.toLowerCase();
+                        if (ua.match(/android/)) {
+                            // Only 1 row of stars
+                            this.setBoard(0, new Layers_1.LayerStarfield(this, 50, 0.6, 100, true));
+                        }
+                        else {
+                            // Add the boards of starfield
+                            this.setBoard(0, new Layers_1.LayerStarfield(this, 20, 0.4, 100, true));
+                            this.setBoard(1, new Layers_1.LayerStarfield(this, 50, 0.6, 100, false));
+                            this.setBoard(2, new Layers_1.LayerStarfield(this, 100, 1.0, 50, false));
+                        }
+                        // Add the board of title
+                        this.setBoard(3, new Layers_1.LayerTitle(this, 'Alien Invasion', 'Press fire to start playing', this.playGame.bind(this)));
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ShooterGame.prototype.playGame = function () {
+        var _this = this;
+        var board = new Game_1.GameBoard(this);
+        this.stage = 1;
+        // this.maxStage = 2;
+        // Add the player to gameBoard
+        this.player = new sprites_1.PlayerShip(this, this.options.playerHp);
+        board.add(this.player);
+        // console.log(this.player);
+        // Add level 1 to board
+        board.setLevel(new level_1.Level(this, this.levels[this.stage - 1], this.stageClear.bind(this)));
+        // board.add(this.level);
+        // Add the board of game
+        this.setBoard(3, board);
+        // Add the board of points
+        this.setBoard(5, new Layers_1.LayerPoints(this));
+        document.addEventListener('click', function () {
+            _this.boards[3].level.end();
+            _this.stageClear();
+            // console.log(this.levelData.length, this.board.cnt)
+        });
+    };
+    ShooterGame.prototype.stageClear = function () {
+        var _this = this;
+        setTimeout(function () {
+            // this.level.end();
+            if (_this.stage !== _this.levels.length) {
+                _this.setBoard(6, new Layers_1.LayerTitle(_this, 'STAGE CLEAR!', 'Press fire to next stage', _this.nextStage.bind(_this)));
+            }
+            else {
+                _this.winGame();
+            }
+        }, 1000);
+    };
+    ShooterGame.prototype.nextStage = function () {
+        this.stage++;
+        this.boards[6] = null;
+        this.boards[3].setLevel(new level_1.Level(this, this.levels[this.stage - 1], this.stageClear.bind(this)));
+        // this.boards[3].add(this.level);
+        // this.setBoard(3, board);
+    };
+    ShooterGame.prototype.winGame = function () {
+        this.setBoard(3, new Layers_1.LayerTitle(this, 'You win!', 'Press fire to play again', this.playGame.bind(this)));
+    };
+    ShooterGame.prototype.loseGame = function () {
+        this.setBoard(3, new Layers_1.LayerTitle(this, 'You lose!', 'Press fire to play again', this.playGame.bind(this)));
+    };
+    return ShooterGame;
+}(Game_1.Game));
+exports.ShooterGame = ShooterGame;
 
-__webpack_require__(12);
 
 /***/ }),
 /* 2 */
@@ -84,10 +218,10 @@ var SpriteSheet = /** @class */ (function () {
     function SpriteSheet() {
         this.map = {};
     }
-    SpriteSheet.prototype.load = function (spritesImage, sprites, callback) {
+    SpriteSheet.prototype.load = function (spritesImage, spriteMap, callback) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.map = sprites;
+            _this.map = spriteMap;
             _this.image = new Image();
             _this.image.onload = function () { return resolve(); };
             _this.image.src = spritesImage;
@@ -107,12 +241,12 @@ var Sprite = /** @class */ (function () {
     function Sprite(game) {
         this.game = game;
     }
-    Sprite.prototype.setup = function (sprite, props) {
-        this.sprite = sprite;
+    Sprite.prototype.setup = function (name, props) {
+        this.name = name;
         this.merge(props);
         this.frame = this.frame || 0;
-        this.w = this.game.spriteSheet.map[sprite].w;
-        this.h = this.game.spriteSheet.map[sprite].h;
+        this.w = this.game.spriteSheet.map[name].w;
+        this.h = this.game.spriteSheet.map[name].h;
     };
     Sprite.prototype.merge = function (props) {
         if (props) {
@@ -122,7 +256,7 @@ var Sprite = /** @class */ (function () {
         }
     };
     Sprite.prototype.draw = function (ctx) {
-        this.game.spriteSheet.draw(ctx, this.sprite, this.x, this.y, this.frame);
+        this.game.spriteSheet.draw(ctx, this.name, this.x, this.y, this.frame);
     };
     Sprite.prototype.hit = function (damage) {
         this.board.remove(this);
@@ -159,9 +293,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var sprite_1 = __webpack_require__(2);
-var index_1 = __webpack_require__(1);
+var ShooterGame_1 = __webpack_require__(1);
 var OBJECT_PLAYER = 1, OBJECT_PLAYER_PROJECTILE = 2, OBJECT_ENEMY = 4, OBJECT_ENEMY_PROJECTILE = 8, OBJECT_POWERUP = 16;
 exports.OBJECT_ENEMY = OBJECT_ENEMY;
+exports.OBJECT_ENEMY_PROJECTILE = OBJECT_ENEMY_PROJECTILE;
 function SpriteType(type) {
     return function (target) {
         target.prototype.type = type;
@@ -174,7 +309,7 @@ var PlayerShip = /** @class */ (function (_super) {
         _this.hp = 3;
         _this.game = game;
         _this.hp = hp;
-        _this.missiles = 6;
+        _this.missiles = 4;
         _this.setup('ship', {
             vx: 0,
             vy: 0,
@@ -231,7 +366,7 @@ var PlayerShip = /** @class */ (function (_super) {
         this.reload = this.reloadTime;
         this.board.add(new PlayerMissile(this.game, this.x, this.y + this.h / 2));
         this.board.add(new PlayerMissile(this.game, this.x + this.w, this.y + this.h / 2));
-        if (this.missiles === 6) {
+        if (this.missiles === 4) {
             this.board.add(new PlayerMissile(this.game, this.x + this.w / 4, this.y + this.h / 2));
             this.board.add(new PlayerMissile(this.game, this.x + this.w / 4 * 3, this.y + this.h / 2));
         }
@@ -256,7 +391,7 @@ var PlayerShip = /** @class */ (function (_super) {
     };
     PlayerShip = __decorate([
         SpriteType(OBJECT_PLAYER),
-        __metadata("design:paramtypes", [index_1.ShooterGame, Number])
+        __metadata("design:paramtypes", [ShooterGame_1.ShooterGame, Number])
     ], PlayerShip);
     return PlayerShip;
 }(sprite_1.Sprite));
@@ -273,9 +408,9 @@ var PlayerMissile = /** @class */ (function (_super) {
     PlayerMissile.prototype.step = function (dt) {
         this.y += this.vy * dt;
         // Check if this missile hits an enemy
-        var collision = this.board.collide(this, OBJECT_ENEMY);
-        if (collision) {
-            collision.hit(this.damage);
+        var target = this.board.collide(this, OBJECT_ENEMY);
+        if (target) {
+            target.hit(this.damage);
             // Remove this missile
             this.board.remove(this);
             // If this missile is out of screen
@@ -415,7 +550,7 @@ exports.Explosion = Explosion;
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(1);
+module.exports = __webpack_require__(12);
 
 
 /***/ }),
@@ -424,161 +559,73 @@ module.exports = __webpack_require__(1);
 
 "use strict";
 
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [0, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-Object.defineProperty(exports, "__esModule", { value: true });
+
 __webpack_require__(13);
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(14);
-var Game_1 = __webpack_require__(15);
-var sprites_1 = __webpack_require__(3);
-var Layers_1 = __webpack_require__(16);
-var level_3 = __webpack_require__(17);
-var ShooterGame = /** @class */ (function (_super) {
-    __extends(ShooterGame, _super);
-    function ShooterGame() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    ShooterGame.prototype.startGame = function (options) {
-        return __awaiter(this, void 0, void 0, function () {
-            var ua;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        this.options = options;
-                        return [4 /*yield*/, this.initialize(options)];
-                    case 1:
-                        _a.sent();
-                        this.levels = options.levels;
-                        ua = navigator.userAgent.toLowerCase();
-                        if (ua.match(/android/)) {
-                            // Only 1 row of stars
-                            this.setBoard(0, new Layers_1.LayerStarfield(this, 50, 0.6, 100, true));
-                        }
-                        else {
-                            // Add the boards of starfield
-                            this.setBoard(0, new Layers_1.LayerStarfield(this, 20, 0.4, 100, true));
-                            this.setBoard(1, new Layers_1.LayerStarfield(this, 50, 0.6, 100, false));
-                            this.setBoard(2, new Layers_1.LayerStarfield(this, 100, 1.0, 50, false));
-                        }
-                        // Add the board of title
-                        this.setBoard(3, new Layers_1.LayerTitle(this, 'Alien Invasion', 'Press fire to start playing', this.playGame.bind(this)));
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    ShooterGame.prototype.playGame = function () {
-        var _this = this;
-        var board = new Game_1.GameBoard();
-        this.stage = 1;
-        this.maxStage = 2;
-        // Add the player to gameBoard
-        this.player = new sprites_1.PlayerShip(this, this.options.playerHp);
-        board.add(this.player);
-        console.log(this.player);
-        // Add level 1 to board
-        this.level = new level_3.Level(this, this.levels[this.stage - 1], this.stageClear.bind(this));
-        board.add(this.level);
-        // Add the board of game
-        this.setBoard(3, board);
-        // Add the board of points
-        this.setBoard(5, new Layers_1.LayerPoints(this));
-        document.addEventListener('click', function () {
-            _this.stageClear();
-            // console.log(this.levelData.length, this.board.cnt)
-        });
-    };
-    ShooterGame.prototype.stageClear = function () {
-        var _this = this;
-        setTimeout(function () {
-            _this.level.end();
-            if (_this.stage !== _this.levels.length) {
-                _this.setBoard(6, new Layers_1.LayerTitle(_this, 'STAGE CLEAR!', 'Press fire to next stage', _this.nextStage.bind(_this)));
-            }
-            else {
-                _this.winGame();
-            }
-        }, 1000);
-    };
-    ShooterGame.prototype.nextStage = function () {
-        this.stage++;
-        this.boards[6] = null;
-        this.level = new level_3.Level(this, this.levels[this.stage - 1], this.stageClear.bind(this));
-        this.boards[3].add(this.level);
-        // this.setBoard(3, board);
-    };
-    ShooterGame.prototype.winGame = function () {
-        this.setBoard(3, new Layers_1.LayerTitle(this, 'You win!', 'Press fire to play again', this.playGame.bind(this)));
-    };
-    ShooterGame.prototype.loseGame = function () {
-        this.setBoard(3, new Layers_1.LayerTitle(this, 'You lose!', 'Press fire to play again', this.playGame.bind(this)));
-    };
-    return ShooterGame;
-}(Game_1.Game));
-exports.ShooterGame = ShooterGame;
-var spritesImage = __webpack_require__(18);
-var sprites = {
+__webpack_require__(15);
+var ShooterGame_1 = __webpack_require__(1);
+var spritesImage = __webpack_require__(19);
+var spriteMap = {
     ship: { sx: 0, sy: 0, w: 37, h: 42, frames: 1 },
     missile: { sx: 0, sy: 30, w: 2, h: 10, frames: 1 },
+    enemy_ship: { sx: 116, sy: 0, w: 42, h: 43, frames: 1 },
     enemy_purple: { sx: 37, sy: 0, w: 42, h: 43, frames: 1 },
     enemy_bee: { sx: 79, sy: 0, w: 37, h: 43, frames: 1 },
-    enemy_ship: { sx: 116, sy: 0, w: 42, h: 43, frames: 1 },
     enemy_circle: { sx: 158, sy: 0, w: 32, h: 33, frames: 1 },
     explosion: { sx: 0, sy: 64, w: 64, h: 64, frames: 12 },
-    enemy_missile: { sx: 9, sy: 42, w: 3, h: 20, frame: 1 }
+    enemy_missile: { sx: 9, sy: 42, w: 3, h: 20, frames: 1 }
 };
 var enemies = {
-    straight: {
+    straight_ship: {
         x: 0,
         y: -50,
         sprite: 'enemy_ship',
         health: 10,
         E: 100
     },
-    ltr: {
+    straight_purple: {
+        x: 0,
+        y: -50,
+        sprite: 'enemy_purple',
+        health: 10,
+        E: 100
+    },
+    charge_bee: {
+        x: 50,
+        y: -50,
+        sprite: 'enemy_bee',
+        health: 10,
+        v: function (t) {
+            var vy = 2 * t;
+        },
+    },
+    step_ship: {
+        x: 0,
+        y: -50,
+        sprite: 'enemy_ship',
+        health: 30,
+        B: 150,
+        C: 1.2,
+        E: 75
+    },
+    step_bee: {
+        x: 0,
+        y: -50,
+        sprite: 'enemy_bee',
+        health: 30,
+        B: 150,
+        C: 1.2,
+        E: 75
+    },
+    wave_purple: {
         x: 0,
         y: -100,
         sprite: 'enemy_purple',
@@ -601,6 +648,32 @@ var enemies = {
         G: 1,
         H: Math.PI / 2
     },
+    circle_purple: {
+        x: 250,
+        y: -50,
+        sprite: 'enemy_purple',
+        health: 10,
+        A: 0,
+        B: -100,
+        C: 1,
+        E: 20,
+        F: 100,
+        G: 1,
+        H: Math.PI / 2
+    },
+    circle_bee: {
+        x: 250,
+        y: -50,
+        sprite: 'enemy_bee',
+        health: 10,
+        A: 0,
+        B: -100,
+        C: 1,
+        E: 20,
+        F: 100,
+        G: 1,
+        H: Math.PI / 2
+    },
     wiggle: {
         x: 100,
         y: -50,
@@ -612,16 +685,7 @@ var enemies = {
         firePercentage: 0.001,
         missiles: 2
     },
-    step: {
-        x: 0,
-        y: -50,
-        sprite: 'enemy_ship',
-        health: 30,
-        B: 150,
-        C: 1.2,
-        E: 75
-    },
-    lord: {
+    wiggle_broad: {
         x: 0,
         y: -50,
         sprite: 'enemy_bee',
@@ -630,40 +694,36 @@ var enemies = {
         C: 2.2,
         E: 75
     },
-    green: {
-        x: 250,
-        y: -50,
-        sprite: 'enemy_ship',
-        health: 20,
-        A: 0,
-        B: -100,
-        C: 1,
-        E: 20,
-        F: 100,
-        G: 1,
-        H: Math.PI / 2
-    }
 };
 var level_1 = [
     // Start,   End, Gap,  Type,   Override
-    [0, 4000, 500, 'step'],
-    [6000, 13000, 800, 'ltr'],
+    [0, 4000, 500, 'step_ship'],
+    [6000, 13000, 800, 'wave_purple'],
     [10000, 16000, 400, 'circle'],
-    [17800, 20000, 500, 'straight', { x: 50 }],
-    [18200, 20000, 500, 'straight', { x: 90 }],
-    [18200, 20000, 500, 'straight', { x: 10 }],
+    [17800, 20000, 500, 'straight_ship', { x: 50 }],
+    [18200, 20000, 500, 'straight_ship', { x: 90 }],
+    [18200, 20000, 500, 'straight_ship', { x: 10 }],
     [22000, 25000, 400, 'wiggle', { x: 150 }],
     [22000, 25000, 400, 'wiggle', { x: 100 }]
 ];
-var level_2 = [[0, 8000, 500, 'lord'], [0, 8000, 500, 'circle']];
+var level_2 = [
+    [0, 4000, 500, 'wiggle_broad'],
+    [5000, 9000, 600, 'circle_purple'],
+    [10000, 14000, 400, 'circle'],
+    [15000, 19000, 1000, 'straight_purple', { x: 10 }],
+    [15100, 19100, 1000, 'straight_purple', { x: 80 }],
+    [15000, 19000, 1000, 'straight_purple', { x: 150 }],
+    [22000, 25000, 400, 'wiggle', { x: 150 }],
+    [22000, 25000, 400, 'wiggle', { x: 100 }]
+];
 // Bootstrap
-var game = new ShooterGame();
+var game = new ShooterGame_1.ShooterGame();
 window.addEventListener('load', function () {
     setTimeout(function () {
         game.startGame({
             canvasElementId: 'game',
             spritesImage: spritesImage,
-            sprites: sprites,
+            spriteMap: spriteMap,
             enemies: enemies,
             levels: [level_1, level_2, level_1],
             playerHp: 20
@@ -676,13 +736,13 @@ if (false) {
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -712,7 +772,7 @@ if (false) {
 })();
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -763,6 +823,7 @@ var KEY_CODES = {
     40: 'down'
 };
 var Game = /** @class */ (function () {
+    // level?: Level;
     function Game() {
         this.boards = [];
         this.keys = {};
@@ -792,7 +853,7 @@ var Game = /** @class */ (function () {
                             this.setBoard(4, new TouchControlsBoard(this));
                         }
                         this.spriteSheet = new sprite_1.SpriteSheet();
-                        return [4 /*yield*/, this.spriteSheet.load(options.spritesImage, options.sprites)];
+                        return [4 /*yield*/, this.spriteSheet.load(options.spritesImage, options.spriteMap)];
                     case 1: 
                     // Load the sprite image
                     return [2 /*return*/, _a.sent()];
@@ -882,16 +943,22 @@ var Game = /** @class */ (function () {
 exports.Game = Game;
 // singleton pattern??
 var GameBoard = /** @class */ (function () {
-    function GameBoard() {
+    function GameBoard(game) {
+        this.game = game;
         // The current list of objects/sprites
         this.objects = [];
-        this.cnt = {};
+        // Counts of objects with different types
+        this.counts = {};
     }
+    GameBoard.prototype.setLevel = function (level) {
+        this.level = level;
+        level.board = this;
+    };
     // Add a new object to the object list
     GameBoard.prototype.add = function (obj) {
         obj.board = this;
         this.objects.push(obj);
-        this.cnt[obj.type] = (this.cnt[obj.type] || 0) + 1;
+        this.counts[obj.type] = (this.counts[obj.type] || 0) + 1;
         return obj;
     };
     // Mark an object for removal
@@ -914,7 +981,7 @@ var GameBoard = /** @class */ (function () {
         for (var i = 0, len = this.removed.length; i < len; i++) {
             var idx = this.objects.indexOf(this.removed[i]);
             if (idx != -1) {
-                this.cnt[this.removed[i].type]--;
+                this.counts[this.removed[i].type]--;
                 this.objects.splice(idx, 1);
             }
         }
@@ -941,6 +1008,9 @@ var GameBoard = /** @class */ (function () {
     // any object that have been marked for removal
     GameBoard.prototype.step = function (dt) {
         this.resetRemoved();
+        if (this.level) {
+            this.level.step(dt);
+        }
         // Every object steps
         this.iterate('step', dt);
         this.finalizeRemoved();
@@ -1051,7 +1121,7 @@ exports.TouchControlsBoard = TouchControlsBoard;
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1141,6 +1211,7 @@ var LayerPoints = /** @class */ (function () {
         this.pointsLength = 8;
     }
     LayerPoints.prototype.draw = function (ctx) {
+        // Save the current state of ctx
         ctx.save();
         ctx.font = 'bold 18px arial';
         ctx.fillStyle = '#FFFFFF';
@@ -1164,7 +1235,7 @@ exports.LayerPoints = LayerPoints;
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1178,43 +1249,32 @@ var Level = /** @class */ (function () {
         for (var i = 0; i < levelData.length; i++) {
             this.levelData.push(Object.create(levelData[i]));
         }
-        this.t = 0;
+        this.time = 0;
         this.callback = callback;
         this.over = false;
     }
     Level.prototype.step = function (dt) {
-        var _this = this;
         if (this.over) {
-            // console.log(this.board)
-            // Remove all objects except the player ship from the gameBoard
-            this.board.objects.forEach(function (a) {
-                if (a instanceof sprites_1.PlayerShip === false) {
-                    _this.board.remove(a);
-                }
-            });
-            // this.board.remove(this);
-            if (this.callback)
-                this.callback();
             return;
         }
         var enemies = this.game.options.enemies;
-        var idx = 0, remove = [], curShip = null;
+        var idx = 0, remove = [], curWave = null;
         // Update the current time offset
-        this.t += dt * 1000;
+        this.time += dt * 1000;
         //   Start, End,  Gap, Type,   Override
         // [ 0,     4000, 500, 'step', { x: 100 } ]
-        while ((curShip = this.levelData[idx]) && curShip[0] < this.t + 2000) {
+        while ((curWave = this.levelData[idx]) && curWave[0] < this.time + 2000) {
             // Check if we've passed the end time
-            if (this.t > curShip[1]) {
-                remove.push(curShip);
+            if (this.time > curWave[1]) {
+                remove.push(curWave);
             }
-            else if (curShip[0] < this.t) {
+            else if (curWave[0] < this.time) {
                 // Get the enemy definition blueprint
-                var enemy = enemies[curShip[3]], override = curShip[4];
+                var enemy = enemies[curWave[3]], override = curWave[4];
                 // Add a new enemy with the blueprint and override
                 this.board.add(new sprites_1.Enemy(this.game, enemy, override));
                 // Increment the start time by the gap
-                curShip[0] += curShip[2];
+                curWave[0] += curWave[2];
             }
             idx++;
         }
@@ -1226,12 +1286,24 @@ var Level = /** @class */ (function () {
         }
         // If there are no more enemies on the board or in
         // levelData, this level is done
-        if (this.levelData.length === 0 && this.board.cnt[sprites_1.OBJECT_ENEMY] === 0) {
+        if (this.levelData.length === 0 &&
+            this.board.counts[sprites_1.OBJECT_ENEMY] === 0) {
             this.end();
         }
     };
     Level.prototype.end = function () {
+        var _this = this;
         this.over = true;
+        // console.log(this.board)
+        // Remove all objects except the player ship from the gameBoard
+        this.board.objects.forEach(function (a) {
+            if (a instanceof sprites_1.PlayerShip === false) {
+                _this.board.remove(a);
+            }
+        });
+        // this.board.remove(this);
+        if (this.callback)
+            this.callback();
     };
     Level.prototype.draw = function (ctx) { };
     return Level;
@@ -1240,7 +1312,7 @@ exports.Level = Level;
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/sprites.6b1347de.png";
