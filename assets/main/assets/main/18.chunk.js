@@ -1,19 +1,19 @@
 webpackJsonp([18],{
 
-/***/ 125:
+/***/ 129:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(205)
+__webpack_require__(230)
 
 var Component = __webpack_require__(5)(
   /* script */
-  __webpack_require__(206),
+  __webpack_require__(231),
   /* template */
-  __webpack_require__(207),
+  __webpack_require__(232),
   /* scopeId */
-  "data-v-a67932b0",
+  null,
   /* cssModules */
   null
 )
@@ -23,14 +23,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 205:
+/***/ 230:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 206:
+/***/ 231:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47,39 +47,19 @@ var _axios2 = _interopRequireDefault(_axios);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  data: function data() {
-    return {
-      list: []
-    };
+  components: {
+    // Management: require('../Management.vue')
   },
-
-  components: {},
-  beforeCreate: function beforeCreate() {},
-  created: function created() {},
   mounted: function mounted() {
-    var _this = this;
-
-    (0, _axios2.default)({
-      url: '/api/sqlite/deployments',
-      // this is essential cause a fetch request is without cookie by default
-      credentials: 'include',
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      mode: 'cors'
-    }).then(function (res) {
-      console.log(res);
-      _this.list.length = 0;
-      _this.list.push(res.data.data.items);
-    });
+    this.query();
+    this.mutate();
   },
 
-  computed: {},
   methods: {
-    deploy: function deploy() {
+    query: function query() {
+      var str = '\n        query {\n          user {\n            items {\n              id\n              name\n            }\n          }\n        }\n      ';
       (0, _axios2.default)({
-        url: '/api/admin/deploy',
+        url: '/api/v1?query=' + str,
         // this is essential cause a fetch request is without cookie by default
         credentials: 'include',
         method: 'GET',
@@ -87,20 +67,27 @@ exports.default = {
           'Content-Type': 'application/json'
         },
         mode: 'cors'
-      }).then(function (res) {});
+      }).then(function (res) {}).catch(function (err) {});
     },
-    reload: function reload() {
-      // axios({
-      //   url: '/api/admin/reload',
-      //   // this is essential cause a fetch request is without cookie by default
-      //   credentials: 'include',
-      //   method: 'GET',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   mode: 'cors',
-      // }).then(res => {
-      // });
+    mutate: function mutate() {
+      var data = {
+        query: '\n          mutation HaHa(\n            $id: [Int]\n            $brand: [String]\n          ) {\n            items_1: getItems(\n              id: $id\n              brand: $brand\n            ) {\n              id\n              name\n              price\n              brand\n            }\n            items_2: getItems {\n              id\n              name\n              brand\n            }\n          }\n        ',
+        variables: {
+          id: [137, 173],
+          brand: ['CK', 'Apple']
+        }
+      };
+      (0, _axios2.default)({
+        url: '/api/v1',
+        // this is essential cause a fetch request is without cookie by default
+        credentials: 'include',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        mode: 'cors',
+        data: data
+      }).then(function (res) {}).catch(function (err) {});
     }
   }
 }; //
@@ -124,53 +111,24 @@ exports.default = {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /***/ }),
 
-/***/ 207:
+/***/ 232:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "AdminDeployment"
+  return _c('transition', {
+    attrs: {
+      "name": "fade"
+    }
+  }, [_c('div', {
+    staticClass: "RouteGraphql"
   }, [_c('div', {
     staticClass: "container-fluid"
-  }, [_c('v-breadcrumb', {
-    attrs: {
-      "items": [{
-        name: 'Deployment'
-      }]
-    }
-  }), _c('div', {
-    staticClass: "form-group"
-  }, [_c('div', {
-    staticClass: "btn btn-primary",
-    on: {
-      "click": _vm.deploy
-    }
-  }, [_vm._v("\n        Deploy\n      ")]), _c('div', {
-    staticClass: "btn btn-primary",
-    on: {
-      "click": _vm.reload
-    }
-  }, [_vm._v("\n        Reload\n      ")])]), _c('table', {
-    staticClass: "table table-bordered"
-  }, [_c('thead', _vm._l((_vm.list), function(a) {
-    return _c('tr', [_c('td', [_vm._v(_vm._s(a.createdAt))])])
-  }))])], 1)])
+  }, [_c('ul', {
+    staticClass: "breadcrumb"
+  }, [_c('li', [_c('a', [_vm._v("Graphql")])])])])])])
 },staticRenderFns: []}
 
 /***/ })

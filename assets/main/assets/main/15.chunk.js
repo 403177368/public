@@ -1,19 +1,19 @@
 webpackJsonp([15],{
 
-/***/ 128:
+/***/ 138:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(226)
+__webpack_require__(282)
 
 var Component = __webpack_require__(5)(
   /* script */
-  __webpack_require__(227),
+  __webpack_require__(283),
   /* template */
-  __webpack_require__(228),
+  __webpack_require__(284),
   /* scopeId */
-  "data-v-304f6735",
+  null,
   /* cssModules */
   null
 )
@@ -23,14 +23,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 226:
+/***/ 282:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 227:
+/***/ 283:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87,25 +87,90 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-exports.default = {};
+exports.default = {
+  computed: {
+    post: function post() {
+      return this.$store.state.main.post;
+    }
+  },
+  watch: {
+    '$store.state.main.post': function $storeStateMainPost(nv) {}
+  },
+  mounted: function mounted() {
+    var id = this.$route.params.id;
+
+    var state_id = this.$store.state.main.post.id;
+    if (state_id === null || state_id !== id) {
+      this.$store.dispatch('main/post/fetchPost', { id: id });
+    }
+  },
+  methods: {
+    preFetch: function preFetch(store, router) {
+      // console.log(router.history.current.params.id);
+      return store.dispatch('main/post/fetchPost', { id: router.history.current.params.id });
+    }
+  }
+};
 
 /***/ }),
 
-/***/ 228:
+/***/ 284:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "TableRoute"
-  }, [_c('table', {
+  return _c('transition', {
     attrs: {
-      "border": "1"
+      "name": "fade-in"
     }
-  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("ID")]), _c('th', [_vm._v("Name")]), _c('th', [_vm._v("Price")])])]), _c('tbody', [_c('tr', [_c('th', [_vm._v("0001")]), _c('th', [_vm._v("iPhone 7")]), _c('th', [_vm._v("6000")])])])])])
-}]}
+  }, [_c('div', {
+    ref: "Post",
+    staticClass: "Post"
+  }, [_c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.post.state === 'pending'),
+      expression: "post.state==='pending'"
+    }]
+  }, [_vm._v("loading...")]), _c('div', {
+    staticClass: "container"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-sm-8 col-sm-offset-2"
+  }, [_c('div', {
+    staticClass: "panel panel-full-sm"
+  }, [_c('div', {
+    ref: "post_main",
+    staticClass: "panel-body",
+    domProps: {
+      "innerHTML": _vm._s(_vm.post.html)
+    }
+  })])])])])])])
+},staticRenderFns: []}
 
 /***/ })
 

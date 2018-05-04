@@ -1,40 +1,17 @@
 webpackJsonp([8],{
 
-/***/ 138:
+/***/ 139:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(281)
+__webpack_require__(285)
 
 var Component = __webpack_require__(5)(
   /* script */
-  __webpack_require__(282),
+  __webpack_require__(286),
   /* template */
-  __webpack_require__(287),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 163:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(164)
-
-var Component = __webpack_require__(5)(
-  /* script */
-  __webpack_require__(165),
-  /* template */
-  __webpack_require__(166),
+  __webpack_require__(291),
   /* scopeId */
   null,
   /* cssModules */
@@ -47,13 +24,36 @@ module.exports = Component.exports
 /***/ }),
 
 /***/ 164:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(165)
+
+var Component = __webpack_require__(5)(
+  /* script */
+  __webpack_require__(166),
+  /* template */
+  __webpack_require__(167),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 165:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 165:
+/***/ 166:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62,6 +62,7 @@ module.exports = Component.exports
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+//
 //
 //
 //
@@ -123,7 +124,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 166:
+/***/ 167:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -162,6 +163,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: " password "
     }],
     staticClass: "form-control input-sm",
+    attrs: {
+      "type": "password"
+    },
     domProps: {
       "value": (_vm.password)
     },
@@ -175,13 +179,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     directives: [{
       name: "show",
       rawName: "v-show",
-      value: (_vm.user.state === 'failed'),
-      expression: " user.state === 'failed' "
+      value: (_vm.user.info),
+      expression: " user.info "
     }],
     staticClass: "form-group has-error"
   }, [_c('div', {
     staticClass: "checkbox"
-  }, [_vm._v("\n        Invalid username or password.\n      ")])]), _c('div', {
+  }, [_vm._v("\n        " + _vm._s(_vm.user.info) + "\n      ")])]), _c('div', {
     staticClass: "btn btn-primary btn-sm",
     on: {
       "click": _vm.login
@@ -191,14 +195,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 281:
+/***/ 285:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 282:
+/***/ 286:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -244,8 +248,8 @@ exports.default = {
     return {};
   },
   components: {
-    BoxSignin: __webpack_require__(163),
-    'signup-box': __webpack_require__(283)
+    BoxSignin: __webpack_require__(164),
+    'signup-box': __webpack_require__(287)
   },
   computed: {
     user: function user() {
@@ -257,18 +261,18 @@ exports.default = {
 
 /***/ }),
 
-/***/ 283:
+/***/ 287:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(284)
+__webpack_require__(288)
 
 var Component = __webpack_require__(5)(
   /* script */
-  __webpack_require__(285),
+  __webpack_require__(289),
   /* template */
-  __webpack_require__(286),
+  __webpack_require__(290),
   /* scopeId */
   "data-v-8a2fd2ec",
   /* cssModules */
@@ -280,14 +284,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 284:
+/***/ 288:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 285:
+/***/ 289:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -341,9 +345,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 
-// import CryptoJS from './hmac-sha256.js';
-// import './home/enc-base64-min.js';
-// import CryptoJS from './home/hmac-sha256.js';
 
 exports.default = {
   data: function data() {
@@ -357,9 +358,7 @@ exports.default = {
 
   components: {},
   computed: {},
-  mounted: function mounted() {
-    // var hash = CryptoJS.HmacSHA256('111111', 'rabbit').toString(CryptoJS.enc.Hex);
-  },
+  mounted: function mounted() {},
 
   methods: {
     submit: function submit() {
@@ -371,21 +370,39 @@ exports.default = {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
+                if (_this.name) {
+                  _context.next = 3;
+                  break;
+                }
+
+                _this.msg = 'Please input username';
+                return _context.abrupt('return');
+
+              case 3:
+                if (_this.password) {
+                  _context.next = 6;
+                  break;
+                }
+
+                _this.msg = 'Please input password';
+                return _context.abrupt('return');
+
+              case 6:
+                _this.msg = '';
+                _context.next = 9;
                 return _this.$store.dispatch('app/user/signup', {
                   name: _this.name,
                   password: _this.password
                 });
 
-              case 2:
+              case 9:
                 res = _context.sent;
 
-                console.log(res);
                 if (res.data.errno !== 0) {
                   _this.msg = res.data.msg;
                 }
 
-              case 5:
+              case 11:
               case 'end':
                 return _context.stop();
             }
@@ -398,7 +415,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 286:
+/***/ 290:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -463,7 +480,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 287:
+/***/ 291:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

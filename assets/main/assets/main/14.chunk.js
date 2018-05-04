@@ -1,19 +1,19 @@
 webpackJsonp([14],{
 
-/***/ 137:
+/***/ 134:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(278)
+__webpack_require__(262)
 
 var Component = __webpack_require__(5)(
   /* script */
-  __webpack_require__(279),
+  __webpack_require__(263),
   /* template */
-  __webpack_require__(280),
+  __webpack_require__(264),
   /* scopeId */
-  null,
+  "data-v-4b71b2f6",
   /* cssModules */
   null
 )
@@ -23,14 +23,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 278:
+/***/ 262:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 279:
+/***/ 263:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -55,89 +55,53 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 exports.default = {
-  computed: {
-    post: function post() {
-      return this.$store.state.main.post;
-    }
+  props: {},
+  data: function data() {
+    return {
+      arr: [{
+        name: '知乎-发现',
+        href: '//www.zhihu.com/explore'
+      }, {
+        name: '豆瓣',
+        href: '//m.douban.com'
+      }]
+    };
   },
-  watch: {
-    '$store.state.main.post': function $storeStateMainPost(nv) {}
+  beforeRouteEnter: function beforeRouteEnter(to, from, next) {
+    next();
   },
-  mounted: function mounted() {
-    var id = this.$route.params.id;
 
-    var state_id = this.$store.state.main.post.id;
-    if (state_id === null || state_id !== id) {
-      this.$store.dispatch('main/post/fetchPost', { id: id });
+  computed: {
+    user: function user() {
+      return this.$store.state.app.user;
     }
   },
+  beforeCreate: function beforeCreate() {
+    // this.$store.complete(['main', 'home'], home);
+    // this.$store.complete(['main', 'projects'], obj);
+  },
+  created: function created() {},
+  mounted: function mounted() {
+    // this.$store.dispatch('main/home/fetch', { what: 'jianshu' });
+    // this.$store.dispatch('main/projects/init');
+  },
+
   methods: {
-    preFetch: function preFetch(store, router) {
-      // console.log(router.history.current.params.id);
-      return store.dispatch('main/post/fetchPost', { id: router.history.current.params.id });
-    }
+    // register(store) {
+    //   store.complete(['main', 'home'], home);
+    //   store.complete(['main', 'projects'], obj);
+    // },
+    // preFetch(store) {
+    //   store.dispatch('main/projects/init');
+    // }
   }
 };
 
 /***/ }),
 
-/***/ 280:
+/***/ 264:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -146,30 +110,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "name": "fade-in"
     }
   }, [_c('div', {
-    ref: "Post",
-    staticClass: "Post"
-  }, [_c('span', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.post.state === 'pending'),
-      expression: "post.state==='pending'"
-    }]
-  }, [_vm._v("loading...")]), _c('div', {
     staticClass: "container"
   }, [_c('div', {
-    staticClass: "row"
+    staticClass: "panel panel-default"
   }, [_c('div', {
-    staticClass: "col-sm-8 col-sm-offset-2"
-  }, [_c('div', {
-    staticClass: "panel panel-full-sm"
-  }, [_c('div', {
-    ref: "post_main",
-    staticClass: "panel-body",
-    domProps: {
-      "innerHTML": _vm._s(_vm.post.html)
-    }
-  })])])])])])])
+    staticClass: "panel-body"
+  }, [_vm._v("\n        " + _vm._s(_vm.user.name) + "\n      ")])])])])
 },staticRenderFns: []}
 
 /***/ })

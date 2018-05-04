@@ -1,19 +1,19 @@
 webpackJsonp([19],{
 
-/***/ 124:
+/***/ 125:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(202)
+__webpack_require__(206)
 
 var Component = __webpack_require__(5)(
   /* script */
-  __webpack_require__(203),
+  __webpack_require__(207),
   /* template */
-  __webpack_require__(204),
+  __webpack_require__(208),
   /* scopeId */
-  "data-v-6434f0a7",
+  "data-v-a67932b0",
   /* cssModules */
   null
 )
@@ -23,14 +23,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 202:
+/***/ 206:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 203:
+/***/ 207:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39,68 +39,139 @@ module.exports = Component.exports
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
+var _axios = __webpack_require__(15);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
+  data: function data() {
+    return {
+      list: []
+    };
+  },
+
   components: {},
   beforeCreate: function beforeCreate() {},
-
   created: function created() {},
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    var _this = this;
+
+    (0, _axios2.default)({
+      url: '/api/sqlite/deployments',
+      // this is essential cause a fetch request is without cookie by default
+      credentials: 'include',
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      mode: 'cors'
+    }).then(function (res) {
+      console.log(res);
+      _this.list.length = 0;
+      _this.list.push(res.data.data.items);
+    });
+  },
 
   computed: {},
-  methods: {}
-};
+  methods: {
+    deploy: function deploy() {
+      (0, _axios2.default)({
+        url: '/api/admin/deploy',
+        // this is essential cause a fetch request is without cookie by default
+        credentials: 'include',
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        mode: 'cors'
+      }).then(function (res) {});
+    },
+    reload: function reload() {
+      // axios({
+      //   url: '/api/admin/reload',
+      //   // this is essential cause a fetch request is without cookie by default
+      //   credentials: 'include',
+      //   method: 'GET',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   mode: 'cors',
+      // }).then(res => {
+      // });
+    }
+  }
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 
-/***/ 204:
+/***/ 208:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "AdminDashboard"
+    staticClass: "AdminDeployment"
   }, [_c('div', {
     staticClass: "container-fluid"
-  }, [_c('ul', {
-    staticClass: "breadcrumb"
-  }, [_c('li', [_c('a', [_vm._v("Dashboard")])])])])])
-}]}
+  }, [_c('v-breadcrumb', {
+    attrs: {
+      "items": [{
+        name: 'Deployment'
+      }]
+    }
+  }), _c('div', {
+    staticClass: "form-group"
+  }, [_c('div', {
+    staticClass: "btn btn-primary",
+    on: {
+      "click": _vm.deploy
+    }
+  }, [_vm._v("\n        Deploy\n      ")]), _c('div', {
+    staticClass: "btn btn-primary",
+    on: {
+      "click": _vm.reload
+    }
+  }, [_vm._v("\n        Reload\n      ")])]), _c('table', {
+    staticClass: "table table-bordered"
+  }, [_c('thead', _vm._l((_vm.list), function(a) {
+    return _c('tr', [_c('td', [_vm._v(_vm._s(a.createdAt))])])
+  }))])], 1)])
+},staticRenderFns: []}
 
 /***/ })
 

@@ -29,7 +29,7 @@
 /******/
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		21: 0
+/******/ 		22: 0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -481,7 +481,7 @@ var routes = [{
   //   template: '<div class="Route404">404: This route doesn\'t exist.</div>'
   // }
   component: function component() {
-    return __webpack_require__.e/* import() */(20).then(__webpack_require__.bind(null, 131));
+    return __webpack_require__.e/* import() */(21).then(__webpack_require__.bind(null, 131));
   }
 }, {
   path: '/',
@@ -501,34 +501,39 @@ var routes = [{
       keepAlive: true
     }
   }, {
+    path: 'profile',
+    component: function component() {
+      return __webpack_require__.e/* import() */(14).then(__webpack_require__.bind(null, 134));
+    }
+  }, {
     path: 'projects',
     component: function component() {
-      return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 134));
+      return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 135));
     }
   }, {
     path: 'canvas',
     component: function component() {
-      return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 135));
+      return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 136));
     }
   }, {
     path: 'blog',
     component: function component() {
-      return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, 136));
+      return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, 137));
     }
   }, {
     path: 'post/:id',
     component: function component() {
-      return __webpack_require__.e/* import() */(14).then(__webpack_require__.bind(null, 137));
+      return __webpack_require__.e/* import() */(15).then(__webpack_require__.bind(null, 138));
     }
   }, {
     path: 'signin',
     component: function component() {
-      return __webpack_require__.e/* import() */(8).then(__webpack_require__.bind(null, 138));
+      return __webpack_require__.e/* import() */(8).then(__webpack_require__.bind(null, 139));
     }
   }, {
     path: 'cnode_post/:id',
     component: function component() {
-      return __webpack_require__.e/* import() */(9).then(__webpack_require__.bind(null, 139));
+      return __webpack_require__.e/* import() */(9).then(__webpack_require__.bind(null, 140));
     }
   }]
 
@@ -536,19 +541,19 @@ var routes = [{
 
   path: '/binance',
   component: function component() {
-    return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 140));
+    return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 141));
   }
 
 }, {
 
   path: '/mall',
   component: function component() {
-    return __webpack_require__.e/* import() */(12).then(__webpack_require__.bind(null, 141));
+    return __webpack_require__.e/* import() */(12).then(__webpack_require__.bind(null, 142));
   },
   children: [{
     path: 'cart',
     component: function component() {
-      return __webpack_require__.e/* import() */(13).then(__webpack_require__.bind(null, 142));
+      return __webpack_require__.e/* import() */(13).then(__webpack_require__.bind(null, 143));
     }
   }]
 
@@ -556,7 +561,7 @@ var routes = [{
 
   path: '/d3',
   component: function component() {
-    return __webpack_require__.e/* import() */(10).then(__webpack_require__.bind(null, 143));
+    return __webpack_require__.e/* import() */(10).then(__webpack_require__.bind(null, 144));
   }
 
 }, __webpack_require__(80).default];
@@ -2699,12 +2704,12 @@ exports.default = {
     alias: '',
     path: 'dashboard',
     component: function component() {
-      return __webpack_require__.e/* import() */(19).then(__webpack_require__.bind(null, 124));
+      return __webpack_require__.e/* import() */(20).then(__webpack_require__.bind(null, 124));
     }
   }, {
     path: 'deployment',
     component: function component() {
-      return __webpack_require__.e/* import() */(18).then(__webpack_require__.bind(null, 125));
+      return __webpack_require__.e/* import() */(19).then(__webpack_require__.bind(null, 125));
     }
   }, {
     path: 'lowdb',
@@ -2714,17 +2719,17 @@ exports.default = {
   }, {
     path: 'sequelize',
     component: function component() {
-      return __webpack_require__.e/* import() */(16).then(__webpack_require__.bind(null, 127));
+      return __webpack_require__.e/* import() */(17).then(__webpack_require__.bind(null, 127));
     }
   }, {
     path: 'tables',
     component: function component() {
-      return __webpack_require__.e/* import() */(15).then(__webpack_require__.bind(null, 128));
+      return __webpack_require__.e/* import() */(16).then(__webpack_require__.bind(null, 128));
     }
   }, {
     path: 'graphql',
     component: function component() {
-      return __webpack_require__.e/* import() */(17).then(__webpack_require__.bind(null, 129));
+      return __webpack_require__.e/* import() */(18).then(__webpack_require__.bind(null, 129));
     }
   }, {
     path: 'crawler',
@@ -4490,137 +4495,160 @@ var _hmacSha2 = _interopRequireDefault(_hmacSha);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var state = {
-  loggedIn: false,
-  state: '',
-  name: ''
-};
-
-var actions = {
-  login: function login(ctx, user) {
-    ctx.commit('SET_STATE', { val: 'pending' });
-    return (0, _axios2.default)({
-      url: '/api/user/login',
-      // this is essential cause a fetch request is without cookie by default
-      withCredentials: true,
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      data: {
-        name: user.name,
-        password: _hmacSha2.default.HmacSHA256(user.password, 'rabbit').toString(_hmacSha2.default.enc.Hex)
-      }
-    }).then(function (res) {
-      if (res.status === 200) {
-        ctx.commit('LOGIN', user);
-        ctx.commit('SET_STATE', { val: 'resolved' });
-        _router.router.push('/main/home');
-      }
-    }).catch(function (err) {
-      ctx.commit('SET_STATE', { val: 'failed' });
-      console.log(err);
-    });
-  },
-  fetchUser: function fetchUser(ctx) {
-    return (0, _axios2.default)({
-      url: '/api/user',
-      // this is essential cause a fetch request is without cookie by default
-      withCredentials: false,
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then(function (res) {
-      if (res.data.errno === 0) {
-        return ctx.commit('LOGIN', res.data);
-      }
-    }).catch(function (err) {
-      console.log(err);
-    });
-  },
-  logout: function logout(ctx) {
-    fetch('/api/user/logout/', {
-      // this is essential cause a fetch request is without cookie by default
-      credentials: 'include',
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      mode: 'cors'
-    }).then(function (res) {
-      return res.json();
-    }).then(function (obj) {
-      if (obj.errno === 0) {
-        return ctx.commit('LOGOUT');
-      } else {
-        return;
-      }
-    }).catch(function (err) {
-      console.log(err);
-    });
-  },
-  signup: function signup(_ref, _ref2) {
-    var _this = this;
-
-    var state = _ref.state;
-    var name = _ref2.name,
-        password = _ref2.password;
-    return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
-      return _regenerator2.default.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              _context.next = 2;
-              return (0, _axios2.default)({
-                url: '/api/user/signup',
-                // this is essential cause a fetch request is without cookie by default
-                withCredentials: true,
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json'
-                },
-                data: {
-                  name: name,
-                  password: _hmacSha2.default.HmacSHA256(password, 'rabbit').toString(_hmacSha2.default.enc.Hex)
-                }
-              });
-
-            case 2:
-              return _context.abrupt('return', _context.sent);
-
-            case 3:
-            case 'end':
-              return _context.stop();
-          }
-        }
-      }, _callee, _this);
-    }))();
-  }
-};
-
-var mutations = {
-  SET_STATE: function SET_STATE(state, _ref3) {
-    var val = _ref3.val;
-
-    state.state = val;
-  },
-  LOGIN: function LOGIN(state) {
-    state.loggedIn = true;
-    state.name = 'soap';
-    state.state = 'resolved';
-  },
-  LOGOUT: function LOGOUT(state) {
-    state.loggedIn = false;
-    state.name = '';
-  }
-};
-
 exports.default = {
   namespaced: true,
-  state: state,
-  actions: actions,
-  mutations: mutations
+  state: {
+    loggedIn: false,
+    state: '',
+    name: '',
+    info: ''
+  },
+  actions: {
+    login: function login(_ref, _ref2) {
+      var state = _ref.state,
+          commit = _ref.commit;
+      var name = _ref2.name,
+          password = _ref2.password;
+
+      // ctx.commit('SET_STATE', { val: 'pending' });
+      if (!name) {
+        state.info = 'Please input username';
+        return;
+      }
+      if (!password) {
+        state.info = 'Please input password';
+        return;
+      }
+
+      state.info = '';
+      state.state = 'pending';
+      return (0, _axios2.default)({
+        url: '/api/user/login',
+        // this is essential cause a fetch request is without cookie by default
+        withCredentials: true,
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: {
+          name: name,
+          password: _hmacSha2.default.HmacSHA256(password, 'rabbit').toString(_hmacSha2.default.enc.Hex)
+        }
+      }).then(function (res) {
+        if (res.data.errno === 0) {
+          commit('LOGIN', { name: name, password: password });
+          commit('SET_STATE', { val: 'resolved' });
+          _router.router.push('/main/home');
+        } else {
+          state.info = res.data.msg;
+        }
+      }).catch(function (err) {
+        // ctx.commit('SET_STATE', { val: 'failed' });
+        state.state = 'failed';
+        console.log(err);
+      });
+    },
+    fetchUser: function fetchUser(ctx) {
+      return (0, _axios2.default)({
+        url: '/api/user',
+        // this is essential cause a fetch request is without cookie by default
+        withCredentials: false,
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (res) {
+        if (res.data.errno === 0) {
+          return ctx.commit('LOGIN', res.data.data);
+        }
+      }).catch(function (err) {
+        console.log(err);
+      });
+    },
+    logout: function logout(ctx) {
+      fetch('/api/user/logout/', {
+        // this is essential cause a fetch request is without cookie by default
+        credentials: 'include',
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        mode: 'cors'
+      }).then(function (res) {
+        return res.json();
+      }).then(function (obj) {
+        if (obj.errno === 0) {
+          return ctx.commit('LOGOUT');
+        } else {
+          return;
+        }
+      }).catch(function (err) {
+        console.log(err);
+      });
+    },
+    signup: function signup(_ref3, _ref4) {
+      var _this = this;
+
+      var state = _ref3.state,
+          commit = _ref3.commit;
+      var name = _ref4.name,
+          password = _ref4.password;
+      return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+        return _regenerator2.default.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return (0, _axios2.default)({
+                  url: '/api/user/signup',
+                  // this is essential cause a fetch request is without cookie by default
+                  withCredentials: true,
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  data: {
+                    name: name,
+                    password: _hmacSha2.default.HmacSHA256(password, 'rabbit').toString(_hmacSha2.default.enc.Hex)
+                  }
+                }).then(function (res) {
+                  if (res.data.errno === 0) {
+                    commit('LOGIN', { name: name });
+                    _router.router.push('/main/home');
+                  }
+                  return res;
+                });
+
+              case 2:
+                return _context.abrupt('return', _context.sent);
+
+              case 3:
+              case 'end':
+                return _context.stop();
+            }
+          }
+        }, _callee, _this);
+      }))();
+    }
+  },
+  mutations: {
+    SET_STATE: function SET_STATE(state, _ref5) {
+      var val = _ref5.val;
+
+      state.state = val;
+    },
+    LOGIN: function LOGIN(state, _ref6) {
+      var name = _ref6.name;
+
+      state.loggedIn = true;
+      state.name = name;
+      state.state = 'resolved';
+    },
+    LOGOUT: function LOGOUT(state) {
+      state.loggedIn = false;
+      state.name = '';
+    }
+  }
 };
 
 /***/ }),
