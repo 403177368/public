@@ -79,301 +79,341 @@ module.exports = __webpack_require__(52);
 "use strict";
 
 
+__webpack_require__(53);
+
+/***/ }),
+
+/***/ 53:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); //THREEJS RELATED VARIABLES 
 
-var _Cow = __webpack_require__(53);
+var _Cow = __webpack_require__(54);
 
-var _User = __webpack_require__(55);
+var _User = __webpack_require__(56);
 
-var _Block = __webpack_require__(56);
+var _Block = __webpack_require__(57);
 
-var _ControlLayer = __webpack_require__(57);
+var _ControlLayer = __webpack_require__(58);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var game = function () {
-  var scene, camera, controls, fieldOfView, aspectRatio, nearPlane, farPlane, shadowLight, backLight, light, renderer, container;
+var Game = function () {
+  // camera: THREE.PerspectiveCamera;
+  // controls: THREE.OrbitControls;
+  // keys: Object;
+  // things: Array<any>;
+  // time: number;
 
-  var HEIGHT,
-      WIDTH,
-      windowHalfX,
-      windowHalfY,
-      mousePos = { x: 0, y: 0 },
-      dist = 0;
+  function Game() {
+    _classCallCheck(this, Game);
 
-  var floor,
-      lion,
-      fan,
-      isBlowing = false;
+    // this.scene;
+    // this.camera;
+    // this.renderer;
 
-  function onWindowResize() {
-    HEIGHT = window.innerHeight;
-    WIDTH = window.innerWidth;
-    windowHalfX = WIDTH / 2;
-    windowHalfY = HEIGHT / 2;
-    renderer.setSize(WIDTH, HEIGHT);
-    camera.aspect = WIDTH / HEIGHT;
-    camera.updateProjectionMatrix();
+    // this.time;
+
+    // this.user;
+    this.view = 'third';
+    this.player;
+
+    this.keys = {
+      'left': false,
+      'right': false,
+      'space': false
+    };
+    this.things = [];
+    this.init();
   }
 
-  function handleMouseMove(event) {
-    mousePos = { x: event.clientX, y: event.clientY };
-  }
+  _createClass(Game, [{
+    key: 'init',
+    value: function init() {
+      this.scene = new THREE.Scene();
+      this.camera = this.createCamera();
+      this.controls = new THREE.OrbitControls(this.camera);
+      // this.controls = new THREE.FlyControls(this.camera);
+      // console.log(this.controls)
+      //   controls.maxPolarAngle = Math.PI * 0.5;
+      this.renderer = this.createRenderer();
 
-  function handleMouseDown(event) {
-    isBlowing = true;
-  }
+      var container = document.createElement('div');
+      document.body.appendChild(container);
+      container.appendChild(this.renderer.domElement);
+      this.windowHalfX = this.WIDTH / 2;
+      this.windowHalfY = this.HEIGHT / 2;
+      this.initEvents();
+      this.listenKeys();
 
-  function handleMouseUp(event) {
-    isBlowing = false;
-  }
+      this.createLights();
+      this.createFloor();
 
-  function handleTouchStart(event) {
-    if (event.touches.length > 1) {
-      event.preventDefault();
-      mousePos = { x: event.touches[0].pageX, y: event.touches[0].pageY };
-      isBlowing = true;
+      this.player = new _Cow.Cow(this, 0, 70, 0);
+      this.add(this.player);
+      // this.enterFirst();
+
+      this.add(new _Block.Block(200, 0, 200));
+      this.add(new _Block.Block(300, 0, 200));
+      this.add(new _User.User(this));
+
+      new _ControlLayer.ControlLayer(this);
+
+      this.time = new Date().getTime();
+      this.loop();
     }
-  }
+  }, {
+    key: 'initEvents',
+    value: function initEvents() {
+      var self = this;
+      var HEIGHT,
+          WIDTH,
+          windowHalfX,
+          windowHalfY,
+          mousePos = { x: 0, y: 0 },
+          dist = 0;
+      this.mousePos = mousePos;
 
-  function handleTouchEnd(event) {
-    mousePos = { x: windowHalfX, y: windowHalfY };
-    isBlowing = false;
-  }
-
-  function handleTouchMove(event) {
-    if (event.touches.length == 1) {
-      event.preventDefault();
-      mousePos = { x: event.touches[0].pageX, y: event.touches[0].pageY };
-    }
-  }
-
-  var Game = function () {
-    function Game() {
-      _classCallCheck(this, Game);
-
-      // this.scene;
-      // this.camera;
-      // this.renderer;
-
-      // this.time;
-
-      // this.user;
-
-      this.keys = {
-        'left': false,
-        'right': false,
-        'space': false
-      };
-      this.things = [];
-      this.init();
-    }
-
-    _createClass(Game, [{
-      key: 'init',
-      value: function init() {
-        scene = new THREE.Scene();
-        this.createCamera();
-        this.camera = camera;
-        this.controls = new THREE.OrbitControls(this.camera);
-        // this.controls = new THREE.FlyControls(this.camera);
-        // console.log(this.controls)
-        //   controls.maxPolarAngle = Math.PI * 0.5;
-        this.createRenderer();
-
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        container.appendChild(renderer.domElement);
-        windowHalfX = WIDTH / 2;
-        windowHalfY = HEIGHT / 2;
-        window.addEventListener('resize', onWindowResize, false);
-        document.addEventListener('mousemove', handleMouseMove, false);
-        document.addEventListener('mousedown', handleMouseDown, false);
-        document.addEventListener('mouseup', handleMouseUp, false);
-        document.addEventListener('touchstart', handleTouchStart, false);
-        document.addEventListener('touchend', handleTouchEnd, false);
-        document.addEventListener('touchmove', handleTouchMove, false);
-
-        this.createLights();
-        this.createFloor();
-
-        this.cow = new _Cow.Cow(this, 0, 70, 0);
-        this.add(this.cow);
-        this.add(new _Block.Block(200, 0, 200));
-        this.add(new _Block.Block(300, 0, 200));
-        this.add(new _User.User(this));
-
-        new _ControlLayer.ControlLayer(this);
-        this.listenKeys();
-
-        this.time = new Date().getTime();
-        this.loop();
+      var floor,
+          lion,
+          fan,
+          isBlowing = false;
+      function onWindowResize() {
+        self.HEIGHT = window.innerHeight;
+        self.WIDTH = window.innerWidth;
+        self.windowHalfX = self.WIDTH / 2;
+        self.windowHalfY = self.HEIGHT / 2;
+        self.renderer.setSize(self.WIDTH, self.HEIGHT);
+        self.camera.aspect = self.WIDTH / self.HEIGHT;
+        self.camera.updateProjectionMatrix();
       }
-    }, {
-      key: 'add',
-      value: function add(sprite) {
-        sprite.game = this;
-        if (sprite.threegroup) {
-          scene.add(sprite.threegroup);
+
+      function handleMouseMove(event) {
+        mousePos = { x: event.clientX, y: event.clientY };
+      }
+
+      function handleMouseDown(event) {
+        isBlowing = true;
+      }
+
+      function handleMouseUp(event) {
+        isBlowing = false;
+      }
+
+      function handleTouchStart(event) {
+        if (event.touches.length > 1) {
+          event.preventDefault();
+          mousePos = { x: event.touches[0].pageX, y: event.touches[0].pageY };
+          isBlowing = true;
         }
-        this.things.push(sprite);
       }
-    }, {
-      key: 'loop',
-      value: function loop() {
-        var time = new Date().getTime();
-        var dt = (time - this.time) / 1000;
-        this.time = time;
-        requestAnimationFrame(this.loop.bind(this));
 
-        var x = this.cow.threegroup.position.x;
-        var y = this.cow.threegroup.position.y;
-        var z = this.cow.threegroup.position.z;
+      function handleTouchEnd(event) {
+        mousePos = { x: windowHalfX, y: windowHalfY };
+        isBlowing = false;
+      }
 
-        var xTarget = mousePos.x - windowHalfX;
-        var yTarget = mousePos.y - windowHalfY;
+      function handleTouchMove(event) {
+        if (event.touches.length == 1) {
+          event.preventDefault();
+          mousePos = { x: event.touches[0].pageX, y: event.touches[0].pageY };
+        }
+      }
+      window.addEventListener('resize', onWindowResize, false);
+      document.addEventListener('mousemove', handleMouseMove, false);
+      document.addEventListener('mousedown', handleMouseDown, false);
+      document.addEventListener('mouseup', handleMouseUp, false);
+      document.addEventListener('touchstart', handleTouchStart, false);
+      document.addEventListener('touchend', handleTouchEnd, false);
+      document.addEventListener('touchmove', handleTouchMove, false);
+    }
+  }, {
+    key: 'add',
+    value: function add(sprite) {
+      sprite.game = this;
+      if (sprite.threegroup) {
+        this.scene.add(sprite.threegroup);
+      }
+      this.things.push(sprite);
+    }
+  }, {
+    key: 'loop',
+    value: function loop() {
+      var time = new Date().getTime();
+      var dt = (time - this.time) / 1000;
+      this.time = time;
+      requestAnimationFrame(this.loop.bind(this));
 
-        // fan.isBlowing = isBlowing;
-        // fan.update(xTarget, yTarget);
-        // // if (isBlowing) {
-        // //   lion.cool(xTarget, yTarget);
-        // // } else {
-        // //   lion.look(xTarget, yTarget);
-        // // }
-        // cow.update();
-        // pig.update();
-        // requestAnimationFrame(loop);
-        this.things.forEach(function (a) {
-          if (a.update) {
-            a.update(dt);
-          }
-        });
+      // var x = this.cow.threegroup.position.x;
+      // var y = this.cow.threegroup.position.y;
+      // var z = this.cow.threegroup.position.z;
 
+      // var xTarget = (this.mousePos.x - this.windowHalfX);
+      // var yTarget = (this.mousePos.y - this.windowHalfY);
+
+      // fan.isBlowing = isBlowing;
+      // fan.update(xTarget, yTarget);
+      // // if (isBlowing) {
+      // //   lion.cool(xTarget, yTarget);
+      // // } else {
+      // //   lion.look(xTarget, yTarget);
+      // // }
+      // cow.update();
+      // pig.update();
+      // requestAnimationFrame(loop);
+      this.things.forEach(function (a) {
+        if (a.update) {
+          a.update(dt);
+        }
+      });
+
+      // this.controls.target.x = x;
+      // this.controls.target.y = y;
+      // this.controls.target.z = z;
+
+      // if (this.keys.KeyW) {
+      // camera.position.z = z - 800;
+      // camera.position.x = x;
+      // camera.position.y = y + 800;
+      // camera.lookAt(new THREE.Vector3(x, y, z));
+      // }
+      // camera.lookAt(new THREE.Vector3(x, y, z));
+      // camera.position.z = z;
+      // camera.position.x = x;
+      // camera.position.y = y + 100;
+      // camera.lookAt(new THREE.Vector3(x, y, z + 1000));
+      if (this.controls) {
+        // this.controls.zoom0 = 1;
         // this.controls.target.x = x;
         // this.controls.target.y = y;
         // this.controls.target.z = z;
-
-        // if (this.keys.KeyW) {
-        // camera.position.z = z - 800;
-        // camera.position.x = x;
-        // camera.position.y = y + 800;
-        // camera.lookAt(new THREE.Vector3(x, y, z));
-        // }
-        // camera.lookAt(new THREE.Vector3(x, y, z));
-        // camera.position.z = z;
-        // camera.position.x = x;
-        // camera.position.y = y + 100;
-        // camera.lookAt(new THREE.Vector3(x, y, z + 1000));
-        if (this.controls) {
-          // this.controls.zoom0 = 1;
-          // this.controls.target.x = x;
-          // this.controls.target.y = y;
-          // this.controls.target.z = z;
-          this.controls.update();
-        }
-        // camera.lookAt(new THREE.Vector3(x, y, z));
-        renderer.render(scene, camera);
+        this.controls.update();
       }
-      // handleKeys() {
-      //   if (this.keys.KeyA === true) {
-      //     camera.position.x -= 5;
-      //   }
-      //   if (this.keys.KeyD === true) {
-      //     camera.position.x += 5;
-      //   }
-      // }
+      this.cameraFollow();
+      // camera.lookAt(new THREE.Vector3(x, y, z));
+      this.renderer.render(this.scene, this.camera);
+    }
+    // handleKeys() {
+    //   if (this.keys.KeyA === true) {
+    //     camera.position.x -= 5;
+    //   }
+    //   if (this.keys.KeyD === true) {
+    //     camera.position.x += 5;
+    //   }
+    // }
 
-    }, {
-      key: 'createCamera',
-      value: function createCamera() {
-        HEIGHT = window.innerHeight;
-        WIDTH = window.innerWidth;
-        aspectRatio = WIDTH / HEIGHT;
-        fieldOfView = 60;
-        nearPlane = 1;
-        // How far the camera can reach
-        farPlane = 10000;
-        camera = new THREE.PerspectiveCamera(fieldOfView, aspectRatio, nearPlane, farPlane);
-        camera.position.z = 800;
-        camera.position.y = 0;
-        camera.lookAt(new THREE.Vector3(0, 0, 0));
-        // console.log(camera)
-        return camera;
+  }, {
+    key: 'createCamera',
+    value: function createCamera() {
+      this.HEIGHT = window.innerHeight;
+      this.WIDTH = window.innerWidth;
+      this.aspectRatio = this.WIDTH / this.HEIGHT;
+      this.fieldOfView = 60;
+      this.nearPlane = 1;
+      // How far the camera can reach
+      this.farPlane = 10000;
+      var camera = new THREE.PerspectiveCamera(this.fieldOfView, this.aspectRatio, this.nearPlane, this.farPlane);
+      camera.position.x = 0;
+      camera.position.z = -1000;
+      camera.position.y = 1000;
+      camera.lookAt(new THREE.Vector3(0, 0, 0));
+      return camera;
+    }
+  }, {
+    key: 'cameraFollow',
+    value: function cameraFollow() {
+      var x = this.player.threegroup.position.x;
+      var y = this.player.threegroup.position.y;
+      var z = this.player.threegroup.position.z;
+      if (this.view === 'third') {
+        this.camera.position.x = x;
+        this.camera.position.y = y + 1000;
+        this.camera.position.z = z - 1000;
+        this.camera.lookAt(new THREE.Vector3(x, y, z));
+      } else {
+        this.camera.position.x = x;
+        this.camera.position.y = y + 100;
+        this.camera.position.z = z - 100;
+        this.camera.lookAt(new THREE.Vector3(x, (y + 10000) * this.player.threegroup.rotation.y, z));
       }
-    }, {
-      key: 'createRenderer',
-      value: function createRenderer() {
-        renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-        renderer.setPixelRatio(window.devicePixelRatio);
-        renderer.setClearColor('#ebe5e7');
-        renderer.setSize(WIDTH, HEIGHT);
-        renderer.shadowMap.enabled = true;
-      }
-    }, {
-      key: 'createLights',
-      value: function createLights() {
-        light = new THREE.HemisphereLight(0xffffff, 0xffffff, .5);
+    }
+  }, {
+    key: 'createRenderer',
+    value: function createRenderer() {
+      var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setClearColor('#ebe5e7');
+      renderer.setSize(this.WIDTH, this.HEIGHT);
+      renderer.shadowMap.enabled = true;
+      return renderer;
+    }
+  }, {
+    key: 'createLights',
+    value: function createLights() {
+      var light = new THREE.HemisphereLight(0xffffff, 0xffffff, .5);
 
-        shadowLight = new THREE.DirectionalLight(0xffffff, 1.5);
-        shadowLight.position.set(200, 200, 200);
-        shadowLight.castShadow = true;
+      var shadowLight = new THREE.DirectionalLight(0xffffff, 1.5);
+      shadowLight.position.set(200, 200, 200);
+      shadowLight.castShadow = true;
 
-        // var shadow = new THREE.DirectionalLightShadow(shadowLight);
+      // var shadow = new THREE.DirectionalLightShadow(shadowLight);
 
-        // shadow.shadowDarkness = .2;
+      // shadow.shadowDarkness = .2;
 
-        backLight = new THREE.DirectionalLight(0xffffff, .4);
-        backLight.position.set(-100, 200, 50);
-        backLight.shadowDarkness = .1;
-        backLight.castShadow = true;
+      var backLight = new THREE.DirectionalLight(0xffffff, .4);
+      backLight.position.set(-100, 200, 50);
+      backLight.shadowDarkness = .1;
+      backLight.castShadow = true;
 
-        var pl = new THREE.PointLight(0xffffff, 2, 10000);
-        pl.position.set(0, 200, 0);
-        scene.add(backLight);
+      var pl = new THREE.PointLight(0xffffff, 2, 10000);
+      pl.position.set(0, 200, 0);
+      // scene.add(backLight);
 
-        // scene.add(backLight);
-        // scene.add(light);
-        // scene.add(shadowLight);
-      }
-    }, {
-      key: 'createFloor',
-      value: function createFloor() {
-        floor = new THREE.Mesh(new THREE.PlaneBufferGeometry(4000, 2000), new THREE.MeshLambertMaterial({ color: 'green' }));
-        floor.rotation.x = -Math.PI / 2;
-        floor.position.y = 0;
-        floor.receiveShadow = true;
+      // scene.add(backLight);
+      // scene.add(light);
+      this.scene.add(shadowLight);
+    }
+  }, {
+    key: 'createFloor',
+    value: function createFloor() {
+      var floor = new THREE.Mesh(new THREE.PlaneBufferGeometry(4000, 2000), new THREE.MeshLambertMaterial({ color: '#00AA72' }));
+      floor.rotation.x = -Math.PI / 2;
+      floor.position.y = 0;
+      floor.receiveShadow = true;
 
-        var fl = new THREE.PlaneGeometry(2000, 2000);
-        fl.rotateX(-Math.PI / 2);
-        var pl = new THREE.ShadowMaterial();
-        pl.opacity = 0.2;
-        var plane = new THREE.Mesh(fl, pl);
-        plane.position.y = 0;
-        plane.receiveShadow = true;
-        var helper = new THREE.GridHelper(2000, 50);
-        helper.position.y = 1;
-        scene.add(helper);
-        scene.add(floor);
-      }
-    }, {
-      key: 'listenKeys',
-      value: function listenKeys() {
-        var _this = this;
+      var fl = new THREE.PlaneGeometry(2000, 2000);
+      fl.rotateX(-Math.PI / 2);
+      var pl = new THREE.ShadowMaterial();
+      pl.opacity = 0.2;
+      var plane = new THREE.Mesh(fl, pl);
+      plane.position.y = 0;
+      plane.receiveShadow = true;
+      var helper = new THREE.GridHelper(2000, 50);
+      helper.position.y = 1;
+      this.scene.add(helper);
+      this.scene.add(floor);
+    }
+  }, {
+    key: 'listenKeys',
+    value: function listenKeys() {
+      var _this = this;
 
-        document.addEventListener('keydown', function (e) {
-          _this.keys[e.code] = true;
-        });
-        document.addEventListener('keyup', function (e) {
-          _this.keys[e.code] = false;
-        });
-      }
-    }]);
+      document.addEventListener('keydown', function (e) {
+        _this.keys[e.code] = true;
+      });
+      document.addEventListener('keyup', function (e) {
+        _this.keys[e.code] = false;
+      });
+    }
+  }]);
 
-    return Game;
-  }();
-
-  return new Game();
+  return Game;
 }();
+
+new Game();
 
 // new User();
 
@@ -574,7 +614,7 @@ function clamp(v, min, max) {
 
 /***/ }),
 
-/***/ 53:
+/***/ 54:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -585,17 +625,37 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Cow = undefined;
 
-var _Sprite2 = __webpack_require__(54);
+var _Sprite2 = __webpack_require__(55);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // import THREE from 'three';
+
 
 var Cow = function (_Sprite) {
   _inherits(Cow, _Sprite);
 
+  // game;
+  // angleLegs;
+  // speed: number;
+  // state;
+  // threegroup: THREE.Group;
+  // whiteMat;
+  // blackMat;
+  // greyMat;
+  // pinkMat;
+  // greenMat;
+  // orangeMat;
+  // yellowMat;
+  // wireMat;
+  // body;
+  // spot1;
+  // spot2;
+  // spot3;
+  // spot4;
+  // tail;
   function Cow(game, x, y, z, options) {
     _classCallCheck(this, Cow);
 
@@ -895,7 +955,7 @@ Cow.prototype.update = function (dt) {
       this.jumping = 'upward';
     }
   }
-  this.jump();
+  this.jump(dt);
 
   // this.threegroup.rotation.y += 0.01;
   if (this.rings1) {
@@ -964,7 +1024,7 @@ exports.Cow = Cow;
 
 /***/ }),
 
-/***/ 54:
+/***/ 55:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -988,27 +1048,29 @@ var Sprite = exports.Sprite = function () {
   _createClass(Sprite, [{
     key: 'init',
     value: function init() {
-      this.speed = 15;
-      this.jumpSpeed = 10;
+      // this.speed = 1500;
+      this.jumpSpeed = 400;
       this.jumping = 'false';
       this.jumpingY = 0;
     }
   }, {
     key: 'jump',
-    value: function jump() {
+    value: function jump(dt) {
+      var dy = this.jumpSpeed * dt;
       if (this.jumping === 'upward') {
-        if (this.jumpingY < 200) {
-          this.jumpingY += this.jumpSpeed;
-          this.threegroup.position.y += this.jumpSpeed;
+        if (this.jumpingY < 100) {
+          this.jumpingY += dy;
+          this.threegroup.position.y += dy;
         } else {
           this.jumping = 'downward';
         }
       } else if (this.jumping === 'downward') {
         if (this.jumpingY > 0) {
-          this.jumpingY -= this.jumpSpeed;
-          this.threegroup.position.y -= this.jumpSpeed;
+          this.jumpingY -= dy;
+          this.threegroup.position.y -= dy;
         } else {
           this.jumpingY = 0;
+          this.threegroup.position.y = 70;
           this.jumping = 'false';
           // remove();
         }
@@ -1032,7 +1094,7 @@ var Sprite = exports.Sprite = function () {
 
 /***/ }),
 
-/***/ 55:
+/***/ 56:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1116,7 +1178,7 @@ var User = exports.User = function () {
 
 /***/ }),
 
-/***/ 56:
+/***/ 57:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1157,35 +1219,93 @@ var Block = exports.Block = function () {
 
 /***/ }),
 
-/***/ 57:
+/***/ 58:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var ControlLayer = exports.ControlLayer = function ControlLayer(game) {
-	_classCallCheck(this, ControlLayer);
+  _classCallCheck(this, ControlLayer);
 
-	var div = document.createElement('div');
-	div.style.cssText += 'position: fixed; left: 0; bottom: 0; width: 100%; height: 100px;';
-	document.body.appendChild(div);
+  var pad = document.createElement('div');
+  pad.style.cssText += '\n      position: fixed; left: 0; bottom: 0; width: 120px; height: 120px;\n    ';
 
-	var up = document.createElement('div');
-	up.style.cssText += 'width: 20px; height: 20px; background: orange;';
-	up.addEventListener('touchstart', function () {
-		game.keys.KeyW = true;
-	});
-	up.addEventListener('touchend', function () {
-		game.keys.KeyW = false;
-	});
+  document.body.appendChild(pad);
 
-	div.appendChild(up);
+  var _loop = function _loop(i) {
+    var btn = document.createElement('div');
+    btn.style.cssText += '\n        width: 30%; height: 30%; background: orange;\n        float: left;\n        border-radius: 1000px;\n      ';
+    btn.addEventListener('touchstart', function () {
+      switch (i) {
+        case 0:
+          game.player.threegroup.rotation.y = Math.PI / 4;
+          game.keys.KeyW = true;
+          break;
+        case 1:
+          game.player.threegroup.rotation.y = 0;
+          game.keys.KeyW = true;
+          break;
+        case 2:
+          game.player.threegroup.rotation.y = -Math.PI / 4;
+          game.keys.KeyW = true;
+          break;
+        case 3:
+          game.player.threegroup.rotation.y = Math.PI / 2;
+          game.keys.KeyW = true;
+          break;
+        case 4:
+          // game.keys.Space = true;
+          break;
+        case 5:
+          game.player.threegroup.rotation.y = -Math.PI / 2;
+          game.keys.KeyW = true;
+          break;
+        case 6:
+          game.player.threegroup.rotation.y = Math.PI / 4 * 3;
+          game.keys.KeyW = true;
+          break;
+        case 7:
+          game.player.threegroup.rotation.y = Math.PI;
+          game.keys.KeyW = true;
+          break;
+        case 8:
+          game.player.threegroup.rotation.y = -Math.PI / 4 * 3;
+          game.keys.KeyW = true;
+          break;
+      }
+    });
+    btn.addEventListener('touchend', function () {
+      game.keys.KeyW = false;
+      game.keys.KeyS = false;
+      switch (i) {
+        case 0:
+          game.keys.KeyW = false;
+          break;
+        case 1:
+          game.keys.KeyW = false;
+          break;
+      }
+    });
+    pad.appendChild(btn);
+  };
+
+  for (var i = 0; i < 9; i++) {
+    _loop(i);
+  }
+
+  // up.addEventListener('touchstart', () => {
+  //   game.keys.KeyW = true;
+  // });
+  // up.addEventListener('touchend', () => {
+  //   game.keys.KeyW = false;
+  // });
 };
 
 /***/ })

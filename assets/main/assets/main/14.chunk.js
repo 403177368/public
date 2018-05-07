@@ -1,17 +1,17 @@
 webpackJsonp([14],{
 
-/***/ 134:
+/***/ 138:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(262)
+__webpack_require__(266)
 
-var Component = __webpack_require__(5)(
+var Component = __webpack_require__(4)(
   /* script */
-  __webpack_require__(263),
+  __webpack_require__(267),
   /* template */
-  __webpack_require__(264),
+  __webpack_require__(268),
   /* scopeId */
   "data-v-4b71b2f6",
   /* cssModules */
@@ -23,14 +23,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 262:
+/***/ 266:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 263:
+/***/ 267:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -70,7 +70,9 @@ exports.default = {
     };
   },
   beforeRouteEnter: function beforeRouteEnter(to, from, next) {
-    next();
+    next(function (vm) {
+      if (!vm.user.loggedIn) {}
+    });
   },
 
   computed: {
@@ -101,7 +103,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 264:
+/***/ 268:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
