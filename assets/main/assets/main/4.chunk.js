@@ -1034,7 +1034,7 @@ exports.default = {
         },
         mode: 'cors',
         data: {
-          author_id: -1,
+          author_id: null,
           content: state.content
         }
       }).then(function (res) {
