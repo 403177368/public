@@ -1179,10 +1179,11 @@ var store = new _vuex2.default.Store({
 });
 
 store.complete = store.ensure = function (path, rawModule) {
-  if (!store._modulesNamespaceMap[key]) {
-    if (typeof path === 'string') path = [path];
-    var key = path.join('/');
+  if (typeof path === 'string') path = [path];
+  var key = path.join('/') + '/';
 
+  // If this module is not installed
+  if (!store._modulesNamespaceMap[key]) {
     var state;
 
     var hasState = function () {

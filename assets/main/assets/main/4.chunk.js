@@ -1024,6 +1024,7 @@ exports.default = {
       var state = _ref2.state,
           dispatch = _ref2.dispatch;
 
+      // console.log('111');
       return (0, _axios2.default)({
         url: '/api/sqlite/comments/',
         // this is essential cause a fetch request is without cookie by default
