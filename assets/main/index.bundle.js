@@ -495,7 +495,7 @@ var routes = [{
   children: [{
     path: 'home',
     component: function component() {
-      return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 137));
+      return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 137));
     },
     meta: {
       keepAlive: true
@@ -2785,7 +2785,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
   path: '/admin',
   component: function component() {
-    return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 127));
+    return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 127));
   },
   children: [{
     alias: '',

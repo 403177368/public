@@ -5,13 +5,13 @@ webpackJsonp([4],{
 
 
 /* styles */
-__webpack_require__(269)
+__webpack_require__(274)
 
 var Component = __webpack_require__(4)(
   /* script */
-  __webpack_require__(270),
+  __webpack_require__(275),
   /* template */
-  __webpack_require__(273),
+  __webpack_require__(278),
   /* scopeId */
   "data-v-1fb9dbe3",
   /* cssModules */
@@ -311,7 +311,8 @@ exports.default = {
   namespaced: true,
   state: state,
   modules: {
-    binance: _binance2.default
+    binance: _binance2.default,
+    comment_box: __webpack_require__(162).default
   },
   actions: {
     init: function init(_ref) {
@@ -978,14 +979,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 269:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 270:
+/***/ 162:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -995,13 +989,89 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(271);
+var _axios = __webpack_require__(15);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  namespaced: true,
+  state: {
+    inited: false,
+    list: [],
+    content: ''
+  },
+  actions: {
+    init: function init(_ref) {
+      var state = _ref.state;
+
+      return (0, _axios2.default)({
+        url: '/api/sqlite/comments/',
+        // this is essential cause a fetch request is without cookie by default
+        withCredentials: true,
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        mode: 'cors'
+      }).then(function (res) {
+        state.inited = true;
+        state.list = res.data.data.items;
+      });
+    },
+    commit: function commit(_ref2) {
+      var state = _ref2.state,
+          dispatch = _ref2.dispatch;
+
+      return (0, _axios2.default)({
+        url: '/api/sqlite/comments/',
+        // this is essential cause a fetch request is without cookie by default
+        withCredentials: true,
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        mode: 'cors',
+        data: {
+          author_id: -1,
+          content: state.content
+        }
+      }).then(function (res) {
+        if (res.data.errno === 0) {
+          dispatch('init');
+        }
+      });
+    }
+  }
+};
+
+/***/ }),
+
+/***/ 274:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 275:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _index = __webpack_require__(276);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _home = __webpack_require__(160);
+var _index3 = __webpack_require__(160);
 
-var _home2 = _interopRequireDefault(_home);
+var _index4 = _interopRequireDefault(_index3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1129,7 +1199,7 @@ exports.default = {
     }
   },
   beforeCreate: function beforeCreate() {
-    this.$store.complete(['main', 'home'], _home2.default);
+    this.$store.complete(['main', 'home'], _index4.default);
     this.$store.complete(['main', 'projects'], _index2.default);
   },
   created: function created() {},
@@ -1140,7 +1210,7 @@ exports.default = {
 
   methods: {
     register: function register(store) {
-      store.complete(['main', 'home'], _home2.default);
+      store.complete(['main', 'home'], _index4.default);
       store.complete(['main', 'projects'], _index2.default);
     },
     preFetch: function preFetch(store) {
@@ -1151,7 +1221,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 271:
+/***/ 276:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1186,7 +1256,7 @@ var actions = {
   },
   fetchProjects: function fetchProjects(ctx) {
     return new _promise2.default(function (resolve, reject) {
-      var projects = __webpack_require__(272).default;
+      var projects = __webpack_require__(277).default;
       resolve(projects);
     });
   }
@@ -1210,7 +1280,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 272:
+/***/ 277:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1247,7 +1317,7 @@ exports.default = [{
 
 /***/ }),
 
-/***/ 273:
+/***/ 278:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

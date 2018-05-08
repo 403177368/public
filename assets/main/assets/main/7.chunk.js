@@ -5,13 +5,13 @@ webpackJsonp([7],{
 
 
 /* styles */
-__webpack_require__(274)
+__webpack_require__(279)
 
 var Component = __webpack_require__(4)(
   /* script */
-  __webpack_require__(275),
+  __webpack_require__(280),
   /* template */
-  __webpack_require__(281),
+  __webpack_require__(286),
   /* scopeId */
   null,
   /* cssModules */
@@ -129,14 +129,14 @@ module.exports = function (object, index, value) {
 
 /***/ }),
 
-/***/ 274:
+/***/ 279:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 275:
+/***/ 280:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -146,7 +146,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Canvas = __webpack_require__(276);
+var _Canvas = __webpack_require__(281);
 
 var _Canvas2 = _interopRequireDefault(_Canvas);
 
@@ -154,7 +154,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = {
   components: {
-    matrix: __webpack_require__(277)
+    matrix: __webpack_require__(282)
   },
   data: function data() {
     return {
@@ -262,7 +262,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 276:
+/***/ 281:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -329,18 +329,18 @@ exports.default = {
 
 /***/ }),
 
-/***/ 277:
+/***/ 282:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(278)
+__webpack_require__(283)
 
 var Component = __webpack_require__(4)(
   /* script */
-  __webpack_require__(279),
+  __webpack_require__(284),
   /* template */
-  __webpack_require__(280),
+  __webpack_require__(285),
   /* scopeId */
   null,
   /* cssModules */
@@ -352,14 +352,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 278:
+/***/ 283:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 279:
+/***/ 284:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -484,7 +484,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 280:
+/***/ 285:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -498,7 +498,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 281:
+/***/ 286:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

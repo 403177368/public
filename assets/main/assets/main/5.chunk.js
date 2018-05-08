@@ -5,13 +5,13 @@ webpackJsonp([5],{
 
 
 /* styles */
-__webpack_require__(213)
+__webpack_require__(214)
 
 var Component = __webpack_require__(4)(
   /* script */
-  __webpack_require__(214),
+  __webpack_require__(215),
   /* template */
-  __webpack_require__(227),
+  __webpack_require__(228),
   /* scopeId */
   null,
   /* cssModules */
@@ -42,14 +42,14 @@ module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
 
 /***/ }),
 
-/***/ 213:
+/***/ 214:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 214:
+/***/ 215:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82,7 +82,7 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = {
   components: {
-    Management: __webpack_require__(215)
+    Management: __webpack_require__(216)
   },
   mounted: function mounted() {
     // this.$store.dispatch('admin/items/changeDB', '/lowdb');
@@ -91,18 +91,18 @@ exports.default = {
 
 /***/ }),
 
-/***/ 215:
+/***/ 216:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(216)
+__webpack_require__(217)
 
 var Component = __webpack_require__(4)(
   /* script */
-  __webpack_require__(217),
+  __webpack_require__(218),
   /* template */
-  __webpack_require__(226),
+  __webpack_require__(227),
   /* scopeId */
   null,
   /* cssModules */
@@ -114,14 +114,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 216:
+/***/ 217:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 217:
+/***/ 218:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -247,8 +247,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = {
   components: {
-    TitleBar: __webpack_require__(218),
-    MyForm: __webpack_require__(222)
+    TitleBar: __webpack_require__(219),
+    MyForm: __webpack_require__(223)
     // Editing: require('./Editing.vue'),
     // Edit: require('./Edit.vue')
   },
@@ -329,18 +329,18 @@ exports.default = {
 
 /***/ }),
 
-/***/ 218:
+/***/ 219:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(219)
+__webpack_require__(220)
 
 var Component = __webpack_require__(4)(
   /* script */
-  __webpack_require__(220),
-  /* template */
   __webpack_require__(221),
+  /* template */
+  __webpack_require__(222),
   /* scopeId */
   null,
   /* cssModules */
@@ -352,14 +352,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 219:
+/***/ 220:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 220:
+/***/ 221:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -394,7 +394,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 221:
+/***/ 222:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -405,18 +405,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 222:
+/***/ 223:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(223)
+__webpack_require__(224)
 
 var Component = __webpack_require__(4)(
   /* script */
-  __webpack_require__(224),
-  /* template */
   __webpack_require__(225),
+  /* template */
+  __webpack_require__(226),
   /* scopeId */
   "data-v-2c970050",
   /* cssModules */
@@ -428,14 +428,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 223:
+/***/ 224:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 224:
+/***/ 225:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -482,7 +482,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 225:
+/***/ 226:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -507,7 +507,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 226:
+/***/ 227:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -597,7 +597,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 227:
+/***/ 228:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

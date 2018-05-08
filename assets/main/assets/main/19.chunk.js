@@ -5,13 +5,13 @@ webpackJsonp([19],{
 
 
 /* styles */
-__webpack_require__(210)
+__webpack_require__(211)
 
 var Component = __webpack_require__(4)(
   /* script */
-  __webpack_require__(211),
-  /* template */
   __webpack_require__(212),
+  /* template */
+  __webpack_require__(213),
   /* scopeId */
   "data-v-a67932b0",
   /* cssModules */
@@ -23,14 +23,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 210:
+/***/ 211:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 211:
+/***/ 212:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -140,7 +140,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 212:
+/***/ 213:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

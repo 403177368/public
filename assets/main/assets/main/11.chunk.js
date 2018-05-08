@@ -5,13 +5,13 @@ webpackJsonp([11],{
 
 
 /* styles */
-__webpack_require__(237)
+__webpack_require__(238)
 
 var Component = __webpack_require__(4)(
   /* script */
-  __webpack_require__(238),
-  /* template */
   __webpack_require__(239),
+  /* template */
+  __webpack_require__(240),
   /* scopeId */
   "data-v-d1f1f1b2",
   /* cssModules */
@@ -42,14 +42,14 @@ module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
 
 /***/ }),
 
-/***/ 237:
+/***/ 238:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 238:
+/***/ 239:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -118,7 +118,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 239:
+/***/ 240:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

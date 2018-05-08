@@ -156,8 +156,8 @@ var Game = function () {
       this.add(this.player);
       // this.enterFirst();
 
-      this.add(new _Block.Block(200, 0, 200));
-      this.add(new _Block.Block(300, 0, 200));
+      this.add(new _Block.Block(200, 50, 200));
+      this.add(new _Block.Block(300, 50, 200));
       this.add(new _User.User(this));
 
       new _ControlLayer.ControlLayer(this);
@@ -353,10 +353,11 @@ var Game = function () {
   }, {
     key: 'createLights',
     value: function createLights() {
+      var daylight = new THREE.AmbientLight(0xffffff, .9);
       var light = new THREE.HemisphereLight(0xffffff, 0xffffff, .5);
 
       var shadowLight = new THREE.DirectionalLight(0xffffff, 1.5);
-      shadowLight.position.set(200, 200, 200);
+      shadowLight.position.set(0, 10000, 0);
       shadowLight.castShadow = true;
 
       // var shadow = new THREE.DirectionalLightShadow(shadowLight);
@@ -374,7 +375,7 @@ var Game = function () {
 
       // scene.add(backLight);
       // scene.add(light);
-      this.scene.add(shadowLight);
+      this.scene.add(daylight);
     }
   }, {
     key: 'createFloor',
@@ -391,9 +392,11 @@ var Game = function () {
       var plane = new THREE.Mesh(fl, pl);
       plane.position.y = 0;
       plane.receiveShadow = true;
+
       var helper = new THREE.GridHelper(2000, 50);
       helper.position.y = 1;
       this.scene.add(helper);
+
       this.scene.add(floor);
     }
   }, {
@@ -974,6 +977,8 @@ Cow.prototype.update = function (dt) {
   // this.updateForward();
 };
 
+Cow.prototype.name = 'cow';
+
 Cow.prototype.idle = function () {};
 
 Cow.prototype.updateWalk = function () {
@@ -1242,7 +1247,8 @@ var ControlLayer = exports.ControlLayer = function ControlLayer(game) {
   var _loop = function _loop(i) {
     var btn = document.createElement('div');
     btn.style.cssText += '\n        width: 30%; height: 30%; background: orange;\n        float: left;\n        border-radius: 1000px;\n      ';
-    btn.addEventListener('touchstart', function () {
+    btn.addEventListener('touchstart', function (e) {
+      e.preventDefault();
       switch (i) {
         case 0:
           game.player.threegroup.rotation.y = Math.PI / 4;

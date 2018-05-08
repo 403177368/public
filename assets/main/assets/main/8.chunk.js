@@ -5,36 +5,13 @@ webpackJsonp([8],{
 
 
 /* styles */
-__webpack_require__(289)
+__webpack_require__(294)
 
 var Component = __webpack_require__(4)(
   /* script */
-  __webpack_require__(290),
-  /* template */
   __webpack_require__(295),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 168:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(169)
-
-var Component = __webpack_require__(4)(
-  /* script */
-  __webpack_require__(170),
   /* template */
-  __webpack_require__(171),
+  __webpack_require__(300),
   /* scopeId */
   null,
   /* cssModules */
@@ -47,13 +24,36 @@ module.exports = Component.exports
 /***/ }),
 
 /***/ 169:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(170)
+
+var Component = __webpack_require__(4)(
+  /* script */
+  __webpack_require__(171),
+  /* template */
+  __webpack_require__(172),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 170:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 170:
+/***/ 171:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -124,7 +124,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 171:
+/***/ 172:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -195,14 +195,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 289:
+/***/ 294:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 290:
+/***/ 295:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -248,8 +248,8 @@ exports.default = {
     return {};
   },
   components: {
-    BoxSignin: __webpack_require__(168),
-    'signup-box': __webpack_require__(291)
+    BoxSignin: __webpack_require__(169),
+    'signup-box': __webpack_require__(296)
   },
   computed: {
     user: function user() {
@@ -261,18 +261,18 @@ exports.default = {
 
 /***/ }),
 
-/***/ 291:
+/***/ 296:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(292)
+__webpack_require__(297)
 
 var Component = __webpack_require__(4)(
   /* script */
-  __webpack_require__(293),
+  __webpack_require__(298),
   /* template */
-  __webpack_require__(294),
+  __webpack_require__(299),
   /* scopeId */
   "data-v-8a2fd2ec",
   /* cssModules */
@@ -284,14 +284,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 292:
+/***/ 297:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 293:
+/***/ 298:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -415,7 +415,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 294:
+/***/ 299:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -480,7 +480,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 295:
+/***/ 300:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

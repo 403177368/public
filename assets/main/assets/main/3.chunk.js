@@ -5,13 +5,13 @@ webpackJsonp([3],{
 
 
 /* styles */
-__webpack_require__(299)
+__webpack_require__(304)
 
 var Component = __webpack_require__(4)(
   /* script */
-  __webpack_require__(300),
+  __webpack_require__(305),
   /* template */
-  __webpack_require__(301),
+  __webpack_require__(306),
   /* scopeId */
   "data-v-bd9c99de",
   /* cssModules */
@@ -311,7 +311,8 @@ exports.default = {
   namespaced: true,
   state: state,
   modules: {
-    binance: _binance2.default
+    binance: _binance2.default,
+    comment_box: __webpack_require__(162).default
   },
   actions: {
     init: function init(_ref) {
@@ -978,7 +979,76 @@ exports.default = {
 
 /***/ }),
 
-/***/ 165:
+/***/ 162:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _axios = __webpack_require__(15);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  namespaced: true,
+  state: {
+    inited: false,
+    list: [],
+    content: ''
+  },
+  actions: {
+    init: function init(_ref) {
+      var state = _ref.state;
+
+      return (0, _axios2.default)({
+        url: '/api/sqlite/comments/',
+        // this is essential cause a fetch request is without cookie by default
+        withCredentials: true,
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        mode: 'cors'
+      }).then(function (res) {
+        state.inited = true;
+        state.list = res.data.data.items;
+      });
+    },
+    commit: function commit(_ref2) {
+      var state = _ref2.state,
+          dispatch = _ref2.dispatch;
+
+      return (0, _axios2.default)({
+        url: '/api/sqlite/comments/',
+        // this is essential cause a fetch request is without cookie by default
+        withCredentials: true,
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        mode: 'cors',
+        data: {
+          author_id: -1,
+          content: state.content
+        }
+      }).then(function (res) {
+        if (res.data.errno === 0) {
+          dispatch('init');
+        }
+      });
+    }
+  }
+};
+
+/***/ }),
+
+/***/ 166:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1051,13 +1121,13 @@ exports.default = {
     // home: require('./home/home.js').default,
     // blog: require('./blog/blog.js').default,
     // projects: require('./projects/projects.js').default,
-    post: __webpack_require__(166).default,
+    post: __webpack_require__(167).default,
     // Canvas: require('./canvas/Canvas.js').default,
 
     // data
     // posts: require('./posts.js').default,
     // focus: require('./focus.js').default,
-    news: __webpack_require__(167).default
+    news: __webpack_require__(168).default
   },
   actions: {
     init: function init(_ref) {
@@ -1107,7 +1177,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 166:
+/***/ 167:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1185,7 +1255,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 167:
+/***/ 168:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1292,14 +1362,14 @@ exports.default = {
 
 /***/ }),
 
-/***/ 299:
+/***/ 304:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 300:
+/***/ 305:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1309,13 +1379,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _indexMain = __webpack_require__(165);
+var _indexMain = __webpack_require__(166);
 
 var _indexMain2 = _interopRequireDefault(_indexMain);
 
-var _home = __webpack_require__(160);
+var _index = __webpack_require__(160);
 
-var _home2 = _interopRequireDefault(_home);
+var _index2 = _interopRequireDefault(_index);
 
 var _vuex = __webpack_require__(52);
 
@@ -1337,7 +1407,7 @@ exports.default = {
   },
   beforeCreate: function beforeCreate() {
     this.$store.complete(['main'], _indexMain2.default);
-    this.$store.complete(['main', 'home'], _home2.default);
+    this.$store.complete(['main', 'home'], _index2.default);
   },
 
   mounted: function mounted() {
@@ -1564,7 +1634,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 301:
+/***/ 306:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
