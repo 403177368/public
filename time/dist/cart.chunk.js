@@ -97,14 +97,10 @@ exports.push([module.i, "", ""]);
 /***/ }),
 
 /***/ 246:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -122,7 +118,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	components: {
 		BackToTop: __webpack_require__(34),
 		MyHeader: __webpack_require__(35),
@@ -131,18 +127,18 @@ exports.default = {
 		ShoppingCart: __webpack_require__(247)
 	},
 	computed: {
-		dir: function dir() {
+		dir: function () {
 			return this.$store.state.dir;
 		},
-		cart: function cart() {
+		cart: function () {
 			return this.$store.state.cart;
 		}
 	},
-	mounted: function mounted() {
+	mounted: function () {
 		this.$store.dispatch('init');
 		this.$store.dispatch('fetchCart');
 	}
-};
+});
 
 /***/ }),
 
@@ -199,14 +195,10 @@ exports.push([module.i, ".ShoppingCart[data-v-0a167a7e]{background:#127bab;overf
 /***/ }),
 
 /***/ 250:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -324,25 +316,25 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	computed: {
-		cart: function cart() {
+		cart() {
 			console.log(this.$store.state.cart);
 			return this.$store.state.cart;
 		}
 	},
 	methods: {
-		remove: function remove(i) {
+		remove(i) {
 			this.$store.dispatch('removeItemFromCart', i);
 		},
-		PLUS: function PLUS(i) {
+		PLUS(i) {
 			this.$store.commit('CART_PLUS', i);
 		},
-		MINUS: function MINUS(i) {
+		MINUS(i) {
 			this.$store.commit('CART_MINUS', i);
 		}
 	}
-};
+});
 
 /***/ }),
 

@@ -1144,14 +1144,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 114 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -1209,7 +1205,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     Debugger: __webpack_require__(115),
     MaskLoading: __webpack_require__(119),
@@ -1223,26 +1219,26 @@ exports.default = {
     PageEntry: __webpack_require__(143),
     PageFactory: __webpack_require__(155)
   },
-  data: function data() {
+  data: function () {
     return {};
   },
   computed: {
-    change_main: function change_main() {
+    change_main() {
       return this.$store.state.change_main;
     },
-    page: function page() {
+    page() {
       return this.$store.state.page;
     },
-    meta: function meta() {
+    meta() {
       return this.$store.state.meta;
     },
-    img: function img() {
+    img() {
       return this.$store.state.img;
     },
-    pic: function pic() {
+    pic() {
       return this.$store.state.pic;
     },
-    show: function show() {
+    show() {
       if (this.change_main.stage !== 'fall') {
         // if (this.meta.platform === 'adr') {
         if (this.meta.normal === true) {
@@ -1272,16 +1268,16 @@ exports.default = {
     }
   },
   watch: {},
-  created: function created() {},
-  mounted: function mounted() {
+  created: function () {},
+  mounted: function () {
     this.$store.dispatch({ type: 'INIT_MAIN' });
   },
   methods: {
-    touchmove: function touchmove(e) {
+    touchmove: function (e) {
       e.preventDefault();
     }
   }
-};
+});
 
 /***/ }),
 /* 115 */
@@ -1313,14 +1309,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 117 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -1347,19 +1339,19 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: ['state'],
 	computed: {
-		writers: function writers() {
+		writers: function () {
 			var state = [];
-			this.state.writers.forEach(function (a) {
+			this.state.writers.forEach(a => {
 				state.push(a.state);
 			});
 			return state;
 		}
 	},
-	mounted: function mounted() {}
-};
+	mounted: function () {}
+});
 
 /***/ }),
 /* 118 */
@@ -1403,10 +1395,7 @@ module.exports = Component.exports
 
 /***/ }),
 /* 121 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
+/***/ (function(module, exports) {
 
 //
 //
@@ -1431,10 +1420,10 @@ module.exports = Component.exports
 //
 
 module.exports = {
-	data: function data() {
+	data: function () {
 		return {};
 	},
-	mounted: function mounted() {}
+	mounted: function () {}
 };
 
 /***/ }),
@@ -1481,14 +1470,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 125 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -1528,11 +1513,11 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
-	data: function data() {
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function () {
 		return {};
 	}
-};
+});
 
 /***/ }),
 /* 126 */
@@ -1582,10 +1567,7 @@ module.exports = Component.exports
 
 /***/ }),
 /* 129 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
+/***/ (function(module, exports) {
 
 //
 //
@@ -1647,18 +1629,18 @@ module.exports = Component.exports
 
 module.exports = {
 	computed: {
-		mask_download: function mask_download() {
+		mask_download() {
 			return this.$store.state.mask_download;
 		}
 	},
 	methods: {
-		hide: function hide() {
+		hide: function () {
 			this.$store.dispatch({
 				type: 'HIDE',
 				what: 'mask_download'
 			});
 		},
-		CONFIRM: function CONFIRM() {
+		CONFIRM: function () {
 			this.$store.dispatch({
 				type: 'TO_DOWNLOAD'
 			});
@@ -1730,14 +1712,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 133 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -1817,18 +1795,18 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	computed: {
-		img: function img() {
+		img() {
 			return this.$store.state.img;
 		},
-		mask: function mask() {
+		mask() {
 			return this.$store.state.mask_rules;
 		}
 	},
-	mounted: function mounted() {},
+	mounted: function () {},
 	methods: {}
-};
+});
 
 /***/ }),
 /* 134 */
@@ -1912,14 +1890,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 137 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -2100,8 +2074,8 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
-	data: function data() {
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function () {
 		return {
 			form: {
 				city: {
@@ -2129,15 +2103,15 @@ exports.default = {
 		};
 	},
 	computed: {
-		img: function img() {
+		img() {
 			return this.$store.state.img;
 		},
-		mask: function mask() {
+		mask() {
 			return this.$store.state.mask_form;
 		},
-		error: function error() {
+		error() {
 			var error = false;
-			for (var key in this.form) {
+			for (let key in this.form) {
 				if (this.form[key].state === 'error') {
 					error = true;
 				}
@@ -2145,22 +2119,22 @@ exports.default = {
 			return error;
 		}
 	},
-	created: function created() {
+	created: function () {
 		if (localStorage.form) {
 			var form = JSON.parse(localStorage.form);
-			for (var key in form) {
+			for (let key in form) {
 				this.form[key].val = form[key].val;
 			}
 			this.done = true;
 		};
 	},
-	mounted: function mounted() {},
+	mounted: function () {},
 	methods: {
-		fill: function fill(e, key) {
+		fill(e, key) {
 			this.form[key].val = e.target.value;
 			console.log(this.form[key].val);
 		},
-		check: function check(key) {
+		check(key) {
 			if (this.form[key].val === '') {
 				this.form[key].state = 'error';
 			} else {
@@ -2168,7 +2142,7 @@ exports.default = {
 				return true;
 			}
 		},
-		checkQQ: function checkQQ() {
+		checkQQ() {
 			if (/^(\d{5,})$/.test(this.form.qq.val)) {
 				this.form.qq.state = '';
 				return true;
@@ -2176,7 +2150,7 @@ exports.default = {
 				this.form.qq.state = 'error';
 			}
 		},
-		checkMobile: function checkMobile() {
+		checkMobile() {
 			if (/^1\d{10}$/.test(this.form.mobile.val)) {
 				this.form.mobile.state = '';
 				return true;
@@ -2184,7 +2158,8 @@ exports.default = {
 				this.form.mobile.state = 'error';
 			}
 		},
-		submit: function submit() {
+
+		submit() {
 			if (this.check('city') && this.check('school') && this.check('name') && this.checkQQ() && this.checkMobile()) {
 				this.done = true;
 				this.$store.dispatch({
@@ -2193,11 +2168,11 @@ exports.default = {
 				});
 			};
 		},
-		edit: function edit() {
+		edit() {
 			this.done = false;
 		}
 	}
-};
+});
 
 /***/ }),
 /* 138 */
@@ -2445,14 +2420,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 141 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -2757,17 +2728,17 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   computed: {
-    img: function img() {
+    img() {
       return '/img/huge/books_fall_2';
     },
-    meta: function meta() {
+    meta() {
       return this.$store.state.meta;
     }
   },
   components: {},
-  data: function data() {
+  data: function () {
     return {
       arr: [{
         val: 1
@@ -2809,7 +2780,7 @@ exports.default = {
       class_: ''
     };
   },
-  created: function created() {},
+  created: function () {},
   watch: {
     // stage: function(new_val){
     // 	if( new_val===0 ){
@@ -2817,13 +2788,11 @@ exports.default = {
     // 	}
     // }
   },
-  mounted: function mounted() {
-    var _this = this;
-
-    setTimeout(function () {
-      _this.class_ = 'active';
-      setTimeout(function () {
-        _this.$store.dispatch({
+  mounted: function () {
+    setTimeout(() => {
+      this.class_ = 'active';
+      setTimeout(() => {
+        this.$store.dispatch({
           type: 'CHANGE_MAIN',
           to: 'entry'
         });
@@ -2831,17 +2800,17 @@ exports.default = {
     }, 250);
   },
   methods: {
-    jump: function jump() {
+    jump: function () {
       if (this.meta.share) {
         this.$store.dispatch({
           type: 'TO_APP'
         });
       }
     },
-    animate: function animate() {},
-    CHANGE_STAGE: function CHANGE_STAGE() {}
+    animate: function () {},
+    CHANGE_STAGE: function () {}
   }
-};
+});
 
 /***/ }),
 /* 142 */
@@ -2902,14 +2871,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 145 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -2990,23 +2955,23 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     VideoHu: __webpack_require__(146),
     BtnToFactory: __webpack_require__(150)
   },
   computed: {
-    change_main: function change_main() {
+    change_main() {
       return this.$store.state.change_main;
     },
-    img: function img() {
+    img() {
       return this.$store.state.img;
     }
   },
   methods: {
-    share: function share() {}
+    share() {}
   }
-};
+});
 
 /***/ }),
 /* 146 */
@@ -3038,14 +3003,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 148 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -3143,21 +3104,21 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	// props: {
 	// 	video: {},
 	// 	current: {},
 	// 	act: {},
 	// 	yyb: {}
 	// },
-	data: function data() {
+	data: function () {
 		return {
 			state: 'pending',
 			loaded: false
 		};
 	},
 	watch: {
-		'$store.state.change_main.stage': function $storeStateChange_mainStage(nv) {
+		'$store.state.change_main.stage': function (nv) {
 			if (nv === 'factory') {
 				this.PAUSE();
 			};
@@ -3167,25 +3128,23 @@ exports.default = {
 		// 		this.state = 'ready';
 		// 	};
 		// },
-		state: function state(_state) {
-			var _this = this;
-
+		state: function (state) {
 			var self = this;
-			console.log('[video state] ' + _state);
-			switch (_state) {
+			console.log('[video state] ' + state);
+			switch (state) {
 				case 'loading':
 
 					this.$refs.video.setAttribute('src', DIR.video + this.video.id + '.mp4');
 					console.log(this.$refs.video.src);
 					this.$refs.video.load();
 
-					this.$refs.video.addEventListener('pause', function () {
-						if (_this.state === 'playing') {
-							_this.state = 'paused';
+					this.$refs.video.addEventListener('pause', () => {
+						if (this.state === 'playing') {
+							this.state = 'paused';
 						}
 					});
 
-					this.$refs.video.addEventListener('loadeddata', function () {
+					this.$refs.video.addEventListener('loadeddata', () => {
 						console.log('loaded');
 						self.loaded = true;
 						// this.act({
@@ -3193,7 +3152,7 @@ exports.default = {
 						// 	i: this.video.id
 						// })
 
-						setTimeout(function () {
+						setTimeout(() => {
 							var tl2 = new TimelineMax();
 							tl2.to(self.$refs.t5, 0.6, {
 								y: '-500%',
@@ -3206,7 +3165,7 @@ exports.default = {
 								scaleX: 0
 							}, {
 								scaleX: 1,
-								onComplete: function onComplete() {
+								onComplete: function () {
 									if (self.state === 'loading') {
 										self.state = 'playing';
 									};
@@ -3233,18 +3192,17 @@ exports.default = {
 		}
 	},
 	computed: {
-		img: function img() {
+		img() {
 			return this.$store.state.img;
 		},
-		meta: function meta() {
+		meta() {
 			return this.$store.state.meta;
 		}
 		// src: function(){
 		// 	return location.href.replace(/act161203.+/,'act161203/video/'+this.video.id+'.mp4');
 		// }
-
 	},
-	mounted: function mounted() {
+	mounted: function () {
 		// if ( window&&window.wView ) {
 		//    window.wView.allowsInlineMediaPlayback = "YES";
 		//    window.wView.mediaPlaybackRequiresUserAction = "NO";
@@ -3263,7 +3221,7 @@ exports.default = {
 		// });
 	},
 	methods: {
-		PLAY: function PLAY(e) {
+		PLAY: function (e) {
 			// this.act({
 			// 	type: 'PLAY_VIDEO',
 			// 	i: this.video.id
@@ -3272,7 +3230,7 @@ exports.default = {
 			var self = this;
 			console.log('dog');
 			self.state = 'playing';
-			Local.forceLog(common.param('act_f'), 'play');
+			Local.forceLog(common.param('act_f'), `play`);
 			// if( this.state === 'pending' ){
 			// 	if( !this.loaded ){
 			// 		self.state = 'loading';
@@ -3283,7 +3241,7 @@ exports.default = {
 			// 	self.state = 'playing';
 			// }
 		},
-		PAUSE: function PAUSE() {
+		PAUSE: function () {
 			// if( this.$refs.video.ended ){
 			// 	this.$refs.video.play();
 			// }else{
@@ -3291,7 +3249,7 @@ exports.default = {
 			// };
 		}
 	}
-};
+});
 
 /***/ }),
 /* 149 */
@@ -3388,14 +3346,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 152 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -3420,35 +3374,35 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	computed: {
-		img: function img() {
+		img() {
 			return this.$store.state.img;
 		}
 	},
-	data: function data() {
+	data: function () {
 		return {
 			pressed: false
 		};
 	},
 	methods: {
-		touchstart: function touchstart() {
+		touchstart: function () {
 			this.pressed = true;
 		},
-		touchmove: function touchmove() {
+		touchmove: function () {
 			this.pressed = false;
 		},
-		touchend: function touchend() {
+		touchend: function () {
 			if (this.pressed) {
 				this.$store.dispatch({ type: 'TO_FACTORY' });
 			};
 			this.pressed = false;
 		},
-		touchcancel: function touchcancel() {
+		touchcancel: function () {
 			this.pressed = false;
 		}
 	}
-};
+});
 
 /***/ }),
 /* 153 */
@@ -3559,14 +3513,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 157 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -3584,7 +3534,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     SwiperCards: __webpack_require__(158),
     CarouselCards: __webpack_require__(169),
@@ -3592,20 +3542,20 @@ exports.default = {
     MaskDone: __webpack_require__(173)
   },
   computed: {
-    pic: function pic() {
+    pic() {
       return this.$store.state.pic;
     },
-    change_main: function change_main() {
+    change_main() {
       return this.$store.state.change_main;
     },
-    img: function img() {
+    img() {
       return this.$store.state.img;
     }
   },
   methods: {
-    share: function share() {}
+    share() {}
   }
-};
+});
 
 /***/ }),
 /* 158 */
@@ -3637,17 +3587,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 160 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -3774,7 +3717,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	components: {
 		Controls: __webpack_require__(7),
 		BtnShare: __webpack_require__(164)
@@ -3783,7 +3726,7 @@ exports.default = {
 		act: {},
 		img: {},
 		items: {
-			default: function _default() {
+			default: function () {
 				return [{}, {}, {}, {}, {}, {}];
 			}
 		},
@@ -3809,8 +3752,8 @@ exports.default = {
 			default: 1000
 		}
 	},
-	data: function data() {
-		return _defineProperty({
+	data: function () {
+		return {
 			width: 0,
 			//items: [],
 
@@ -3824,35 +3767,33 @@ exports.default = {
 			X2: 0,
 
 			currentOne: 0,
-			transition: '0s'
-		}, 'offset', 0);
+			transition: '0s',
+			offset: 0
+		};
 	},
 	computed: {
-		share_btn: function share_btn() {
+		share_btn() {
 			return this.$store.state.share_btn;
 		},
-		pic: function pic() {
+		pic() {
 			return this.$store.state.pic;
 		},
-
-		img: function img() {
+		img: function () {
 			return this.$store.state.img;
 		}
 	},
 	watch: {
-		items: function items() {
+		items: function () {
 			//this.copy = this.items;
 		},
-		currentOne: function currentOne(new_val) {
+		currentOne: function (new_val) {
 			this.$store.dispatch({
 				type: 'PICK_BG',
 				i: new_val
 			});
 		}
 	},
-	mounted: function mounted() {
-		var _this = this;
-
+	mounted: function () {
 		//console.log(this.$refs)
 		var self = this;
 		// this.items = (function(){
@@ -3860,23 +3801,23 @@ exports.default = {
 		// 	return items;
 		// })();
 		// console.log(this.trainOffsetX)
-		window.addEventListener('DOMContentLoaded', function () {
-			setTimeout(function () {
-				_this.setWidth();
+		window.addEventListener('DOMContentLoaded', () => {
+			setTimeout(() => {
+				this.setWidth();
 			}, 600);
 		});
 		// window.addEventListener('load',()=>{
 		// 	this.setWidth();
 		// });
-		window.addEventListener('resize', function () {
-			setTimeout(function () {
-				_this.setWidth();
+		window.addEventListener('resize', () => {
+			setTimeout(() => {
+				this.setWidth();
 			}, 50);
 		});
 		if (this.autoplay) {
-			setInterval(function () {
-				if (!_this.inCycle) {
-					_this.toNext();
+			setInterval(() => {
+				if (!this.inCycle) {
+					this.toNext();
 				};
 			}, this.interval);
 		}
@@ -3885,20 +3826,19 @@ exports.default = {
 		// window.dispatchEvent(e);
 	},
 	methods: {
-		to_book: function to_book() {
+		to_book() {
 			this.act({ type: 'TO_BOOK', bid: this.items[this.currentOne].bid });
 		},
-
-		__toItem: function __toItem(name) {
+		__toItem: function (name) {
 			var i;
-			this.items.forEach(function (a) {
+			this.items.forEach(a => {
 				if (a.name === name) {
 					i = a.id;
 				}
 			});
 			this.toCard(i);
 		},
-		setWidth: function setWidth() {
+		setWidth: function () {
 			var elem = this.$refs.swiper;
 			var width = Number(document.defaultView.getComputedStyle(elem).width.replace(/px/, ''));
 			this.width = width;
@@ -3906,9 +3846,7 @@ exports.default = {
 			this.trainOffsetX = -this.currentOne * this.width;
 			console.log('trainOffsetX:' + this.trainOffsetX);
 		},
-		toNext: function toNext() {
-			var _this2 = this;
-
+		toNext: function () {
 			if (true) {
 				this.switching = true;
 				this.transition = this.duration + 'ms ' + this.ease;
@@ -3921,19 +3859,17 @@ exports.default = {
 				} else {
 					this.trainOffsetX = -this.currentOne * this.width;
 				}
-				setTimeout(function () {
-					_this2.transition = '0s';
-					if (_this2.carousel && _this2.currentOne === 0) {
-						_this2.trainOffsetX = 0;
+				setTimeout(() => {
+					this.transition = '0s';
+					if (this.carousel && this.currentOne === 0) {
+						this.trainOffsetX = 0;
 					};
-					_this2.switching = false;
-					_this2.inCycle = false;
+					this.switching = false;
+					this.inCycle = false;
 				}, this.duration);
 			}
 		},
-		toPrev: function toPrev() {
-			var _this3 = this;
-
+		toPrev: function () {
 			this.switching = true;
 			this.transition = this.duration + 'ms ' + this.ease;
 			if (this.currentOne > 0) {
@@ -3945,28 +3881,26 @@ exports.default = {
 			} else {
 				this.trainOffsetX = -this.currentOne * this.width;
 			}
-			setTimeout(function () {
-				_this3.transition = '0s';
-				if (_this3.carousel && _this3.currentOne === _this3.items.length - 1) {
-					_this3.trainOffsetX = -_this3.currentOne * _this3.width;
+			setTimeout(() => {
+				this.transition = '0s';
+				if (this.carousel && this.currentOne === this.items.length - 1) {
+					this.trainOffsetX = -this.currentOne * this.width;
 				};
-				_this3.switching = false;
-				_this3.inCycle = false;
+				this.switching = false;
+				this.inCycle = false;
 			}, this.duration);
 		},
-		toCard: function toCard(i) {
-			var _this4 = this;
-
+		toCard: function (i) {
 			this.currentOne = i;
 			this.transition = this.duration + 'ms ' + this.ease;
 			this.trainOffsetX = -this.currentOne * this.width;
-			setTimeout(function () {
-				_this4.transition = '0s';
-				_this4.switching = false;
-				_this4.inCycle = false;
+			setTimeout(() => {
+				this.transition = '0s';
+				this.switching = false;
+				this.inCycle = false;
 			}, this.duration);
 		},
-		touchstart: function touchstart(e) {
+		touchstart: function (e) {
 			e.stopPropagation();
 			// console.log(this.items)
 			console.log(this.inCycle);
@@ -3987,7 +3921,7 @@ exports.default = {
 				this.Y1 = e.changedTouches[0].pageY;
 			};
 		},
-		touchmove: function touchmove(e) {
+		touchmove: function (e) {
 			e.stopPropagation();
 			if (this.inCycle && !this.switching) {
 				this.moveCount++;
@@ -4020,7 +3954,7 @@ exports.default = {
 				}
 			}
 		},
-		touchend: function touchend(e) {
+		touchend: function (e) {
 			e.stopPropagation();
 			if (this.inCycle && !this.scrolling) {
 				this.X2 = e.changedTouches[0].pageX;
@@ -4042,7 +3976,7 @@ exports.default = {
 			}
 		}
 	}
-};
+});
 
 /***/ }),
 /* 161 */
@@ -4052,14 +3986,10 @@ exports.default = {
 
 /***/ }),
 /* 162 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -4159,34 +4089,34 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
-  data: function data() {
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function () {
     return {
       fp: '',
       class_: ''
     };
   },
   computed: {
-    img: function img() {
+    img() {
       return this.$store.state.img;
     }
   },
   methods: {
-    touchstart: function touchstart(e) {
+    touchstart(e) {
       e.stopPropagation();
       e.preventDefault();
       this.fp = 'active';
       this.class_ = 'active';
       this.$store.dispatch({ type: 'PLAY_SLOGAN' });
     },
-    touchend: function touchend(e) {
+    touchend(e) {
       e.stopPropagation();
       this.fp = '';
       this.class_ = '';
       this.$store.dispatch({ type: 'STOP_SLOGAN' });
     }
   }
-};
+});
 
 /***/ }),
 /* 163 */
@@ -4278,14 +4208,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 166 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -4311,41 +4237,41 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	computed: {
-		pic: function pic() {
+		pic() {
 			return this.$store.state.pic;
 		},
-		share_btn: function share_btn() {
+		share_btn() {
 			return this.$store.state.share_btn;
 		},
-		img: function img() {
+		img() {
 			return this.$store.state.img;
 		}
 	},
-	data: function data() {
+	data: function () {
 		return {
 			pressed: false
 		};
 	},
 	methods: {
-		touchstart: function touchstart() {
+		touchstart: function () {
 			this.pressed = true;
 		},
-		touchmove: function touchmove() {
+		touchmove: function () {
 			this.pressed = false;
 		},
-		touchend: function touchend() {
+		touchend: function () {
 			if (this.pressed) {
 				this.$store.dispatch({ type: 'SHARE_PIC' });
 			};
 			this.pressed = false;
 		},
-		touchcancel: function touchcancel() {
+		touchcancel: function () {
 			this.pressed = false;
 		}
 	}
-};
+});
 
 /***/ }),
 /* 167 */
@@ -4504,14 +4430,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 171 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -4592,8 +4514,8 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
-	data: function data() {
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function () {
 		return {
 			cards: [{
 				p: 0,
@@ -4610,11 +4532,11 @@ exports.default = {
 		};
 	},
 	watch: {
-		current: function current(nv) {}
+		current(nv) {}
 	},
 	methods: {
-		next: function next() {
-			this.cards.forEach(function (a) {
+		next: function () {
+			this.cards.forEach(a => {
 				if (a.p < 1) {
 					a.p++;
 				} else {
@@ -4623,11 +4545,11 @@ exports.default = {
 			});
 			// this.current++;
 		},
-		prev: function prev() {
+		prev: function () {
 			this.rotateY += 60;
 		}
 	}
-};
+});
 
 /***/ }),
 /* 172 */
@@ -4688,14 +4610,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 175 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -4723,18 +4641,18 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	computed: {
-		img: function img() {
+		img() {
 			return this.$store.state.img;
 		},
-		pic: function pic() {
+		pic() {
 			return this.$store.state.pic;
 		}
 	},
-	mounted: function mounted() {},
+	mounted: function () {},
 	methods: {}
-};
+});
 
 /***/ }),
 /* 176 */

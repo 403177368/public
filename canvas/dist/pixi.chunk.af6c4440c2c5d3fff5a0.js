@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/canvas/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 45);
+/******/ 	return __webpack_require__(__webpack_require__.s = 46);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -267,27 +267,27 @@ var Missile = exports.Missile = function (_Sprite) {
 
 /***/ }),
 
-/***/ 45:
+/***/ 46:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(46);
+module.exports = __webpack_require__(47);
 
 
 /***/ }),
 
-/***/ 46:
+/***/ 47:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _createPlane = __webpack_require__(47);
+var _createPlane = __webpack_require__(48);
 
-var _Plane = __webpack_require__(48);
+var _Plane = __webpack_require__(49);
 
-var _createText = __webpack_require__(49);
+var _createText = __webpack_require__(50);
 
-var _AnimatedPlane = __webpack_require__(50);
+var _AnimatedPlane = __webpack_require__(51);
 
 var app = new PIXI.Application(500, 800, { backgroundColor: 0x1099bb });
 document.body.appendChild(app.view);
@@ -352,7 +352,7 @@ new _AnimatedPlane.AnimatedPlane({
 
 /***/ }),
 
-/***/ 47:
+/***/ 48:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -413,7 +413,7 @@ function fadeOut(sprite) {}
 
 /***/ }),
 
-/***/ 48:
+/***/ 49:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -469,7 +469,7 @@ Object.assign(Plane.prototype, {
 
 /***/ }),
 
-/***/ 49:
+/***/ 50:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -506,7 +506,7 @@ function createText(app) {
 
 /***/ }),
 
-/***/ 50:
+/***/ 51:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

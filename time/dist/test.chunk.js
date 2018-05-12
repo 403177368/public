@@ -1786,14 +1786,10 @@ function applyToTag (styleElement, obj) {
 /***/ }),
 
 /***/ 40:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -1836,15 +1832,15 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		items: {
-			default: function _default() {
+			default: function () {
 				return [{}];
 			}
 		}
 	}
-};
+});
 
 /***/ }),
 
@@ -1975,14 +1971,10 @@ exports.push([module.i, ".line{width:400px;line-height:60px;background:orange;te
 /***/ }),
 
 /***/ 605:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -2012,12 +2004,12 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	components: {
 		TopbarBlack: __webpack_require__(37),
 		NavbarWeifeng: __webpack_require__(606)
 	}
-};
+});
 
 /***/ }),
 
@@ -2074,14 +2066,10 @@ exports.push([module.i, ".NavbarWeifeng[data-v-6e075505]{width:100%;min-width:10
 /***/ }),
 
 /***/ 609:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -2124,10 +2112,10 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		items: {
-			default: function _default() {
+			default: function () {
 				return [{
 					name: '首页'
 				}, {
@@ -2156,23 +2144,23 @@ exports.default = {
 			}
 		}
 	},
-	data: function data() {
+	data: function () {
 		return {
 			current: 0
 		};
 	},
 	methods: {
-		mouseenter: function mouseenter(e, i) {
+		mouseenter: function (e, i) {
 			this.current = i;
 		},
-		mouseleave: function mouseleave() {
+		mouseleave: function () {
 			this.current = 0;
 		},
-		haha: function haha(e) {
+		haha: function (e) {
 			console.log(e);
 		}
 	}
-};
+});
 
 /***/ }),
 

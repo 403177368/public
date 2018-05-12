@@ -60,26 +60,16 @@
 /******/ 	__webpack_require__.p = "/canvas/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 51);
+/******/ 	return __webpack_require__(__webpack_require__.s = 52);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 51:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(52);
-
-
-/***/ }),
-
 /***/ 52:
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+module.exports = __webpack_require__(53);
 
-
-__webpack_require__(53);
 
 /***/ }),
 
@@ -89,17 +79,29 @@ __webpack_require__(53);
 "use strict";
 
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); //THREEJS RELATED VARIABLES 
+__webpack_require__(54);
 
-var _Cow = __webpack_require__(54);
+/***/ }),
 
-var _User = __webpack_require__(56);
+/***/ 54:
+/***/ (function(module, exports, __webpack_require__) {
 
-var _Block = __webpack_require__(57);
+"use strict";
 
-var _ControlLayer = __webpack_require__(58);
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); // THREEJS RELATED VARIABLES 
+
+var _Cow = __webpack_require__(55);
+
+var _User = __webpack_require__(57);
+
+var _Block = __webpack_require__(58);
+
+var _ControlLayer = __webpack_require__(59);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var THREE = window.THREE;
 
 var Game = function () {
   // camera: THREE.PerspectiveCamera;
@@ -118,6 +120,7 @@ var Game = function () {
     // this.time;
 
     // this.user;
+    this.cameraFollowing = false;
     this.view = 'third';
     this.player;
 
@@ -290,9 +293,15 @@ var Game = function () {
         // this.controls.target.x = x;
         // this.controls.target.y = y;
         // this.controls.target.z = z;
+        this.controls.target.x = this.player.threegroup.position.x;
+        this.controls.target.y = this.player.threegroup.position.y;
+        this.controls.target.z = this.player.threegroup.position.z;
+
         this.controls.update();
       }
-      this.cameraFollow();
+      if (this.cameraFollowing) {
+        this.cameraFollow();
+      }
       // camera.lookAt(new THREE.Vector3(x, y, z));
       this.renderer.render(this.scene, this.camera);
     }
@@ -420,7 +429,7 @@ new Game();
 
 // new User();
 
-//INIT THREE JS, SCREEN AND MOUSE EVENTS
+// INIT THREE JS, SCREEN AND MOUSE EVENTS
 
 // function init() {
 //   scene = new THREE.Scene();
@@ -617,7 +626,7 @@ function clamp(v, min, max) {
 
 /***/ }),
 
-/***/ 54:
+/***/ 55:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -628,7 +637,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Cow = undefined;
 
-var _Sprite2 = __webpack_require__(55);
+var _Sprite2 = __webpack_require__(56);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -1029,7 +1038,7 @@ exports.Cow = Cow;
 
 /***/ }),
 
-/***/ 55:
+/***/ 56:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1099,7 +1108,7 @@ var Sprite = exports.Sprite = function () {
 
 /***/ }),
 
-/***/ 56:
+/***/ 57:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1183,7 +1192,7 @@ var User = exports.User = function () {
 
 /***/ }),
 
-/***/ 57:
+/***/ 58:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1224,7 +1233,7 @@ var Block = exports.Block = function () {
 
 /***/ }),
 
-/***/ 58:
+/***/ 59:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1236,8 +1245,8 @@ Object.defineProperty(exports, "__esModule", {
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ControlLayer = exports.ControlLayer = function ControlLayer(game) {
-  _classCallCheck(this, ControlLayer);
+var SubjectiveControl = exports.SubjectiveControl = function SubjectiveControl(game) {
+  _classCallCheck(this, SubjectiveControl);
 
   var pad = document.createElement('div');
   pad.style.cssText += '\n      position: fixed; left: 0; bottom: 0; width: 120px; height: 120px;\n    ';
@@ -1249,6 +1258,7 @@ var ControlLayer = exports.ControlLayer = function ControlLayer(game) {
     btn.style.cssText += '\n        width: 30%; height: 30%; background: orange;\n        float: left;\n        border-radius: 1000px;\n      ';
     btn.addEventListener('touchstart', function (e) {
       e.preventDefault();
+      game.cameraFollowing = true;
       switch (i) {
         case 0:
           game.player.threegroup.rotation.y = Math.PI / 4;
@@ -1288,6 +1298,7 @@ var ControlLayer = exports.ControlLayer = function ControlLayer(game) {
       }
     });
     btn.addEventListener('touchend', function () {
+      game.cameraFollowing = false;
       game.keys.KeyW = false;
       game.keys.KeyS = false;
       switch (i) {
@@ -1304,6 +1315,79 @@ var ControlLayer = exports.ControlLayer = function ControlLayer(game) {
 
   for (var i = 0; i < 9; i++) {
     _loop(i);
+  }
+};
+
+var ControlLayer = exports.ControlLayer = function ControlLayer(game) {
+  _classCallCheck(this, ControlLayer);
+
+  var pad = document.createElement('div');
+  pad.style.cssText += '\n      position: fixed; left: 0; bottom: 0; width: 120px; height: 120px;\n    ';
+
+  document.body.appendChild(pad);
+
+  var _loop2 = function _loop2(i) {
+    var btn = document.createElement('div');
+    btn.style.cssText += '\n        width: 30%; height: 30%; background: orange;\n        float: left;\n        border-radius: 1000px;\n      ';
+    btn.addEventListener('touchstart', function (e) {
+      e.preventDefault();
+      game.cameraFollowing = true;
+      switch (i) {
+        case 0:
+          game.player.threegroup.rotation.y = Math.PI / 4;
+          game.keys.KeyW = true;
+          break;
+        case 1:
+          game.player.threegroup.rotation.y = 0;
+          game.keys.KeyW = true;
+          break;
+        case 2:
+          game.player.threegroup.rotation.y = -Math.PI / 4;
+          game.keys.KeyW = true;
+          break;
+        case 3:
+          game.player.threegroup.rotation.y = Math.PI / 2;
+          game.keys.KeyW = true;
+          break;
+        case 4:
+          // game.keys.Space = true;
+          break;
+        case 5:
+          game.player.threegroup.rotation.y = -Math.PI / 2;
+          game.keys.KeyW = true;
+          break;
+        case 6:
+          game.player.threegroup.rotation.y = Math.PI / 4 * 3;
+          game.keys.KeyW = true;
+          break;
+        case 7:
+          game.player.threegroup.rotation.y = Math.PI;
+          game.keys.KeyW = true;
+          break;
+        case 8:
+          game.player.threegroup.rotation.y = -Math.PI / 4 * 3;
+          game.keys.KeyW = true;
+          break;
+      }
+    });
+    btn.addEventListener('touchend', function () {
+      game.cameraFollowing = false;
+      game.keys.KeyW = false;
+      game.keys.KeyS = false;
+      switch (i) {
+        case 0:
+          game.keys.KeyW = false;
+          break;
+        case 1:
+          game.keys.KeyW = false;
+          break;
+      }
+    });
+    pad.appendChild(btn);
+  };
+
+  for (var i = 0; i < 9; i++) {
+    _loop2(i);
   }
 
   // up.addEventListener('touchstart', () => {

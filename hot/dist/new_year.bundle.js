@@ -461,22 +461,95 @@ module.exports = Component.exports
 
 /***/ }),
 /* 237 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_store_books_js__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_store_books_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__store_store_books_js__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 
-var _storeBooks = __webpack_require__(238);
-
-var _storeBooks2 = _interopRequireDefault(_storeBooks);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     Debugger: __webpack_require__(246),
     MaskLoading: __webpack_require__(250),
@@ -491,101 +564,23 @@ exports.default = {
     EndPage: __webpack_require__(283),
     Flipper: __webpack_require__(291)
   },
-  data: function data() {
-    return _storeBooks2.default.state;
+  data: function () {
+    return __WEBPACK_IMPORTED_MODULE_0__store_store_books_js___default.a.state;
   },
   computed: {},
   watch: {},
-  created: function created() {},
-  mounted: function mounted() {
+  created: function () {},
+  mounted: function () {
     this.act({ type: 'INIT' });
     // console.log(this)
   },
   methods: {
-    act: _storeBooks2.default.act,
-    touchstart: function touchstart(e) {
+    act: __WEBPACK_IMPORTED_MODULE_0__store_store_books_js___default.a.act,
+    touchstart: function (e) {
       // e.preventDefault();
     }
   }
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+});
 
 /***/ }),
 /* 238 */
@@ -1406,14 +1401,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 248 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -1440,19 +1431,19 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: ['state'],
 	computed: {
-		writers: function writers() {
+		writers: function () {
 			var state = [];
-			this.state.writers.forEach(function (a) {
+			this.state.writers.forEach(a => {
 				state.push(a.state);
 			});
 			return state;
 		}
 	},
-	mounted: function mounted() {}
-};
+	mounted: function () {}
+});
 
 /***/ }),
 /* 249 */
@@ -1496,10 +1487,7 @@ module.exports = Component.exports
 
 /***/ }),
 /* 252 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
+/***/ (function(module, exports) {
 
 //
 //
@@ -1524,10 +1512,10 @@ module.exports = Component.exports
 //
 
 module.exports = {
-	data: function data() {
+	data: function () {
 		return {};
 	},
-	mounted: function mounted() {}
+	mounted: function () {}
 };
 
 /***/ }),
@@ -1574,14 +1562,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 256 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -1621,11 +1605,11 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
-	data: function data() {
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function () {
 		return {};
 	}
-};
+});
 
 /***/ }),
 /* 257 */
@@ -1675,14 +1659,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 260 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -1768,7 +1748,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		id: {},
 		hasDiscount: {},
@@ -1777,9 +1757,9 @@ exports.default = {
 		state: {},
 		act: {}
 	},
-	mounted: function mounted() {},
+	mounted: function () {},
 	methods: {}
-};
+});
 
 /***/ }),
 /* 261 */
@@ -1879,14 +1859,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 264 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -1970,19 +1946,19 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		img: {},
 		state: {},
 		act: {}
 	},
 	methods: {
-		click: function click() {
+		click: function () {
 			this.act({ type: 'HIDE', what: 'mask_info' });
 			this.act({ type: 'SWITCH', direction: 'up' });
 		}
 	}
-};
+});
 
 /***/ }),
 /* 265 */
@@ -2052,14 +2028,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 268 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -2120,18 +2092,18 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		img: {},
 		state: {},
 		act: {}
 	},
 	methods: {
-		click: function click() {
+		click: function () {
 			this.act({ type: 'HIDE', what: 'mask_black' });
 		}
 	}
-};
+});
 
 /***/ }),
 /* 269 */
@@ -2195,14 +2167,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 272 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -2287,7 +2255,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		id: {},
 		taken: {},
@@ -2301,7 +2269,7 @@ exports.default = {
 		loggedIn: {},
 		stage: {}
 	},
-	data: function data() {
+	data: function () {
 		return {
 			class_: '',
 
@@ -2310,7 +2278,7 @@ exports.default = {
 		};
 	},
 	watch: {
-		stage: function stage(nv, ov) {
+		stage: function (nv, ov) {
 			if (ov === 0 && nv === 1) {
 				this.class_ = 'leave';
 			} else if (ov === 1 && nv === 0) {
@@ -2318,19 +2286,19 @@ exports.default = {
 			}
 		}
 	},
-	mounted: function mounted() {
+	mounted: function () {
 		//this.act({type:'STAGE',i:1})
 	},
 	methods: {
-		touchstart: function touchstart(e) {
+		touchstart: function (e) {
 			e.stopPropagation();
 			this.Y0 = e.changedTouches[0].pageY;
 		},
-		touchmove: function touchmove(e) {
+		touchmove: function (e) {
 			e.stopPropagation();
 			e.preventDefault();
 		},
-		touchend: function touchend(e) {
+		touchend: function (e) {
 			e.stopPropagation();
 			this.Y2 = e.changedTouches[0].pageY;
 			var distance = this.Y2 - this.Y0;
@@ -2342,7 +2310,7 @@ exports.default = {
 			}
 		}
 	}
-};
+});
 
 /***/ }),
 /* 273 */
@@ -2497,392 +2465,387 @@ module.exports = Component.exports
 
 /***/ }),
 /* 276 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BookBlock_less__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BookBlock_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__BookBlock_less__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _props;
-
-__webpack_require__(277);
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; } //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 var bb;
 
-exports.default = {
-	props: (_props = {
+/* harmony default export */ __webpack_exports__["default"] = ({
+	props: {
 		id: {},
 		name: {},
 		count: {},
@@ -2892,14 +2855,19 @@ exports.default = {
 
 		act: {},
 		img: {},
-		loggedIn: {}
+		loggedIn: {},
 
-	}, _defineProperty(_props, 'name', {}), _defineProperty(_props, 'books', {}), _defineProperty(_props, 'stage', {}), _defineProperty(_props, 'current', {}), _props),
+		name: {},
+		books: {},
+
+		stage: {},
+		current: {}
+	},
 	computed: {},
 	components: {
 		Scroller: __webpack_require__(278)
 	},
-	data: function data() {
+	data: function () {
 		return {
 			show: false,
 			class_: '',
@@ -2912,9 +2880,7 @@ exports.default = {
 		};
 	},
 	watch: {
-		stage: function stage(nv, ov) {
-			var _this = this;
-
+		stage: function (nv, ov) {
 			if (ov === 1 && nv === 2) {
 				this.class_ = 'leave';
 			} else if (ov === 2 && nv === 1) {
@@ -2924,21 +2890,21 @@ exports.default = {
 					//this.show = true;
 					this.hand = 'active';
 					this.initialized = true;
-					setTimeout(function () {
-						_this.hand = '';
+					setTimeout(() => {
+						this.hand = '';
 					}, 4000);
 				};
 			}
 		},
-		current: function current(nv, ov) {
+		current: function (nv, ov) {
 			if (nv > ov) {
 				bb.next();
 			} else {
 				bb.prev();
 			}
 		},
-		books: function books() {
-			setTimeout(function () {
+		books: function () {
+			setTimeout(() => {
 				bb = new BookBlock(document.querySelector('#bb-bookblock'), {
 					orientation: 'horizontal',
 					speed: 300
@@ -2946,7 +2912,7 @@ exports.default = {
 			}, 500);
 		}
 	},
-	mounted: function mounted() {
+	mounted: function () {
 		// setTimeout(()=>{
 
 
@@ -2962,15 +2928,15 @@ exports.default = {
 		// },500);
 	},
 	methods: {
-		touchstart: function touchstart(e) {
+		touchstart: function (e) {
 			e.stopPropagation();
 			this.Y0 = e.changedTouches[0].pageY;
 		},
-		touchmove: function touchmove(e) {
+		touchmove: function (e) {
 			e.stopPropagation();
 			e.preventDefault();
 		},
-		touchend: function touchend(e) {
+		touchend: function (e) {
 			//e.stopPropagation();
 			this.Y2 = e.changedTouches[0].pageY;
 			var distanceY = this.Y2 - this.Y0;
@@ -2988,12 +2954,12 @@ exports.default = {
 				}()
 			});
 		},
-		click: function click(e) {
+		click: function (e) {
 			e.stopPropagation();
 			//this.act({type:'SWITCH',direction:'up'})
 		}
 	}
-};
+});
 
 /***/ }),
 /* 277 */
@@ -3031,17 +2997,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 280 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -3188,10 +3147,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		items: {
-			default: function _default() {
+			default: function () {
 				return [{}, {}, {}, {}];
 			}
 		},
@@ -3201,7 +3160,7 @@ exports.default = {
 		act: {}
 	},
 	computed: {
-		books: function books() {
+		books: function () {
 			// var books = [];
 			// for( let i = 2;i<this.items.length;i++ ){
 			// 	books.push( this.items[i] );
@@ -3209,8 +3168,8 @@ exports.default = {
 			// return books;
 		}
 	},
-	data: function data() {
-		return _defineProperty({
+	data: function () {
+		return {
 			contentW: 0,
 			trainW: 0,
 
@@ -3229,11 +3188,12 @@ exports.default = {
 			Y2: 0,
 
 			currentOne: 0,
-			transition: '0s'
-		}, 'offset', 0);
+			transition: '0s',
+			offset: 0
+		};
 	},
 	watch: {
-		co: function co(n) {
+		co: function (n) {
 			if (n < 4) {
 				this.transition = '1000ms';
 				this.trainOffsetX = 0;
@@ -3243,9 +3203,7 @@ exports.default = {
 			}
 		}
 	},
-	mounted: function mounted() {
-		var _this = this;
-
+	mounted: function () {
 		var self = this;
 		// setTimeout(()=>{
 		// 	this.setWidth();
@@ -3262,14 +3220,14 @@ exports.default = {
 		// 		this.setWidth();
 		// 	},50)
 		// });
-		window.addEventListener('resize', function () {
-			setTimeout(function () {
-				_this.setWidth();
+		window.addEventListener('resize', () => {
+			setTimeout(() => {
+				this.setWidth();
 			}, 50);
 		});
 	},
 	methods: {
-		setWidth: function setWidth() {
+		setWidth: function () {
 			//var elem = this.$refs.train;
 			this.contentW = Number(document.defaultView.getComputedStyle(this.$refs.content).width.replace(/px/, ''));
 			this.trainW = Number(document.defaultView.getComputedStyle(this.$refs.train).width.replace(/px/, ''));
@@ -3278,7 +3236,7 @@ exports.default = {
 			// this.transition = '0s';
 			//this.trainOffsetX = -this.currentOne*this.width;	
 		},
-		touchstart: function touchstart(e) {
+		touchstart: function (e) {
 			//console.log(this.inCycle)
 			this.setWidth();
 			e.stopPropagation();
@@ -3294,7 +3252,7 @@ exports.default = {
 				this.Y0 = this.Y1 = e.changedTouches[0].pageY;
 			};
 		},
-		touchmove: function touchmove(e) {
+		touchmove: function (e) {
 			e.stopPropagation();
 			if (this.inCycle) {
 				this.moveCount++;
@@ -3336,7 +3294,7 @@ exports.default = {
 				}
 			}
 		},
-		touchend: function touchend(e) {
+		touchend: function (e) {
 			e.stopPropagation();
 			if (this.inCycle && !this.scrolling) {
 				this.X2 = e.changedTouches[0].pageX;
@@ -3366,7 +3324,7 @@ exports.default = {
 			}
 		}
 	}
-};
+});
 
 /***/ }),
 /* 281 */
@@ -3635,14 +3593,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 285 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -3758,7 +3712,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		id: {},
 		hasDiscount: {},
@@ -3772,7 +3726,7 @@ exports.default = {
 	components: {
 		Rules: __webpack_require__(286)
 	},
-	data: function data() {
+	data: function () {
 		return {
 			class_: '',
 
@@ -3787,18 +3741,18 @@ exports.default = {
 		// 	}
 		// }
 	},
-	mounted: function mounted() {
+	mounted: function () {
 		//this.act({type:'STAGE',i:1})
 	},
 	methods: {
-		touchstart: function touchstart(e) {
+		touchstart: function (e) {
 			e.stopPropagation();
 			this.Y0 = e.changedTouches[0].pageY;
 		},
-		touchmove: function touchmove(e) {
+		touchmove: function (e) {
 			e.preventDefault();
 		},
-		touchend: function touchend(e) {
+		touchend: function (e) {
 			e.stopPropagation();
 			this.Y2 = e.changedTouches[0].pageY;
 			var distance = this.Y2 - this.Y0;
@@ -3810,7 +3764,7 @@ exports.default = {
 			}
 		}
 	}
-};
+});
 
 /***/ }),
 /* 286 */
@@ -3842,14 +3796,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 288 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -3926,7 +3876,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		id: {},
 		hasDiscount: {},
@@ -3934,7 +3884,7 @@ exports.default = {
 		act: {},
 		img: {}
 	},
-	data: function data() {
+	data: function () {
 		return {
 			writers: function () {
 				return (/writers\.html/.test(location.href)
@@ -3943,14 +3893,14 @@ exports.default = {
 		};
 	},
 	methods: {
-		TO_CONTACT: function TO_CONTACT() {
+		TO_CONTACT: function () {
 			this.act({
 				type: 'TO_CONTACT'
 			});
 		}
 	}
 
-};
+});
 
 /***/ }),
 /* 289 */
@@ -4111,14 +4061,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 293 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -4150,8 +4096,8 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
-	data: function data() {
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function () {
 		return {
 			items: [{
 				background: 'red'
@@ -4162,11 +4108,11 @@ exports.default = {
 		};
 	},
 	methods: {
-		turn: function turn() {
+		turn: function () {
 			this.$refs.page0.classList.add('active');
 		}
 	}
-};
+});
 
 /***/ }),
 /* 294 */

@@ -213,14 +213,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 32 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -275,13 +271,13 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
-	data: function data() {
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function () {
 		return {
 			items: __webpack_require__(33).default
 		};
 	}
-};
+});
 
 /***/ }),
 /* 33 */

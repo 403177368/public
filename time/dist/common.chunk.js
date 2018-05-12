@@ -1925,14 +1925,10 @@ exports.push([module.i, ".BACK-TO-TOP[data-v-655653d5]{position:fixed;right:10px
 
 /***/ }),
 /* 61 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -1956,38 +1952,36 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 var body;
-exports.default = {
-	data: function data() {
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function () {
 		return {
 			scrolling: false
 		};
 	},
-	mounted: function mounted() {
+	mounted: function () {
 		body = document.querySelector('body');
 	},
 	methods: {
-		back: function back() {
-			var _this = this;
-
+		back: function () {
 			if (!this.scrolling) {
 				this.scrolling = true;
 				var duration = 300;
 				var distance = body.scrollTop;
 				var dy = 10 * distance / duration;
-				var interval = setInterval(function () {
+				var interval = setInterval(() => {
 					if (body.scrollTop - dy > 0) {
 						body.scrollTop -= dy;
 					} else {
 						body.scrollTop = 0;
 						clearInterval(interval);
-						_this.scrolling = false;
+						this.scrolling = false;
 					}
 				}, 10);
 			}
 			//window.scroll(0,0);
 		}
 	}
-};
+});
 
 /***/ }),
 /* 62 */
@@ -2033,14 +2027,10 @@ exports.push([module.i, ".MyHeader .searchbar[data-v-ffa574b2]{height:120px;back
 
 /***/ }),
 /* 65 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -2082,21 +2072,20 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   props: ['dir'],
   computed: {
-    user: function user() {
+    user() {
       return this.$store.state.user;
     },
-
-    quantity_in_cart: function quantity_in_cart() {
+    quantity_in_cart: function () {
       return this.$store.state.cart.items.length;
     }
   },
-  mounted: function mounted() {
+  mounted: function () {
     this.$store.dispatch('user/fetchUser');
   }
-};
+});
 
 /***/ }),
 /* 66 */
@@ -2239,14 +2228,10 @@ exports.push([module.i, ".footer .container[data-v-5efae1b5]{padding:50px 0;back
 
 /***/ }),
 /* 69 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -2342,7 +2327,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {};
+/* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
 /* 70 */

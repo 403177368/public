@@ -1878,14 +1878,10 @@ module.exports = Component.exports
 /***/ }),
 
 /***/ 593:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -1898,7 +1894,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     MyHeader: __webpack_require__(35),
     MyFooter: __webpack_require__(36),
@@ -1906,14 +1902,14 @@ exports.default = {
     Signin: __webpack_require__(594)
   },
   computed: {
-    dir: function dir() {
+    dir: function () {
       return this.$store.state.dir;
     },
-    items: function items() {
+    items: function () {
       return this.$store.state.items;
     }
   }
-};
+});
 
 /***/ }),
 
@@ -1970,14 +1966,10 @@ exports.push([module.i, ".Signin[data-v-d151da20]{overflow:hidden;background:lin
 /***/ }),
 
 /***/ 597:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -2195,8 +2187,8 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
-	data: function data() {
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function () {
 		return {
 			signin_form: {
 				id: '',
@@ -2205,52 +2197,52 @@ exports.default = {
 			}
 		};
 	},
-	mounted: function mounted() {},
+	mounted: function () {},
 	computed: {
-		signup: function signup() {
+		signup() {
 			return this.$store.state.signup;
 		},
-		user: function user() {
+		user() {
 			return this.$store.state.user;
 		}
 	},
 	methods: {
-		toggle2: function toggle2() {
+		toggle2: function () {
 			if (this.signin_form.remember_me === false) {
 				this.signin_form.remember_me = true;
 			} else {
 				this.signin_form.remember_me = false;
 			}
 		},
-		SIGNUP_FOCUS: function SIGNUP_FOCUS(str) {
+		SIGNUP_FOCUS(str) {
 			this.$store.commit('SIGNUP_FOCUS', str);
 		},
-		checkMobile: function checkMobile(e) {
+		checkMobile(e) {
 			this.$store.dispatch('checkMobile', e.target.value);
 		},
-		CHECK_PASSWORD: function CHECK_PASSWORD(e) {
+		CHECK_PASSWORD(e) {
 			this.$store.commit('CHECK_PASSWORD', e.target.value);
 		},
-		CHECK_PASSWORD2: function CHECK_PASSWORD2(e) {
+		CHECK_PASSWORD2(e) {
 			this.$store.commit('CHECK_PASSWORD2', e.target.value);
 		},
-		CHECK_VERIF: function CHECK_VERIF(e) {
+		CHECK_VERIF(e) {
 			this.$store.commit('CHECK_VERIF', e.target.value);
 		},
-		CHECK_AGREE: function CHECK_AGREE() {
+		CHECK_AGREE() {
 			this.$store.commit('CHECK_AGREE');
 		},
-		signup: function signup() {
+		signup() {
 			this.$store.dispatch('signup');
 		},
-		login: function login() {
+		login() {
 			this.$store.dispatch('user/login', JSON.stringify({
 				name: this.signin_form.id,
 				password: this.signin_form.password
 			}));
 		}
 	}
-};
+});
 
 /***/ }),
 
@@ -2482,14 +2474,10 @@ exports.push([module.i, ".BACK-TO-TOP[data-v-655653d5]{position:fixed;right:10px
 /***/ }),
 
 /***/ 61:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -2513,38 +2501,36 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 var body;
-exports.default = {
-	data: function data() {
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function () {
 		return {
 			scrolling: false
 		};
 	},
-	mounted: function mounted() {
+	mounted: function () {
 		body = document.querySelector('body');
 	},
 	methods: {
-		back: function back() {
-			var _this = this;
-
+		back: function () {
 			if (!this.scrolling) {
 				this.scrolling = true;
 				var duration = 300;
 				var distance = body.scrollTop;
 				var dy = 10 * distance / duration;
-				var interval = setInterval(function () {
+				var interval = setInterval(() => {
 					if (body.scrollTop - dy > 0) {
 						body.scrollTop -= dy;
 					} else {
 						body.scrollTop = 0;
 						clearInterval(interval);
-						_this.scrolling = false;
+						this.scrolling = false;
 					}
 				}, 10);
 			}
 			//window.scroll(0,0);
 		}
 	}
-};
+});
 
 /***/ }),
 
@@ -2594,14 +2580,10 @@ exports.push([module.i, ".MyHeader .searchbar[data-v-ffa574b2]{height:120px;back
 /***/ }),
 
 /***/ 65:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -2643,21 +2625,20 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   props: ['dir'],
   computed: {
-    user: function user() {
+    user() {
       return this.$store.state.user;
     },
-
-    quantity_in_cart: function quantity_in_cart() {
+    quantity_in_cart: function () {
       return this.$store.state.cart.items.length;
     }
   },
-  mounted: function mounted() {
+  mounted: function () {
     this.$store.dispatch('user/fetchUser');
   }
-};
+});
 
 /***/ }),
 
@@ -2804,14 +2785,10 @@ exports.push([module.i, ".footer .container[data-v-5efae1b5]{padding:50px 0;back
 /***/ }),
 
 /***/ 69:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -2907,7 +2884,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {};
+/* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
 

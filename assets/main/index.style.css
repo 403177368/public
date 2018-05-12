@@ -934,26 +934,26 @@ a {
 .RouteCnodePost .comments {
   border: none!important;
 }
-.RouteCnodePost .comments .card-item {
+.RouteCnodePost .comments .list-group-item {
   overflow: hidden;
 }
-.RouteCnodePost .comments .card-item .avatar {
+.RouteCnodePost .comments .list-group-item .avatar {
   float: left;
 }
-.RouteCnodePost .comments .card-item img {
+.RouteCnodePost .comments .list-group-item img {
   float: left;
   width: 40px;
   border-radius: 1000px;
 }
-.RouteCnodePost .comments .card-item .media-body span {
+.RouteCnodePost .comments .list-group-item .media-body span {
   margin-right: 15px;
 }
-.RouteCnodePost .comments .card-item .details {
+.RouteCnodePost .comments .list-group-item .details {
   box-sizing: border-box;
   width: 100%;
   padding-left: 55px;
 }
-.RouteCnodePost .comments .card-item .details span {
+.RouteCnodePost .comments .list-group-item .details span {
   margin-right: 15px;
 }
 

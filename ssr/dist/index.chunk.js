@@ -225,14 +225,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 8 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -246,15 +242,15 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
-	data: function data() {
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function () {
 		return {};
 	},
 	components: {
 		Navbar: __webpack_require__(9)
 	},
-	mounted: function mounted() {}
-};
+	mounted: function () {}
+});
 
 /***/ }),
 /* 9 */
@@ -286,14 +282,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 11 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -312,29 +304,29 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		items: {
-			default: function _default() {
+			default: function () {
 				return {
 					msg: 'hello'
 				};
 			}
 		}
 	},
-	data: function data() {
+	data: function () {
 		return {
 			msg: 'hello'
 		};
 	},
-	created: function created() {},
+	created: function () {},
 	methods: {
-		click: function click() {
+		click: function () {
 			console.log('clicked');
 			this.msg = 'world';
 		}
 	}
-};
+});
 
 /***/ }),
 /* 12 */
@@ -417,14 +409,10 @@ module.exports = window.VueRouter;
 
 /***/ }),
 /* 16 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -432,7 +420,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {};
+/* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
 /* 17 */

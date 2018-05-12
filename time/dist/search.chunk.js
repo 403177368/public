@@ -69,14 +69,10 @@ module.exports = Component.exports
 /***/ }),
 
 /***/ 578:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -89,7 +85,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	components: {
 		MyHeader: __webpack_require__(35),
 		MyFooter: __webpack_require__(36),
@@ -97,14 +93,14 @@ exports.default = {
 		SearchResults: __webpack_require__(579)
 	},
 	computed: {
-		dir: function dir() {
+		dir: function () {
 			return this.$store.state.dir;
 		},
-		items: function items() {
+		items: function () {
 			return this.$store.state.items;
 		}
 	}
-};
+});
 
 /***/ }),
 
@@ -161,14 +157,10 @@ exports.push([module.i, ".SearchResults[data-v-3a024d90]{padding-bottom:100px;ba
 /***/ }),
 
 /***/ 582:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -242,30 +234,30 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     Showcase: __webpack_require__(583)
   },
   computed: {
-    dir: function dir() {
+    dir() {
       return this.$store.state.dir;
     },
-    search: function search() {
+    search() {
       return this.$store.state._search;
     },
-    items: function items() {
+    items() {
       return this.$store.state.items;
     }
   },
   methods: {
-    searchItems: function searchItems(key, i) {
-      this.$store.dispatch('searchItems', { key: key, i: i });
+    searchItems(key, i) {
+      this.$store.dispatch('searchItems', { key, i });
     },
-    searchItemsByBrand: function searchItemsByBrand(i) {
+    searchItemsByBrand(i) {
       this.$store.dispatch('searchItemsByBrand', i);
     }
   }
-};
+});
 
 /***/ }),
 
@@ -322,14 +314,10 @@ exports.push([module.i, ".Showcase[data-v-9138c00a]{width:1000px;margin:auto;pad
 /***/ }),
 
 /***/ 586:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -386,14 +374,14 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   props: ['items'],
   computed: {
-    dir: function dir() {
+    dir: function () {
       return this.$store.state.dir;
     }
   }
-};
+});
 
 /***/ }),
 

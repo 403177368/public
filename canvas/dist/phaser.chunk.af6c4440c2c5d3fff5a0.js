@@ -60,20 +60,20 @@
 /******/ 	__webpack_require__.p = "/canvas/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 39);
+/******/ 	return __webpack_require__(__webpack_require__.s = 41);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 39:
+/***/ 41:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(40);
+module.exports = __webpack_require__(42);
 
 
 /***/ }),
 
-/***/ 40:
+/***/ 42:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -93,7 +93,7 @@ var App = function () {
     this.tileset;
     this.layer;
     this.player;
-    this.facing = 'left';
+    this.facing = 'right';
     this.weapon;
     this.bg;
 
@@ -173,7 +173,7 @@ var App = function () {
       player.body.setSize(20, 32, 5, 16);
 
       player.animations.add('left', [0, 1, 2, 3], 10, true);
-      player.animations.add('turn', [4], 20, true);
+      player.animations.add('idle', [4], 20, true);
       player.animations.add('right', [5, 6, 7, 8], 10, true);
 
       game.camera.follow(player);
@@ -189,11 +189,12 @@ var App = function () {
       weapon.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
 
       //  The speed at which the bullet is fired
-      weapon.bulletSpeed = 100;
-      weapon.bulletGravity = new Phaser.Point(-1, -1);
+      weapon.bulletSpeed = 200;
+      // weapon.bulletGravity = 0;
+      weapon.bulletGravity = new Phaser.Point(0, -250);
 
       //  Speed-up the rate of fire, allowing them to shoot 1 bullet every 60ms
-      weapon.fireRate = 300;
+      weapon.fireRate = 1000;
 
       //  Tell the Weapon to track the 'player' Sprite
       //  With no offsets from the position
@@ -266,28 +267,28 @@ var App = function () {
       if (cursors.left.isDown || controls.left) {
         player.body.velocity.x = -150;
 
-        if (facing != 'left') {
+        if (this.facing !== 'left') {
           player.animations.play('left');
-          facing = 'left';
+          this.facing = 'left';
         }
       } else if (cursors.right.isDown || controls.right) {
         player.body.velocity.x = 150;
 
-        if (facing != 'right') {
+        if (this.facing !== 'right') {
           player.animations.play('right');
-          facing = 'right';
+          this.facing = 'right';
         }
       } else {
-        if (facing != 'idle') {
+        if (this.facing !== 'idle') {
           player.animations.stop();
 
-          if (facing == 'left') {
+          if (this.facing === 'left') {
             player.frame = 0;
           } else {
             player.frame = 5;
           }
 
-          facing = 'idle';
+          this.facing = 'idle';
         }
       }
 

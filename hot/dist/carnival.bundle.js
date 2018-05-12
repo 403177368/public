@@ -232,14 +232,10 @@ module.exports = Component.exports
 /***/ }),
 
 /***/ 86:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -276,8 +272,8 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
-	data: function data() {
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function () {
 		return {
 			img: '../img/h5_carnival'
 		};
@@ -286,7 +282,7 @@ exports.default = {
 		Chips: __webpack_require__(87),
 		ButtonOrange: __webpack_require__(91)
 	}
-};
+});
 
 /***/ }),
 
@@ -321,14 +317,10 @@ module.exports = Component.exports
 /***/ }),
 
 /***/ 89:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -499,14 +491,14 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		img: {}
 	},
-	data: function data() {
+	data: function () {
 		return {};
 	}
-};
+});
 
 /***/ }),
 
@@ -559,14 +551,10 @@ module.exports = Component.exports
 /***/ }),
 
 /***/ 93:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -601,30 +589,30 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	components: {
 		Arrows: __webpack_require__(94)
 	},
 	props: {
 		img: {}
 	},
-	data: function data() {
+	data: function () {
 		return {
 			pressed: false
 		};
 	},
 	methods: {
-		touchstart: function touchstart() {
+		touchstart: function () {
 			this.pressed = true;
 		},
-		touchmove: function touchmove() {
+		touchmove: function () {
 			this.pressed = false;
 		},
-		touchend: function touchend() {
+		touchend: function () {
 			this.pressed = false;
 		}
 	}
-};
+});
 
 /***/ }),
 
@@ -659,14 +647,10 @@ module.exports = Component.exports
 /***/ }),
 
 /***/ 96:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -732,14 +716,14 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		img: {}
 	},
-	data: function data() {
+	data: function () {
 		return {};
 	}
-};
+});
 
 /***/ }),
 

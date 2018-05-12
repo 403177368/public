@@ -284,33 +284,31 @@ module.exports = Component.exports
 
 /***/ }),
 /* 39 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_store_js__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_store_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__store_store_js__);
+//
+//
+//
+//
+//
+//
 
 
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _store = __webpack_require__(40);
-
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	components: {
 		Slider: __webpack_require__(41)
 	},
-	data: function data() {
-		return _store.data;
+	data: function () {
+		return __WEBPACK_IMPORTED_MODULE_0__store_store_js__["data"];
 	},
 	methods: {
-		act: _store.act
+		act: __WEBPACK_IMPORTED_MODULE_0__store_store_js__["act"]
 	}
-}; //
-//
-//
-//
-//
-//
+});
 
 /***/ }),
 /* 40 */
@@ -362,14 +360,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 43 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -421,11 +415,11 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		img: {},
 		items: {
-			default: function _default() {
+			default: function () {
 				return ['#6dace2', '#af9180', 'yellow', '', ''];
 			}
 		},
@@ -440,7 +434,7 @@ exports.default = {
 		Item3: __webpack_require__(67),
 		Item4: __webpack_require__(71)
 	},
-	data: function data() {
+	data: function () {
 		return {
 			viewportHeight: 0,
 			color: 'black',
@@ -458,12 +452,10 @@ exports.default = {
 		};
 	},
 	watch: {
-		current: function current(neo, old) {
-			var _this = this;
-
+		current: function (neo, old) {
 			this.active[neo] = true;
-			setTimeout(function () {
-				_this.active[old] = false;
+			setTimeout(() => {
+				this.active[old] = false;
 			}, this.duration);
 			// switch(neo){
 			// 	case 0:
@@ -488,28 +480,26 @@ exports.default = {
 			// }
 		}
 	},
-	mounted: function mounted() {
-		var _this2 = this;
-
+	mounted: function () {
 		this.viewportHeight = window.innerHeight;
-		window.addEventListener('resize', function () {
-			_this2.viewportHeight = window.innerHeight;
+		window.addEventListener('resize', () => {
+			this.viewportHeight = window.innerHeight;
 		}, 50);
 
 		this.active[this.current] = true;
 	},
 	methods: {
-		keydown: function keydown(e) {
+		keydown: function (e) {
 			console.log(e);
 		},
-		touchstart: function touchstart(e) {
+		touchstart: function (e) {
 			//e.preventDefault();
 			this.Y1 = e.changedTouches[0].pageY;
 		},
-		touchmove: function touchmove(e) {
+		touchmove: function (e) {
 			e.preventDefault();
 		},
-		touchend: function touchend(e) {
+		touchend: function (e) {
 			this.Y2 = e.changedTouches[0].pageY;
 			var distance = this.Y2 - this.Y1;
 			//console.log(distance)
@@ -521,13 +511,13 @@ exports.default = {
 				}
 			}
 		},
-		toNext: function toNext() {
+		toNext: function () {
 			if (this.current < this.items.length - 1) {
 				this.current++;
 			}
 		}
 	}
-};
+});
 
 /***/ }),
 /* 44 */
@@ -559,14 +549,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 46 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -640,13 +626,13 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	components: {
 		Circles: __webpack_require__(47),
 		Arrow: __webpack_require__(3)
 	},
 	props: ['img', 'act', 'active'],
-	data: function data() {
+	data: function () {
 		return {
 			count: 0,
 			an: {
@@ -682,7 +668,7 @@ exports.default = {
 		};
 	},
 	watch: {
-		active: function active(b) {
+		active: function (b) {
 			if (b) {
 				this.go();
 			} else {
@@ -690,35 +676,28 @@ exports.default = {
 			}
 		}
 	},
-	mounted: function mounted() {
+	mounted: function () {
 		//this.go();
 	},
 	methods: {
-		go: function go() {
-			var _this = this;
-
+		go: function () {
 			this.reset();
 			this.count++;
 			var count = this.count;
-
-			var _loop = function _loop(key) {
-				setTimeout(function () {
-					if (count !== _this.count) return;
-					_this.an[key].s = 'active';
-				}, _this.an[key].p);
-			};
-
-			for (var key in this.an) {
-				_loop(key);
+			for (let key in this.an) {
+				setTimeout(() => {
+					if (count !== this.count) return;
+					this.an[key].s = 'active';
+				}, this.an[key].p);
 			}
 		},
-		reset: function reset() {
-			for (var key in this.an) {
+		reset: function () {
+			for (let key in this.an) {
 				this.an[key].s = '';
 			}
 		}
 	}
-};
+});
 
 /***/ }),
 /* 47 */
@@ -750,14 +729,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 49 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -847,14 +822,14 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		active: {}
 	},
-	data: function data() {
+	data: function () {
 		return {};
 	}
-};
+});
 
 /***/ }),
 /* 50 */
@@ -895,14 +870,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 /* 52 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -915,11 +886,11 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		img: {}
 	}
-};
+});
 
 /***/ }),
 /* 53 */
@@ -1012,14 +983,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 57 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -1111,7 +1078,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	components: {
 		Arrow: __webpack_require__(3)
 	},
@@ -1119,7 +1086,7 @@ exports.default = {
 		img: {},
 		active: {}
 	},
-	data: function data() {
+	data: function () {
 		return {
 			count: 0,
 			an: {
@@ -1151,7 +1118,7 @@ exports.default = {
 		};
 	},
 	watch: {
-		active: function active(b) {
+		active: function (b) {
 			if (b) {
 				this.go();
 			} else {
@@ -1160,31 +1127,24 @@ exports.default = {
 		}
 	},
 	methods: {
-		go: function go() {
-			var _this = this;
-
+		go: function () {
 			this.reset();
 			this.count++;
 			var count = this.count;
-
-			var _loop = function _loop(key) {
-				setTimeout(function () {
-					if (count !== _this.count) return;
-					_this.an[key].s = 'active';
-				}, _this.an[key].p);
-			};
-
-			for (var key in this.an) {
-				_loop(key);
+			for (let key in this.an) {
+				setTimeout(() => {
+					if (count !== this.count) return;
+					this.an[key].s = 'active';
+				}, this.an[key].p);
 			}
 		},
-		reset: function reset() {
-			for (var key in this.an) {
+		reset: function () {
+			for (let key in this.an) {
 				this.an[key].s = '';
 			}
 		}
 	}
-};
+});
 
 /***/ }),
 /* 58 */
@@ -1257,14 +1217,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 61 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -1318,7 +1274,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		img: {},
 		active: {}
@@ -1327,7 +1283,7 @@ exports.default = {
 		CardCarousel: __webpack_require__(62),
 		Arrow: __webpack_require__(3)
 	},
-	data: function data() {
+	data: function () {
 		return {
 			count: 0,
 			an: {
@@ -1359,7 +1315,7 @@ exports.default = {
 		};
 	},
 	watch: {
-		active: function active(neo) {
+		active: function (neo) {
 			if (neo) {
 				this.go();
 			} else {
@@ -1367,33 +1323,26 @@ exports.default = {
 			}
 		}
 	},
-	mounted: function mounted() {},
+	mounted: function () {},
 	methods: {
-		go: function go() {
-			var _this = this;
-
+		go: function () {
 			this.reset();
 			this.count++;
 			var count = this.count;
-
-			var _loop = function _loop(key) {
-				setTimeout(function () {
-					if (count !== _this.count) return;
-					_this.an[key].s = 'active';
-				}, _this.an[key].p);
-			};
-
-			for (var key in this.an) {
-				_loop(key);
+			for (let key in this.an) {
+				setTimeout(() => {
+					if (count !== this.count) return;
+					this.an[key].s = 'active';
+				}, this.an[key].p);
 			}
 		},
-		reset: function reset() {
-			for (var key in this.an) {
+		reset: function () {
+			for (let key in this.an) {
 				this.an[key].s = '';
 			}
 		}
 	}
-};
+});
 
 /***/ }),
 /* 62 */
@@ -1425,14 +1374,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 64 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -1635,7 +1580,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		img: {},
 		active: {},
@@ -1644,7 +1589,7 @@ exports.default = {
 			default: 500
 		}
 	},
-	data: function data() {
+	data: function () {
 		return {
 			state: ['transform: translate3d(-360px,0,-360px) rotateY(40deg);'],
 
@@ -1676,7 +1621,7 @@ exports.default = {
 		};
 	},
 	watch: {
-		active: function active(b) {
+		active: function (b) {
 			if (b) {
 				this.carousel = true;
 			} else {
@@ -1684,13 +1629,13 @@ exports.default = {
 			}
 		}
 	},
-	mounted: function mounted() {
+	mounted: function () {
 		//this.go();
 	},
 	methods: {
-		update: function update() {
+		update: function () {
 			var self = this;
-			self.cards.forEach(function (a) {
+			self.cards.forEach(a => {
 				var target = a.p + 1;
 				if (target > 6) {
 					target = 0;
@@ -1699,12 +1644,12 @@ exports.default = {
 				a.p = target;
 			});
 		},
-		next: function next() {
+		next: function () {
 			var self = this;
 			if (!this.switching) {
 				this.switching = true;
 
-				self.cards.forEach(function (a) {
+				self.cards.forEach(a => {
 					var target = a.p + 1;
 					if (target > 6) {
 						target = 0;
@@ -1724,12 +1669,12 @@ exports.default = {
 				}, self.duration);
 			};
 		},
-		prev: function prev() {
+		prev: function () {
 			var self = this;
 			if (!this.switching) {
 				this.switching = true;
 
-				self.cards.forEach(function (a) {
+				self.cards.forEach(a => {
 					var target = a.p - 1;
 					if (target < 0) {
 						target = 6;
@@ -1750,7 +1695,7 @@ exports.default = {
 			};
 		}
 	}
-};
+});
 
 /***/ }),
 /* 65 */
@@ -1856,14 +1801,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 69 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -1956,12 +1897,12 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		img: {},
 		active: {}
 	},
-	data: function data() {
+	data: function () {
 		return {
 			cities: [{
 				name: '南通总部',
@@ -1995,7 +1936,7 @@ exports.default = {
 		Arrow: __webpack_require__(3)
 	},
 	watch: {
-		active: function active(neo) {
+		active: function (neo) {
 			//console.log(neo)
 			if (neo) {
 				this.go();
@@ -2005,31 +1946,24 @@ exports.default = {
 		}
 	},
 	methods: {
-		go: function go() {
-			var _this = this;
-
+		go: function () {
 			this.reset();
 			this.count++;
 			var count = this.count;
-
-			var _loop = function _loop(key) {
-				setTimeout(function () {
-					if (count !== _this.count) return;
-					_this.cities[key].s = 'active';
-				}, _this.cities[key].p);
-			};
-
-			for (var key in this.cities) {
-				_loop(key);
+			for (let key in this.cities) {
+				setTimeout(() => {
+					if (count !== this.count) return;
+					this.cities[key].s = 'active';
+				}, this.cities[key].p);
 			}
 		},
-		reset: function reset() {
-			for (var key in this.cities) {
+		reset: function () {
+			for (let key in this.cities) {
 				this.cities[key].s = '';
 			}
 		}
 	}
-};
+});
 
 /***/ }),
 /* 70 */
@@ -2100,14 +2034,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 73 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -2150,12 +2080,12 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		img: {},
 		active: {}
 	},
-	data: function data() {
+	data: function () {
 		return {
 			count: 0,
 			an: {
@@ -2178,7 +2108,7 @@ exports.default = {
 		SvgPenguin: __webpack_require__(74)
 	},
 	watch: {
-		active: function active(neo) {
+		active: function (neo) {
 			//console.log(neo)
 			if (neo) {
 				this.go();
@@ -2188,31 +2118,24 @@ exports.default = {
 		}
 	},
 	methods: {
-		go: function go() {
-			var _this = this;
-
+		go: function () {
 			this.reset();
 			this.count++;
 			var count = this.count;
-
-			var _loop = function _loop(key) {
-				setTimeout(function () {
-					if (count !== _this.count) return;
-					_this.an[key].s = 'active';
-				}, _this.an[key].p);
-			};
-
-			for (var key in this.an) {
-				_loop(key);
+			for (let key in this.an) {
+				setTimeout(() => {
+					if (count !== this.count) return;
+					this.an[key].s = 'active';
+				}, this.an[key].p);
 			}
 		},
-		reset: function reset() {
-			for (var key in this.an) {
+		reset: function () {
+			for (let key in this.an) {
 				this.an[key].s = '';
 			}
 		}
 	}
-};
+});
 
 /***/ }),
 /* 74 */
@@ -2244,14 +2167,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 76 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -2575,11 +2494,11 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 // version: 0.0.2
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		active: {}
 	},
-	data: function data() {
+	data: function () {
 		return {
 			cycle: 0,
 
@@ -2597,7 +2516,7 @@ exports.default = {
 		};
 	},
 	watch: {
-		active: function active(neo) {
+		active: function (neo) {
 			console.log(neo);
 			if (neo) {
 				this.cycle++;
@@ -2607,36 +2526,34 @@ exports.default = {
 			}
 		}
 	},
-	mounted: function mounted() {
+	mounted: function () {
 		//this.go();
 	},
 	methods: {
-		go: function go() {
-			var _this = this;
-
+		go: function () {
 			var self = this;
 			var cycle = this.cycle;
 			if (cycle !== this.cycle) return;
 			self.reset();
 			self.coversC = 'active';
 			self.backbone = 'active';
-			setTimeout(function () {
-				if (cycle !== _this.cycle) return;
+			setTimeout(() => {
+				if (cycle !== this.cycle) return;
 				self.coversA = 'active';
 				self.coversB = 'active';
 				self.pages = 'active';
-				setTimeout(function () {
-					if (cycle !== _this.cycle) return;
+				setTimeout(() => {
+					if (cycle !== this.cycle) return;
 					self.markA = 'active';
 					self.markB = 'active';
-					setTimeout(function () {
-						if (cycle !== _this.cycle) return;
+					setTimeout(() => {
+						if (cycle !== this.cycle) return;
 						self.second = 'active';
 					}, 2000);
 				}, 2000);
 			}, 2000);
 		},
-		reset: function reset() {
+		reset: function () {
 			this.coversC = '__';
 			this.backbone = '';
 			this.coversA = '';
@@ -2647,7 +2564,7 @@ exports.default = {
 			this.second = '';
 		}
 	}
-};
+});
 
 /***/ }),
 /* 77 */

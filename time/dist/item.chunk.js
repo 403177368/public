@@ -64,14 +64,10 @@ module.exports = Component.exports
 /***/ }),
 
 /***/ 273:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -84,7 +80,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	components: {
 		MyHeader: __webpack_require__(35),
 		MyFooter: __webpack_require__(36),
@@ -93,17 +89,17 @@ exports.default = {
 		Item: __webpack_require__(274)
 	},
 	computed: {
-		dir: function dir() {
+		dir: function () {
 			return this.$store.state.dir;
 		},
-		items: function items() {
+		items: function () {
 			return this.$store.state.items;
 		}
 	},
-	mounted: function mounted() {
+	mounted: function () {
 		this.$store.dispatch('init');
 	}
-};
+});
 
 /***/ }),
 
@@ -160,14 +156,10 @@ exports.push([module.i, ".Item[data-v-50303ad6]{background:#127bab;overflow:hidd
 /***/ }),
 
 /***/ 277:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -338,11 +330,11 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     TabbedBox: __webpack_require__(278)
   },
-  data: function data() {
+  data: function () {
     return {
       id: '',
       query: '',
@@ -350,40 +342,40 @@ exports.default = {
       quantity: 1
     };
   },
-  mounted: function mounted() {
+  mounted: function () {
     //this.get_id();
     this.get_query();
     this.$store.dispatch('fetchItem', this.get_id());
   },
   computed: {
-    item: function item() {
+    item: function () {
       return this.$store.state.item;
     }
   },
   methods: {
-    get_id: function get_id() {
+    get_id: function () {
       var id = location.href.match(/id=.+/)[0].split(/&/)[0].replace(/id=/, '');
       return id;
     },
-    get_query: function get_query() {
+    get_query: function () {
       this.query = location.href.match(/\?.+/)[0];
     },
-    get_item: function get_item() {
+    get_item: function () {
       var self = this;
     },
-    plus: function plus() {
+    plus: function () {
       this.quantity++;
     },
-    minus: function minus() {
+    minus: function () {
       if (this.quantity > 1) {
         this.quantity--;
       }
     },
-    pick: function pick(n) {
+    pick: function (n) {
       this.current = n;
     }
   }
-};
+});
 
 /***/ }),
 
@@ -440,14 +432,10 @@ exports.push([module.i, ".TabbedBox[data-v-3e7038ac]{width:1000px;margin:30px au
 /***/ }),
 
 /***/ 281:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -526,25 +514,25 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		tabs: {
-			default: function _default() {
+			default: function () {
 				return ['商品详情', '评价晒单', '购买须知'];
 			}
 		}
 	},
-	data: function data() {
+	data: function () {
 		return {
 			current: 0
 		};
 	},
 	methods: {
-		pick: function pick(i) {
+		pick: function (i) {
 			this.current = i;
 		}
 	}
-};
+});
 
 /***/ }),
 

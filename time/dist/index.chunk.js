@@ -102,14 +102,10 @@ exports.push([module.i, "", ""]);
 /***/ }),
 
 /***/ 258:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -129,7 +125,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     TopbarBlack: __webpack_require__(37),
     MyHeader: __webpack_require__(35),
@@ -138,17 +134,17 @@ exports.default = {
     Home: __webpack_require__(259)
   },
   computed: {
-    dir: function dir() {
+    dir: function () {
       return this.$store.state.dir;
     },
-    items: function items() {
+    items: function () {
       return this.$store.state.items;
     }
   },
-  created: function created() {
+  created: function () {
     this.$store.dispatch('init');
   }
-};
+});
 
 /***/ }),
 
@@ -205,14 +201,10 @@ exports.push([module.i, ".Home[data-v-431cab85]{position:relative;width:100%;bac
 /***/ }),
 
 /***/ 262:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -680,7 +672,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     dir: {}
   },
@@ -688,11 +680,11 @@ exports.default = {
     Focus: __webpack_require__(263)
   },
   computed: {
-    col2: function col2() {
+    col2: function () {
       return [this.dir.item + '?id=1602091546'];
     }
   }
-};
+});
 
 /***/ }),
 
@@ -749,14 +741,10 @@ exports.push([module.i, ".Focus[data-v-8bc38a0c]{position:relative;width:100%;he
 /***/ }),
 
 /***/ 266:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -858,43 +846,43 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		dir: {},
 		items: {
-			default: function _default() {
+			default: function () {
 				return [0, 1, 2, 3];
 			}
 		}
 	},
-	data: function data() {
+	data: function () {
 		return {
 			current: 0
 		};
 	},
 	watch: {
-		curernt: function curernt(val, prev_val) {}
+		curernt: function (val, prev_val) {}
 	},
 	methods: {
-		prev: function prev() {
+		prev: function () {
 			if (this.current > 0) {
 				this.current--;
 			} else {
 				this.current = 3;
 			}
 		},
-		next: function next() {
+		next: function () {
 			if (this.current < 3) {
 				this.current++;
 			} else {
 				this.current = 0;
 			}
 		},
-		jump: function jump(i) {
+		jump: function (i) {
 			this.current = i;
 		}
 	}
-};
+});
 
 /***/ }),
 
@@ -1981,14 +1969,10 @@ exports.push([module.i, ".TopbarBlack[data-v-1773a3ba]{position:relative;width:1
 /***/ }),
 
 /***/ 40:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -2031,15 +2015,15 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		items: {
-			default: function _default() {
+			default: function () {
 				return [{}];
 			}
 		}
 	}
-};
+});
 
 /***/ }),
 

@@ -343,9 +343,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "col-sm-8 col-sm-offset-2"
   }, [_c('div', {
-    staticClass: "card post--"
+    staticClass: "panel panel-default panel-full-sm post--"
   }, [_c('div', {
-    staticClass: "card-body"
+    staticClass: "panel-body"
   }, [_c('div', {
     staticClass: "page-header",
     staticStyle: {
@@ -385,14 +385,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "innerHTML": _vm._s(_vm.post.content)
     }
   })])]), _c('div', {
-    staticClass: "card"
+    staticClass: "panel panel-default panel-full-sm"
   }, [_c('li', {
-    staticClass: "card-heading"
+    staticClass: "panel-heading"
   }, [_vm._v("\n              Comments\n            ")]), _c('ul', {
-    staticClass: "card-group comments"
+    staticClass: "list-group comments"
   }, [_vm._l((_vm.post.comments), function(a, i) {
     return _c('li', {
-      staticClass: "card-item"
+      staticClass: "list-group-item"
     }, [_c('div', {
       staticClass: "media"
     }, [_c('div', {
@@ -420,7 +420,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       value: (_vm.post.comments.length === 0),
       expression: " post.comments.length === 0 "
     }],
-    staticClass: "card-item text-center"
+    staticClass: "list-group-item text-center"
   }, [_vm._v("\n                No comments.\n              ")])], 2)])])])])])
 },staticRenderFns: []}
 

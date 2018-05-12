@@ -181,7 +181,7 @@ S.UI = function () {
       canvas = document.querySelector('.canvas'),
       interval,
       isTouch = false,
-      //('ontouchstart' in window || navigator.msMaxTouchPoints),
+      // ('ontouchstart' in window || navigator.msMaxTouchPoints),
   currentAction,
       resizeTimer,
       time,
@@ -356,7 +356,7 @@ S.UI = function () {
             input.focus();
           }
         } else if (url) {
-          //window.location = url;
+          // window.location = url;
         }
       }
     });
@@ -771,7 +771,7 @@ S.Shape = function () {
           dots[i].move(new S.Point({
             x: Math.random() * a.w,
             y: Math.random() * a.h,
-            a: 0.3, //.4
+            a: 0.3, // .4
             z: Math.random() * 4,
             h: 0
           }));

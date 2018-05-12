@@ -4903,20 +4903,20 @@ function createStore(options) {
 
       // console.log(path)
       if (!Array.isArray(path)) {
-        throw new Error("[revuex] Expect module path to be an array.");
+        throw new Error('[revuex] Expect module path to be an array.');
       }
 
       if (path.length === 0) {
         this.isRoot = true;
-        this.name = "@@root";
-        this.path = "@@root";
+        this.name = '@@root';
+        this.path = '@@root';
       } else {
         this.isRoot = false;
         this.name = path[path.length - 1];
         if (path.length === 1) {
           this.path = path[0];
         } else {
-          this.path = path.join("/");
+          this.path = path.join('/');
         }
       }
 
@@ -4930,11 +4930,11 @@ function createStore(options) {
       if (path.length === 0) {
         parentModule = null;
       } else if (path.length === 1) {
-        parentModule = modulesMap["@@root"];
+        parentModule = modulesMap['@@root'];
       } else {
         var arr = path.slice();
         arr.pop();
-        parentPath = arr.join("/");
+        parentPath = arr.join('/');
         parentModule = modulesMap[parentPath];
       }
 
@@ -4968,12 +4968,12 @@ function createStore(options) {
       // Register the creators:
       this.creators = rawModule.creators || {};
       for (var _key in this.creators) {
-        creatorsMap[this.path + "/" + _key] = this.creators[_key];
+        creatorsMap[this.path + '/' + _key] = this.creators[_key];
       }
     }
 
     (0, _createClass3.default)(Module, [{
-      key: "initReducer",
+      key: 'initReducer',
       value: function initReducer(rawModule) {
         this.indexReducer = rawModule.reducer || function (state, action) {
           return state;
@@ -4986,7 +4986,7 @@ function createStore(options) {
       // internalReducer and reducer of this module must be updated when a new child module is installed.
 
     }, {
-      key: "updateReducer",
+      key: 'updateReducer',
       value: function updateReducer() {
         var self = this;
         var childrenKeys = (0, _keys2.default)(self.modules) || [];
@@ -5004,8 +5004,8 @@ function createStore(options) {
             var indexState;
             var childrenState;
             if (state) {
-              if (state.toString() !== "[object Object]") {
-                throw new Error("[revuex] State of a module must be a plain object!");
+              if (state.toString() !== '[object Object]') {
+                throw new Error('[revuex] State of a module must be a plain object!');
               } else {
                 // Split the state:
                 indexState = {};
@@ -5023,9 +5023,9 @@ function createStore(options) {
             // console.log('reducing: ' + action.type)
             // If path of this module is matched in action.type:
             var rawType = action.type;
-            var arr = action.type.split("/");
+            var arr = action.type.split('/');
             var name = arr.pop();
-            var path = arr.join("/");
+            var path = arr.join('/');
             var nextState;
 
             // if (path === 'item') {
@@ -5033,7 +5033,7 @@ function createStore(options) {
             // }
 
             if (path === self.path) {
-              console.log("[revuex] matched action: " + action.type);
+              console.log('[revuex] matched action: ' + action.type);
               // Remove the prefix:
               action.type = name;
               indexState = self.indexReducer(indexState, action);
@@ -5054,17 +5054,17 @@ function createStore(options) {
               // throw new Error('[revuex] Invalid action type: ' + action.type + '.');
             }
           } else {
-            throw new Error("[revuex] Action needs a type field.");
+            throw new Error('[revuex] Action needs a type field.');
           }
         };
       }
     }, {
-      key: "mergeState",
+      key: 'mergeState',
       value: function mergeState(indexState, childrenState) {
         var state = {};
         for (var key in indexState) {
           if (this.modules[key]) {
-            throw new Error("[revuex] Duplicated state key \"" + key + "\" in module \"" + this.path + "\".'");
+            throw new Error('[revuex] Duplicated state key "' + key + '" in module "' + this.path + '".\'');
           }
           state[key] = indexState[key];
         }
@@ -5079,11 +5079,11 @@ function createStore(options) {
 
   function registerModule(pathArr, rawModule) {
     if (!Array.isArray(pathArr)) {
-      throw new Error("[revuex] Expect pathArr to be an array but get " + pathArr.toString());
+      throw new Error('[revuex] Expect pathArr to be an array but get ' + pathArr.toString());
     }
-    var path = pathArr.join("/");
+    var path = pathArr.join('/');
     if (!modulesMap[path]) {
-      console.log("[revuex] registering module " + path);
+      console.log('[revuex] registering module ' + path);
       var _module = new Module(pathArr, rawModule);
       // Update this module's ancestors' internalReducer and reducer:
       while (_module.parent) {
@@ -5125,7 +5125,7 @@ function createStore(options) {
 
   // Create the redux store.
   var store = (0, _redux.createStore)(rootModule.reducer, undefined);
-  console.log("store: ", store);
+  console.log('store: ', store);
 
   store._rootModule = rootModule;
   store._creatorsMap = creatorsMap;
@@ -5147,13 +5147,13 @@ function createStore(options) {
 
   // Function to run a creator:
   store.run = function (path, payload) {
-    console.log("[revuex] running action creator: " + path);
+    console.log('[revuex] running action creator: ' + path);
     if (!creatorsMap[path]) {
-      throw new Error("[revuex] Unknown action creator: " + path + ".");
+      throw new Error('[revuex] Unknown action creator: ' + path + '.');
     }
-    var arr = path.split("/");
+    var arr = path.split('/');
     arr.pop();
-    var modulePath = arr.join("/");
+    var modulePath = arr.join('/');
     var ctx = {
       // dispatch: store.dispatch,
       create: function create(key) {
@@ -5163,14 +5163,14 @@ function createStore(options) {
         if (options && options.root) {
           return store.create(key, payload);
         } else {
-          return store.create(modulePath + "/" + key, payload);
+          return store.create(modulePath + '/' + key, payload);
         }
       },
       run: function run(key, payload, options) {
         if (options && options.root) {
           return store.run(key, payload);
         } else {
-          return store.run(modulePath + "/" + key, payload);
+          return store.run(modulePath + '/' + key, payload);
         }
       },
 
@@ -5184,12 +5184,12 @@ function createStore(options) {
         } else {
           // Complete the action type:
           // Make this action a global action:
-          action.type = modulePath + "/" + key;
+          action.type = modulePath + '/' + key;
           return internalDispatch(action);
         }
       }
     };
-    Object.defineProperty(ctx, "rootState", {
+    Object.defineProperty(ctx, 'rootState', {
       enumerable: true,
       configurable: true,
       // writable: elKey?true:false,,
@@ -5197,10 +5197,10 @@ function createStore(options) {
         return store.getState();
       },
       set: function set() {
-        throw new Error("[revuex] The state must not be mutated.");
+        throw new Error('[revuex] The state must not be mutated.');
       }
     });
-    Object.defineProperty(ctx, "state", {
+    Object.defineProperty(ctx, 'state', {
       enumerable: true,
       configurable: true,
       // writable: elKey?true:false,,
@@ -5212,7 +5212,7 @@ function createStore(options) {
         return state;
       },
       set: function set() {
-        throw new Error("[revuex] The state must not be mutated.");
+        throw new Error('[revuex] The state must not be mutated.');
       }
     });
 

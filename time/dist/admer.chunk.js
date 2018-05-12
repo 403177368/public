@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/time/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 112);
+/******/ 	return __webpack_require__(__webpack_require__.s = 111);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1779,14 +1779,14 @@ module.exports = window.VueRouter;
 /* 108 */,
 /* 109 */,
 /* 110 */,
-/* 111 */,
-/* 112 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(113);
 
 
 /***/ }),
+/* 112 */,
 /* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1952,14 +1952,10 @@ exports.push([module.i, ".RouteIndex[data-v-0ca206bb]{position:relative;box-sizi
 
 /***/ }),
 /* 120 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -1989,12 +1985,12 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     NavLeft: __webpack_require__(121),
     Navbar: __webpack_require__(125)
   }
-};
+});
 
 /***/ }),
 /* 121 */
@@ -2122,14 +2118,10 @@ exports.push([module.i, "", ""]);
 
 /***/ }),
 /* 128 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -2149,7 +2141,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {};
+/* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
 /* 129 */
@@ -2244,14 +2236,10 @@ exports.push([module.i, ".RouteHome[data-v-38ec20ec]{position:relative;box-sizin
 
 /***/ }),
 /* 134 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -2410,32 +2398,32 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     Post: __webpack_require__(135),
     BoxSignin: __webpack_require__(140)
   },
-  data: function data() {
+  data: function () {
     return {};
   },
   computed: {
-    user: function user() {
+    user() {
       return this.$store.state.user;
     },
-    items: function items() {
+    items() {
       return this.$store.state.items;
     },
-    focus: function focus() {
+    focus() {
       return this.$store.state.focus;
     }
   },
   methods: {
-    change_tab: function change_tab(i) {
+    change_tab(i) {
       // this.$store.dispatch('items/changeDB', '/sequelize');
       this.tabs.active = i;
     }
   }
-};
+});
 
 /***/ }),
 /* 135 */
@@ -2488,14 +2476,10 @@ exports.push([module.i, "", ""]);
 
 /***/ }),
 /* 138 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -2511,7 +2495,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {};
+/* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
 /* 139 */
@@ -2576,14 +2560,10 @@ exports.push([module.i, "", ""]);
 
 /***/ }),
 /* 143 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -2613,8 +2593,8 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
-  data: function data() {
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function () {
     return {
       user: {
         name: '',
@@ -2623,15 +2603,15 @@ exports.default = {
     };
   },
   methods: {
-    set: function set(e, key) {
+    set(e, key) {
       console.log(key);
       this.user[key] = e.target.value;
     },
-    tryLogin: function tryLogin() {
+    tryLogin() {
       this.$store.dispatch('user/login', JSON.stringify(this.user));
     }
   }
-};
+});
 
 /***/ }),
 /* 144 */
@@ -2881,14 +2861,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 147 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -2915,8 +2891,8 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
-  data: function data() {
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function () {
     return {
       tabs: {
         tabs: [{
@@ -2934,7 +2910,7 @@ exports.default = {
     MaskEdit: __webpack_require__(148),
     Management: __webpack_require__(153)
   }
-};
+});
 
 /***/ }),
 /* 148 */
@@ -2987,14 +2963,10 @@ exports.push([module.i, ".Mask[data-v-47194094]{display:table;position:fixed;lef
 
 /***/ }),
 /* 151 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -3077,46 +3049,45 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
-  data: function data() {
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function () {
     return {
       patch: {}
     };
   },
   computed: {
-    beingEditted: function beingEditted() {
+    beingEditted() {
       return this.$store.state.items.beingEditted;
     },
-    item: function item() {
+    item() {
       // console.log(this.$store.getters)
       return this.$store.getters['items/item'];
     }
   },
   watch: {},
   methods: {
-    EDIT_ITEM_VALUE: function EDIT_ITEM_VALUE(key, e) {
+    EDIT_ITEM_VALUE(key, e) {
       this.patch[key] = e.target.value;
       // this.$store.commit('EDIT_ITEM_VALUE',{
       //   key: key,
       //   val: e.target.value
       // })
     },
-
     // saveItem() {
     //   this.$store.dispatch('saveItem', JSON.stringify(this.item))
     // },
-    close: function close() {
+    close() {
       this.patch = {};
       this.$store.commit('items/EDIT_ITEM_OVER');
     },
-    patchItem: function patchItem() {
+    patchItem() {
       this.$store.dispatch('items/patchItem', {
         id: this.item.id,
         patch_json: JSON.stringify(this.patch)
       });
     }
   }
-};
+});
 
 /***/ }),
 /* 152 */
@@ -3200,14 +3171,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 154 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -3254,13 +3221,13 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	computed: {
-		items: function items() {
+		items() {
 			return this.$store.state.items;
 		}
 	}
-};
+});
 
 /***/ }),
 /* 155 */
@@ -3416,14 +3383,10 @@ exports.push([module.i, ".App[data-v-527f900f]{overflow:hidden}", ""]);
 
 /***/ }),
 /* 160 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -3439,28 +3402,28 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     // TopbarBlack: require('components/TopbarBlack.vue'),
     // MaskEdit: require('./Mask.vue'),
   },
-  created: function created() {
+  created: function () {
     this.$store.dispatch('items/fetchItems');
     this.$store.dispatch('focus/init');
     this.$store.dispatch('user/fetchUser');
   },
   computed: {
-    items: function items() {
+    items: function () {
       return this.$store.state.items;
     },
-    num: function num() {
+    num: function () {
       return this.$store.state.num.num;
     }
   },
   methods: {
-    act: function act() {}
+    act: function () {}
   }
-};
+});
 
 /***/ }),
 /* 161 */

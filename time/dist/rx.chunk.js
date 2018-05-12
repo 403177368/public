@@ -6878,52 +6878,73 @@ exports.push([module.i, ".box[data-v-69c02800]{background:grey}", ""]);
 
 /***/ }),
 /* 290 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Rx__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Rx__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _Rx = __webpack_require__(291);
-
-var _Rx2 = _interopRequireDefault(_Rx);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  mounted: function mounted() {
+/* harmony default export */ __webpack_exports__["default"] = ({
+  mounted: function () {
 
     var button = document.querySelector('.plus');
     var text = document.querySelector('.text');
 
-    var plus$ = _Rx2.default.Observable.fromEvent(button, 'click').throttleTime(1000).scan(function (count) {
-      return count + 1;
-    }, 0);
+    const plus$ = __WEBPACK_IMPORTED_MODULE_0_rxjs_Rx___default.a.Observable.fromEvent(button, 'click').throttleTime(1000).scan(count => count + 1, 0);
     // plus$.subscribe(count => text.innerHTML = `${count}`);
     // plus$.subscribe(count => console.log(count));
 
-    var minus$ = _Rx2.default.Observable.fromEvent(document.querySelector('.minus'), 'click').scan(function (count) {
-      return count - 1;
-    }, 0);
+    const minus$ = __WEBPACK_IMPORTED_MODULE_0_rxjs_Rx___default.a.Observable.fromEvent(document.querySelector('.minus'), 'click').scan(count => count - 1, 0);
 
-    var count$ = _Rx2.default.Observable.merge(plus$, minus$).subscribe(function (count) {
-      return text.innerHTML = '' + count;
-    });
+    const count$ = __WEBPACK_IMPORTED_MODULE_0_rxjs_Rx___default.a.Observable.merge(plus$, minus$).subscribe(count => text.innerHTML = `${count}`);
 
-    var interval$ = _Rx2.default.Observable.interval(200).scan(function (count) {
+    const interval$ = __WEBPACK_IMPORTED_MODULE_0_rxjs_Rx___default.a.Observable.interval(200).scan(count => {
       if (count < 60) {
         return count + 1;
       } else {
         return 0;
       }
-    }, 0).subscribe(function (count) {
-      document.querySelector('.interval').innerHTML = 'count: ' + count;
+    }, 0).subscribe(count => {
+      document.querySelector('.interval').innerHTML = `count: ${count}`;
     });
 
-    var items$ = _Rx2.default.Observable.from([{
+    const items$ = __WEBPACK_IMPORTED_MODULE_0_rxjs_Rx___default.a.Observable.from([{
       name: 'John',
       age: 20
     }, {
@@ -6932,51 +6953,16 @@ exports.default = {
     }]);
 
     function filtered$(maxAge) {
-      return items$.filter(function (a) {
-        return a.age < maxAge;
-      });
+      return items$.filter(a => a.age < maxAge);
     };
 
-    items$.subscribe(function (a) {
+    items$.subscribe(a => {
       console.log(a);
     });
 
     // minus$.subscribe(count => text.innerHTML = `${count}`);
   }
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+});
 
 /***/ }),
 /* 291 */

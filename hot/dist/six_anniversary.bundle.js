@@ -391,19 +391,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 185 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-__webpack_require__(186);
-
-var _store = __webpack_require__(187);
-
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__App_scss__ = __webpack_require__(186);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__App_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__App_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_js__ = __webpack_require__(187);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__store_js__);
 //
 //
 //
@@ -440,7 +435,10 @@ var _store = __webpack_require__(187);
 //
 //
 
-exports.default = {
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     Debugger: __webpack_require__(189),
     MaskLoading: __webpack_require__(193),
@@ -451,11 +449,11 @@ exports.default = {
     MainBlock: __webpack_require__(205),
     MaskBooks: __webpack_require__(225)
   },
-  data: function data() {
-    return _store.data;
+  data: function () {
+    return __WEBPACK_IMPORTED_MODULE_1__store_js__["data"];
   },
   computed: {
-    href: function href() {
+    href: function () {
       var self = this;
       return location.href
       // .replace( /http:\/\/solomotest4\.3g\.qq\.com/,'https://ptsolomo.reader.qq.com' )
@@ -464,14 +462,14 @@ exports.default = {
     }
   },
   watch: {},
-  created: function created() {},
-  mounted: function mounted() {
+  created: function () {},
+  mounted: function () {
     this.act({ type: 'INIT' });
   },
   methods: {
-    act: _store.act
+    act: __WEBPACK_IMPORTED_MODULE_1__store_js__["act"]
   }
-};
+});
 
 /***/ }),
 /* 186 */
@@ -1012,14 +1010,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 191 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -1046,19 +1040,19 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: ['state'],
 	computed: {
-		writers: function writers() {
+		writers: function () {
 			var state = [];
-			this.state.writers.forEach(function (a) {
+			this.state.writers.forEach(a => {
 				state.push(a.state);
 			});
 			return state;
 		}
 	},
-	mounted: function mounted() {}
-};
+	mounted: function () {}
+});
 
 /***/ }),
 /* 192 */
@@ -1102,10 +1096,7 @@ module.exports = Component.exports
 
 /***/ }),
 /* 195 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
+/***/ (function(module, exports) {
 
 //
 //
@@ -1130,10 +1121,10 @@ module.exports = Component.exports
 //
 
 module.exports = {
-	data: function data() {
+	data: function () {
 		return {};
 	},
-	mounted: function mounted() {}
+	mounted: function () {}
 };
 
 /***/ }),
@@ -1180,14 +1171,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 199 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -1227,11 +1214,11 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
-	data: function data() {
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function () {
 		return {};
 	}
-};
+});
 
 /***/ }),
 /* 200 */
@@ -1281,14 +1268,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 203 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-		value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -1452,10 +1435,10 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 		props: ['stage', 'act'],
 		components: {},
-		data: function data() {
+		data: function () {
 				return {
 						img: '/img/six_anniversary/',
 
@@ -1464,17 +1447,17 @@ exports.default = {
 						bg_focus: ''
 				};
 		},
-		created: function created() {},
+		created: function () {},
 		watch: {
-				stage: function stage(new_val) {
+				stage: function (new_val) {
 						if (new_val === 0) {
 								this.animate();
 						}
 				}
 		},
-		mounted: function mounted() {},
+		mounted: function () {},
 		methods: {
-				animate: function animate() {
+				animate: function () {
 						var self = this;
 
 						var penguin_0 = this.$refs.penguin_0;
@@ -1523,7 +1506,7 @@ exports.default = {
 								y: '50%'
 						}, {
 								y: '0%',
-								onStart: function onStart() {},
+								onStart: function () {},
 								ease: Elastic
 						}).fromTo(Focus, 0.3, {
 								opacity: 1
@@ -1545,14 +1528,14 @@ exports.default = {
 						// 	},2000);
 						// },1000)
 				},
-				CHANGE_STAGE: function CHANGE_STAGE() {
+				CHANGE_STAGE: function () {
 						this.act({
 								type: 'CHANGE_STAGE',
 								n: 1
 						});
 				}
 		}
-};
+});
 
 /***/ }),
 /* 204 */
@@ -1663,14 +1646,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 207 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-		value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -1802,7 +1781,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 		props: {
 				writers: {},
 				current: {},
@@ -1820,15 +1799,15 @@ exports.default = {
 				FreeBooks: __webpack_require__(216),
 				Rules: __webpack_require__(220)
 		},
-		data: function data() {
+		data: function () {
 				return {
 						img: '/img/six_anniversary/'
 				};
 		},
-		created: function created() {},
+		created: function () {},
 		watch: {},
 		methods: {}
-};
+});
 
 /***/ }),
 /* 208 */
@@ -1860,17 +1839,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 210 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -2021,7 +1993,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     MyVideo: __webpack_require__(211)
   },
@@ -2051,8 +2023,8 @@ exports.default = {
     },
     authors: {}
   },
-  data: function data() {
-    return _defineProperty({
+  data: function () {
+    return {
       img: '/img/six_anniversary/',
 
       width: 0,
@@ -2069,26 +2041,27 @@ exports.default = {
       X2: 0,
 
       currentOne: 0,
-      transition: '0s'
-    }, 'offset', 0);
+      transition: '0s',
+      offset: 0
+    };
   },
   computed: {
-    author: function author() {
+    author: function () {
       return this.items[this.currentOne].name;
     }
   },
   watch: {
-    day: function day(newVal) {
+    day: function (newVal) {
       this.currentOne = newVal;
     },
-    currentOne: function currentOne(new_val, old) {
+    currentOne: function (new_val, old) {
       // console.log(new_val)
       this.act({
         type: 'SWITCH',
         n: new_val
       });
     },
-    stage: function stage(neo) {
+    stage: function (neo) {
       var self = this;
       if (neo === 1) {
 
@@ -2105,7 +2078,7 @@ exports.default = {
           opacity: 1
         }).to(advice, 1, {
           opacity: 0,
-          onComplete: function onComplete() {
+          onComplete: function () {
             advice.style.display = 'none';
           }
         });
@@ -2126,51 +2099,47 @@ exports.default = {
       }
     }
   },
-  mounted: function mounted() {
-    var _this = this;
-
+  mounted: function () {
     // console.log(this.$refs)
     var self = this;
     // this.items = (function(){
     //  var items = JSON.parse( JSON.stringify(self.raw) );
     //  return items;
     // })();
-    window.addEventListener('load', function () {
-      _this.setWidth();
+    window.addEventListener('load', () => {
+      this.setWidth();
     });
-    window.addEventListener('resize', function () {
-      setTimeout(function () {
-        _this.setWidth();
+    window.addEventListener('resize', () => {
+      setTimeout(() => {
+        this.setWidth();
       }, 50);
     });
     if (this.autoplay) {
-      setInterval(function () {
-        if (!_this.inCycle) {
-          _this.toNext();
+      setInterval(() => {
+        if (!this.inCycle) {
+          this.toNext();
         }
       }, this.interval);
     }
   },
   methods: {
-    __toItem: function __toItem(name) {
+    __toItem: function (name) {
       var i;
-      this.items.forEach(function (a) {
+      this.items.forEach(a => {
         if (a.name === name) {
           i = a.id;
         }
       });
       this.toCard(i);
     },
-    setWidth: function setWidth() {
+    setWidth: function () {
       var elem = this.$refs.swiper;
       var width = Number(document.defaultView.getComputedStyle(elem).width.replace(/px/, ''));
       this.width = width;
       this.transition = '0s';
       this.trainOffsetX = -this.currentOne * this.width;
     },
-    toNext: function toNext() {
-      var _this2 = this;
-
+    toNext: function () {
       if (true) {
         this.switching = true;
         this.transition = this.duration + 'ms cubic-bezier(0.175, 0.885, 0.32, 1.275)';
@@ -2183,19 +2152,17 @@ exports.default = {
         } else {
           this.trainOffsetX = -this.currentOne * this.width;
         }
-        setTimeout(function () {
-          _this2.transition = '0s';
-          if (_this2.carousel && _this2.currentOne === 0) {
-            _this2.trainOffsetX = 0;
+        setTimeout(() => {
+          this.transition = '0s';
+          if (this.carousel && this.currentOne === 0) {
+            this.trainOffsetX = 0;
           }
-          _this2.switching = false;
-          _this2.inCycle = false;
+          this.switching = false;
+          this.inCycle = false;
         }, this.duration);
       }
     },
-    toPrev: function toPrev() {
-      var _this3 = this;
-
+    toPrev: function () {
       this.switching = true;
       this.transition = this.duration + 'ms cubic-bezier(0.175, 0.885, 0.32, 1.275)';
       if (this.currentOne > 0) {
@@ -2207,28 +2174,26 @@ exports.default = {
       } else {
         this.trainOffsetX = -this.currentOne * this.width;
       }
-      setTimeout(function () {
-        _this3.transition = '0s';
-        if (_this3.carousel && _this3.currentOne === _this3.items.length - 1) {
-          _this3.trainOffsetX = -_this3.currentOne * _this3.width;
+      setTimeout(() => {
+        this.transition = '0s';
+        if (this.carousel && this.currentOne === this.items.length - 1) {
+          this.trainOffsetX = -this.currentOne * this.width;
         }
-        _this3.switching = false;
-        _this3.inCycle = false;
+        this.switching = false;
+        this.inCycle = false;
       }, this.duration);
     },
-    toCard: function toCard(i) {
-      var _this4 = this;
-
+    toCard: function (i) {
       this.currentOne = i;
       this.transition = this.duration + 'ms cubic-bezier(0.175, 0.885, 0.32, 1.275)';
       this.trainOffsetX = -this.currentOne * this.width;
-      setTimeout(function () {
-        _this4.transition = '0s';
-        _this4.switching = false;
-        _this4.inCycle = false;
+      setTimeout(() => {
+        this.transition = '0s';
+        this.switching = false;
+        this.inCycle = false;
       }, this.duration);
     },
-    touchstart: function touchstart(e) {
+    touchstart: function (e) {
       console.log(this.inCycle);
       e.stopPropagation();
       if (!this.inCycle) {
@@ -2243,7 +2208,7 @@ exports.default = {
         this.Y1 = e.changedTouches[0].pageY;
       }
     },
-    touchmove: function touchmove(e) {
+    touchmove: function (e) {
       e.stopPropagation();
       if (this.inCycle) {
         this.moveCount++;
@@ -2275,7 +2240,7 @@ exports.default = {
         }
       }
     },
-    touchend: function touchend(e) {
+    touchend: function (e) {
       e.stopPropagation();
       if (this.inCycle && !this.scrolling) {
         this.X2 = e.changedTouches[0].pageX;
@@ -2296,7 +2261,7 @@ exports.default = {
       }
     }
   }
-};
+});
 
 /***/ }),
 /* 211 */
@@ -2328,14 +2293,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 213 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -2449,14 +2410,14 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     video: {},
     current: {},
     act: {},
     yyb: {}
   },
-  data: function data() {
+  data: function () {
     return {
       img: '/img/six_anniversary/',
       state: 'pending',
@@ -2464,16 +2425,14 @@ exports.default = {
     };
   },
   watch: {
-    current: function current() {
+    current: function () {
       if (this.state !== 'pending') {
         this.state = 'ready';
       }
     },
-    state: function state(_state) {
-      var _this = this;
-
+    state: function (state) {
       var self = this;
-      switch (_state) {
+      switch (state) {
         case 'loading':
           var tl0 = new TimelineMax();
 
@@ -2539,13 +2498,13 @@ exports.default = {
           console.log(this.$refs.video.src);
           this.$refs.video.load();
 
-          this.$refs.video.addEventListener('pause', function () {
-            if (_this.state === 'playing') {
-              _this.state = 'paused';
+          this.$refs.video.addEventListener('pause', () => {
+            if (this.state === 'playing') {
+              this.state = 'paused';
             }
           });
 
-          this.$refs.video.addEventListener('loadeddata', function () {
+          this.$refs.video.addEventListener('loadeddata', () => {
             console.log('loaded');
             self.loaded = true;
             // this.act({
@@ -2553,7 +2512,7 @@ exports.default = {
             //  i: this.video.id
             // })
 
-            setTimeout(function () {
+            setTimeout(() => {
               var tl2 = new TimelineMax();
               tl2.to(self.$refs.t5, 0.6, {
                 y: '-500%',
@@ -2566,7 +2525,7 @@ exports.default = {
                 scaleX: 0
               }, {
                 scaleX: 1,
-                onComplete: function onComplete() {
+                onComplete: function () {
                   if (self.state === 'loading') {
                     self.state = 'playing';
                   }
@@ -2591,13 +2550,13 @@ exports.default = {
     }
   },
   computed: {
-    src: function src() {
+    src: function () {
       return location.href.replace(/act161203.+/, 'act161203/video/' + this.video.id + '.mp4');
     }
   },
-  mounted: function mounted() {},
+  mounted: function () {},
   methods: {
-    PLAY: function PLAY(e) {
+    PLAY: function (e) {
       this.act({
         type: 'PLAY_VIDEO',
         i: this.video.id
@@ -2614,7 +2573,7 @@ exports.default = {
         self.state = 'playing';
       }
     },
-    PAUSE: function PAUSE() {
+    PAUSE: function () {
       if (this.$refs.video.ended) {
         this.$refs.video.play();
       } else {
@@ -2622,7 +2581,7 @@ exports.default = {
       }
     }
   }
-};
+});
 
 /***/ }),
 /* 214 */
@@ -2836,14 +2795,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 218 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-		value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -3014,7 +2969,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 		props: {
 				writers: {},
 				current: {},
@@ -3023,39 +2978,38 @@ exports.default = {
 				yyb: {}
 		},
 		components: {},
-		data: function data() {
+		data() {
 				return {
 						img: '/img/six_anniversary/'
 				};
 		},
-
 		computed: {
-				books: function books() {
+				books: function () {
 						return this.writers[this.current].books;
 				},
-				unlocked: function unlocked() {
+				unlocked: function () {
 						return this.writers[this.current].unlocked;
 				}
 		},
 		methods: {
-				SHOW_MASK: function SHOW_MASK() {
+				SHOW_MASK: function () {
 						this.act({
 								type: 'SHOW_MASK'
 						});
 				},
-				_TO_BOOK: function _TO_BOOK(bid) {
+				_TO_BOOK: function (bid) {
 						this.act({
 								type: '_TO_BOOK',
-								bid: bid
+								bid
 						});
 				},
-				_SHARE: function _SHARE() {
+				_SHARE: function () {
 						this.act({
 								type: '_SHARE'
 						});
 				}
 		}
-};
+});
 
 /***/ }),
 /* 219 */
@@ -3176,14 +3130,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 222 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -3235,9 +3185,9 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
 	props: ['adr']
-};
+});
 
 /***/ }),
 /* 223 */
@@ -3371,17 +3321,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 227 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -3488,39 +3431,39 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 //
 //
 
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   components: {},
   props: {
     act: {},
     writers: {}
   },
-  data: function data() {
+  data: function () {
     return {
       img: '/img/six_anniversary/'
     };
   },
   computed: {
-    books: function books() {
+    books: function () {
       var books = [];
-      this.writers.forEach(function (a) {
+      this.writers.forEach(a => {
         if (a.unlocked) {
-          books.push.apply(books, _toConsumableArray(a.books));
+          books.push(...a.books);
         }
       });
       return books;
     }
   },
   methods: {
-    HIDE_MASK: function HIDE_MASK() {
+    HIDE_MASK: function () {
       this.act({
         type: 'HIDE_MASK'
       });
     },
-    touchmove: function touchmove(e) {
+    touchmove: function (e) {
       e.stopPropagation();
     }
   }
-};
+});
 
 /***/ }),
 /* 228 */
