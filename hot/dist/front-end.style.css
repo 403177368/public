@@ -20,17 +20,17 @@ img {
 }
 /* Media Queries */
 
-#root a[data-v-5b0221a0] {
+#root a[data-v-6b01dd65] {
   text-decoration: none;
 }
-#root header[data-v-5b0221a0] {
+#root header[data-v-6b01dd65] {
   padding: 10px 0;
   border-bottom: 1px solid #0F88EB;
   font-size: 20px;
   color: #0F88EB;
   text-align: center;
 }
-#root .block[data-v-5b0221a0] {
+#root .block[data-v-6b01dd65] {
   display: block;
   box-sizing: border-box;
   position: relative;
@@ -40,11 +40,11 @@ img {
   color: #0F88EB;
   border-bottom: 1px solid #dddddd;
 }
-#root .block .keywords[data-v-5b0221a0] {
+#root .block .keywords[data-v-6b01dd65] {
   color: #F23051;
   font-size: 14px;
 }
-#root .block .desc[data-v-5b0221a0] {
+#root .block .desc[data-v-6b01dd65] {
   font-size: 14px;
   color: #999;
 }

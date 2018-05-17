@@ -1,21 +1,21 @@
 
-#app .box[data-v-1f8b64f4] {
+#app .box[data-v-af75710a] {
   width: 80%;
   margin: auto;
   background: green;
 }
-#app .box img[data-v-1f8b64f4] {
+#app .box img[data-v-af75710a] {
   width: 20%;
   height: 2rem;
   margin: auto;
 }
-#app .box p[data-v-1f8b64f4] {
+#app .box p[data-v-af75710a] {
   padding: 0.2rem 0;
   font-size: 0.3rem;
   text-align: center;
 }
 
-.RibbonCorner .ribbon[data-v-e4c1328e] {
+.RibbonCorner .ribbon[data-v-7a25d064] {
   position: relative;
   width: 400px;
   height: 20px;
@@ -33,7 +33,7 @@
 		box-shadow: 0px 0px 3px 2px rgba(0,0,0,0.3);
 		*/
 }
-.RibbonCorner .panel[data-v-e4c1328e] {
+.RibbonCorner .panel[data-v-7a25d064] {
   position: relative;
   margin: 50px auto;
   width: 300px;
@@ -42,7 +42,7 @@
   box-shadow: grey 1px 1px 5px;
 }
 
-.Navbar[data-v-358ab404] {
+.Navbar[data-v-2a906be9] {
   box-sizing: border-box;
   width: 100%;
   padding: 0.1rem;

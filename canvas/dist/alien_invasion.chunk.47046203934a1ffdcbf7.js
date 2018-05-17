@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/canvas/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 11);
+/******/ 	return __webpack_require__(__webpack_require__.s = 12);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -116,10 +116,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var Game_1 = __webpack_require__(16);
+var Game_1 = __webpack_require__(17);
 var sprites_1 = __webpack_require__(3);
-var Layers_1 = __webpack_require__(17);
-var level_1 = __webpack_require__(18);
+var Layers_1 = __webpack_require__(18);
+var level_1 = __webpack_require__(19);
 var ShooterGame = /** @class */ (function (_super) {
     __extends(ShooterGame, _super);
     function ShooterGame() {
@@ -547,20 +547,12 @@ exports.Explosion = Explosion;
 /* 8 */,
 /* 9 */,
 /* 10 */,
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(12);
-
-
-/***/ }),
+/* 11 */,
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+module.exports = __webpack_require__(13);
 
-
-__webpack_require__(13);
 
 /***/ }),
 /* 13 */
@@ -568,11 +560,20 @@ __webpack_require__(13);
 
 "use strict";
 
-Object.defineProperty(exports, "__esModule", { value: true });
+
 __webpack_require__(14);
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(15);
+__webpack_require__(16);
 var ShooterGame_1 = __webpack_require__(1);
-var spritesImage = __webpack_require__(19);
+var spritesImage = __webpack_require__(20);
 var spriteMap = {
     ship: { sx: 0, sy: 0, w: 37, h: 42, frames: 1 },
     missile: { sx: 0, sy: 30, w: 2, h: 10, frames: 1 },
@@ -736,13 +737,13 @@ if (false) {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -772,7 +773,7 @@ if (false) {
 })();
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1121,7 +1122,7 @@ exports.TouchControlsBoard = TouchControlsBoard;
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1235,7 +1236,7 @@ exports.LayerPoints = LayerPoints;
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1312,7 +1313,7 @@ exports.Level = Level;
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/sprites.6b1347de.png";

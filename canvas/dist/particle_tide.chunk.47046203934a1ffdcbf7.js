@@ -60,20 +60,20 @@
 /******/ 	__webpack_require__.p = "/canvas/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 60);
+/******/ 	return __webpack_require__(__webpack_require__.s = 40);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 60:
+/***/ 40:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(61);
+module.exports = __webpack_require__(41);
 
 
 /***/ }),
 
-/***/ 61:
+/***/ 41:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

@@ -60,26 +60,23 @@
 /******/ 	__webpack_require__.p = "/canvas/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 52);
+/******/ 	return __webpack_require__(__webpack_require__.s = 53);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 52:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 5:
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__(53);
-
+module.exports = window.THREE;
 
 /***/ }),
 
 /***/ 53:
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+module.exports = __webpack_require__(54);
 
-
-__webpack_require__(54);
 
 /***/ }),
 
@@ -89,222 +86,174 @@ __webpack_require__(54);
 "use strict";
 
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); // THREEJS RELATED VARIABLES 
+__webpack_require__(55);
 
-var _Cow = __webpack_require__(55);
+/***/ }),
 
-var _User = __webpack_require__(57);
+/***/ 55:
+/***/ (function(module, exports, __webpack_require__) {
 
-var _Block = __webpack_require__(58);
+"use strict";
 
-var _ControlLayer = __webpack_require__(59);
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var THREE = window.THREE;
-
-var Game = function () {
-  // camera: THREE.PerspectiveCamera;
-  // controls: THREE.OrbitControls;
-  // keys: Object;
-  // things: Array<any>;
-  // time: number;
-
-  function Game() {
-    _classCallCheck(this, Game);
-
-    // this.scene;
-    // this.camera;
-    // this.renderer;
-
-    // this.time;
-
-    // this.user;
-    this.cameraFollowing = false;
-    this.view = 'third';
-    this.player;
-
-    this.keys = {
-      'left': false,
-      'right': false,
-      'space': false
+Object.defineProperty(exports, "__esModule", { value: true });
+// THREEJS RELATED VARIABLES 
+var THREE = __webpack_require__(5);
+var Cow_js_1 = __webpack_require__(56);
+var User_js_1 = __webpack_require__(58);
+var Block_1 = __webpack_require__(59);
+var ControlLayer_js_1 = __webpack_require__(60);
+var Game = /** @class */ (function () {
+    function Game() {
+        this.cameraFollowing = false;
+        this.view = 'third';
+        this.player;
+        this.keys = {
+            'left': false,
+            'right': false,
+            'space': false
+        };
+        this.things = [];
+        this.init();
+    }
+    Game.prototype.init = function () {
+        this.scene = new THREE.Scene();
+        this.camera = this.createCamera();
+        this.controls = new THREE.OrbitControls(this.camera);
+        // this.controls = new THREE.FlyControls(this.camera);
+        // console.log(this.controls)
+        //   controls.maxPolarAngle = Math.PI * 0.5;
+        this.renderer = this.createRenderer();
+        var container = document.createElement('div');
+        document.body.appendChild(container);
+        container.appendChild(this.renderer.domElement);
+        this.windowHalfX = this.WIDTH / 2;
+        this.windowHalfY = this.HEIGHT / 2;
+        this.initEvents();
+        this.listenKeys();
+        this.createLights();
+        this.createFloor();
+        this.player = new Cow_js_1.Cow(this, 0, 70, 0);
+        this.add(this.player);
+        // this.enterFirst();
+        this.add(new Block_1.Block(200, 50, 200));
+        this.add(new Block_1.Block(300, 50, 200));
+        this.add(new User_js_1.User(this));
+        new ControlLayer_js_1.ControlLayer(this);
+        this.time = new Date().getTime();
+        this.loop();
     };
-    this.things = [];
-    this.init();
-  }
-
-  _createClass(Game, [{
-    key: 'init',
-    value: function init() {
-      this.scene = new THREE.Scene();
-      this.camera = this.createCamera();
-      this.controls = new THREE.OrbitControls(this.camera);
-      // this.controls = new THREE.FlyControls(this.camera);
-      // console.log(this.controls)
-      //   controls.maxPolarAngle = Math.PI * 0.5;
-      this.renderer = this.createRenderer();
-
-      var container = document.createElement('div');
-      document.body.appendChild(container);
-      container.appendChild(this.renderer.domElement);
-      this.windowHalfX = this.WIDTH / 2;
-      this.windowHalfY = this.HEIGHT / 2;
-      this.initEvents();
-      this.listenKeys();
-
-      this.createLights();
-      this.createFloor();
-
-      this.player = new _Cow.Cow(this, 0, 70, 0);
-      this.add(this.player);
-      // this.enterFirst();
-
-      this.add(new _Block.Block(200, 50, 200));
-      this.add(new _Block.Block(300, 50, 200));
-      this.add(new _User.User(this));
-
-      new _ControlLayer.ControlLayer(this);
-
-      this.time = new Date().getTime();
-      this.loop();
-    }
-  }, {
-    key: 'initEvents',
-    value: function initEvents() {
-      var self = this;
-      var HEIGHT,
-          WIDTH,
-          windowHalfX,
-          windowHalfY,
-          mousePos = { x: 0, y: 0 },
-          dist = 0;
-      this.mousePos = mousePos;
-
-      var floor,
-          lion,
-          fan,
-          isBlowing = false;
-      function onWindowResize() {
-        self.HEIGHT = window.innerHeight;
-        self.WIDTH = window.innerWidth;
-        self.windowHalfX = self.WIDTH / 2;
-        self.windowHalfY = self.HEIGHT / 2;
-        self.renderer.setSize(self.WIDTH, self.HEIGHT);
-        self.camera.aspect = self.WIDTH / self.HEIGHT;
-        self.camera.updateProjectionMatrix();
-      }
-
-      function handleMouseMove(event) {
-        mousePos = { x: event.clientX, y: event.clientY };
-      }
-
-      function handleMouseDown(event) {
-        isBlowing = true;
-      }
-
-      function handleMouseUp(event) {
-        isBlowing = false;
-      }
-
-      function handleTouchStart(event) {
-        if (event.touches.length > 1) {
-          event.preventDefault();
-          mousePos = { x: event.touches[0].pageX, y: event.touches[0].pageY };
-          isBlowing = true;
+    Game.prototype.initEvents = function () {
+        var self = this;
+        var HEIGHT, WIDTH, mousePos = { x: 0, y: 0 }, dist = 0;
+        this.mousePos = mousePos;
+        var floor, lion, fan, isBlowing = false;
+        function onWindowResize() {
+            self.HEIGHT = window.innerHeight;
+            self.WIDTH = window.innerWidth;
+            self.windowHalfX = self.WIDTH / 2;
+            self.windowHalfY = self.HEIGHT / 2;
+            self.renderer.setSize(self.WIDTH, self.HEIGHT);
+            self.camera.aspect = self.WIDTH / self.HEIGHT;
+            self.camera.updateProjectionMatrix();
         }
-      }
-
-      function handleTouchEnd(event) {
-        mousePos = { x: windowHalfX, y: windowHalfY };
-        isBlowing = false;
-      }
-
-      function handleTouchMove(event) {
-        if (event.touches.length == 1) {
-          event.preventDefault();
-          mousePos = { x: event.touches[0].pageX, y: event.touches[0].pageY };
+        function handleMouseMove(event) {
+            mousePos = { x: event.clientX, y: event.clientY };
         }
-      }
-      window.addEventListener('resize', onWindowResize, false);
-      document.addEventListener('mousemove', handleMouseMove, false);
-      document.addEventListener('mousedown', handleMouseDown, false);
-      document.addEventListener('mouseup', handleMouseUp, false);
-      document.addEventListener('touchstart', handleTouchStart, false);
-      document.addEventListener('touchend', handleTouchEnd, false);
-      document.addEventListener('touchmove', handleTouchMove, false);
-    }
-  }, {
-    key: 'add',
-    value: function add(sprite) {
-      sprite.game = this;
-      if (sprite.threegroup) {
-        this.scene.add(sprite.threegroup);
-      }
-      this.things.push(sprite);
-    }
-  }, {
-    key: 'loop',
-    value: function loop() {
-      var time = new Date().getTime();
-      var dt = (time - this.time) / 1000;
-      this.time = time;
-      requestAnimationFrame(this.loop.bind(this));
-
-      // var x = this.cow.threegroup.position.x;
-      // var y = this.cow.threegroup.position.y;
-      // var z = this.cow.threegroup.position.z;
-
-      // var xTarget = (this.mousePos.x - this.windowHalfX);
-      // var yTarget = (this.mousePos.y - this.windowHalfY);
-
-      // fan.isBlowing = isBlowing;
-      // fan.update(xTarget, yTarget);
-      // // if (isBlowing) {
-      // //   lion.cool(xTarget, yTarget);
-      // // } else {
-      // //   lion.look(xTarget, yTarget);
-      // // }
-      // cow.update();
-      // pig.update();
-      // requestAnimationFrame(loop);
-      this.things.forEach(function (a) {
-        if (a.update) {
-          a.update(dt);
+        function handleMouseDown(event) {
+            isBlowing = true;
         }
-      });
-
-      // this.controls.target.x = x;
-      // this.controls.target.y = y;
-      // this.controls.target.z = z;
-
-      // if (this.keys.KeyW) {
-      // camera.position.z = z - 800;
-      // camera.position.x = x;
-      // camera.position.y = y + 800;
-      // camera.lookAt(new THREE.Vector3(x, y, z));
-      // }
-      // camera.lookAt(new THREE.Vector3(x, y, z));
-      // camera.position.z = z;
-      // camera.position.x = x;
-      // camera.position.y = y + 100;
-      // camera.lookAt(new THREE.Vector3(x, y, z + 1000));
-      if (this.controls) {
-        // this.controls.zoom0 = 1;
+        function handleMouseUp(event) {
+            isBlowing = false;
+        }
+        function handleTouchStart(event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+                mousePos = { x: event.touches[0].pageX, y: event.touches[0].pageY };
+                isBlowing = true;
+            }
+        }
+        function handleTouchEnd(event) {
+            mousePos = { x: self.windowHalfX, y: self.windowHalfY };
+            isBlowing = false;
+        }
+        function handleTouchMove(event) {
+            if (event.touches.length == 1) {
+                event.preventDefault();
+                mousePos = { x: event.touches[0].pageX, y: event.touches[0].pageY };
+            }
+        }
+        window.addEventListener('resize', onWindowResize, false);
+        document.addEventListener('mousemove', handleMouseMove, false);
+        document.addEventListener('mousedown', handleMouseDown, false);
+        document.addEventListener('mouseup', handleMouseUp, false);
+        document.addEventListener('touchstart', handleTouchStart, false);
+        document.addEventListener('touchend', handleTouchEnd, false);
+        document.addEventListener('touchmove', handleTouchMove, false);
+    };
+    Game.prototype.add = function (sprite) {
+        sprite.game = this;
+        if (sprite.threegroup) {
+            this.scene.add(sprite.threegroup);
+        }
+        this.things.push(sprite);
+    };
+    Game.prototype.loop = function () {
+        var time = new Date().getTime();
+        var dt = (time - this.time) / 1000;
+        this.time = time;
+        requestAnimationFrame(this.loop.bind(this));
+        // var x = this.cow.threegroup.position.x;
+        // var y = this.cow.threegroup.position.y;
+        // var z = this.cow.threegroup.position.z;
+        // var xTarget = (this.mousePos.x - this.windowHalfX);
+        // var yTarget = (this.mousePos.y - this.windowHalfY);
+        // fan.isBlowing = isBlowing;
+        // fan.update(xTarget, yTarget);
+        // // if (isBlowing) {
+        // //   lion.cool(xTarget, yTarget);
+        // // } else {
+        // //   lion.look(xTarget, yTarget);
+        // // }
+        // cow.update();
+        // pig.update();
+        // requestAnimationFrame(loop);
+        this.things.forEach(function (a) {
+            if (a.update) {
+                a.update(dt);
+            }
+        });
         // this.controls.target.x = x;
         // this.controls.target.y = y;
         // this.controls.target.z = z;
-        this.controls.target.x = this.player.threegroup.position.x;
-        this.controls.target.y = this.player.threegroup.position.y;
-        this.controls.target.z = this.player.threegroup.position.z;
-
-        this.controls.update();
-      }
-      if (this.cameraFollowing) {
-        this.cameraFollow();
-      }
-      // camera.lookAt(new THREE.Vector3(x, y, z));
-      this.renderer.render(this.scene, this.camera);
-    }
+        // if (this.keys.KeyW) {
+        // camera.position.z = z - 800;
+        // camera.position.x = x;
+        // camera.position.y = y + 800;
+        // camera.lookAt(new THREE.Vector3(x, y, z));
+        // }
+        // camera.lookAt(new THREE.Vector3(x, y, z));
+        // camera.position.z = z;
+        // camera.position.x = x;
+        // camera.position.y = y + 100;
+        // camera.lookAt(new THREE.Vector3(x, y, z + 1000));
+        // if (this.view === 'first') {
+        // }
+        if (this.controls) {
+            // this.controls.zoom0 = 1;
+            // this.controls.target.x = x;
+            // this.controls.target.y = y;
+            // this.controls.target.z = z;
+            this.controls.target.x = this.player.threegroup.position.x;
+            this.controls.target.y = this.player.threegroup.position.y;
+            this.controls.target.z = this.player.threegroup.position.z;
+            this.controls.update();
+        }
+        if (this.cameraFollowing) {
+            this.cameraFollow();
+        }
+        // camera.lookAt(new THREE.Vector3(x, y, z));
+        this.renderer.render(this.scene, this.camera);
+    };
     // handleKeys() {
     //   if (this.keys.KeyA === true) {
     //     camera.position.x -= 5;
@@ -313,124 +262,100 @@ var Game = function () {
     //     camera.position.x += 5;
     //   }
     // }
-
-  }, {
-    key: 'createCamera',
-    value: function createCamera() {
-      this.HEIGHT = window.innerHeight;
-      this.WIDTH = window.innerWidth;
-      this.aspectRatio = this.WIDTH / this.HEIGHT;
-      this.fieldOfView = 60;
-      this.nearPlane = 1;
-      // How far the camera can reach
-      this.farPlane = 10000;
-      var camera = new THREE.PerspectiveCamera(this.fieldOfView, this.aspectRatio, this.nearPlane, this.farPlane);
-      camera.position.x = 0;
-      camera.position.z = -1000;
-      camera.position.y = 1000;
-      camera.lookAt(new THREE.Vector3(0, 0, 0));
-      return camera;
-    }
-  }, {
-    key: 'cameraFollow',
-    value: function cameraFollow() {
-      var x = this.player.threegroup.position.x;
-      var y = this.player.threegroup.position.y;
-      var z = this.player.threegroup.position.z;
-      if (this.view === 'third') {
-        this.camera.position.x = x;
-        this.camera.position.y = y + 1000;
-        this.camera.position.z = z - 1000;
-        this.camera.lookAt(new THREE.Vector3(x, y, z));
-      } else {
-        this.camera.position.x = x;
-        this.camera.position.y = y + 100;
-        this.camera.position.z = z - 100;
-        this.camera.lookAt(new THREE.Vector3(x, (y + 10000) * this.player.threegroup.rotation.y, z));
-      }
-    }
-  }, {
-    key: 'createRenderer',
-    value: function createRenderer() {
-      var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-      renderer.setPixelRatio(window.devicePixelRatio);
-      renderer.setClearColor('#ebe5e7');
-      renderer.setSize(this.WIDTH, this.HEIGHT);
-      renderer.shadowMap.enabled = true;
-      return renderer;
-    }
-  }, {
-    key: 'createLights',
-    value: function createLights() {
-      var daylight = new THREE.AmbientLight(0xffffff, .9);
-      var light = new THREE.HemisphereLight(0xffffff, 0xffffff, .5);
-
-      var shadowLight = new THREE.DirectionalLight(0xffffff, 1.5);
-      shadowLight.position.set(0, 10000, 0);
-      shadowLight.castShadow = true;
-
-      // var shadow = new THREE.DirectionalLightShadow(shadowLight);
-
-      // shadow.shadowDarkness = .2;
-
-      var backLight = new THREE.DirectionalLight(0xffffff, .4);
-      backLight.position.set(-100, 200, 50);
-      backLight.shadowDarkness = .1;
-      backLight.castShadow = true;
-
-      var pl = new THREE.PointLight(0xffffff, 2, 10000);
-      pl.position.set(0, 200, 0);
-      // scene.add(backLight);
-
-      // scene.add(backLight);
-      // scene.add(light);
-      this.scene.add(daylight);
-    }
-  }, {
-    key: 'createFloor',
-    value: function createFloor() {
-      var floor = new THREE.Mesh(new THREE.PlaneBufferGeometry(4000, 2000), new THREE.MeshLambertMaterial({ color: '#00AA72' }));
-      floor.rotation.x = -Math.PI / 2;
-      floor.position.y = 0;
-      floor.receiveShadow = true;
-
-      var fl = new THREE.PlaneGeometry(2000, 2000);
-      fl.rotateX(-Math.PI / 2);
-      var pl = new THREE.ShadowMaterial();
-      pl.opacity = 0.2;
-      var plane = new THREE.Mesh(fl, pl);
-      plane.position.y = 0;
-      plane.receiveShadow = true;
-
-      var helper = new THREE.GridHelper(2000, 50);
-      helper.position.y = 1;
-      this.scene.add(helper);
-
-      this.scene.add(floor);
-    }
-  }, {
-    key: 'listenKeys',
-    value: function listenKeys() {
-      var _this = this;
-
-      document.addEventListener('keydown', function (e) {
-        _this.keys[e.code] = true;
-      });
-      document.addEventListener('keyup', function (e) {
-        _this.keys[e.code] = false;
-      });
-    }
-  }]);
-
-  return Game;
-}();
-
+    Game.prototype.createCamera = function () {
+        this.HEIGHT = window.innerHeight;
+        this.WIDTH = window.innerWidth;
+        this.aspectRatio = this.WIDTH / this.HEIGHT;
+        this.fieldOfView = 60;
+        this.nearPlane = 1;
+        // How far the camera can reach
+        this.farPlane = 10000;
+        var camera = new THREE.PerspectiveCamera(this.fieldOfView, this.aspectRatio, this.nearPlane, this.farPlane);
+        camera.position.x = 0;
+        camera.position.z = -1000;
+        camera.position.y = 1000;
+        camera.lookAt(new THREE.Vector3(0, 0, 0));
+        return camera;
+    };
+    Game.prototype.cameraFollow = function () {
+        var x = this.player.threegroup.position.x;
+        var y = this.player.threegroup.position.y;
+        var z = this.player.threegroup.position.z;
+        if (this.view === 'third') {
+            this.camera.position.x = x;
+            this.camera.position.y = y + 1000;
+            this.camera.position.z = z - 1000;
+            this.camera.lookAt(new THREE.Vector3(x, y, z));
+        }
+        else {
+            this.camera.position.x = x;
+            this.camera.position.y = y + 100;
+            this.camera.position.z = z - 100;
+            this.camera.lookAt(new THREE.Vector3(x, (y + 10000) * this.player.threegroup.rotation.y, z));
+        }
+    };
+    Game.prototype.createRenderer = function () {
+        var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setClearColor('#ebe5e7');
+        renderer.setSize(this.WIDTH, this.HEIGHT);
+        renderer.shadowMap.enabled = true;
+        return renderer;
+    };
+    Game.prototype.createLights = function () {
+        var daylight = new THREE.AmbientLight(0xffffff, .9);
+        var light = new THREE.HemisphereLight(0xffffff, 0xffffff, .5);
+        var shadowLight = new THREE.DirectionalLight(0xffffff, 1.5);
+        shadowLight.position.set(0, 10000, 0);
+        shadowLight.castShadow = true;
+        // var shadow = new THREE.DirectionalLightShadow(shadowLight);
+        // shadow.shadowDarkness = .2;
+        var backLight = new THREE.DirectionalLight(0xffffff, .4);
+        backLight.position.set(-100, 200, 50);
+        // backLight.shadowDarkness = .1;
+        backLight.castShadow = true;
+        var pl = new THREE.PointLight(0xffffff, 2, 10000);
+        pl.position.set(0, 200, 0);
+        // scene.add(backLight);
+        // scene.add(backLight);
+        // scene.add(light);
+        this.scene.add(daylight);
+    };
+    Game.prototype.createFloor = function () {
+        var floor = new THREE.Mesh(new THREE.PlaneBufferGeometry(4000, 2000), new THREE.MeshLambertMaterial({
+            color: '#00AA72',
+        }));
+        floor.rotation.x = -Math.PI / 2;
+        floor.position.y = 0;
+        floor.receiveShadow = true;
+        // var fl = new THREE.PlaneGeometry(2000, 2000);
+        // fl.rotateX(-Math.PI / 2);
+        // var pl = new THREE.ShadowMaterial();
+        // pl.opacity = 0.2;
+        // var plane = new THREE.Mesh(fl, pl);
+        // plane.position.y = 0;
+        // plane.receiveShadow = true;
+        var helper = new THREE.GridHelper(2000, 50);
+        helper.position.y = 1;
+        this.scene.add(helper);
+        // var axisHelper = new THREE.AxisHelper(500);
+        // this.scene.add(axisHelper);
+        this.scene.add(floor);
+    };
+    Game.prototype.listenKeys = function () {
+        var _this = this;
+        document.addEventListener('keydown', function (e) {
+            _this.keys[e.code] = true;
+        });
+        document.addEventListener('keyup', function (e) {
+            _this.keys[e.code] = false;
+        });
+    };
+    return Game;
+}());
 new Game();
-
 // new User();
-
 // INIT THREE JS, SCREEN AND MOUSE EVENTS
-
 // function init() {
 //   scene = new THREE.Scene();
 //   HEIGHT = window.innerHeight;
@@ -447,16 +372,13 @@ new Game();
 //   camera.position.z = 800;
 //   camera.position.y = 0;
 //   camera.lookAt(new THREE.Vector3(0, 0, 0));
-
 //   var controls = new THREE.OrbitControls(camera);
 //   //   controls.maxPolarAngle = Math.PI * 0.5;
-
 //   renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 //   renderer.setPixelRatio(window.devicePixelRatio);
 //   renderer.setClearColor('#ebe5e7');
 //   renderer.setSize(WIDTH, HEIGHT);
 //   renderer.shadowMap.enabled = true;
-
 //   container = document.createElement('div');
 //   document.body.appendChild(container)
 //   container.appendChild(renderer.domElement);
@@ -469,11 +391,8 @@ new Game();
 //   document.addEventListener('touchstart', handleTouchStart, false);
 //   document.addEventListener('touchend', handleTouchEnd, false);
 //   document.addEventListener('touchmove', handleTouchMove, false);
-
 //   // controls = new THREE.OrbitControls( camera, renderer.domElement);
-
 // }
-
 // function onWindowResize() {
 //   HEIGHT = window.innerHeight;
 //   WIDTH = window.innerWidth;
@@ -483,19 +402,15 @@ new Game();
 //   camera.aspect = WIDTH / HEIGHT;
 //   camera.updateProjectionMatrix();
 // }
-
 // function handleMouseMove(event) {
 //   mousePos = { x: event.clientX, y: event.clientY };
 // }
-
 // function handleMouseDown(event) {
 //   isBlowing = true;
 // }
-
 // function handleMouseUp(event) {
 //   isBlowing = false;
 // }
-
 // function handleTouchStart(event) {
 //   if (event.touches.length > 1) {
 //     event.preventDefault();
@@ -503,38 +418,31 @@ new Game();
 //     isBlowing = true;
 //   }
 // }
-
 // function handleTouchEnd(event) {
 //   mousePos = { x: windowHalfX, y: windowHalfY };
 //   isBlowing = false;
 // }
-
 // function handleTouchMove(event) {
 //   if (event.touches.length == 1) {
 //     event.preventDefault();
 //     mousePos = { x: event.touches[0].pageX, y: event.touches[0].pageY };
 //   }
 // }
-
 // function createLights() {
 //   light = new THREE.HemisphereLight(0xffffff, 0xffffff, .5)
-
 //   shadowLight = new THREE.DirectionalLight(0xffffff, .8);
 //   shadowLight.position.set(200, 200, 200);
 //   shadowLight.castShadow = true;
 //   var shadow = new THREE.DirectionalLightShadow(shadowLight);
 //   shadow.shadowDarkness = .2;
-
 //   backLight = new THREE.DirectionalLight(0xffffff, .4);
 //   backLight.position.set(-100, 200, 50);
 //   backLight.shadowDarkness = .1;
 //   backLight.castShadow = true;
-
 //   scene.add(backLight);
 //   scene.add(light);
 //   scene.add(shadowLight);
 // }
-
 // function createFloor() {
 //   floor = new THREE.Mesh(new THREE.PlaneBufferGeometry(1000, 500), new THREE.MeshBasicMaterial({ color: 'green' }));
 //   floor.rotation.x = -Math.PI / 2;
@@ -542,13 +450,10 @@ new Game();
 //   floor.receiveShadow = true;
 //   scene.add(floor);
 // }
-
-
 // function loop() {
 //   render();
 //   var xTarget = (mousePos.x - windowHalfX);
 //   var yTarget = (mousePos.y - windowHalfY);
-
 //   fan.isBlowing = isBlowing;
 //   fan.update(xTarget, yTarget);
 //   // if (isBlowing) {
@@ -560,46 +465,37 @@ new Game();
 //   pig.update();
 //   requestAnimationFrame(loop);
 // }
-
 // function render() {
 //   if (controls) controls.update();
 //   renderer.render(scene, camera);
 // }
-
 // document.addEventListener('click', () => {
 //   cow.walk();
 // })
-
 // init();
 // createLights();
 // createFloor();
 // // createLion();
 // import { Fan } from './Fan.js';
 // createFan();
-
 // import { Pig } from './Pig.js';
 // import { Lion } from './Lion.js';
-
 // function createLion() {
 //   lion = new Lion();
 //   scene.add(lion.threegroup);
 // }
-
 // function createFan() {
 //   fan = new Fan();
 //   fan.threegroup.position.z = 350;
 //   scene.add(fan.threegroup);
 // }
-
 // var pig = new Pig();
 // scene.add(pig.head);
-
 // import { Cow } from './Cow.js';
 // var cow = new Cow(0, 0, 0);
 // scene.add(cow.threegroup);
 // var cow1 = new Cow(100, 0, 120);
 // scene.add(cow1.threegroup);
-
 // import { Block } from './Block.js';
 // console.log(new Block({
 //   scene,
@@ -608,12 +504,9 @@ new Game();
 //   z: 200
 // }))
 // loop();
-
-
-function clamp(v, min, max) {
-  return Math.min(Math.max(v, min), max);
-}
-
+// function clamp(v, min, max) {
+//   return Math.min(Math.max(v, min), max);
+// }
 // function rule3(v, vmin, vmax, tmin, tmax) {
 //   var nv = Math.max(Math.min(v, vmax), vmin);
 //   var dv = vmax - vmin;
@@ -621,12 +514,12 @@ function clamp(v, min, max) {
 //   var dt = tmax - tmin;
 //   var tv = tmin + (pc * dt);
 //   return tv;
+// } 
 
-// }
 
 /***/ }),
 
-/***/ 55:
+/***/ 56:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -637,7 +530,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Cow = undefined;
 
-var _Sprite2 = __webpack_require__(56);
+var _Sprite2 = __webpack_require__(57);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -645,6 +538,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // import THREE from 'three';
 
+
+var THREE = window.THREE;
 
 var Cow = function (_Sprite) {
   _inherits(Cow, _Sprite);
@@ -1038,7 +933,7 @@ exports.Cow = Cow;
 
 /***/ }),
 
-/***/ 56:
+/***/ 57:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1108,7 +1003,7 @@ var Sprite = exports.Sprite = function () {
 
 /***/ }),
 
-/***/ 57:
+/***/ 58:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1192,48 +1087,36 @@ var User = exports.User = function () {
 
 /***/ }),
 
-/***/ 58:
+/***/ 59:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
+Object.defineProperty(exports, "__esModule", { value: true });
+var THREE = __webpack_require__(5);
+var Block = /** @class */ (function () {
+    function Block(x, y, z) {
+        this.yellowMat = new THREE.MeshLambertMaterial({
+            color: 0xd7a25e,
+        });
+        var bodyGeom = new THREE.BoxGeometry(100, 100, 100);
+        this.threegroup = new THREE.Mesh(bodyGeom, this.yellowMat);
+        Object.assign(this.threegroup.position, {
+            x: x,
+            y: y,
+            z: z
+        });
+    }
+    Block.prototype.die = function () {
+    };
+    return Block;
+}());
+exports.Block = Block;
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Block = exports.Block = function () {
-  function Block(x, y, z) {
-    _classCallCheck(this, Block);
-
-    this.yellowMat = new THREE.MeshLambertMaterial({
-      color: 0xd7a25e,
-      shading: THREE.FlatShading
-    });
-    var bodyGeom = new THREE.BoxGeometry(100, 100, 100);
-    this.threegroup = new THREE.Mesh(bodyGeom, this.yellowMat);
-    Object.assign(this.threegroup.position, {
-      x: x,
-      y: y,
-      z: z
-    });
-  }
-
-  _createClass(Block, [{
-    key: "die",
-    value: function die() {}
-  }]);
-
-  return Block;
-}();
 
 /***/ }),
 
-/***/ 59:
+/***/ 60:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

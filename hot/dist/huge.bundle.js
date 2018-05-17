@@ -136,7 +136,7 @@ var Component = __webpack_require__(0)(
   /* template */
   __webpack_require__(163),
   /* scopeId */
-  "data-v-f0a388f6",
+  "data-v-3bcb78f0",
   /* cssModules */
   null
 )
@@ -1055,61 +1055,60 @@ exports.default = { state: state, mutators: mutators };
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
-
 var state = {
-	audio: {
-		on: false
-	},
-	change: {
-		stage: 0
-	}
+  audio: {
+    on: false
+  },
+  change: {
+    stage: 0
+  }
 };
 
 var mutators = {
-	INIT: function INIT(_ref, action) {
-		var state = _ref.state,
-		    dispatch = _ref.dispatch;
+  INIT: function INIT(_ref, action) {
+    var state = _ref.state,
+        dispatch = _ref.dispatch;
 
-		Local.forceLog(common.param('act_f'), 'enter');
+    Local.forceLog(common.param('act_f'), 'enter');
 
-		window.CLOSE_WINDOW = function () {
-			console.log('CLOSE_WINDOW');
-			dispatch({
-				type: 'CLOSE_WINDOW'
-			});
-			return true;
-		};
+    window.CLOSE_WINDOW = function () {
+      console.log('CLOSE_WINDOW');
+      dispatch({
+        type: 'CLOSE_WINDOW'
+      });
+      return true;
+    };
 
-		state.page = 'ready';
-	},
-	TURN_AUDIO: function TURN_AUDIO(_ref2, action) {
-		var state = _ref2.state,
-		    dispatch = _ref2.dispatch;
+    state.page = 'ready';
+  },
+  TURN_AUDIO: function TURN_AUDIO(_ref2, action) {
+    var state = _ref2.state,
+        dispatch = _ref2.dispatch;
 
-		state.audio.on = !state.audio.on;
-	},
-	CHANGE: function CHANGE(_ref3, action) {
-		var state = _ref3.state,
-		    dispatch = _ref3.dispatch;
+    state.audio.on = !state.audio.on;
+  },
+  CHANGE: function CHANGE(_ref3, action) {
+    var state = _ref3.state,
+        dispatch = _ref3.dispatch;
 
-		state.change.stage = action.to;
-	},
-	CLICK_BTN: function CLICK_BTN(_ref4, action) {
-		var state = _ref4.state,
-		    dispatch = _ref4.dispatch;
+    state.change.stage = action.to;
+  },
+  CLICK_BTN: function CLICK_BTN(_ref4, action) {
+    var state = _ref4.state,
+        dispatch = _ref4.dispatch;
 
-		if (state.meta.share) {
-			dispatch({
-				type: 'TO_APP'
-			});
-		} else {
-			dispatch({
-				type: 'SHARE'
-			});
-		}
-	}
+    if (state.meta.share) {
+      dispatch({
+        type: 'TO_APP'
+      });
+    } else {
+      dispatch({
+        type: 'SHARE'
+      });
+    }
+  }
 };
 
 exports.default = { state: state, mutators: mutators };
@@ -1128,7 +1127,7 @@ var Component = __webpack_require__(0)(
   /* template */
   __webpack_require__(178),
   /* scopeId */
-  "data-v-8d0688a8",
+  "data-v-51ffa9e1",
   /* cssModules */
   null
 )
@@ -1293,7 +1292,7 @@ var Component = __webpack_require__(0)(
   /* template */
   __webpack_require__(118),
   /* scopeId */
-  "data-v-6b10dd4e",
+  "data-v-920409f8",
   /* cssModules */
   null
 )
@@ -1379,7 +1378,7 @@ var Component = __webpack_require__(0)(
   /* template */
   __webpack_require__(122),
   /* scopeId */
-  "data-v-4a205db6",
+  "data-v-06994060",
   /* cssModules */
   null
 )
@@ -1454,7 +1453,7 @@ var Component = __webpack_require__(0)(
   /* template */
   __webpack_require__(126),
   /* scopeId */
-  "data-v-0b5a53bb",
+  "data-v-533a3cf0",
   /* cssModules */
   null
 )
@@ -1551,7 +1550,7 @@ var Component = __webpack_require__(0)(
   /* template */
   __webpack_require__(130),
   /* scopeId */
-  "data-v-b71b8a9a",
+  "data-v-638cca9e",
   /* cssModules */
   null
 )
@@ -1696,7 +1695,7 @@ var Component = __webpack_require__(0)(
   /* template */
   __webpack_require__(134),
   /* scopeId */
-  "data-v-77e3e42c",
+  "data-v-476e5421",
   /* cssModules */
   null
 )
@@ -1874,7 +1873,7 @@ var Component = __webpack_require__(0)(
   /* template */
   __webpack_require__(138),
   /* scopeId */
-  "data-v-6e59099f",
+  "data-v-2276470a",
   /* cssModules */
   null
 )
@@ -2404,7 +2403,7 @@ var Component = __webpack_require__(0)(
   /* template */
   __webpack_require__(142),
   /* scopeId */
-  "data-v-a5afe0d4",
+  "data-v-6c429f81",
   /* cssModules */
   null
 )
@@ -2855,7 +2854,7 @@ var Component = __webpack_require__(0)(
   /* template */
   __webpack_require__(154),
   /* scopeId */
-  "data-v-23e10c38",
+  "data-v-84cc2c4e",
   /* cssModules */
   null
 )
@@ -2987,7 +2986,7 @@ var Component = __webpack_require__(0)(
   /* template */
   __webpack_require__(149),
   /* scopeId */
-  "data-v-4b915969",
+  "data-v-d91d7ac4",
   /* cssModules */
   null
 )
@@ -3330,7 +3329,7 @@ var Component = __webpack_require__(0)(
   /* template */
   __webpack_require__(153),
   /* scopeId */
-  "data-v-d614c43c",
+  "data-v-54102dcd",
   /* cssModules */
   null
 )
@@ -3497,7 +3496,7 @@ var Component = __webpack_require__(0)(
   /* template */
   __webpack_require__(177),
   /* scopeId */
-  "data-v-2f8f07fc",
+  "data-v-463d4eb1",
   /* cssModules */
   null
 )
@@ -3571,7 +3570,7 @@ var Component = __webpack_require__(0)(
   /* template */
   __webpack_require__(168),
   /* scopeId */
-  "data-v-60a1024c",
+  "data-v-774f4901",
   /* cssModules */
   null
 )
@@ -4192,7 +4191,7 @@ var Component = __webpack_require__(0)(
   /* template */
   __webpack_require__(167),
   /* scopeId */
-  "data-v-61b69132",
+  "data-v-15d3ce9d",
   /* cssModules */
   null
 )
@@ -4414,7 +4413,7 @@ var Component = __webpack_require__(0)(
   /* template */
   __webpack_require__(172),
   /* scopeId */
-  "data-v-fb72cfb8",
+  "data-v-b303f4ce",
   /* cssModules */
   null
 )
@@ -4594,7 +4593,7 @@ var Component = __webpack_require__(0)(
   /* template */
   __webpack_require__(176),
   /* scopeId */
-  "data-v-d15add46",
+  "data-v-4b6fcec8",
   /* cssModules */
   null
 )
