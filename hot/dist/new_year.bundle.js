@@ -461,95 +461,22 @@ module.exports = Component.exports
 
 /***/ }),
 /* 237 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_store_books_js__ = __webpack_require__(238);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_store_books_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__store_store_books_js__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+var _storeBooks = __webpack_require__(238);
+
+var _storeBooks2 = _interopRequireDefault(_storeBooks);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
   components: {
     Debugger: __webpack_require__(246),
     MaskLoading: __webpack_require__(250),
@@ -564,23 +491,101 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     EndPage: __webpack_require__(283),
     Flipper: __webpack_require__(291)
   },
-  data: function () {
-    return __WEBPACK_IMPORTED_MODULE_0__store_store_books_js___default.a.state;
+  data: function data() {
+    return _storeBooks2.default.state;
   },
   computed: {},
   watch: {},
-  created: function () {},
-  mounted: function () {
+  created: function created() {},
+  mounted: function mounted() {
     this.act({ type: 'INIT' });
     // console.log(this)
   },
   methods: {
-    act: __WEBPACK_IMPORTED_MODULE_0__store_store_books_js___default.a.act,
-    touchstart: function (e) {
+    act: _storeBooks2.default.act,
+    touchstart: function touchstart(e) {
       // e.preventDefault();
     }
   }
-});
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 238 */
@@ -1401,10 +1406,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 248 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -1431,19 +1440,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	props: ['state'],
 	computed: {
-		writers: function () {
+		writers: function writers() {
 			var state = [];
-			this.state.writers.forEach(a => {
+			this.state.writers.forEach(function (a) {
 				state.push(a.state);
 			});
 			return state;
 		}
 	},
-	mounted: function () {}
-});
+	mounted: function mounted() {}
+};
 
 /***/ }),
 /* 249 */
@@ -1487,7 +1496,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 252 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 //
 //
@@ -1512,10 +1524,10 @@ module.exports = Component.exports
 //
 
 module.exports = {
-	data: function () {
+	data: function data() {
 		return {};
 	},
-	mounted: function () {}
+	mounted: function mounted() {}
 };
 
 /***/ }),
@@ -1562,10 +1574,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 256 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -1605,11 +1621,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-	data: function () {
+exports.default = {
+	data: function data() {
 		return {};
 	}
-});
+};
 
 /***/ }),
 /* 257 */
@@ -1659,10 +1675,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 260 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -1748,7 +1768,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	props: {
 		id: {},
 		hasDiscount: {},
@@ -1757,9 +1777,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		state: {},
 		act: {}
 	},
-	mounted: function () {},
+	mounted: function mounted() {},
 	methods: {}
-});
+};
 
 /***/ }),
 /* 261 */
@@ -1859,10 +1879,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 264 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -1946,19 +1970,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	props: {
 		img: {},
 		state: {},
 		act: {}
 	},
 	methods: {
-		click: function () {
+		click: function click() {
 			this.act({ type: 'HIDE', what: 'mask_info' });
 			this.act({ type: 'SWITCH', direction: 'up' });
 		}
 	}
-});
+};
 
 /***/ }),
 /* 265 */
@@ -2028,10 +2052,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 268 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -2092,18 +2120,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	props: {
 		img: {},
 		state: {},
 		act: {}
 	},
 	methods: {
-		click: function () {
+		click: function click() {
 			this.act({ type: 'HIDE', what: 'mask_black' });
 		}
 	}
-});
+};
 
 /***/ }),
 /* 269 */
@@ -2167,10 +2195,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 272 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -2255,7 +2287,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	props: {
 		id: {},
 		taken: {},
@@ -2269,7 +2301,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		loggedIn: {},
 		stage: {}
 	},
-	data: function () {
+	data: function data() {
 		return {
 			class_: '',
 
@@ -2278,7 +2310,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		};
 	},
 	watch: {
-		stage: function (nv, ov) {
+		stage: function stage(nv, ov) {
 			if (ov === 0 && nv === 1) {
 				this.class_ = 'leave';
 			} else if (ov === 1 && nv === 0) {
@@ -2286,19 +2318,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			}
 		}
 	},
-	mounted: function () {
+	mounted: function mounted() {
 		//this.act({type:'STAGE',i:1})
 	},
 	methods: {
-		touchstart: function (e) {
+		touchstart: function touchstart(e) {
 			e.stopPropagation();
 			this.Y0 = e.changedTouches[0].pageY;
 		},
-		touchmove: function (e) {
+		touchmove: function touchmove(e) {
 			e.stopPropagation();
 			e.preventDefault();
 		},
-		touchend: function (e) {
+		touchend: function touchend(e) {
 			e.stopPropagation();
 			this.Y2 = e.changedTouches[0].pageY;
 			var distance = this.Y2 - this.Y0;
@@ -2310,7 +2342,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			}
 		}
 	}
-});
+};
 
 /***/ }),
 /* 273 */
@@ -2465,387 +2497,392 @@ module.exports = Component.exports
 
 /***/ }),
 /* 276 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BookBlock_less__ = __webpack_require__(277);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BookBlock_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__BookBlock_less__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _props;
+
+__webpack_require__(277);
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; } //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 var bb;
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-	props: {
+exports.default = {
+	props: (_props = {
 		id: {},
 		name: {},
 		count: {},
@@ -2855,19 +2892,14 @@ var bb;
 
 		act: {},
 		img: {},
-		loggedIn: {},
+		loggedIn: {}
 
-		name: {},
-		books: {},
-
-		stage: {},
-		current: {}
-	},
+	}, _defineProperty(_props, 'name', {}), _defineProperty(_props, 'books', {}), _defineProperty(_props, 'stage', {}), _defineProperty(_props, 'current', {}), _props),
 	computed: {},
 	components: {
 		Scroller: __webpack_require__(278)
 	},
-	data: function () {
+	data: function data() {
 		return {
 			show: false,
 			class_: '',
@@ -2880,7 +2912,9 @@ var bb;
 		};
 	},
 	watch: {
-		stage: function (nv, ov) {
+		stage: function stage(nv, ov) {
+			var _this = this;
+
 			if (ov === 1 && nv === 2) {
 				this.class_ = 'leave';
 			} else if (ov === 2 && nv === 1) {
@@ -2890,21 +2924,21 @@ var bb;
 					//this.show = true;
 					this.hand = 'active';
 					this.initialized = true;
-					setTimeout(() => {
-						this.hand = '';
+					setTimeout(function () {
+						_this.hand = '';
 					}, 4000);
 				};
 			}
 		},
-		current: function (nv, ov) {
+		current: function current(nv, ov) {
 			if (nv > ov) {
 				bb.next();
 			} else {
 				bb.prev();
 			}
 		},
-		books: function () {
-			setTimeout(() => {
+		books: function books() {
+			setTimeout(function () {
 				bb = new BookBlock(document.querySelector('#bb-bookblock'), {
 					orientation: 'horizontal',
 					speed: 300
@@ -2912,7 +2946,7 @@ var bb;
 			}, 500);
 		}
 	},
-	mounted: function () {
+	mounted: function mounted() {
 		// setTimeout(()=>{
 
 
@@ -2928,15 +2962,15 @@ var bb;
 		// },500);
 	},
 	methods: {
-		touchstart: function (e) {
+		touchstart: function touchstart(e) {
 			e.stopPropagation();
 			this.Y0 = e.changedTouches[0].pageY;
 		},
-		touchmove: function (e) {
+		touchmove: function touchmove(e) {
 			e.stopPropagation();
 			e.preventDefault();
 		},
-		touchend: function (e) {
+		touchend: function touchend(e) {
 			//e.stopPropagation();
 			this.Y2 = e.changedTouches[0].pageY;
 			var distanceY = this.Y2 - this.Y0;
@@ -2954,12 +2988,12 @@ var bb;
 				}()
 			});
 		},
-		click: function (e) {
+		click: function click(e) {
 			e.stopPropagation();
 			//this.act({type:'SWITCH',direction:'up'})
 		}
 	}
-});
+};
 
 /***/ }),
 /* 277 */
@@ -2997,10 +3031,17 @@ module.exports = Component.exports
 
 /***/ }),
 /* 280 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -3147,10 +3188,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	props: {
 		items: {
-			default: function () {
+			default: function _default() {
 				return [{}, {}, {}, {}];
 			}
 		},
@@ -3160,7 +3201,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		act: {}
 	},
 	computed: {
-		books: function () {
+		books: function books() {
 			// var books = [];
 			// for( let i = 2;i<this.items.length;i++ ){
 			// 	books.push( this.items[i] );
@@ -3168,8 +3209,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			// return books;
 		}
 	},
-	data: function () {
-		return {
+	data: function data() {
+		return _defineProperty({
 			contentW: 0,
 			trainW: 0,
 
@@ -3188,12 +3229,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			Y2: 0,
 
 			currentOne: 0,
-			transition: '0s',
-			offset: 0
-		};
+			transition: '0s'
+		}, 'offset', 0);
 	},
 	watch: {
-		co: function (n) {
+		co: function co(n) {
 			if (n < 4) {
 				this.transition = '1000ms';
 				this.trainOffsetX = 0;
@@ -3203,7 +3243,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			}
 		}
 	},
-	mounted: function () {
+	mounted: function mounted() {
+		var _this = this;
+
 		var self = this;
 		// setTimeout(()=>{
 		// 	this.setWidth();
@@ -3220,14 +3262,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		// 		this.setWidth();
 		// 	},50)
 		// });
-		window.addEventListener('resize', () => {
-			setTimeout(() => {
-				this.setWidth();
+		window.addEventListener('resize', function () {
+			setTimeout(function () {
+				_this.setWidth();
 			}, 50);
 		});
 	},
 	methods: {
-		setWidth: function () {
+		setWidth: function setWidth() {
 			//var elem = this.$refs.train;
 			this.contentW = Number(document.defaultView.getComputedStyle(this.$refs.content).width.replace(/px/, ''));
 			this.trainW = Number(document.defaultView.getComputedStyle(this.$refs.train).width.replace(/px/, ''));
@@ -3236,7 +3278,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			// this.transition = '0s';
 			//this.trainOffsetX = -this.currentOne*this.width;	
 		},
-		touchstart: function (e) {
+		touchstart: function touchstart(e) {
 			//console.log(this.inCycle)
 			this.setWidth();
 			e.stopPropagation();
@@ -3252,7 +3294,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				this.Y0 = this.Y1 = e.changedTouches[0].pageY;
 			};
 		},
-		touchmove: function (e) {
+		touchmove: function touchmove(e) {
 			e.stopPropagation();
 			if (this.inCycle) {
 				this.moveCount++;
@@ -3294,7 +3336,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				}
 			}
 		},
-		touchend: function (e) {
+		touchend: function touchend(e) {
 			e.stopPropagation();
 			if (this.inCycle && !this.scrolling) {
 				this.X2 = e.changedTouches[0].pageX;
@@ -3324,7 +3366,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			}
 		}
 	}
-});
+};
 
 /***/ }),
 /* 281 */
@@ -3593,10 +3635,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 285 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -3712,7 +3758,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	props: {
 		id: {},
 		hasDiscount: {},
@@ -3726,7 +3772,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	components: {
 		Rules: __webpack_require__(286)
 	},
-	data: function () {
+	data: function data() {
 		return {
 			class_: '',
 
@@ -3741,18 +3787,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		// 	}
 		// }
 	},
-	mounted: function () {
+	mounted: function mounted() {
 		//this.act({type:'STAGE',i:1})
 	},
 	methods: {
-		touchstart: function (e) {
+		touchstart: function touchstart(e) {
 			e.stopPropagation();
 			this.Y0 = e.changedTouches[0].pageY;
 		},
-		touchmove: function (e) {
+		touchmove: function touchmove(e) {
 			e.preventDefault();
 		},
-		touchend: function (e) {
+		touchend: function touchend(e) {
 			e.stopPropagation();
 			this.Y2 = e.changedTouches[0].pageY;
 			var distance = this.Y2 - this.Y0;
@@ -3764,7 +3810,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			}
 		}
 	}
-});
+};
 
 /***/ }),
 /* 286 */
@@ -3796,10 +3842,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 288 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -3876,7 +3926,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	props: {
 		id: {},
 		hasDiscount: {},
@@ -3884,7 +3934,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		act: {},
 		img: {}
 	},
-	data: function () {
+	data: function data() {
 		return {
 			writers: function () {
 				return (/writers\.html/.test(location.href)
@@ -3893,14 +3943,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		};
 	},
 	methods: {
-		TO_CONTACT: function () {
+		TO_CONTACT: function TO_CONTACT() {
 			this.act({
 				type: 'TO_CONTACT'
 			});
 		}
 	}
 
-});
+};
 
 /***/ }),
 /* 289 */
@@ -4061,10 +4111,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 293 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -4096,8 +4150,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-	data: function () {
+exports.default = {
+	data: function data() {
 		return {
 			items: [{
 				background: 'red'
@@ -4108,11 +4162,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		};
 	},
 	methods: {
-		turn: function () {
+		turn: function turn() {
 			this.$refs.page0.classList.add('active');
 		}
 	}
-});
+};
 
 /***/ }),
 /* 294 */

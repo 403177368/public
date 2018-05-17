@@ -391,14 +391,19 @@ module.exports = Component.exports
 
 /***/ }),
 /* 185 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__App_scss__ = __webpack_require__(186);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__App_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__App_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_js__ = __webpack_require__(187);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__store_js__);
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+__webpack_require__(186);
+
+var _store = __webpack_require__(187);
+
 //
 //
 //
@@ -435,10 +440,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
   components: {
     Debugger: __webpack_require__(189),
     MaskLoading: __webpack_require__(193),
@@ -449,11 +451,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     MainBlock: __webpack_require__(205),
     MaskBooks: __webpack_require__(225)
   },
-  data: function () {
-    return __WEBPACK_IMPORTED_MODULE_1__store_js__["data"];
+  data: function data() {
+    return _store.data;
   },
   computed: {
-    href: function () {
+    href: function href() {
       var self = this;
       return location.href
       // .replace( /http:\/\/solomotest4\.3g\.qq\.com/,'https://ptsolomo.reader.qq.com' )
@@ -462,14 +464,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   },
   watch: {},
-  created: function () {},
-  mounted: function () {
+  created: function created() {},
+  mounted: function mounted() {
     this.act({ type: 'INIT' });
   },
   methods: {
-    act: __WEBPACK_IMPORTED_MODULE_1__store_js__["act"]
+    act: _store.act
   }
-});
+};
 
 /***/ }),
 /* 186 */
@@ -1010,10 +1012,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 191 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -1040,19 +1046,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	props: ['state'],
 	computed: {
-		writers: function () {
+		writers: function writers() {
 			var state = [];
-			this.state.writers.forEach(a => {
+			this.state.writers.forEach(function (a) {
 				state.push(a.state);
 			});
 			return state;
 		}
 	},
-	mounted: function () {}
-});
+	mounted: function mounted() {}
+};
 
 /***/ }),
 /* 192 */
@@ -1096,7 +1102,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 195 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 //
 //
@@ -1121,10 +1130,10 @@ module.exports = Component.exports
 //
 
 module.exports = {
-	data: function () {
+	data: function data() {
 		return {};
 	},
-	mounted: function () {}
+	mounted: function mounted() {}
 };
 
 /***/ }),
@@ -1171,10 +1180,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 199 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -1214,11 +1227,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-	data: function () {
+exports.default = {
+	data: function data() {
 		return {};
 	}
-});
+};
 
 /***/ }),
 /* 200 */
@@ -1268,10 +1281,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 203 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+		value: true
+});
 //
 //
 //
@@ -1435,10 +1452,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 		props: ['stage', 'act'],
 		components: {},
-		data: function () {
+		data: function data() {
 				return {
 						img: '/img/six_anniversary/',
 
@@ -1447,17 +1464,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 						bg_focus: ''
 				};
 		},
-		created: function () {},
+		created: function created() {},
 		watch: {
-				stage: function (new_val) {
+				stage: function stage(new_val) {
 						if (new_val === 0) {
 								this.animate();
 						}
 				}
 		},
-		mounted: function () {},
+		mounted: function mounted() {},
 		methods: {
-				animate: function () {
+				animate: function animate() {
 						var self = this;
 
 						var penguin_0 = this.$refs.penguin_0;
@@ -1506,7 +1523,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 								y: '50%'
 						}, {
 								y: '0%',
-								onStart: function () {},
+								onStart: function onStart() {},
 								ease: Elastic
 						}).fromTo(Focus, 0.3, {
 								opacity: 1
@@ -1528,14 +1545,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 						// 	},2000);
 						// },1000)
 				},
-				CHANGE_STAGE: function () {
+				CHANGE_STAGE: function CHANGE_STAGE() {
 						this.act({
 								type: 'CHANGE_STAGE',
 								n: 1
 						});
 				}
 		}
-});
+};
 
 /***/ }),
 /* 204 */
@@ -1646,10 +1663,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 207 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+		value: true
+});
 //
 //
 //
@@ -1781,7 +1802,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 		props: {
 				writers: {},
 				current: {},
@@ -1799,15 +1820,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				FreeBooks: __webpack_require__(216),
 				Rules: __webpack_require__(220)
 		},
-		data: function () {
+		data: function data() {
 				return {
 						img: '/img/six_anniversary/'
 				};
 		},
-		created: function () {},
+		created: function created() {},
 		watch: {},
 		methods: {}
-});
+};
 
 /***/ }),
 /* 208 */
@@ -1839,10 +1860,17 @@ module.exports = Component.exports
 
 /***/ }),
 /* 210 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -1993,7 +2021,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
   components: {
     MyVideo: __webpack_require__(211)
   },
@@ -2023,8 +2051,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     authors: {}
   },
-  data: function () {
-    return {
+  data: function data() {
+    return _defineProperty({
       img: '/img/six_anniversary/',
 
       width: 0,
@@ -2041,27 +2069,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       X2: 0,
 
       currentOne: 0,
-      transition: '0s',
-      offset: 0
-    };
+      transition: '0s'
+    }, 'offset', 0);
   },
   computed: {
-    author: function () {
+    author: function author() {
       return this.items[this.currentOne].name;
     }
   },
   watch: {
-    day: function (newVal) {
+    day: function day(newVal) {
       this.currentOne = newVal;
     },
-    currentOne: function (new_val, old) {
+    currentOne: function currentOne(new_val, old) {
       // console.log(new_val)
       this.act({
         type: 'SWITCH',
         n: new_val
       });
     },
-    stage: function (neo) {
+    stage: function stage(neo) {
       var self = this;
       if (neo === 1) {
 
@@ -2078,7 +2105,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           opacity: 1
         }).to(advice, 1, {
           opacity: 0,
-          onComplete: function () {
+          onComplete: function onComplete() {
             advice.style.display = 'none';
           }
         });
@@ -2099,47 +2126,51 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
     }
   },
-  mounted: function () {
+  mounted: function mounted() {
+    var _this = this;
+
     // console.log(this.$refs)
     var self = this;
     // this.items = (function(){
     //  var items = JSON.parse( JSON.stringify(self.raw) );
     //  return items;
     // })();
-    window.addEventListener('load', () => {
-      this.setWidth();
+    window.addEventListener('load', function () {
+      _this.setWidth();
     });
-    window.addEventListener('resize', () => {
-      setTimeout(() => {
-        this.setWidth();
+    window.addEventListener('resize', function () {
+      setTimeout(function () {
+        _this.setWidth();
       }, 50);
     });
     if (this.autoplay) {
-      setInterval(() => {
-        if (!this.inCycle) {
-          this.toNext();
+      setInterval(function () {
+        if (!_this.inCycle) {
+          _this.toNext();
         }
       }, this.interval);
     }
   },
   methods: {
-    __toItem: function (name) {
+    __toItem: function __toItem(name) {
       var i;
-      this.items.forEach(a => {
+      this.items.forEach(function (a) {
         if (a.name === name) {
           i = a.id;
         }
       });
       this.toCard(i);
     },
-    setWidth: function () {
+    setWidth: function setWidth() {
       var elem = this.$refs.swiper;
       var width = Number(document.defaultView.getComputedStyle(elem).width.replace(/px/, ''));
       this.width = width;
       this.transition = '0s';
       this.trainOffsetX = -this.currentOne * this.width;
     },
-    toNext: function () {
+    toNext: function toNext() {
+      var _this2 = this;
+
       if (true) {
         this.switching = true;
         this.transition = this.duration + 'ms cubic-bezier(0.175, 0.885, 0.32, 1.275)';
@@ -2152,17 +2183,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         } else {
           this.trainOffsetX = -this.currentOne * this.width;
         }
-        setTimeout(() => {
-          this.transition = '0s';
-          if (this.carousel && this.currentOne === 0) {
-            this.trainOffsetX = 0;
+        setTimeout(function () {
+          _this2.transition = '0s';
+          if (_this2.carousel && _this2.currentOne === 0) {
+            _this2.trainOffsetX = 0;
           }
-          this.switching = false;
-          this.inCycle = false;
+          _this2.switching = false;
+          _this2.inCycle = false;
         }, this.duration);
       }
     },
-    toPrev: function () {
+    toPrev: function toPrev() {
+      var _this3 = this;
+
       this.switching = true;
       this.transition = this.duration + 'ms cubic-bezier(0.175, 0.885, 0.32, 1.275)';
       if (this.currentOne > 0) {
@@ -2174,26 +2207,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       } else {
         this.trainOffsetX = -this.currentOne * this.width;
       }
-      setTimeout(() => {
-        this.transition = '0s';
-        if (this.carousel && this.currentOne === this.items.length - 1) {
-          this.trainOffsetX = -this.currentOne * this.width;
+      setTimeout(function () {
+        _this3.transition = '0s';
+        if (_this3.carousel && _this3.currentOne === _this3.items.length - 1) {
+          _this3.trainOffsetX = -_this3.currentOne * _this3.width;
         }
-        this.switching = false;
-        this.inCycle = false;
+        _this3.switching = false;
+        _this3.inCycle = false;
       }, this.duration);
     },
-    toCard: function (i) {
+    toCard: function toCard(i) {
+      var _this4 = this;
+
       this.currentOne = i;
       this.transition = this.duration + 'ms cubic-bezier(0.175, 0.885, 0.32, 1.275)';
       this.trainOffsetX = -this.currentOne * this.width;
-      setTimeout(() => {
-        this.transition = '0s';
-        this.switching = false;
-        this.inCycle = false;
+      setTimeout(function () {
+        _this4.transition = '0s';
+        _this4.switching = false;
+        _this4.inCycle = false;
       }, this.duration);
     },
-    touchstart: function (e) {
+    touchstart: function touchstart(e) {
       console.log(this.inCycle);
       e.stopPropagation();
       if (!this.inCycle) {
@@ -2208,7 +2243,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         this.Y1 = e.changedTouches[0].pageY;
       }
     },
-    touchmove: function (e) {
+    touchmove: function touchmove(e) {
       e.stopPropagation();
       if (this.inCycle) {
         this.moveCount++;
@@ -2240,7 +2275,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
       }
     },
-    touchend: function (e) {
+    touchend: function touchend(e) {
       e.stopPropagation();
       if (this.inCycle && !this.scrolling) {
         this.X2 = e.changedTouches[0].pageX;
@@ -2261,7 +2296,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
     }
   }
-});
+};
 
 /***/ }),
 /* 211 */
@@ -2293,10 +2328,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 213 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 //
 //
 //
@@ -2410,14 +2449,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
   props: {
     video: {},
     current: {},
     act: {},
     yyb: {}
   },
-  data: function () {
+  data: function data() {
     return {
       img: '/img/six_anniversary/',
       state: 'pending',
@@ -2425,14 +2464,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     };
   },
   watch: {
-    current: function () {
+    current: function current() {
       if (this.state !== 'pending') {
         this.state = 'ready';
       }
     },
-    state: function (state) {
+    state: function state(_state) {
+      var _this = this;
+
       var self = this;
-      switch (state) {
+      switch (_state) {
         case 'loading':
           var tl0 = new TimelineMax();
 
@@ -2498,13 +2539,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           console.log(this.$refs.video.src);
           this.$refs.video.load();
 
-          this.$refs.video.addEventListener('pause', () => {
-            if (this.state === 'playing') {
-              this.state = 'paused';
+          this.$refs.video.addEventListener('pause', function () {
+            if (_this.state === 'playing') {
+              _this.state = 'paused';
             }
           });
 
-          this.$refs.video.addEventListener('loadeddata', () => {
+          this.$refs.video.addEventListener('loadeddata', function () {
             console.log('loaded');
             self.loaded = true;
             // this.act({
@@ -2512,7 +2553,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             //  i: this.video.id
             // })
 
-            setTimeout(() => {
+            setTimeout(function () {
               var tl2 = new TimelineMax();
               tl2.to(self.$refs.t5, 0.6, {
                 y: '-500%',
@@ -2525,7 +2566,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 scaleX: 0
               }, {
                 scaleX: 1,
-                onComplete: function () {
+                onComplete: function onComplete() {
                   if (self.state === 'loading') {
                     self.state = 'playing';
                   }
@@ -2550,13 +2591,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   },
   computed: {
-    src: function () {
+    src: function src() {
       return location.href.replace(/act161203.+/, 'act161203/video/' + this.video.id + '.mp4');
     }
   },
-  mounted: function () {},
+  mounted: function mounted() {},
   methods: {
-    PLAY: function (e) {
+    PLAY: function PLAY(e) {
       this.act({
         type: 'PLAY_VIDEO',
         i: this.video.id
@@ -2573,7 +2614,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         self.state = 'playing';
       }
     },
-    PAUSE: function () {
+    PAUSE: function PAUSE() {
       if (this.$refs.video.ended) {
         this.$refs.video.play();
       } else {
@@ -2581,7 +2622,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
     }
   }
-});
+};
 
 /***/ }),
 /* 214 */
@@ -2795,10 +2836,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 218 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+		value: true
+});
 //
 //
 //
@@ -2969,7 +3014,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 		props: {
 				writers: {},
 				current: {},
@@ -2978,38 +3023,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				yyb: {}
 		},
 		components: {},
-		data() {
+		data: function data() {
 				return {
 						img: '/img/six_anniversary/'
 				};
 		},
+
 		computed: {
-				books: function () {
+				books: function books() {
 						return this.writers[this.current].books;
 				},
-				unlocked: function () {
+				unlocked: function unlocked() {
 						return this.writers[this.current].unlocked;
 				}
 		},
 		methods: {
-				SHOW_MASK: function () {
+				SHOW_MASK: function SHOW_MASK() {
 						this.act({
 								type: 'SHOW_MASK'
 						});
 				},
-				_TO_BOOK: function (bid) {
+				_TO_BOOK: function _TO_BOOK(bid) {
 						this.act({
 								type: '_TO_BOOK',
-								bid
+								bid: bid
 						});
 				},
-				_SHARE: function () {
+				_SHARE: function _SHARE() {
 						this.act({
 								type: '_SHARE'
 						});
 				}
 		}
-});
+};
 
 /***/ }),
 /* 219 */
@@ -3130,10 +3176,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 222 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -3185,9 +3235,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	props: ['adr']
-});
+};
 
 /***/ }),
 /* 223 */
@@ -3321,10 +3371,17 @@ module.exports = Component.exports
 
 /***/ }),
 /* 227 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 //
 //
 //
@@ -3431,39 +3488,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
   components: {},
   props: {
     act: {},
     writers: {}
   },
-  data: function () {
+  data: function data() {
     return {
       img: '/img/six_anniversary/'
     };
   },
   computed: {
-    books: function () {
+    books: function books() {
       var books = [];
-      this.writers.forEach(a => {
+      this.writers.forEach(function (a) {
         if (a.unlocked) {
-          books.push(...a.books);
+          books.push.apply(books, _toConsumableArray(a.books));
         }
       });
       return books;
     }
   },
   methods: {
-    HIDE_MASK: function () {
+    HIDE_MASK: function HIDE_MASK() {
       this.act({
         type: 'HIDE_MASK'
       });
     },
-    touchmove: function (e) {
+    touchmove: function touchmove(e) {
       e.stopPropagation();
     }
   }
-});
+};
 
 /***/ }),
 /* 228 */

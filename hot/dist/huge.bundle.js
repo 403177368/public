@@ -1143,10 +1143,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 114 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 //
 //
 //
@@ -1204,7 +1208,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
   components: {
     Debugger: __webpack_require__(115),
     MaskLoading: __webpack_require__(119),
@@ -1218,26 +1222,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     PageEntry: __webpack_require__(143),
     PageFactory: __webpack_require__(155)
   },
-  data: function () {
+  data: function data() {
     return {};
   },
   computed: {
-    change_main() {
+    change_main: function change_main() {
       return this.$store.state.change_main;
     },
-    page() {
+    page: function page() {
       return this.$store.state.page;
     },
-    meta() {
+    meta: function meta() {
       return this.$store.state.meta;
     },
-    img() {
+    img: function img() {
       return this.$store.state.img;
     },
-    pic() {
+    pic: function pic() {
       return this.$store.state.pic;
     },
-    show() {
+    show: function show() {
       if (this.change_main.stage !== 'fall') {
         // if (this.meta.platform === 'adr') {
         if (this.meta.normal === true) {
@@ -1267,16 +1271,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   },
   watch: {},
-  created: function () {},
-  mounted: function () {
+  created: function created() {},
+  mounted: function mounted() {
     this.$store.dispatch({ type: 'INIT_MAIN' });
   },
   methods: {
-    touchmove: function (e) {
+    touchmove: function touchmove(e) {
       e.preventDefault();
     }
   }
-});
+};
 
 /***/ }),
 /* 115 */
@@ -1308,10 +1312,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 117 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -1338,19 +1346,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	props: ['state'],
 	computed: {
-		writers: function () {
+		writers: function writers() {
 			var state = [];
-			this.state.writers.forEach(a => {
+			this.state.writers.forEach(function (a) {
 				state.push(a.state);
 			});
 			return state;
 		}
 	},
-	mounted: function () {}
-});
+	mounted: function mounted() {}
+};
 
 /***/ }),
 /* 118 */
@@ -1394,7 +1402,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 121 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 //
 //
@@ -1419,10 +1430,10 @@ module.exports = Component.exports
 //
 
 module.exports = {
-	data: function () {
+	data: function data() {
 		return {};
 	},
-	mounted: function () {}
+	mounted: function mounted() {}
 };
 
 /***/ }),
@@ -1469,10 +1480,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 125 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -1512,11 +1527,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-	data: function () {
+exports.default = {
+	data: function data() {
 		return {};
 	}
-});
+};
 
 /***/ }),
 /* 126 */
@@ -1566,7 +1581,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 129 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 //
 //
@@ -1628,18 +1646,18 @@ module.exports = Component.exports
 
 module.exports = {
 	computed: {
-		mask_download() {
+		mask_download: function mask_download() {
 			return this.$store.state.mask_download;
 		}
 	},
 	methods: {
-		hide: function () {
+		hide: function hide() {
 			this.$store.dispatch({
 				type: 'HIDE',
 				what: 'mask_download'
 			});
 		},
-		CONFIRM: function () {
+		CONFIRM: function CONFIRM() {
 			this.$store.dispatch({
 				type: 'TO_DOWNLOAD'
 			});
@@ -1711,10 +1729,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 133 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -1794,18 +1816,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	computed: {
-		img() {
+		img: function img() {
 			return this.$store.state.img;
 		},
-		mask() {
+		mask: function mask() {
 			return this.$store.state.mask_rules;
 		}
 	},
-	mounted: function () {},
+	mounted: function mounted() {},
 	methods: {}
-});
+};
 
 /***/ }),
 /* 134 */
@@ -1889,10 +1911,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 137 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -2073,8 +2099,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-	data: function () {
+exports.default = {
+	data: function data() {
 		return {
 			form: {
 				city: {
@@ -2102,15 +2128,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		};
 	},
 	computed: {
-		img() {
+		img: function img() {
 			return this.$store.state.img;
 		},
-		mask() {
+		mask: function mask() {
 			return this.$store.state.mask_form;
 		},
-		error() {
+		error: function error() {
 			var error = false;
-			for (let key in this.form) {
+			for (var key in this.form) {
 				if (this.form[key].state === 'error') {
 					error = true;
 				}
@@ -2118,22 +2144,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			return error;
 		}
 	},
-	created: function () {
+	created: function created() {
 		if (localStorage.form) {
 			var form = JSON.parse(localStorage.form);
-			for (let key in form) {
+			for (var key in form) {
 				this.form[key].val = form[key].val;
 			}
 			this.done = true;
 		};
 	},
-	mounted: function () {},
+	mounted: function mounted() {},
 	methods: {
-		fill(e, key) {
+		fill: function fill(e, key) {
 			this.form[key].val = e.target.value;
 			console.log(this.form[key].val);
 		},
-		check(key) {
+		check: function check(key) {
 			if (this.form[key].val === '') {
 				this.form[key].state = 'error';
 			} else {
@@ -2141,7 +2167,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				return true;
 			}
 		},
-		checkQQ() {
+		checkQQ: function checkQQ() {
 			if (/^(\d{5,})$/.test(this.form.qq.val)) {
 				this.form.qq.state = '';
 				return true;
@@ -2149,7 +2175,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				this.form.qq.state = 'error';
 			}
 		},
-		checkMobile() {
+		checkMobile: function checkMobile() {
 			if (/^1\d{10}$/.test(this.form.mobile.val)) {
 				this.form.mobile.state = '';
 				return true;
@@ -2157,8 +2183,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				this.form.mobile.state = 'error';
 			}
 		},
-
-		submit() {
+		submit: function submit() {
 			if (this.check('city') && this.check('school') && this.check('name') && this.checkQQ() && this.checkMobile()) {
 				this.done = true;
 				this.$store.dispatch({
@@ -2167,11 +2192,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				});
 			};
 		},
-		edit() {
+		edit: function edit() {
 			this.done = false;
 		}
 	}
-});
+};
 
 /***/ }),
 /* 138 */
@@ -2419,10 +2444,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 141 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 //
 //
 //
@@ -2727,17 +2756,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
   computed: {
-    img() {
+    img: function img() {
       return '/img/huge/books_fall_2';
     },
-    meta() {
+    meta: function meta() {
       return this.$store.state.meta;
     }
   },
   components: {},
-  data: function () {
+  data: function data() {
     return {
       arr: [{
         val: 1
@@ -2779,7 +2808,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       class_: ''
     };
   },
-  created: function () {},
+  created: function created() {},
   watch: {
     // stage: function(new_val){
     // 	if( new_val===0 ){
@@ -2787,11 +2816,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     // 	}
     // }
   },
-  mounted: function () {
-    setTimeout(() => {
-      this.class_ = 'active';
-      setTimeout(() => {
-        this.$store.dispatch({
+  mounted: function mounted() {
+    var _this = this;
+
+    setTimeout(function () {
+      _this.class_ = 'active';
+      setTimeout(function () {
+        _this.$store.dispatch({
           type: 'CHANGE_MAIN',
           to: 'entry'
         });
@@ -2799,17 +2830,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }, 250);
   },
   methods: {
-    jump: function () {
+    jump: function jump() {
       if (this.meta.share) {
         this.$store.dispatch({
           type: 'TO_APP'
         });
       }
     },
-    animate: function () {},
-    CHANGE_STAGE: function () {}
+    animate: function animate() {},
+    CHANGE_STAGE: function CHANGE_STAGE() {}
   }
-});
+};
 
 /***/ }),
 /* 142 */
@@ -2870,10 +2901,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 145 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 //
 //
 //
@@ -2954,23 +2989,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
   components: {
     VideoHu: __webpack_require__(146),
     BtnToFactory: __webpack_require__(150)
   },
   computed: {
-    change_main() {
+    change_main: function change_main() {
       return this.$store.state.change_main;
     },
-    img() {
+    img: function img() {
       return this.$store.state.img;
     }
   },
   methods: {
-    share() {}
+    share: function share() {}
   }
-});
+};
 
 /***/ }),
 /* 146 */
@@ -3002,10 +3037,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 148 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -3103,21 +3142,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	// props: {
 	// 	video: {},
 	// 	current: {},
 	// 	act: {},
 	// 	yyb: {}
 	// },
-	data: function () {
+	data: function data() {
 		return {
 			state: 'pending',
 			loaded: false
 		};
 	},
 	watch: {
-		'$store.state.change_main.stage': function (nv) {
+		'$store.state.change_main.stage': function $storeStateChange_mainStage(nv) {
 			if (nv === 'factory') {
 				this.PAUSE();
 			};
@@ -3127,23 +3166,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		// 		this.state = 'ready';
 		// 	};
 		// },
-		state: function (state) {
+		state: function state(_state) {
+			var _this = this;
+
 			var self = this;
-			console.log('[video state] ' + state);
-			switch (state) {
+			console.log('[video state] ' + _state);
+			switch (_state) {
 				case 'loading':
 
 					this.$refs.video.setAttribute('src', DIR.video + this.video.id + '.mp4');
 					console.log(this.$refs.video.src);
 					this.$refs.video.load();
 
-					this.$refs.video.addEventListener('pause', () => {
-						if (this.state === 'playing') {
-							this.state = 'paused';
+					this.$refs.video.addEventListener('pause', function () {
+						if (_this.state === 'playing') {
+							_this.state = 'paused';
 						}
 					});
 
-					this.$refs.video.addEventListener('loadeddata', () => {
+					this.$refs.video.addEventListener('loadeddata', function () {
 						console.log('loaded');
 						self.loaded = true;
 						// this.act({
@@ -3151,7 +3192,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 						// 	i: this.video.id
 						// })
 
-						setTimeout(() => {
+						setTimeout(function () {
 							var tl2 = new TimelineMax();
 							tl2.to(self.$refs.t5, 0.6, {
 								y: '-500%',
@@ -3164,7 +3205,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 								scaleX: 0
 							}, {
 								scaleX: 1,
-								onComplete: function () {
+								onComplete: function onComplete() {
 									if (self.state === 'loading') {
 										self.state = 'playing';
 									};
@@ -3191,17 +3232,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		}
 	},
 	computed: {
-		img() {
+		img: function img() {
 			return this.$store.state.img;
 		},
-		meta() {
+		meta: function meta() {
 			return this.$store.state.meta;
 		}
 		// src: function(){
 		// 	return location.href.replace(/act161203.+/,'act161203/video/'+this.video.id+'.mp4');
 		// }
+
 	},
-	mounted: function () {
+	mounted: function mounted() {
 		// if ( window&&window.wView ) {
 		//    window.wView.allowsInlineMediaPlayback = "YES";
 		//    window.wView.mediaPlaybackRequiresUserAction = "NO";
@@ -3220,7 +3262,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		// });
 	},
 	methods: {
-		PLAY: function (e) {
+		PLAY: function PLAY(e) {
 			// this.act({
 			// 	type: 'PLAY_VIDEO',
 			// 	i: this.video.id
@@ -3229,7 +3271,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			var self = this;
 			console.log('dog');
 			self.state = 'playing';
-			Local.forceLog(common.param('act_f'), `play`);
+			Local.forceLog(common.param('act_f'), 'play');
 			// if( this.state === 'pending' ){
 			// 	if( !this.loaded ){
 			// 		self.state = 'loading';
@@ -3240,7 +3282,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			// 	self.state = 'playing';
 			// }
 		},
-		PAUSE: function () {
+		PAUSE: function PAUSE() {
 			// if( this.$refs.video.ended ){
 			// 	this.$refs.video.play();
 			// }else{
@@ -3248,7 +3290,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			// };
 		}
 	}
-});
+};
 
 /***/ }),
 /* 149 */
@@ -3345,10 +3387,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 152 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -3373,35 +3419,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	computed: {
-		img() {
+		img: function img() {
 			return this.$store.state.img;
 		}
 	},
-	data: function () {
+	data: function data() {
 		return {
 			pressed: false
 		};
 	},
 	methods: {
-		touchstart: function () {
+		touchstart: function touchstart() {
 			this.pressed = true;
 		},
-		touchmove: function () {
+		touchmove: function touchmove() {
 			this.pressed = false;
 		},
-		touchend: function () {
+		touchend: function touchend() {
 			if (this.pressed) {
 				this.$store.dispatch({ type: 'TO_FACTORY' });
 			};
 			this.pressed = false;
 		},
-		touchcancel: function () {
+		touchcancel: function touchcancel() {
 			this.pressed = false;
 		}
 	}
-});
+};
 
 /***/ }),
 /* 153 */
@@ -3512,10 +3558,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 157 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 //
 //
 //
@@ -3533,7 +3583,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
   components: {
     SwiperCards: __webpack_require__(158),
     CarouselCards: __webpack_require__(169),
@@ -3541,20 +3591,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     MaskDone: __webpack_require__(173)
   },
   computed: {
-    pic() {
+    pic: function pic() {
       return this.$store.state.pic;
     },
-    change_main() {
+    change_main: function change_main() {
       return this.$store.state.change_main;
     },
-    img() {
+    img: function img() {
       return this.$store.state.img;
     }
   },
   methods: {
-    share() {}
+    share: function share() {}
   }
-});
+};
 
 /***/ }),
 /* 158 */
@@ -3586,10 +3636,17 @@ module.exports = Component.exports
 
 /***/ }),
 /* 160 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -3716,7 +3773,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	components: {
 		Controls: __webpack_require__(7),
 		BtnShare: __webpack_require__(164)
@@ -3725,7 +3782,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		act: {},
 		img: {},
 		items: {
-			default: function () {
+			default: function _default() {
 				return [{}, {}, {}, {}, {}, {}];
 			}
 		},
@@ -3751,8 +3808,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			default: 1000
 		}
 	},
-	data: function () {
-		return {
+	data: function data() {
+		return _defineProperty({
 			width: 0,
 			//items: [],
 
@@ -3766,33 +3823,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			X2: 0,
 
 			currentOne: 0,
-			transition: '0s',
-			offset: 0
-		};
+			transition: '0s'
+		}, 'offset', 0);
 	},
 	computed: {
-		share_btn() {
+		share_btn: function share_btn() {
 			return this.$store.state.share_btn;
 		},
-		pic() {
+		pic: function pic() {
 			return this.$store.state.pic;
 		},
-		img: function () {
+
+		img: function img() {
 			return this.$store.state.img;
 		}
 	},
 	watch: {
-		items: function () {
+		items: function items() {
 			//this.copy = this.items;
 		},
-		currentOne: function (new_val) {
+		currentOne: function currentOne(new_val) {
 			this.$store.dispatch({
 				type: 'PICK_BG',
 				i: new_val
 			});
 		}
 	},
-	mounted: function () {
+	mounted: function mounted() {
+		var _this = this;
+
 		//console.log(this.$refs)
 		var self = this;
 		// this.items = (function(){
@@ -3800,23 +3859,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		// 	return items;
 		// })();
 		// console.log(this.trainOffsetX)
-		window.addEventListener('DOMContentLoaded', () => {
-			setTimeout(() => {
-				this.setWidth();
+		window.addEventListener('DOMContentLoaded', function () {
+			setTimeout(function () {
+				_this.setWidth();
 			}, 600);
 		});
 		// window.addEventListener('load',()=>{
 		// 	this.setWidth();
 		// });
-		window.addEventListener('resize', () => {
-			setTimeout(() => {
-				this.setWidth();
+		window.addEventListener('resize', function () {
+			setTimeout(function () {
+				_this.setWidth();
 			}, 50);
 		});
 		if (this.autoplay) {
-			setInterval(() => {
-				if (!this.inCycle) {
-					this.toNext();
+			setInterval(function () {
+				if (!_this.inCycle) {
+					_this.toNext();
 				};
 			}, this.interval);
 		}
@@ -3825,19 +3884,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		// window.dispatchEvent(e);
 	},
 	methods: {
-		to_book() {
+		to_book: function to_book() {
 			this.act({ type: 'TO_BOOK', bid: this.items[this.currentOne].bid });
 		},
-		__toItem: function (name) {
+
+		__toItem: function __toItem(name) {
 			var i;
-			this.items.forEach(a => {
+			this.items.forEach(function (a) {
 				if (a.name === name) {
 					i = a.id;
 				}
 			});
 			this.toCard(i);
 		},
-		setWidth: function () {
+		setWidth: function setWidth() {
 			var elem = this.$refs.swiper;
 			var width = Number(document.defaultView.getComputedStyle(elem).width.replace(/px/, ''));
 			this.width = width;
@@ -3845,7 +3905,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			this.trainOffsetX = -this.currentOne * this.width;
 			console.log('trainOffsetX:' + this.trainOffsetX);
 		},
-		toNext: function () {
+		toNext: function toNext() {
+			var _this2 = this;
+
 			if (true) {
 				this.switching = true;
 				this.transition = this.duration + 'ms ' + this.ease;
@@ -3858,17 +3920,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				} else {
 					this.trainOffsetX = -this.currentOne * this.width;
 				}
-				setTimeout(() => {
-					this.transition = '0s';
-					if (this.carousel && this.currentOne === 0) {
-						this.trainOffsetX = 0;
+				setTimeout(function () {
+					_this2.transition = '0s';
+					if (_this2.carousel && _this2.currentOne === 0) {
+						_this2.trainOffsetX = 0;
 					};
-					this.switching = false;
-					this.inCycle = false;
+					_this2.switching = false;
+					_this2.inCycle = false;
 				}, this.duration);
 			}
 		},
-		toPrev: function () {
+		toPrev: function toPrev() {
+			var _this3 = this;
+
 			this.switching = true;
 			this.transition = this.duration + 'ms ' + this.ease;
 			if (this.currentOne > 0) {
@@ -3880,26 +3944,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			} else {
 				this.trainOffsetX = -this.currentOne * this.width;
 			}
-			setTimeout(() => {
-				this.transition = '0s';
-				if (this.carousel && this.currentOne === this.items.length - 1) {
-					this.trainOffsetX = -this.currentOne * this.width;
+			setTimeout(function () {
+				_this3.transition = '0s';
+				if (_this3.carousel && _this3.currentOne === _this3.items.length - 1) {
+					_this3.trainOffsetX = -_this3.currentOne * _this3.width;
 				};
-				this.switching = false;
-				this.inCycle = false;
+				_this3.switching = false;
+				_this3.inCycle = false;
 			}, this.duration);
 		},
-		toCard: function (i) {
+		toCard: function toCard(i) {
+			var _this4 = this;
+
 			this.currentOne = i;
 			this.transition = this.duration + 'ms ' + this.ease;
 			this.trainOffsetX = -this.currentOne * this.width;
-			setTimeout(() => {
-				this.transition = '0s';
-				this.switching = false;
-				this.inCycle = false;
+			setTimeout(function () {
+				_this4.transition = '0s';
+				_this4.switching = false;
+				_this4.inCycle = false;
 			}, this.duration);
 		},
-		touchstart: function (e) {
+		touchstart: function touchstart(e) {
 			e.stopPropagation();
 			// console.log(this.items)
 			console.log(this.inCycle);
@@ -3920,7 +3986,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				this.Y1 = e.changedTouches[0].pageY;
 			};
 		},
-		touchmove: function (e) {
+		touchmove: function touchmove(e) {
 			e.stopPropagation();
 			if (this.inCycle && !this.switching) {
 				this.moveCount++;
@@ -3953,7 +4019,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				}
 			}
 		},
-		touchend: function (e) {
+		touchend: function touchend(e) {
 			e.stopPropagation();
 			if (this.inCycle && !this.scrolling) {
 				this.X2 = e.changedTouches[0].pageX;
@@ -3975,7 +4041,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			}
 		}
 	}
-});
+};
 
 /***/ }),
 /* 161 */
@@ -3985,10 +4051,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 /* 162 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 //
 //
 //
@@ -4088,34 +4158,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function () {
+exports.default = {
+  data: function data() {
     return {
       fp: '',
       class_: ''
     };
   },
   computed: {
-    img() {
+    img: function img() {
       return this.$store.state.img;
     }
   },
   methods: {
-    touchstart(e) {
+    touchstart: function touchstart(e) {
       e.stopPropagation();
       e.preventDefault();
       this.fp = 'active';
       this.class_ = 'active';
       this.$store.dispatch({ type: 'PLAY_SLOGAN' });
     },
-    touchend(e) {
+    touchend: function touchend(e) {
       e.stopPropagation();
       this.fp = '';
       this.class_ = '';
       this.$store.dispatch({ type: 'STOP_SLOGAN' });
     }
   }
-});
+};
 
 /***/ }),
 /* 163 */
@@ -4207,10 +4277,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 166 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -4236,41 +4310,41 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	computed: {
-		pic() {
+		pic: function pic() {
 			return this.$store.state.pic;
 		},
-		share_btn() {
+		share_btn: function share_btn() {
 			return this.$store.state.share_btn;
 		},
-		img() {
+		img: function img() {
 			return this.$store.state.img;
 		}
 	},
-	data: function () {
+	data: function data() {
 		return {
 			pressed: false
 		};
 	},
 	methods: {
-		touchstart: function () {
+		touchstart: function touchstart() {
 			this.pressed = true;
 		},
-		touchmove: function () {
+		touchmove: function touchmove() {
 			this.pressed = false;
 		},
-		touchend: function () {
+		touchend: function touchend() {
 			if (this.pressed) {
 				this.$store.dispatch({ type: 'SHARE_PIC' });
 			};
 			this.pressed = false;
 		},
-		touchcancel: function () {
+		touchcancel: function touchcancel() {
 			this.pressed = false;
 		}
 	}
-});
+};
 
 /***/ }),
 /* 167 */
@@ -4429,10 +4503,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 171 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -4513,8 +4591,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-	data: function () {
+exports.default = {
+	data: function data() {
 		return {
 			cards: [{
 				p: 0,
@@ -4531,11 +4609,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		};
 	},
 	watch: {
-		current(nv) {}
+		current: function current(nv) {}
 	},
 	methods: {
-		next: function () {
-			this.cards.forEach(a => {
+		next: function next() {
+			this.cards.forEach(function (a) {
 				if (a.p < 1) {
 					a.p++;
 				} else {
@@ -4544,11 +4622,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			});
 			// this.current++;
 		},
-		prev: function () {
+		prev: function prev() {
 			this.rotateY += 60;
 		}
 	}
-});
+};
 
 /***/ }),
 /* 172 */
@@ -4609,10 +4687,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 175 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -4640,18 +4722,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	computed: {
-		img() {
+		img: function img() {
 			return this.$store.state.img;
 		},
-		pic() {
+		pic: function pic() {
 			return this.$store.state.pic;
 		}
 	},
-	mounted: function () {},
+	mounted: function mounted() {},
 	methods: {}
-});
+};
 
 /***/ }),
 /* 176 */

@@ -332,10 +332,14 @@ module.exports = window.VueRouter;
 
 /***/ }),
 /* 15 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -368,22 +372,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	components: {
 		Navbar: __webpack_require__(16),
 		RibbonCorner: __webpack_require__(20)
 	},
-	data: function () {
+	data: function data() {
 		return {
 			msg: 'peterson'
 		};
 	},
 	computed: {
-		count: function () {
+		count: function count() {
 			return this.$store.state.count;
 		}
 	}
-});
+};
 
 /***/ }),
 /* 16 */
@@ -415,10 +419,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 18 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -439,18 +447,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-	data: function () {
+exports.default = {
+	data: function data() {
 		return {
 			text: 'click here..'
 		};
 	},
 	methods: {
-		click: function () {
+		click: function click() {
 			this.text = 'clicked!!!';
 		}
 	}
-});
+};
 
 /***/ }),
 /* 19 */

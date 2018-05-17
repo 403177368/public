@@ -284,31 +284,33 @@ module.exports = Component.exports
 
 /***/ }),
 /* 39 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_store_js__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_store_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__store_store_js__);
-//
-//
-//
-//
-//
-//
 
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _store = __webpack_require__(40);
+
+exports.default = {
 	components: {
 		Slider: __webpack_require__(41)
 	},
-	data: function () {
-		return __WEBPACK_IMPORTED_MODULE_0__store_store_js__["data"];
+	data: function data() {
+		return _store.data;
 	},
 	methods: {
-		act: __WEBPACK_IMPORTED_MODULE_0__store_store_js__["act"]
+		act: _store.act
 	}
-});
+}; //
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 40 */
@@ -360,10 +362,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 43 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -415,11 +421,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	props: {
 		img: {},
 		items: {
-			default: function () {
+			default: function _default() {
 				return ['#6dace2', '#af9180', 'yellow', '', ''];
 			}
 		},
@@ -434,7 +440,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		Item3: __webpack_require__(67),
 		Item4: __webpack_require__(71)
 	},
-	data: function () {
+	data: function data() {
 		return {
 			viewportHeight: 0,
 			color: 'black',
@@ -452,10 +458,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		};
 	},
 	watch: {
-		current: function (neo, old) {
+		current: function current(neo, old) {
+			var _this = this;
+
 			this.active[neo] = true;
-			setTimeout(() => {
-				this.active[old] = false;
+			setTimeout(function () {
+				_this.active[old] = false;
 			}, this.duration);
 			// switch(neo){
 			// 	case 0:
@@ -480,26 +488,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			// }
 		}
 	},
-	mounted: function () {
+	mounted: function mounted() {
+		var _this2 = this;
+
 		this.viewportHeight = window.innerHeight;
-		window.addEventListener('resize', () => {
-			this.viewportHeight = window.innerHeight;
+		window.addEventListener('resize', function () {
+			_this2.viewportHeight = window.innerHeight;
 		}, 50);
 
 		this.active[this.current] = true;
 	},
 	methods: {
-		keydown: function (e) {
+		keydown: function keydown(e) {
 			console.log(e);
 		},
-		touchstart: function (e) {
+		touchstart: function touchstart(e) {
 			//e.preventDefault();
 			this.Y1 = e.changedTouches[0].pageY;
 		},
-		touchmove: function (e) {
+		touchmove: function touchmove(e) {
 			e.preventDefault();
 		},
-		touchend: function (e) {
+		touchend: function touchend(e) {
 			this.Y2 = e.changedTouches[0].pageY;
 			var distance = this.Y2 - this.Y1;
 			//console.log(distance)
@@ -511,13 +521,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				}
 			}
 		},
-		toNext: function () {
+		toNext: function toNext() {
 			if (this.current < this.items.length - 1) {
 				this.current++;
 			}
 		}
 	}
-});
+};
 
 /***/ }),
 /* 44 */
@@ -549,10 +559,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 46 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -626,13 +640,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	components: {
 		Circles: __webpack_require__(47),
 		Arrow: __webpack_require__(3)
 	},
 	props: ['img', 'act', 'active'],
-	data: function () {
+	data: function data() {
 		return {
 			count: 0,
 			an: {
@@ -668,7 +682,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		};
 	},
 	watch: {
-		active: function (b) {
+		active: function active(b) {
 			if (b) {
 				this.go();
 			} else {
@@ -676,28 +690,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			}
 		}
 	},
-	mounted: function () {
+	mounted: function mounted() {
 		//this.go();
 	},
 	methods: {
-		go: function () {
+		go: function go() {
+			var _this = this;
+
 			this.reset();
 			this.count++;
 			var count = this.count;
-			for (let key in this.an) {
-				setTimeout(() => {
-					if (count !== this.count) return;
-					this.an[key].s = 'active';
-				}, this.an[key].p);
+
+			var _loop = function _loop(key) {
+				setTimeout(function () {
+					if (count !== _this.count) return;
+					_this.an[key].s = 'active';
+				}, _this.an[key].p);
+			};
+
+			for (var key in this.an) {
+				_loop(key);
 			}
 		},
-		reset: function () {
-			for (let key in this.an) {
+		reset: function reset() {
+			for (var key in this.an) {
 				this.an[key].s = '';
 			}
 		}
 	}
-});
+};
 
 /***/ }),
 /* 47 */
@@ -729,10 +750,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 49 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -822,14 +847,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	props: {
 		active: {}
 	},
-	data: function () {
+	data: function data() {
 		return {};
 	}
-});
+};
 
 /***/ }),
 /* 50 */
@@ -870,10 +895,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 /* 52 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -886,11 +915,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	props: {
 		img: {}
 	}
-});
+};
 
 /***/ }),
 /* 53 */
@@ -983,10 +1012,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 57 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -1078,7 +1111,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	components: {
 		Arrow: __webpack_require__(3)
 	},
@@ -1086,7 +1119,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		img: {},
 		active: {}
 	},
-	data: function () {
+	data: function data() {
 		return {
 			count: 0,
 			an: {
@@ -1118,7 +1151,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		};
 	},
 	watch: {
-		active: function (b) {
+		active: function active(b) {
 			if (b) {
 				this.go();
 			} else {
@@ -1127,24 +1160,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		}
 	},
 	methods: {
-		go: function () {
+		go: function go() {
+			var _this = this;
+
 			this.reset();
 			this.count++;
 			var count = this.count;
-			for (let key in this.an) {
-				setTimeout(() => {
-					if (count !== this.count) return;
-					this.an[key].s = 'active';
-				}, this.an[key].p);
+
+			var _loop = function _loop(key) {
+				setTimeout(function () {
+					if (count !== _this.count) return;
+					_this.an[key].s = 'active';
+				}, _this.an[key].p);
+			};
+
+			for (var key in this.an) {
+				_loop(key);
 			}
 		},
-		reset: function () {
-			for (let key in this.an) {
+		reset: function reset() {
+			for (var key in this.an) {
 				this.an[key].s = '';
 			}
 		}
 	}
-});
+};
 
 /***/ }),
 /* 58 */
@@ -1217,10 +1257,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 61 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -1274,7 +1318,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	props: {
 		img: {},
 		active: {}
@@ -1283,7 +1327,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		CardCarousel: __webpack_require__(62),
 		Arrow: __webpack_require__(3)
 	},
-	data: function () {
+	data: function data() {
 		return {
 			count: 0,
 			an: {
@@ -1315,7 +1359,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		};
 	},
 	watch: {
-		active: function (neo) {
+		active: function active(neo) {
 			if (neo) {
 				this.go();
 			} else {
@@ -1323,26 +1367,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			}
 		}
 	},
-	mounted: function () {},
+	mounted: function mounted() {},
 	methods: {
-		go: function () {
+		go: function go() {
+			var _this = this;
+
 			this.reset();
 			this.count++;
 			var count = this.count;
-			for (let key in this.an) {
-				setTimeout(() => {
-					if (count !== this.count) return;
-					this.an[key].s = 'active';
-				}, this.an[key].p);
+
+			var _loop = function _loop(key) {
+				setTimeout(function () {
+					if (count !== _this.count) return;
+					_this.an[key].s = 'active';
+				}, _this.an[key].p);
+			};
+
+			for (var key in this.an) {
+				_loop(key);
 			}
 		},
-		reset: function () {
-			for (let key in this.an) {
+		reset: function reset() {
+			for (var key in this.an) {
 				this.an[key].s = '';
 			}
 		}
 	}
-});
+};
 
 /***/ }),
 /* 62 */
@@ -1374,10 +1425,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 64 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -1580,7 +1635,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	props: {
 		img: {},
 		active: {},
@@ -1589,7 +1644,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			default: 500
 		}
 	},
-	data: function () {
+	data: function data() {
 		return {
 			state: ['transform: translate3d(-360px,0,-360px) rotateY(40deg);'],
 
@@ -1621,7 +1676,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		};
 	},
 	watch: {
-		active: function (b) {
+		active: function active(b) {
 			if (b) {
 				this.carousel = true;
 			} else {
@@ -1629,13 +1684,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			}
 		}
 	},
-	mounted: function () {
+	mounted: function mounted() {
 		//this.go();
 	},
 	methods: {
-		update: function () {
+		update: function update() {
 			var self = this;
-			self.cards.forEach(a => {
+			self.cards.forEach(function (a) {
 				var target = a.p + 1;
 				if (target > 6) {
 					target = 0;
@@ -1644,12 +1699,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				a.p = target;
 			});
 		},
-		next: function () {
+		next: function next() {
 			var self = this;
 			if (!this.switching) {
 				this.switching = true;
 
-				self.cards.forEach(a => {
+				self.cards.forEach(function (a) {
 					var target = a.p + 1;
 					if (target > 6) {
 						target = 0;
@@ -1669,12 +1724,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				}, self.duration);
 			};
 		},
-		prev: function () {
+		prev: function prev() {
 			var self = this;
 			if (!this.switching) {
 				this.switching = true;
 
-				self.cards.forEach(a => {
+				self.cards.forEach(function (a) {
 					var target = a.p - 1;
 					if (target < 0) {
 						target = 6;
@@ -1695,7 +1750,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			};
 		}
 	}
-});
+};
 
 /***/ }),
 /* 65 */
@@ -1801,10 +1856,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 69 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -1897,12 +1956,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	props: {
 		img: {},
 		active: {}
 	},
-	data: function () {
+	data: function data() {
 		return {
 			cities: [{
 				name: '南通总部',
@@ -1936,7 +1995,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		Arrow: __webpack_require__(3)
 	},
 	watch: {
-		active: function (neo) {
+		active: function active(neo) {
 			//console.log(neo)
 			if (neo) {
 				this.go();
@@ -1946,24 +2005,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		}
 	},
 	methods: {
-		go: function () {
+		go: function go() {
+			var _this = this;
+
 			this.reset();
 			this.count++;
 			var count = this.count;
-			for (let key in this.cities) {
-				setTimeout(() => {
-					if (count !== this.count) return;
-					this.cities[key].s = 'active';
-				}, this.cities[key].p);
+
+			var _loop = function _loop(key) {
+				setTimeout(function () {
+					if (count !== _this.count) return;
+					_this.cities[key].s = 'active';
+				}, _this.cities[key].p);
+			};
+
+			for (var key in this.cities) {
+				_loop(key);
 			}
 		},
-		reset: function () {
-			for (let key in this.cities) {
+		reset: function reset() {
+			for (var key in this.cities) {
 				this.cities[key].s = '';
 			}
 		}
 	}
-});
+};
 
 /***/ }),
 /* 70 */
@@ -2034,10 +2100,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 73 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -2080,12 +2150,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	props: {
 		img: {},
 		active: {}
 	},
-	data: function () {
+	data: function data() {
 		return {
 			count: 0,
 			an: {
@@ -2108,7 +2178,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		SvgPenguin: __webpack_require__(74)
 	},
 	watch: {
-		active: function (neo) {
+		active: function active(neo) {
 			//console.log(neo)
 			if (neo) {
 				this.go();
@@ -2118,24 +2188,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		}
 	},
 	methods: {
-		go: function () {
+		go: function go() {
+			var _this = this;
+
 			this.reset();
 			this.count++;
 			var count = this.count;
-			for (let key in this.an) {
-				setTimeout(() => {
-					if (count !== this.count) return;
-					this.an[key].s = 'active';
-				}, this.an[key].p);
+
+			var _loop = function _loop(key) {
+				setTimeout(function () {
+					if (count !== _this.count) return;
+					_this.an[key].s = 'active';
+				}, _this.an[key].p);
+			};
+
+			for (var key in this.an) {
+				_loop(key);
 			}
 		},
-		reset: function () {
-			for (let key in this.an) {
+		reset: function reset() {
+			for (var key in this.an) {
 				this.an[key].s = '';
 			}
 		}
 	}
-});
+};
 
 /***/ }),
 /* 74 */
@@ -2167,10 +2244,14 @@ module.exports = Component.exports
 
 /***/ }),
 /* 76 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 //
 //
 //
@@ -2494,11 +2575,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 // version: 0.0.2
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
 	props: {
 		active: {}
 	},
-	data: function () {
+	data: function data() {
 		return {
 			cycle: 0,
 
@@ -2516,7 +2597,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		};
 	},
 	watch: {
-		active: function (neo) {
+		active: function active(neo) {
 			console.log(neo);
 			if (neo) {
 				this.cycle++;
@@ -2526,34 +2607,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			}
 		}
 	},
-	mounted: function () {
+	mounted: function mounted() {
 		//this.go();
 	},
 	methods: {
-		go: function () {
+		go: function go() {
+			var _this = this;
+
 			var self = this;
 			var cycle = this.cycle;
 			if (cycle !== this.cycle) return;
 			self.reset();
 			self.coversC = 'active';
 			self.backbone = 'active';
-			setTimeout(() => {
-				if (cycle !== this.cycle) return;
+			setTimeout(function () {
+				if (cycle !== _this.cycle) return;
 				self.coversA = 'active';
 				self.coversB = 'active';
 				self.pages = 'active';
-				setTimeout(() => {
-					if (cycle !== this.cycle) return;
+				setTimeout(function () {
+					if (cycle !== _this.cycle) return;
 					self.markA = 'active';
 					self.markB = 'active';
-					setTimeout(() => {
-						if (cycle !== this.cycle) return;
+					setTimeout(function () {
+						if (cycle !== _this.cycle) return;
 						self.second = 'active';
 					}, 2000);
 				}, 2000);
 			}, 2000);
 		},
-		reset: function () {
+		reset: function reset() {
 			this.coversC = '__';
 			this.backbone = '';
 			this.coversA = '';
@@ -2564,7 +2647,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			this.second = '';
 		}
 	}
-});
+};
 
 /***/ }),
 /* 77 */
