@@ -1328,13 +1328,14 @@ exports.default = {
       }).then(function (res) {
         var _state$items;
 
-        // var el = document.querySelector('#container-1996');
-        // window.scroll(0, el.offsetTop);
         state.items.length = 0;
         (_state$items = state.items).push.apply(_state$items, (0, _toConsumableArray3.default)(res.data.data));
         state.inited = true;
         state.page = page;
         state.status = 'success';
+
+        var el = document.querySelector('#container-1996');
+        window.scroll(0, el.offsetTop - 30);
       }).catch(function (err) {
         var _state$items2;
 

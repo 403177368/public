@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/time/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 111);
+/******/ 	return __webpack_require__(__webpack_require__.s = 112);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1779,14 +1779,14 @@ module.exports = window.VueRouter;
 /* 108 */,
 /* 109 */,
 /* 110 */,
-/* 111 */
+/* 111 */,
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(113);
 
 
 /***/ }),
-/* 112 */,
 /* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 

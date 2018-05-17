@@ -351,7 +351,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticStyle: {
       "margin-top": "0"
     }
-  }, [_c('h1', [_vm._v(_vm._s(_vm.post.title))])]), _c('div', [_c('div', {
+  }, [_c('h1', {}, [_vm._v(_vm._s(_vm.post.title))])]), _c('div', [_c('div', {
     staticStyle: {
       "margin-bottom": "15px",
       "overflow": "hidden"
