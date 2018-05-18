@@ -1782,6 +1782,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
 
 exports.default = {
   name: 'main-home',
@@ -2494,20 +2497,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     slot: "body_0"
   }, [_c('ul', {
     staticClass: "list-group"
-  }, [_c('li', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.$store.state.main.home.echojs.items.length === 0),
-      expression: " $store.state.main.home.echojs.items.length === 0 "
-    }],
+  }, [(_vm.$store.state.main.home.echojs.items.length === 0) ? _c('li', {
     staticClass: "list-group-item",
     staticStyle: {
       "text-align": "center"
     }
   }, [_c('i', {
     staticClass: "fa fa-spinner fa-spin"
-  })]), _vm._l((_vm.$store.state.main.home.echojs.items), function(a) {
+  })]) : _vm._e(), _vm._l((_vm.$store.state.main.home.echojs.items), function(a) {
     return _c('a', {
       staticClass: "list-group-item",
       attrs: {
@@ -2540,20 +2537,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _c('div', {
     staticClass: "btn btn-primary btn-sm"
-  }, [_vm._v("Search")])]), _c('li', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.$store.state.main.home.jianshu.items.length === 0),
-      expression: " $store.state.main.home.jianshu.items.length === 0 "
-    }],
+  }, [_vm._v("Search")])]), (_vm.$store.state.main.home.jianshu.items.length === 0) ? _c('li', {
     staticClass: "list-group-item",
     staticStyle: {
       "text-align": "center"
     }
   }, [_c('i', {
     staticClass: "fa fa-spinner fa-spin"
-  })]), _vm._l((_vm.$store.state.main.home.jianshu.items), function(a) {
+  })]) : _vm._e(), _vm._l((_vm.$store.state.main.home.jianshu.items), function(a) {
     return _c('li', {
       staticClass: "list-group-item",
       attrs: {
