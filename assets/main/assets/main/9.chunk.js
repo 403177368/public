@@ -150,128 +150,11 @@ var _toConsumableArray2 = __webpack_require__(149);
 
 var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _axios = __webpack_require__(15);
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
   data: function data() {
@@ -292,7 +175,7 @@ exports.default = {
     var _this = this;
 
     var id = this.$route.params.id;
-    axios({
+    (0, _axios2.default)({
       url: '//cnodejs.org/api/v1/topic/' + id,
       // this is essential cause a fetch request is without cookie by default
       credentials: 'include',
@@ -326,7 +209,135 @@ exports.default = {
   },
 
   methods: {}
-};
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 
@@ -345,13 +356,20 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "panel panel-default panel-full-sm post--"
   }, [_c('div', {
-    staticClass: "panel-body"
-  }, [_c('div', {
+    staticClass: "panel-body",
+    staticStyle: {
+      "overflow": "scroll"
+    }
+  }, [_vm._m(0), _c('div', {
     staticClass: "page-header",
     staticStyle: {
       "margin-top": "0"
     }
-  }, [_c('h1', {}, [_vm._v(_vm._s(_vm.post.title))])]), _c('div', [_c('div', {
+  }, [_c('h1', {
+    staticStyle: {
+      "margin": "10px 0"
+    }
+  }, [_vm._v(_vm._s(_vm.post.title))])]), _c('div', [_c('div', {
     staticStyle: {
       "margin-bottom": "15px",
       "overflow": "hidden"
@@ -386,9 +404,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })])]), _c('div', {
     staticClass: "panel panel-default panel-full-sm"
-  }, [_c('li', {
-    staticClass: "panel-heading"
-  }, [_vm._v("\n              Comments\n            ")]), _c('ul', {
+  }, [_vm._m(1), _c('ul', {
     staticClass: "list-group comments"
   }, [_vm._l((_vm.post.comments), function(a, i) {
     return _c('li', {
@@ -422,7 +438,42 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }],
     staticClass: "list-group-item text-center"
   }, [_vm._v("\n                No comments.\n              ")])], 2)])])])])])
-},staticRenderFns: []}
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('a', {
+    attrs: {
+      "href": "javascript:history.back();"
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-angle-double-left"
+  }), _vm._v(" Back")]), _c('span', {
+    staticClass: "pull-right"
+  }, [_c('a', {
+    staticStyle: {
+      "cursor": "pointer",
+      "margin-right": "10px"
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-heart-o"
+  })]), _c('a', {
+    staticStyle: {
+      "cursor": "pointer"
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-share"
+  })])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "panel-heading",
+    staticStyle: {
+      "padding-left": "0"
+    }
+  }, [_c('span', {
+    staticStyle: {
+      "padding-left": "12px",
+      "border-left": "3px solid #0f88eb"
+    }
+  }, [_vm._v("Comments")])])
+}]}
 
 /***/ })
 

@@ -1777,6 +1777,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
 
 exports.default = {
   name: 'main-home',
@@ -2024,7 +2029,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [(_vm.news.status === 'loading') ? _c('li', {
     staticClass: "list-group-item text-center"
-  }, [_vm._v("\n        Loading...\n      ")]) : _vm._e(), _vm._l((_vm.news.items), function(a) {
+  }, [_c('i', {
+    staticClass: "fa fa-spinner fa-spin"
+  })]) : _vm._e(), _vm._l((_vm.news.items), function(a) {
     return _c('li', {
       directives: [{
         name: "show",
@@ -2293,6 +2300,8 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
 
 exports.default = {
   computed: {
@@ -2358,7 +2367,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, _vm._l((_vm.box.list), function(a) {
     return _c('div', {
       staticClass: "list-group-item"
-    }, [_vm._v("\n        " + _vm._s(a.author ? a.author.name : 'Anonymous User')), _c('br'), _vm._v("\n        " + _vm._s(a.content) + "\n      ")])
+    }, [_c('div', {
+      staticClass: "text-muted"
+    }, [_vm._v("\n          " + _vm._s(a.author ? a.author.name : 'Anonymous User') + " - " + _vm._s(a.updatedAt) + "\n        ")]), _vm._v("\n        " + _vm._s(a.content) + "\n      ")])
   }))])])
 },staticRenderFns: []}
 
@@ -2483,7 +2494,20 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     slot: "body_0"
   }, [_c('ul', {
     staticClass: "list-group"
-  }, _vm._l((_vm.$store.state.main.home.echojs.items), function(a) {
+  }, [_c('li', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.$store.state.main.home.echojs.items.length === 0),
+      expression: " $store.state.main.home.echojs.items.length === 0 "
+    }],
+    staticClass: "list-group-item",
+    staticStyle: {
+      "text-align": "center"
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-spinner fa-spin"
+  })]), _vm._l((_vm.$store.state.main.home.echojs.items), function(a) {
     return _c('a', {
       staticClass: "list-group-item",
       attrs: {
@@ -2494,7 +2518,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "font-size": "18px"
       }
     }, [_vm._v(_vm._s(a.title))])])
-  })), _c('div', {
+  })], 2), _c('div', {
     staticClass: "panel-body"
   }, [_c('div', {
     staticClass: "btn btn-primary btn-sm"
@@ -2527,7 +2551,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticStyle: {
       "text-align": "center"
     }
-  }, [_vm._v("\n                  Loading...\n                ")]), _vm._l((_vm.$store.state.main.home.jianshu.items), function(a) {
+  }, [_c('i', {
+    staticClass: "fa fa-spinner fa-spin"
+  })]), _vm._l((_vm.$store.state.main.home.jianshu.items), function(a) {
     return _c('li', {
       staticClass: "list-group-item",
       attrs: {
