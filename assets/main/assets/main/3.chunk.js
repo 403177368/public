@@ -1337,16 +1337,16 @@ exports.default = {
         var el = document.querySelector('#container-1996');
         window.scroll(0, el.offsetTop - 30);
       }).catch(function (err) {
-        var _state$items2;
+        // state.status = 'error';
+        // state.items.length = 0;
+        // state.items.push(...[{
+        //   author: {
 
-        state.status = 'error';
-        state.items.length = 0;
-        (_state$items2 = state.items).push.apply(_state$items2, [{
-          author: {}
-        }]);
-        state.inited = true;
-        state.page = 1;
-        console.log(err);
+        //   }
+        // }]);
+        // state.inited = true;
+        // state.page = 1;
+        // console.log(err);
       });
     },
     to_page: function to_page(_ref4, _ref5) {
