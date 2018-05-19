@@ -1024,7 +1024,10 @@ exports.default = {
       var state = _ref2.state,
           dispatch = _ref2.dispatch;
 
-      // console.log('111');
+      if (!state.content) {
+        alert('Your comment can not be empty!');
+        return;
+      }
       return (0, _axios2.default)({
         url: '/api/sqlite/comments/',
         // this is essential cause a fetch request is without cookie by default
@@ -1040,6 +1043,7 @@ exports.default = {
         }
       }).then(function (res) {
         if (res.data.errno === 0) {
+          state.content = '';
           dispatch('init');
         }
       });
@@ -1337,6 +1341,7 @@ exports.default = {
         var el = document.querySelector('#container-1996');
         window.scroll(0, el.offsetTop - 30);
       }).catch(function (err) {
+        alert(err.message);
         // state.status = 'error';
         // state.items.length = 0;
         // state.items.push(...[{

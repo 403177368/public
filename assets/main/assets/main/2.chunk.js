@@ -417,6 +417,7 @@ exports.default = {
         var el = document.querySelector('#container-1996');
         window.scroll(0, el.offsetTop - 30);
       }).catch(function (err) {
+        alert(err.message);
         // state.status = 'error';
         // state.items.length = 0;
         // state.items.push(...[{
