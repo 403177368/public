@@ -47,7 +47,7 @@ var _index = __webpack_require__(85);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _store = __webpack_require__(54);
+var _store = __webpack_require__(55);
 
 var _store2 = _interopRequireDefault(_store);
 
@@ -189,7 +189,7 @@ var ShoppingCart = function (_React$Component) {
                 React.createElement('i', { className: 'fa fa-check' })
               )
             ),
-            React.createElement('img', { className: 'part thumbnail', src: _config2.default.img + '/items/' + item.id + '/t.jpg' }),
+            React.createElement('img', { className: 'part thumbnail', src: item.thumb }),
             React.createElement(
               'div',
               { className: 'part part-3' },

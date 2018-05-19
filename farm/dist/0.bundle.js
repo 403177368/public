@@ -55,13 +55,13 @@ var _Topbar = __webpack_require__(31);
 
 var _Swiper = __webpack_require__(87);
 
-var _CommentBox = __webpack_require__(232);
+var _CommentBox = __webpack_require__(233);
 
 var _config = __webpack_require__(222);
 
 var _config2 = _interopRequireDefault(_config);
 
-var _store = __webpack_require__(54);
+var _store = __webpack_require__(55);
 
 var _store2 = _interopRequireDefault(_store);
 
@@ -118,13 +118,13 @@ var Item = function (_React$Component) {
     value: function thumbnails() {
       var id = this.props.params.id;
       return [{
-        img: '/img/farm/items/' + id + '/t.jpg'
+        img: this.props.item.thumb
       }, {
-        img: '/img/farm/items/' + id + '/t.jpg'
+        img: this.props.item.thumb
       }, {
-        img: '/img/farm/items/' + id + '/t.jpg'
+        img: this.props.item.thumb
       }, {
-        img: '/img/farm/items/' + id + '/t.jpg'
+        img: this.props.item.thumb
       }];
     }
   }, {
@@ -444,15 +444,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _regenerator = __webpack_require__(228);
+var _extends2 = __webpack_require__(228);
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _regenerator = __webpack_require__(229);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _promise = __webpack_require__(55);
-
-var _promise2 = _interopRequireDefault(_promise);
-
-var _asyncToGenerator2 = __webpack_require__(231);
+var _asyncToGenerator2 = __webpack_require__(232);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -460,11 +460,9 @@ var _stringify = __webpack_require__(37);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
-var _api_items = __webpack_require__(86);
-
-var _api_items2 = _interopRequireDefault(_api_items);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// import items from '../app/api_items.js';
 
 exports.default = {
   reducer: function reducer() {
@@ -503,15 +501,22 @@ exports.default = {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return new _promise2.default(function (resolve, reject) {
-                  var item;
-                  _api_items2.default.forEach(function (a) {
-                    if (id + '' === a.id + '') {
-                      item = a;
-                      item.quantity = 1;
-                    }
-                  });
-                  resolve(item);
+                return axios({
+                  url: '/api/sqlite/items?id=' + id,
+                  // this is essential cause a fetch request is without cookie by default
+                  withCredentials: true,
+                  method: 'GET',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  mode: 'cors'
+                }).then(function (res) {
+                  if (res.data.errno === 0) {
+                    // state[what].inited = true;
+                    // state[what].items.length = 0;
+                    // state[what].items.push(...res.data.items);
+                    return res.data.data.items[0];
+                  }
                 });
 
               case 2:
@@ -553,7 +558,9 @@ exports.default = {
                 }
                 _context2.next = 3;
                 return dispatch('shoppingCart/ADD_TO_CART', {
-                  item: item
+                  item: (0, _extends3.default)({}, item, {
+                    quantity: 1
+                  })
                 }, {
                   root: true
                 });
@@ -580,12 +587,42 @@ exports.default = {
 /***/ 228:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(229);
+"use strict";
 
+
+exports.__esModule = true;
+
+var _assign = __webpack_require__(86);
+
+var _assign2 = _interopRequireDefault(_assign);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _assign2.default || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+
+    for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }
+
+  return target;
+};
 
 /***/ }),
 
 /***/ 229:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(230);
+
+
+/***/ }),
+
+/***/ 230:
 /***/ (function(module, exports, __webpack_require__) {
 
 // This method of obtaining a reference to the global object needs to be
@@ -603,7 +640,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(230);
+module.exports = __webpack_require__(231);
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -620,7 +657,7 @@ if (hadRuntime) {
 
 /***/ }),
 
-/***/ 230:
+/***/ 231:
 /***/ (function(module, exports) {
 
 /**
@@ -1357,7 +1394,7 @@ if (hadRuntime) {
 
 /***/ }),
 
-/***/ 231:
+/***/ 232:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1365,7 +1402,7 @@ if (hadRuntime) {
 
 exports.__esModule = true;
 
-var _promise = __webpack_require__(55);
+var _promise = __webpack_require__(38);
 
 var _promise2 = _interopRequireDefault(_promise);
 
@@ -1402,7 +1439,7 @@ exports.default = function (fn) {
 
 /***/ }),
 
-/***/ 232:
+/***/ 233:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
