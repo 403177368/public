@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 220:
+/***/ 224:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.ShoppingCart = undefined;
 
-var _stringify = __webpack_require__(37);
+var _stringify = __webpack_require__(39);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
@@ -35,19 +35,19 @@ var _inherits2 = __webpack_require__(4);
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-__webpack_require__(223);
+__webpack_require__(227);
 
-var _Navbar = __webpack_require__(30);
+var _Navbar = __webpack_require__(32);
 
-var _config = __webpack_require__(222);
+var _config = __webpack_require__(226);
 
 var _config2 = _interopRequireDefault(_config);
 
-var _index = __webpack_require__(85);
+var _index = __webpack_require__(88);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _store = __webpack_require__(55);
+var _store = __webpack_require__(56);
 
 var _store2 = _interopRequireDefault(_store);
 
@@ -125,7 +125,7 @@ var ShoppingCart = function (_React$Component) {
   }, {
     key: 'checkThis',
     value: function checkThis(i) {
-      this.props.dispatch('shoppingCart/CHECK_THIS', { i: i });
+      _store2.default.dispatch('shoppingCart/CHECK_THIS', { i: i });
     }
   }, {
     key: 'minusOne',
@@ -300,7 +300,7 @@ exports.ShoppingCart = ShoppingCart;
 
 /***/ }),
 
-/***/ 222:
+/***/ 226:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -320,13 +320,13 @@ exports.default = dir;
 
 /***/ }),
 
-/***/ 223:
+/***/ 227:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(224);
+var content = __webpack_require__(228);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(7)(content, {});
@@ -347,7 +347,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 224:
+/***/ 228:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(6)();
