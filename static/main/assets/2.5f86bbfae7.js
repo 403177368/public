@@ -397,7 +397,8 @@ exports.default = {
 
       state.status = 'loading';
       return (0, _axios2.default)({
-        url: '//cnodejs.org/api/v1/topics?page=' + page + '&limit=20',
+        // url: '//cnodejs.org/api/v1/topics?page=' + page + '&limit=20',
+        url: '/api/cnode?page=' + page,
         // this is essential cause a fetch request is without cookie by default
         credentials: 'include',
         method: 'GET',

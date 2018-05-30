@@ -4906,6 +4906,7 @@ var _functions = __webpack_require__(72);
 var _Store = __webpack_require__(144);
 
 // Organize your react/redux application in the vuex way.
+
 /*
 API Reference
   createStore(options): Store
@@ -4916,6 +4917,10 @@ API Reference
   	dispatch(path: string, payload)
 */
 
+/**
+ * Create a store.
+ * @returns
+ */
 function createStore(options) {
   return new _Store.Store(options);
 }
@@ -4969,6 +4974,8 @@ var Store = exports.Store = function () {
     this.subscribe = this._reduxStore.subscribe;
     // Object.assign(this, this._reduxStore);
   }
+  // Invoke an action-creator
+
 
   (0, _createClass3.default)(Store, [{
     key: 'invoke',
@@ -5036,6 +5043,8 @@ var Store = exports.Store = function () {
 
       return self._creatorsMap[path](ctx, payload);
     }
+    // Dispatch an action
+
   }, {
     key: 'dispatch',
     value: function dispatch(path) {
@@ -5045,11 +5054,15 @@ var Store = exports.Store = function () {
       action.type = path;
       this._reduxStore.dispatch(action);
     }
+    // Ensure the given module is installed to the given path
+
   }, {
     key: 'ensure',
     value: function ensure(pathArr, rawModule) {
       this.registerModule(pathArr, rawModule);
     }
+    // Register a module to the given path
+
   }, {
     key: 'registerModule',
     value: function registerModule(pathArr, rawModule) {

@@ -211,7 +211,7 @@ exports.default = {
 
     var id = this.$route.params.id;
     (0, _axios2.default)({
-      url: '//cnodejs.org/api/v1/topic/' + id,
+      url: '/api/cnode/post/' + id,
       // this is essential cause a fetch request is without cookie by default
       credentials: 'include',
       method: 'GET',
