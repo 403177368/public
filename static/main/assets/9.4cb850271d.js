@@ -393,7 +393,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "panel-body",
     staticStyle: {
-      "overflow": "scroll"
+      "overflow": "hidden"
     }
   }, [_vm._m(0), _c('div', {
     staticClass: "page-header",
