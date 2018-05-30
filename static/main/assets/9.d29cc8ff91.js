@@ -185,65 +185,73 @@ var _toConsumableArray2 = __webpack_require__(163);
 
 var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
+var _promise = __webpack_require__(29);
+
+var _promise2 = _interopRequireDefault(_promise);
+
 var _axios = __webpack_require__(17);
 
 var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = {
-  data: function data() {
-    return {
-      post: {
-        title: '',
-        author: {},
-        content: '',
-        create_at: '',
-        comments: []
-      }
-    };
+var rawModule = {
+  namespaced: true,
+  state: {
+    inited: false,
+    post: {
+      title: '',
+      author: {},
+      content: '',
+      create_at: '',
+      comments: []
+    }
   },
+  actions: {
+    init: function init(_ref, _ref2) {
+      var state = _ref.state;
+      var id = _ref2.id;
 
-  components: {},
-  computed: {},
-  mounted: function mounted() {
-    var _this = this;
+      return new _promise2.default(function (resolve, reject) {
+        // var id = router.currentRoute.params.id;
+        state.inited = false;
+        (0, _axios2.default)({
+          url: '/api/cnode/post/' + id,
+          // this is essential cause a fetch request is without cookie by default
+          credentials: 'include',
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          mode: 'cors'
+        }).then(function (res) {
+          var _state$post$comments;
 
-    var id = this.$route.params.id;
-    (0, _axios2.default)({
-      url: '/api/cnode/post/' + id,
-      // this is essential cause a fetch request is without cookie by default
-      credentials: 'include',
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      mode: 'cors'
-    }).then(function (res) {
-      var _post$comments;
+          state.post.title = res.data.data.title;
+          state.post.content = res.data.data.content;
+          state.post.author = res.data.data.author;
+          state.post.create_at = res.data.data.create_at;
+          state.post.comments.length = 0;
+          (_state$post$comments = state.post.comments).push.apply(_state$post$comments, (0, _toConsumableArray3.default)(res.data.data.replies.slice()));
+          // console.log(this.post);
+          state.inited = true;
+          resolve();
+        }).catch(function (err) {
+          // this.post.title = 'A Post';
+          // this.post.content = '<p>Post\'s content...</p>';
+          // this.post.comments.length = 0;
+          // this.post.comments.push({
+          //   author: {
 
-      _this.post.title = res.data.data.title;
-      _this.post.content = res.data.data.content;
-      _this.post.author = res.data.data.author;
-      _this.post.create_at = res.data.data.create_at;
-      _this.post.comments.length = 0;
-      (_post$comments = _this.post.comments).push.apply(_post$comments, (0, _toConsumableArray3.default)(res.data.data.replies.slice()));
-      console.log(_this.post);
-    }).catch(function (err) {
-      // this.post.title = 'A Post';
-      // this.post.content = '<p>Post\'s content...</p>';
-      // this.post.comments.length = 0;
-      // this.post.comments.push({
-      //   author: {
-
-      //   },
-      //   create_at: '2017-07-07'
-      // })
-      console.log(err);
-    });
-  },
-
-  methods: {}
+          //   },
+          //   create_at: '2017-07-07'
+          // })
+          reject();
+          console.log(err);
+        });
+      });
+    }
+  }
 }; //
 //
 //
@@ -374,6 +382,50 @@ exports.default = {
 //
 //
 
+exports.default = {
+  data: function data() {
+    return {
+      // post: {
+      //   title: '',
+      //   author: {},
+      //   content: '',
+      //   create_at: '',
+      //   comments: []
+      // }
+    };
+  },
+
+  // beforeRouteEnter(from, to, next) {
+  //   this.$store.ensure(['main', 'cnode_post'], rawModule);
+  //   this.$store.dispatch('main/cnode_post/init', { id: this.$route.params.id }).then(() => {
+  //     next();
+  //   });
+  //   // this.preFetch().then(() => {
+  //   //   next();
+  //   // });
+  // },
+  components: {},
+  computed: {
+    post: function post() {
+      return this.$store.state.main.cnode_post.post;
+    }
+  },
+  beforeCreate: function beforeCreate() {
+    this.$store.ensure(['main', 'cnode_post'], rawModule);
+    this.$store.dispatch('main/cnode_post/init', { id: this.$route.params.id });
+  },
+  mounted: function mounted() {
+    // this.preFetch();
+  },
+
+  methods: {
+    preFetch: function preFetch(store, router) {
+      store.ensure(['main', 'cnode_post'], rawModule);
+      return store.dispatch('main/cnode_post/init', { id: router.currentRoute.params.id });
+    }
+  }
+};
+
 /***/ }),
 
 /***/ 352:
@@ -381,6 +433,12 @@ exports.default = {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.$store.state.main.cnode_post.inited),
+      expression: "$store.state.main.cnode_post.inited"
+    }],
     staticClass: "RouteCnodePost"
   }, [_c('div', {
     staticClass: "container"
