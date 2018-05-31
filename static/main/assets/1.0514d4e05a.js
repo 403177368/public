@@ -232,7 +232,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, "\n.RouteAdmin[data-v-690b9843] {\n  position: relative;\n  width: 100%;\n  overflow: hidden;\n}\n.RouteAdmin .my-group[data-v-690b9843] {\n  margin-bottom: 15px!important;\n}\n.RouteAdmin .main-part[data-v-690b9843] {\n  box-sizing: border-box;\n  width: 100%;\n  height: 100vh;\n  margin-top: 50px;\n  overflow: scroll;\n}\n.RouteAdmin .main-part [data-v-690b9843]::-webkit-scrollbar {\n  width: 0;\n  height: 0;\n}\n.RouteAdmin .right-part[data-v-690b9843] {\n  height: 100%;\n  overflow: scroll;\n}\n.RouteAdmin .right-part .container--[data-v-690b9843] {\n  height: 100%;\n  overflow: scroll;\n}\n@media (min-width: 992px) {\n.RouteAdmin .right-part[data-v-690b9843] {\n    margin-left: 200px;\n}\n}\n", ""]);
+exports.push([module.i, "\n.RouteAdmin[data-v-690b9843] {\n  position: relative;\n  width: 100%;\n  overflow: hidden;\n}\n.RouteAdmin .my-group[data-v-690b9843] {\n  margin-bottom: 15px!important;\n}\n.RouteAdmin .main-part[data-v-690b9843] {\n  box-sizing: border-box;\n  width: 100%;\n  height: 100vh;\n  padding-top: 50px;\n  overflow: hidden;\n}\n.RouteAdmin .main-part [data-v-690b9843]::-webkit-scrollbar {\n  width: 0;\n  height: 0;\n}\n.RouteAdmin .right-part[data-v-690b9843] {\n  height: 100%;\n  overflow: scroll;\n}\n@media (min-width: 992px) {\n.RouteAdmin .right-part[data-v-690b9843] {\n    margin-left: 200px;\n}\n}\n", ""]);
 
 // exports
 
@@ -290,6 +290,7 @@ exports.default = {
 
   }
 }; //
+//
 //
 //
 //

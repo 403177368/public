@@ -86,7 +86,7 @@
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "assets/" + chunkId + "." + {"0":"74242d0ccf","1":"372cc37ec5","2":"5f86bbfae7","3":"334d42b7ed","4":"6edd213811","5":"041adbd2f5","6":"d1a192ede7","7":"2a48531951","8":"fea6131aea","9":"d29cc8ff91","10":"d00b955a8f","11":"aeba3c06b9","12":"19d5d30c80","13":"37214bdc14","14":"68f7512a2c","15":"3fc1a172a5","16":"f43a6bc21b","17":"eee4907624","18":"400427e6e2","19":"7dfae3c3ab","20":"921b284c4e","21":"aed2d1dae2"}[chunkId] + ".js";
+/******/ 		script.src = __webpack_require__.p + "assets/" + chunkId + "." + {"0":"74242d0ccf","1":"0514d4e05a","2":"5f86bbfae7","3":"334d42b7ed","4":"6edd213811","5":"041adbd2f5","6":"d1a192ede7","7":"2a48531951","8":"fea6131aea","9":"d29cc8ff91","10":"d00b955a8f","11":"aeba3c06b9","12":"19d5d30c80","13":"37214bdc14","14":"68f7512a2c","15":"3fc1a172a5","16":"f43a6bc21b","17":"eee4907624","18":"400427e6e2","19":"7dfae3c3ab","20":"921b284c4e","21":"aed2d1dae2"}[chunkId] + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -3101,7 +3101,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, "\n.v-side-menu[data-v-74a6f318] {\n  float: left;\n  overflow: hidden;\n  width: 200px;\n  height: 100%;\n  background: #1C2B36;\n}\n.v-side-menu .first-container[data-v-74a6f318] {\n  width: 100%;\n  max-height: 50px;\n  overflow: hidden;\n}\n.v-side-menu .first-container.active[data-v-74a6f318] {\n  max-height: 10000px;\n}\n.v-side-menu .first-container a[data-v-74a6f318] {\n  box-sizing: border-box;\n  display: block;\n  height: 50px;\n  line-height: 50px;\n  padding: 0 15px;\n  background: #1C2B36;\n  color: #869fb1;\n  cursor: pointer;\n  text-decoration: none;\n}\n.v-side-menu .first-container a[data-v-74a6f318]:hover {\n  color: white;\n}\n.v-side-menu .first-container a i[data-v-74a6f318] {\n  height: 50px;\n  line-height: 50px;\n}\n.v-side-menu .first-container .second-container[data-v-74a6f318] {\n  background: black;\n}\n.v-side-menu .first-container .second-container a[data-v-74a6f318] {\n  padding: 0 30px;\n  background: black;\n}\n", ""]);
+exports.push([module.i, "\n.v-side-menu[data-v-74a6f318] {\n  float: left;\n  overflow: hidden;\n  width: 200px;\n  height: 100%;\n  background: #1C2B36;\n}\n.v-side-menu .v-side-menu-inner[data-v-74a6f318] {\n  height: 100%;\n  overflow: scroll;\n}\n.v-side-menu .first-container[data-v-74a6f318] {\n  width: 100%;\n  max-height: 50px;\n  overflow: hidden;\n}\n.v-side-menu .first-container.active[data-v-74a6f318] {\n  max-height: 10000px;\n}\n.v-side-menu .first-container a[data-v-74a6f318] {\n  box-sizing: border-box;\n  display: block;\n  height: 50px;\n  line-height: 50px;\n  padding: 0 15px;\n  background: #1C2B36;\n  color: #869fb1;\n  cursor: pointer;\n  text-decoration: none;\n}\n.v-side-menu .first-container a[data-v-74a6f318]:hover {\n  color: white;\n}\n.v-side-menu .first-container a i[data-v-74a6f318] {\n  height: 50px;\n  line-height: 50px;\n}\n.v-side-menu .first-container .second-container[data-v-74a6f318] {\n  background: black;\n}\n.v-side-menu .first-container .second-container a[data-v-74a6f318] {\n  padding: 0 30px;\n  background: black;\n}\n", ""]);
 
 // exports
 
@@ -3116,6 +3116,12 @@ exports.push([module.i, "\n.v-side-menu[data-v-74a6f318] {\n  float: left;\n  ov
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3207,6 +3213,8 @@ exports.default = {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "v-side-menu hidden-sm hidden-xs"
+  }, [_c('div', {
+    staticClass: "v-side-menu-inner"
   }, _vm._l((_vm.menu), function(a, i) {
     return _c('div', {
       staticClass: "first-container",
@@ -3237,7 +3245,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }, [_vm._v(_vm._s(b.name))])], 1)
     })) : _vm._e()])
-  }))
+  }))])
 },staticRenderFns: []}
 
 /***/ }),
