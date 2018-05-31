@@ -1,17 +1,17 @@
 webpackJsonp([0],{
 
-/***/ 151:
+/***/ 153:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(292)
+__webpack_require__(294)
 
 var Component = __webpack_require__(6)(
   /* script */
-  __webpack_require__(294),
+  __webpack_require__(296),
   /* template */
-  __webpack_require__(310),
+  __webpack_require__(312),
   /* scopeId */
   "data-v-248bd508",
   /* cssModules */
@@ -23,7 +23,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 163:
+/***/ 165:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31,7 +31,7 @@ module.exports = Component.exports
 
 exports.__esModule = true;
 
-var _from = __webpack_require__(164);
+var _from = __webpack_require__(166);
 
 var _from2 = _interopRequireDefault(_from);
 
@@ -51,24 +51,24 @@ exports.default = function (arr) {
 
 /***/ }),
 
-/***/ 164:
+/***/ 166:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(165), __esModule: true };
+module.exports = { "default": __webpack_require__(167), __esModule: true };
 
 /***/ }),
 
-/***/ 165:
+/***/ 167:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(46);
-__webpack_require__(166);
+__webpack_require__(47);
+__webpack_require__(168);
 module.exports = __webpack_require__(4).Array.from;
 
 
 /***/ }),
 
-/***/ 166:
+/***/ 168:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -76,13 +76,13 @@ module.exports = __webpack_require__(4).Array.from;
 var ctx = __webpack_require__(13);
 var $export = __webpack_require__(8);
 var toObject = __webpack_require__(28);
-var call = __webpack_require__(47);
-var isArrayIter = __webpack_require__(48);
+var call = __webpack_require__(48);
+var isArrayIter = __webpack_require__(49);
 var toLength = __webpack_require__(31);
-var createProperty = __webpack_require__(167);
-var getIterFn = __webpack_require__(49);
+var createProperty = __webpack_require__(169);
+var getIterFn = __webpack_require__(50);
 
-$export($export.S + $export.F * !__webpack_require__(50)(function (iter) { Array.from(iter); }), 'Array', {
+$export($export.S + $export.F * !__webpack_require__(51)(function (iter) { Array.from(iter); }), 'Array', {
   // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
   from: function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
     var O = toObject(arrayLike);
@@ -113,7 +113,7 @@ $export($export.S + $export.F * !__webpack_require__(50)(function (iter) { Array
 
 /***/ }),
 
-/***/ 167:
+/***/ 169:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -129,14 +129,14 @@ module.exports = function (object, index, value) {
 
 /***/ }),
 
-/***/ 168:
+/***/ 170:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(169), __esModule: true };
+module.exports = { "default": __webpack_require__(171), __esModule: true };
 
 /***/ }),
 
-/***/ 169:
+/***/ 171:
 /***/ (function(module, exports, __webpack_require__) {
 
 var core = __webpack_require__(4);
@@ -148,30 +148,30 @@ module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
 
 /***/ }),
 
-/***/ 170:
+/***/ 172:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(171), __esModule: true };
+module.exports = { "default": __webpack_require__(173), __esModule: true };
 
 /***/ }),
 
-/***/ 171:
+/***/ 173:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(172);
+__webpack_require__(174);
 module.exports = __webpack_require__(4).Object.keys;
 
 
 /***/ }),
 
-/***/ 172:
+/***/ 174:
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 Object.keys(O)
 var toObject = __webpack_require__(28);
 var $keys = __webpack_require__(32);
 
-__webpack_require__(173)('keys', function () {
+__webpack_require__(175)('keys', function () {
   return function keys(it) {
     return $keys(toObject(it));
   };
@@ -180,7 +180,7 @@ __webpack_require__(173)('keys', function () {
 
 /***/ }),
 
-/***/ 173:
+/***/ 175:
 /***/ (function(module, exports, __webpack_require__) {
 
 // most Object methods by ES6 should accept primitives
@@ -197,7 +197,7 @@ module.exports = function (KEY, exec) {
 
 /***/ }),
 
-/***/ 174:
+/***/ 176:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -207,7 +207,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _toConsumableArray2 = __webpack_require__(163);
+var _toConsumableArray2 = __webpack_require__(165);
 
 var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
@@ -215,11 +215,11 @@ var _promise = __webpack_require__(29);
 
 var _promise2 = _interopRequireDefault(_promise);
 
-var _stringify = __webpack_require__(168);
+var _stringify = __webpack_require__(170);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
-var _extends2 = __webpack_require__(51);
+var _extends2 = __webpack_require__(52);
 
 var _extends3 = _interopRequireDefault(_extends2);
 
@@ -227,7 +227,7 @@ var _axios = __webpack_require__(17);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _binance = __webpack_require__(175);
+var _binance = __webpack_require__(177);
 
 var _binance2 = _interopRequireDefault(_binance);
 
@@ -312,7 +312,7 @@ exports.default = {
   state: state,
   modules: {
     binance: _binance2.default,
-    comment_box: __webpack_require__(176).default
+    comment_box: __webpack_require__(178).default
   },
   actions: {
     init: function init(_ref) {
@@ -532,7 +532,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 175:
+/***/ 177:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -542,15 +542,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _stringify = __webpack_require__(168);
+var _stringify = __webpack_require__(170);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
-var _extends2 = __webpack_require__(51);
+var _extends2 = __webpack_require__(52);
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _keys = __webpack_require__(170);
+var _keys = __webpack_require__(172);
 
 var _keys2 = _interopRequireDefault(_keys);
 
@@ -979,7 +979,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 176:
+/***/ 178:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1053,17 +1053,17 @@ exports.default = {
 
 /***/ }),
 
-/***/ 177:
+/***/ 179:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(178), __esModule: true };
+module.exports = { "default": __webpack_require__(180), __esModule: true };
 
 /***/ }),
 
-/***/ 178:
+/***/ 180:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(179);
+__webpack_require__(181);
 var $Object = __webpack_require__(4).Object;
 module.exports = function defineProperty(it, key, desc) {
   return $Object.defineProperty(it, key, desc);
@@ -1072,7 +1072,7 @@ module.exports = function defineProperty(it, key, desc) {
 
 /***/ }),
 
-/***/ 179:
+/***/ 181:
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(8);
@@ -1082,18 +1082,18 @@ $export($export.S + $export.F * !__webpack_require__(9), 'Object', { definePrope
 
 /***/ }),
 
-/***/ 183:
+/***/ 185:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(184)
+__webpack_require__(186)
 
 var Component = __webpack_require__(6)(
   /* script */
-  __webpack_require__(186),
+  __webpack_require__(188),
   /* template */
-  __webpack_require__(187),
+  __webpack_require__(189),
   /* scopeId */
   null,
   /* cssModules */
@@ -1105,13 +1105,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 184:
+/***/ 186:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(185);
+var content = __webpack_require__(187);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(1)(content, {});
@@ -1132,7 +1132,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 185:
+/***/ 187:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -1147,7 +1147,7 @@ exports.push([module.i, "/*@pink: #e91e63;*/\n", ""]);
 
 /***/ }),
 
-/***/ 186:
+/***/ 188:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1218,7 +1218,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 187:
+/***/ 189:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1289,18 +1289,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 188:
+/***/ 190:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(189)
+__webpack_require__(191)
 
 var Component = __webpack_require__(6)(
   /* script */
-  __webpack_require__(191),
-  /* template */
   __webpack_require__(193),
+  /* template */
+  __webpack_require__(195),
   /* scopeId */
   null,
   /* cssModules */
@@ -1312,13 +1312,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 189:
+/***/ 191:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(190);
+var content = __webpack_require__(192);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(1)(content, {});
@@ -1339,7 +1339,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 190:
+/***/ 192:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -1354,7 +1354,7 @@ exports.push([module.i, "/*@pink: #e91e63;*/\n.Posts .panel-heading {\n  vertica
 
 /***/ }),
 
-/***/ 191:
+/***/ 193:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1364,7 +1364,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _defineProperty2 = __webpack_require__(192);
+var _defineProperty2 = __webpack_require__(194);
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
@@ -1422,7 +1422,7 @@ exports.default = (0, _defineProperty3.default)({
 
 /***/ }),
 
-/***/ 192:
+/***/ 194:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1430,7 +1430,7 @@ exports.default = (0, _defineProperty3.default)({
 
 exports.__esModule = true;
 
-var _defineProperty = __webpack_require__(177);
+var _defineProperty = __webpack_require__(179);
 
 var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -1453,7 +1453,7 @@ exports.default = function (obj, key, value) {
 
 /***/ }),
 
-/***/ 193:
+/***/ 195:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1491,13 +1491,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 292:
+/***/ 294:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(293);
+var content = __webpack_require__(295);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(1)(content, {});
@@ -1518,7 +1518,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 293:
+/***/ 295:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -1533,7 +1533,7 @@ exports.push([module.i, "/*@pink: #e91e63;*/\n.Home .panel-heading span[data-v-2
 
 /***/ }),
 
-/***/ 294:
+/***/ 296:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1543,7 +1543,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(174);
+var _index = __webpack_require__(176);
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -1900,12 +1900,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = {
   name: 'main-home',
   components: {
-    News: __webpack_require__(295),
-    BoxSignin: __webpack_require__(183),
-    Posts: __webpack_require__(188),
+    News: __webpack_require__(297),
+    BoxSignin: __webpack_require__(185),
+    Posts: __webpack_require__(190),
     // DatePicker: require('./DatePicker.vue'),
-    'tabbed-panel': __webpack_require__(300),
-    'comment-box': __webpack_require__(305)
+    'tabbed-panel': __webpack_require__(302),
+    'comment-box': __webpack_require__(307)
     // Slider: require('./Slider.vue')
   },
   computed: {
@@ -1967,18 +1967,18 @@ exports.default = {
 
 /***/ }),
 
-/***/ 295:
+/***/ 297:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(296)
+__webpack_require__(298)
 
 var Component = __webpack_require__(6)(
   /* script */
-  __webpack_require__(298),
+  __webpack_require__(300),
   /* template */
-  __webpack_require__(299),
+  __webpack_require__(301),
   /* scopeId */
   null,
   /* cssModules */
@@ -1990,13 +1990,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 296:
+/***/ 298:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(297);
+var content = __webpack_require__(299);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(1)(content, {});
@@ -2017,7 +2017,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 297:
+/***/ 299:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -2032,7 +2032,7 @@ exports.push([module.i, "/*@pink: #e91e63;*/\n.News .pagination {\n  display: ta
 
 /***/ }),
 
-/***/ 298:
+/***/ 300:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2167,7 +2167,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 299:
+/***/ 301:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -2235,18 +2235,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 300:
+/***/ 302:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(301)
+__webpack_require__(303)
 
 var Component = __webpack_require__(6)(
   /* script */
-  __webpack_require__(303),
+  __webpack_require__(305),
   /* template */
-  __webpack_require__(304),
+  __webpack_require__(306),
   /* scopeId */
   null,
   /* cssModules */
@@ -2258,13 +2258,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 301:
+/***/ 303:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(302);
+var content = __webpack_require__(304);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(1)(content, {});
@@ -2285,7 +2285,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 302:
+/***/ 304:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -2300,7 +2300,7 @@ exports.push([module.i, "\n.TabbedPanel777 .panel-heading span {\n  margin-right
 
 /***/ }),
 
-/***/ 303:
+/***/ 305:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2388,7 +2388,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 304:
+/***/ 306:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -2412,18 +2412,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 305:
+/***/ 307:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(306)
+__webpack_require__(308)
 
 var Component = __webpack_require__(6)(
   /* script */
-  __webpack_require__(308),
+  __webpack_require__(310),
   /* template */
-  __webpack_require__(309),
+  __webpack_require__(311),
   /* scopeId */
   "data-v-420f6216",
   /* cssModules */
@@ -2435,13 +2435,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 306:
+/***/ 308:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(307);
+var content = __webpack_require__(309);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(1)(content, {});
@@ -2462,7 +2462,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 307:
+/***/ 309:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -2477,7 +2477,7 @@ exports.push([module.i, "", ""]);
 
 /***/ }),
 
-/***/ 308:
+/***/ 310:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2537,7 +2537,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 309:
+/***/ 311:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -2588,13 +2588,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "list-group-item"
     }, [_c('div', {
       staticClass: "text-muted"
-    }, [_vm._v("\n          " + _vm._s(a.author ? a.author.name : 'Anonymous User') + " - " + _vm._s(a.updatedAt) + "\n        ")]), _vm._v("\n        " + _vm._s(a.content) + "\n      ")])
+    }, [_vm._v("\n          " + _vm._s(a.author ? a.author.name : 'Anonymous User') + " - " + _vm._s(_vm._f("date")(a.updatedAt)) + "\n        ")]), _vm._v("\n        " + _vm._s(a.content) + "\n      ")])
   }))])])
 },staticRenderFns: []}
 
 /***/ }),
 
-/***/ 310:
+/***/ 312:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

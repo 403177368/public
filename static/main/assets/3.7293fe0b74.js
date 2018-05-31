@@ -1,17 +1,17 @@
 webpackJsonp([3],{
 
-/***/ 144:
+/***/ 146:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(238)
+__webpack_require__(240)
 
 var Component = __webpack_require__(6)(
   /* script */
-  __webpack_require__(240),
+  __webpack_require__(242),
   /* template */
-  __webpack_require__(256),
+  __webpack_require__(258),
   /* scopeId */
   null,
   /* cssModules */
@@ -23,14 +23,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 168:
+/***/ 170:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(169), __esModule: true };
+module.exports = { "default": __webpack_require__(171), __esModule: true };
 
 /***/ }),
 
-/***/ 169:
+/***/ 171:
 /***/ (function(module, exports, __webpack_require__) {
 
 var core = __webpack_require__(4);
@@ -42,13 +42,13 @@ module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
 
 /***/ }),
 
-/***/ 238:
+/***/ 240:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(239);
+var content = __webpack_require__(241);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(1)(content, {});
@@ -69,7 +69,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 239:
+/***/ 241:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -84,7 +84,7 @@ exports.push([module.i, "\n.RouteLowdb {\n  padding: 15px 0;\n}\n", ""]);
 
 /***/ }),
 
-/***/ 240:
+/***/ 242:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -117,7 +117,7 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = {
   components: {
-    Management: __webpack_require__(241)
+    Management: __webpack_require__(243)
   },
   mounted: function mounted() {
     // this.$store.dispatch('admin/items/changeDB', '/lowdb');
@@ -126,18 +126,18 @@ exports.default = {
 
 /***/ }),
 
-/***/ 241:
+/***/ 243:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(242)
+__webpack_require__(244)
 
 var Component = __webpack_require__(6)(
   /* script */
-  __webpack_require__(244),
+  __webpack_require__(246),
   /* template */
-  __webpack_require__(255),
+  __webpack_require__(257),
   /* scopeId */
   null,
   /* cssModules */
@@ -149,13 +149,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 242:
+/***/ 244:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(243);
+var content = __webpack_require__(245);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(1)(content, {});
@@ -176,7 +176,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 243:
+/***/ 245:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -191,7 +191,7 @@ exports.push([module.i, "\n.Management .table {\n  background: white;\n}\n.Manag
 
 /***/ }),
 
-/***/ 244:
+/***/ 246:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -201,7 +201,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _stringify = __webpack_require__(168);
+var _stringify = __webpack_require__(170);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
@@ -317,8 +317,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = {
   components: {
-    TitleBar: __webpack_require__(245),
-    MyForm: __webpack_require__(250)
+    TitleBar: __webpack_require__(247),
+    MyForm: __webpack_require__(252)
     // Editing: require('./Editing.vue'),
     // Edit: require('./Edit.vue')
   },
@@ -399,18 +399,18 @@ exports.default = {
 
 /***/ }),
 
-/***/ 245:
+/***/ 247:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(246)
+__webpack_require__(248)
 
 var Component = __webpack_require__(6)(
   /* script */
-  __webpack_require__(248),
+  __webpack_require__(250),
   /* template */
-  __webpack_require__(249),
+  __webpack_require__(251),
   /* scopeId */
   null,
   /* cssModules */
@@ -422,13 +422,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 246:
+/***/ 248:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(247);
+var content = __webpack_require__(249);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(1)(content, {});
@@ -449,7 +449,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 247:
+/***/ 249:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -464,7 +464,7 @@ exports.push([module.i, "\n.TitleBar {\n  padding: 20px;\n  font-size: 24px;\n  
 
 /***/ }),
 
-/***/ 248:
+/***/ 250:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -499,7 +499,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 249:
+/***/ 251:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -510,18 +510,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 250:
+/***/ 252:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(251)
+__webpack_require__(253)
 
 var Component = __webpack_require__(6)(
   /* script */
-  __webpack_require__(253),
+  __webpack_require__(255),
   /* template */
-  __webpack_require__(254),
+  __webpack_require__(256),
   /* scopeId */
   "data-v-2c970050",
   /* cssModules */
@@ -533,13 +533,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 251:
+/***/ 253:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(252);
+var content = __webpack_require__(254);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(1)(content, {});
@@ -560,7 +560,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 252:
+/***/ 254:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -575,7 +575,7 @@ exports.push([module.i, "", ""]);
 
 /***/ }),
 
-/***/ 253:
+/***/ 255:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -622,7 +622,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 254:
+/***/ 256:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -647,7 +647,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 255:
+/***/ 257:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -737,7 +737,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 256:
+/***/ 258:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

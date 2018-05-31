@@ -1,17 +1,17 @@
 webpackJsonp([12],{
 
-/***/ 160:
+/***/ 162:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(357)
+__webpack_require__(359)
 
 var Component = __webpack_require__(6)(
   /* script */
-  __webpack_require__(359),
-  /* template */
   __webpack_require__(361),
+  /* template */
+  __webpack_require__(363),
   /* scopeId */
   null,
   /* cssModules */
@@ -23,13 +23,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 357:
+/***/ 359:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(358);
+var content = __webpack_require__(360);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(1)(content, {});
@@ -50,7 +50,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 358:
+/***/ 360:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -65,7 +65,7 @@ exports.push([module.i, "\n.RouteMall .item {\n  display: inline-block;\n}\n.Rou
 
 /***/ }),
 
-/***/ 359:
+/***/ 361:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75,7 +75,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(360);
+var _index = __webpack_require__(362);
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -150,7 +150,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 360:
+/***/ 362:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -185,7 +185,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 361:
+/***/ 363:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

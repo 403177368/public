@@ -1,17 +1,17 @@
 webpackJsonp([17],{
 
-/***/ 145:
+/***/ 147:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(257)
+__webpack_require__(259)
 
 var Component = __webpack_require__(6)(
   /* script */
-  __webpack_require__(259),
+  __webpack_require__(261),
   /* template */
-  __webpack_require__(260),
+  __webpack_require__(262),
   /* scopeId */
   "data-v-050faf6a",
   /* cssModules */
@@ -23,13 +23,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 257:
+/***/ 259:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(258);
+var content = __webpack_require__(260);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(1)(content, {});
@@ -50,7 +50,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 258:
+/***/ 260:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -65,7 +65,7 @@ exports.push([module.i, "\n.RouteSequelize[data-v-050faf6a] {\n  padding-top: 15
 
 /***/ }),
 
-/***/ 259:
+/***/ 261:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74,6 +74,7 @@ exports.push([module.i, "\n.RouteSequelize[data-v-050faf6a] {\n  padding-top: 15
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+//
 //
 //
 //
@@ -199,7 +200,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 260:
+/***/ 262:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -216,6 +217,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, _vm._l((_vm.sequelize.tables), function(a) {
     return _c('div', {
       staticClass: "btn btn-default btn-sm",
+      staticStyle: {
+        "margin-right": "6px",
+        "margin-bottom": "6px"
+      },
       on: {
         "click": function($event) {
           _vm.$store.dispatch('admin/sequelize/fetchTable', a)

@@ -1,17 +1,17 @@
 webpackJsonp([20],{
 
-/***/ 142:
+/***/ 144:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(230)
+__webpack_require__(232)
 
 var Component = __webpack_require__(6)(
   /* script */
-  __webpack_require__(232),
+  __webpack_require__(234),
   /* template */
-  __webpack_require__(233),
+  __webpack_require__(235),
   /* scopeId */
   "data-v-6434f0a7",
   /* cssModules */
@@ -23,13 +23,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 230:
+/***/ 232:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(231);
+var content = __webpack_require__(233);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(1)(content, {});
@@ -50,7 +50,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 231:
+/***/ 233:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -65,7 +65,7 @@ exports.push([module.i, "\n.AdminDashboard[data-v-6434f0a7] {\n  padding: 15px 0
 
 /***/ }),
 
-/***/ 232:
+/***/ 234:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -122,7 +122,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 233:
+/***/ 235:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

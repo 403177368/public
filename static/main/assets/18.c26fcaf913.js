@@ -1,17 +1,17 @@
 webpackJsonp([18],{
 
-/***/ 147:
+/***/ 149:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(265)
+__webpack_require__(267)
 
 var Component = __webpack_require__(6)(
   /* script */
-  __webpack_require__(267),
+  __webpack_require__(269),
   /* template */
-  __webpack_require__(268),
+  __webpack_require__(270),
   /* scopeId */
   null,
   /* cssModules */
@@ -23,13 +23,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 265:
+/***/ 267:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(266);
+var content = __webpack_require__(268);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(1)(content, {});
@@ -50,7 +50,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 266:
+/***/ 268:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -65,7 +65,7 @@ exports.push([module.i, "\n.RouteGraphql {\n  padding: 15px 0;\n}\n", ""]);
 
 /***/ }),
 
-/***/ 267:
+/***/ 269:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -149,7 +149,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 268:
+/***/ 270:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

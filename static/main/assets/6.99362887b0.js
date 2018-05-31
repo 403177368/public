@@ -1,17 +1,17 @@
 webpackJsonp([6],{
 
-/***/ 155:
+/***/ 157:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(331)
+__webpack_require__(333)
 
 var Component = __webpack_require__(6)(
   /* script */
-  __webpack_require__(333),
-  /* template */
   __webpack_require__(335),
+  /* template */
+  __webpack_require__(337),
   /* scopeId */
   null,
   /* cssModules */
@@ -23,7 +23,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 163:
+/***/ 165:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31,7 +31,7 @@ module.exports = Component.exports
 
 exports.__esModule = true;
 
-var _from = __webpack_require__(164);
+var _from = __webpack_require__(166);
 
 var _from2 = _interopRequireDefault(_from);
 
@@ -51,24 +51,24 @@ exports.default = function (arr) {
 
 /***/ }),
 
-/***/ 164:
+/***/ 166:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(165), __esModule: true };
+module.exports = { "default": __webpack_require__(167), __esModule: true };
 
 /***/ }),
 
-/***/ 165:
+/***/ 167:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(46);
-__webpack_require__(166);
+__webpack_require__(47);
+__webpack_require__(168);
 module.exports = __webpack_require__(4).Array.from;
 
 
 /***/ }),
 
-/***/ 166:
+/***/ 168:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -76,13 +76,13 @@ module.exports = __webpack_require__(4).Array.from;
 var ctx = __webpack_require__(13);
 var $export = __webpack_require__(8);
 var toObject = __webpack_require__(28);
-var call = __webpack_require__(47);
-var isArrayIter = __webpack_require__(48);
+var call = __webpack_require__(48);
+var isArrayIter = __webpack_require__(49);
 var toLength = __webpack_require__(31);
-var createProperty = __webpack_require__(167);
-var getIterFn = __webpack_require__(49);
+var createProperty = __webpack_require__(169);
+var getIterFn = __webpack_require__(50);
 
-$export($export.S + $export.F * !__webpack_require__(50)(function (iter) { Array.from(iter); }), 'Array', {
+$export($export.S + $export.F * !__webpack_require__(51)(function (iter) { Array.from(iter); }), 'Array', {
   // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
   from: function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
     var O = toObject(arrayLike);
@@ -113,7 +113,7 @@ $export($export.S + $export.F * !__webpack_require__(50)(function (iter) { Array
 
 /***/ }),
 
-/***/ 167:
+/***/ 169:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -129,17 +129,17 @@ module.exports = function (object, index, value) {
 
 /***/ }),
 
-/***/ 177:
+/***/ 179:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(178), __esModule: true };
+module.exports = { "default": __webpack_require__(180), __esModule: true };
 
 /***/ }),
 
-/***/ 178:
+/***/ 180:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(179);
+__webpack_require__(181);
 var $Object = __webpack_require__(4).Object;
 module.exports = function defineProperty(it, key, desc) {
   return $Object.defineProperty(it, key, desc);
@@ -148,7 +148,7 @@ module.exports = function defineProperty(it, key, desc) {
 
 /***/ }),
 
-/***/ 179:
+/***/ 181:
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(8);
@@ -158,18 +158,18 @@ $export($export.S + $export.F * !__webpack_require__(9), 'Object', { definePrope
 
 /***/ }),
 
-/***/ 188:
+/***/ 190:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(189)
+__webpack_require__(191)
 
 var Component = __webpack_require__(6)(
   /* script */
-  __webpack_require__(191),
-  /* template */
   __webpack_require__(193),
+  /* template */
+  __webpack_require__(195),
   /* scopeId */
   null,
   /* cssModules */
@@ -181,13 +181,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 189:
+/***/ 191:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(190);
+var content = __webpack_require__(192);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(1)(content, {});
@@ -208,7 +208,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 190:
+/***/ 192:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -223,7 +223,7 @@ exports.push([module.i, "/*@pink: #e91e63;*/\n.Posts .panel-heading {\n  vertica
 
 /***/ }),
 
-/***/ 191:
+/***/ 193:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -233,7 +233,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _defineProperty2 = __webpack_require__(192);
+var _defineProperty2 = __webpack_require__(194);
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
@@ -291,7 +291,7 @@ exports.default = (0, _defineProperty3.default)({
 
 /***/ }),
 
-/***/ 192:
+/***/ 194:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -299,7 +299,7 @@ exports.default = (0, _defineProperty3.default)({
 
 exports.__esModule = true;
 
-var _defineProperty = __webpack_require__(177);
+var _defineProperty = __webpack_require__(179);
 
 var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -322,7 +322,7 @@ exports.default = function (obj, key, value) {
 
 /***/ }),
 
-/***/ 193:
+/***/ 195:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -360,13 +360,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 331:
+/***/ 333:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(332);
+var content = __webpack_require__(334);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(1)(content, {});
@@ -387,7 +387,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 332:
+/***/ 334:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -402,7 +402,7 @@ exports.push([module.i, "/*@pink: #e91e63;*/\n", ""]);
 
 /***/ }),
 
-/***/ 333:
+/***/ 335:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -412,7 +412,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _blog = __webpack_require__(334);
+var _blog = __webpack_require__(336);
 
 var _blog2 = _interopRequireDefault(_blog);
 
@@ -420,7 +420,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = {
   components: {
-    Posts: __webpack_require__(188)
+    Posts: __webpack_require__(190)
   },
   computed: {
     list: function list() {
@@ -486,7 +486,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 334:
+/***/ 336:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -496,7 +496,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _toConsumableArray2 = __webpack_require__(163);
+var _toConsumableArray2 = __webpack_require__(165);
 
 var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
@@ -612,7 +612,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 335:
+/***/ 337:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

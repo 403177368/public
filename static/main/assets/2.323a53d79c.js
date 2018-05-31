@@ -1,17 +1,17 @@
 webpackJsonp([2],{
 
-/***/ 150:
+/***/ 152:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(274)
+__webpack_require__(276)
 
 var Component = __webpack_require__(6)(
   /* script */
-  __webpack_require__(276),
+  __webpack_require__(278),
   /* template */
-  __webpack_require__(291),
+  __webpack_require__(293),
   /* scopeId */
   "data-v-4f860d3b",
   /* cssModules */
@@ -23,7 +23,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 163:
+/***/ 165:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31,7 +31,7 @@ module.exports = Component.exports
 
 exports.__esModule = true;
 
-var _from = __webpack_require__(164);
+var _from = __webpack_require__(166);
 
 var _from2 = _interopRequireDefault(_from);
 
@@ -51,24 +51,24 @@ exports.default = function (arr) {
 
 /***/ }),
 
-/***/ 164:
+/***/ 166:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(165), __esModule: true };
+module.exports = { "default": __webpack_require__(167), __esModule: true };
 
 /***/ }),
 
-/***/ 165:
+/***/ 167:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(46);
-__webpack_require__(166);
+__webpack_require__(47);
+__webpack_require__(168);
 module.exports = __webpack_require__(4).Array.from;
 
 
 /***/ }),
 
-/***/ 166:
+/***/ 168:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -76,13 +76,13 @@ module.exports = __webpack_require__(4).Array.from;
 var ctx = __webpack_require__(13);
 var $export = __webpack_require__(8);
 var toObject = __webpack_require__(28);
-var call = __webpack_require__(47);
-var isArrayIter = __webpack_require__(48);
+var call = __webpack_require__(48);
+var isArrayIter = __webpack_require__(49);
 var toLength = __webpack_require__(31);
-var createProperty = __webpack_require__(167);
-var getIterFn = __webpack_require__(49);
+var createProperty = __webpack_require__(169);
+var getIterFn = __webpack_require__(50);
 
-$export($export.S + $export.F * !__webpack_require__(50)(function (iter) { Array.from(iter); }), 'Array', {
+$export($export.S + $export.F * !__webpack_require__(51)(function (iter) { Array.from(iter); }), 'Array', {
   // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
   from: function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
     var O = toObject(arrayLike);
@@ -113,7 +113,7 @@ $export($export.S + $export.F * !__webpack_require__(50)(function (iter) { Array
 
 /***/ }),
 
-/***/ 167:
+/***/ 169:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -129,7 +129,7 @@ module.exports = function (object, index, value) {
 
 /***/ }),
 
-/***/ 180:
+/***/ 182:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -139,7 +139,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _regenerator = __webpack_require__(52);
+var _regenerator = __webpack_require__(53);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
@@ -147,7 +147,7 @@ var _promise = __webpack_require__(29);
 
 var _promise2 = _interopRequireDefault(_promise);
 
-var _asyncToGenerator2 = __webpack_require__(53);
+var _asyncToGenerator2 = __webpack_require__(54);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -202,13 +202,13 @@ exports.default = {
     // home: require('./home/home.js').default,
     // blog: require('./blog/blog.js').default,
     // projects: require('./projects/projects.js').default,
-    post: __webpack_require__(181).default,
+    post: __webpack_require__(183).default,
     // Canvas: require('./canvas/Canvas.js').default,
 
     // data
     // posts: require('./posts.js').default,
     // focus: require('./focus.js').default,
-    news: __webpack_require__(182).default
+    news: __webpack_require__(184).default
   },
   actions: {
     init: function init(_ref) {
@@ -258,7 +258,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 181:
+/***/ 183:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -336,7 +336,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 182:
+/***/ 184:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -346,7 +346,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _toConsumableArray2 = __webpack_require__(163);
+var _toConsumableArray2 = __webpack_require__(165);
 
 var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
@@ -446,13 +446,13 @@ exports.default = {
 
 /***/ }),
 
-/***/ 274:
+/***/ 276:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(275);
+var content = __webpack_require__(277);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(1)(content, {});
@@ -473,7 +473,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 275:
+/***/ 277:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -488,7 +488,7 @@ exports.push([module.i, "\n.bg[data-v-4f860d3b] {\n  min-height: 100vh;\n}\n", "
 
 /***/ }),
 
-/***/ 276:
+/***/ 278:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -498,7 +498,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _indexMain = __webpack_require__(180);
+var _indexMain = __webpack_require__(182);
 
 var _indexMain2 = _interopRequireDefault(_indexMain);
 
@@ -506,10 +506,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = {
   components: {
-    Navbar: __webpack_require__(277),
-    MyMenu: __webpack_require__(282),
+    Navbar: __webpack_require__(279),
+    MyMenu: __webpack_require__(284),
     // Slider: require('./Slider.vue'),
-    MyFooter: __webpack_require__(287)
+    MyFooter: __webpack_require__(289)
   },
   beforeCreate: function beforeCreate() {
     this.$store.complete(['main'], _indexMain2.default);
@@ -549,18 +549,18 @@ exports.default = {
 
 /***/ }),
 
-/***/ 277:
+/***/ 279:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(278)
+__webpack_require__(280)
 
 var Component = __webpack_require__(6)(
   /* script */
-  __webpack_require__(280),
+  __webpack_require__(282),
   /* template */
-  __webpack_require__(281),
+  __webpack_require__(283),
   /* scopeId */
   "data-v-66ff04d4",
   /* cssModules */
@@ -572,13 +572,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 278:
+/***/ 280:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(279);
+var content = __webpack_require__(281);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(1)(content, {});
@@ -599,7 +599,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 279:
+/***/ 281:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -614,7 +614,7 @@ exports.push([module.i, "/*@pink: #e91e63;*/\n.Navbar[data-v-66ff04d4] {\n  posi
 
 /***/ }),
 
-/***/ 280:
+/***/ 282:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -768,7 +768,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 281:
+/***/ 283:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -887,18 +887,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 282:
+/***/ 284:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(283)
+__webpack_require__(285)
 
 var Component = __webpack_require__(6)(
   /* script */
-  __webpack_require__(285),
+  __webpack_require__(287),
   /* template */
-  __webpack_require__(286),
+  __webpack_require__(288),
   /* scopeId */
   "data-v-ae7bca36",
   /* cssModules */
@@ -910,13 +910,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 283:
+/***/ 285:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(284);
+var content = __webpack_require__(286);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(1)(content, {});
@@ -937,7 +937,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 284:
+/***/ 286:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -952,7 +952,7 @@ exports.push([module.i, "/*@pink: #e91e63;*/\n.Menu[data-v-ae7bca36] {\n  positi
 
 /***/ }),
 
-/***/ 285:
+/***/ 287:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1022,7 +1022,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 286:
+/***/ 288:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1055,18 +1055,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 287:
+/***/ 289:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(288)
+__webpack_require__(290)
 
 var Component = __webpack_require__(6)(
   /* script */
   null,
   /* template */
-  __webpack_require__(290),
+  __webpack_require__(292),
   /* scopeId */
   "data-v-2dce59a1",
   /* cssModules */
@@ -1078,13 +1078,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 288:
+/***/ 290:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(289);
+var content = __webpack_require__(291);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(1)(content, {});
@@ -1105,7 +1105,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 289:
+/***/ 291:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -1120,7 +1120,7 @@ exports.push([module.i, "/*@pink: #e91e63;*/\n.Footer[data-v-2dce59a1] {\n  padd
 
 /***/ }),
 
-/***/ 290:
+/***/ 292:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1131,7 +1131,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 291:
+/***/ 293:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

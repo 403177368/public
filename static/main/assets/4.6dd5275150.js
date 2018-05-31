@@ -1,19 +1,19 @@
-webpackJsonp([5],{
+webpackJsonp([4],{
 
-/***/ 153:
+/***/ 161:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(315)
+__webpack_require__(355)
 
 var Component = __webpack_require__(6)(
   /* script */
-  __webpack_require__(317),
+  __webpack_require__(357),
   /* template */
-  __webpack_require__(320),
+  __webpack_require__(358),
   /* scopeId */
-  "data-v-1fb9dbe3",
+  "data-v-bd9c99de",
   /* cssModules */
   null
 )
@@ -23,7 +23,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 163:
+/***/ 165:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31,7 +31,7 @@ module.exports = Component.exports
 
 exports.__esModule = true;
 
-var _from = __webpack_require__(164);
+var _from = __webpack_require__(166);
 
 var _from2 = _interopRequireDefault(_from);
 
@@ -51,24 +51,24 @@ exports.default = function (arr) {
 
 /***/ }),
 
-/***/ 164:
+/***/ 166:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(165), __esModule: true };
+module.exports = { "default": __webpack_require__(167), __esModule: true };
 
 /***/ }),
 
-/***/ 165:
+/***/ 167:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(46);
-__webpack_require__(166);
+__webpack_require__(47);
+__webpack_require__(168);
 module.exports = __webpack_require__(4).Array.from;
 
 
 /***/ }),
 
-/***/ 166:
+/***/ 168:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -76,13 +76,13 @@ module.exports = __webpack_require__(4).Array.from;
 var ctx = __webpack_require__(13);
 var $export = __webpack_require__(8);
 var toObject = __webpack_require__(28);
-var call = __webpack_require__(47);
-var isArrayIter = __webpack_require__(48);
+var call = __webpack_require__(48);
+var isArrayIter = __webpack_require__(49);
 var toLength = __webpack_require__(31);
-var createProperty = __webpack_require__(167);
-var getIterFn = __webpack_require__(49);
+var createProperty = __webpack_require__(169);
+var getIterFn = __webpack_require__(50);
 
-$export($export.S + $export.F * !__webpack_require__(50)(function (iter) { Array.from(iter); }), 'Array', {
+$export($export.S + $export.F * !__webpack_require__(51)(function (iter) { Array.from(iter); }), 'Array', {
   // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
   from: function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
     var O = toObject(arrayLike);
@@ -113,7 +113,7 @@ $export($export.S + $export.F * !__webpack_require__(50)(function (iter) { Array
 
 /***/ }),
 
-/***/ 167:
+/***/ 169:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -129,14 +129,14 @@ module.exports = function (object, index, value) {
 
 /***/ }),
 
-/***/ 168:
+/***/ 170:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(169), __esModule: true };
+module.exports = { "default": __webpack_require__(171), __esModule: true };
 
 /***/ }),
 
-/***/ 169:
+/***/ 171:
 /***/ (function(module, exports, __webpack_require__) {
 
 var core = __webpack_require__(4);
@@ -148,30 +148,30 @@ module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
 
 /***/ }),
 
-/***/ 170:
+/***/ 172:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(171), __esModule: true };
+module.exports = { "default": __webpack_require__(173), __esModule: true };
 
 /***/ }),
 
-/***/ 171:
+/***/ 173:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(172);
+__webpack_require__(174);
 module.exports = __webpack_require__(4).Object.keys;
 
 
 /***/ }),
 
-/***/ 172:
+/***/ 174:
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 Object.keys(O)
 var toObject = __webpack_require__(28);
 var $keys = __webpack_require__(32);
 
-__webpack_require__(173)('keys', function () {
+__webpack_require__(175)('keys', function () {
   return function keys(it) {
     return $keys(toObject(it));
   };
@@ -180,7 +180,7 @@ __webpack_require__(173)('keys', function () {
 
 /***/ }),
 
-/***/ 173:
+/***/ 175:
 /***/ (function(module, exports, __webpack_require__) {
 
 // most Object methods by ES6 should accept primitives
@@ -197,7 +197,7 @@ module.exports = function (KEY, exec) {
 
 /***/ }),
 
-/***/ 174:
+/***/ 176:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -207,7 +207,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _toConsumableArray2 = __webpack_require__(163);
+var _toConsumableArray2 = __webpack_require__(165);
 
 var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
@@ -215,11 +215,11 @@ var _promise = __webpack_require__(29);
 
 var _promise2 = _interopRequireDefault(_promise);
 
-var _stringify = __webpack_require__(168);
+var _stringify = __webpack_require__(170);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
-var _extends2 = __webpack_require__(51);
+var _extends2 = __webpack_require__(52);
 
 var _extends3 = _interopRequireDefault(_extends2);
 
@@ -227,7 +227,7 @@ var _axios = __webpack_require__(17);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _binance = __webpack_require__(175);
+var _binance = __webpack_require__(177);
 
 var _binance2 = _interopRequireDefault(_binance);
 
@@ -312,7 +312,7 @@ exports.default = {
   state: state,
   modules: {
     binance: _binance2.default,
-    comment_box: __webpack_require__(176).default
+    comment_box: __webpack_require__(178).default
   },
   actions: {
     init: function init(_ref) {
@@ -532,7 +532,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 175:
+/***/ 177:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -542,15 +542,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _stringify = __webpack_require__(168);
+var _stringify = __webpack_require__(170);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
-var _extends2 = __webpack_require__(51);
+var _extends2 = __webpack_require__(52);
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _keys = __webpack_require__(170);
+var _keys = __webpack_require__(172);
 
 var _keys2 = _interopRequireDefault(_keys);
 
@@ -979,7 +979,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 176:
+/***/ 178:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1053,49 +1053,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 315:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(316);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(1)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../../../../../../node_modules/css-loader/index.js!../../../../../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-1fb9dbe3&scoped=true!../../../../../../../../node_modules/postcss-loader/index.js!../../../../../../../../node_modules/less-loader/index.js!../../../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue", function() {
-			var newContent = require("!!../../../../../../../../node_modules/css-loader/index.js!../../../../../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-1fb9dbe3&scoped=true!../../../../../../../../node_modules/postcss-loader/index.js!../../../../../../../../node_modules/less-loader/index.js!../../../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 316:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(0)();
-// imports
-
-
-// module
-exports.push([module.i, "/*@pink: #e91e63;*/\n.Projects .card .card-heading span[data-v-1fb9dbe3] {\n  margin-right: 15px;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 317:
+/***/ 182:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1105,209 +1063,191 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(318);
+var _regenerator = __webpack_require__(53);
 
-var _index2 = _interopRequireDefault(_index);
-
-var _index3 = __webpack_require__(174);
-
-var _index4 = _interopRequireDefault(_index3);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-  props: {},
-  data: function data() {
-    return {
-      arr: [{
-        name: '知乎-发现',
-        href: '//www.zhihu.com/explore'
-      }, {
-        name: '豆瓣',
-        href: '//m.douban.com'
-      }]
-    };
-  },
-  beforeRouteEnter: function beforeRouteEnter(to, from, next) {
-    next();
-  },
-
-  computed: {
-    projects: function projects() {
-      return this.$store.state.main.projects;
-    }
-  },
-  beforeCreate: function beforeCreate() {
-    this.$store.complete(['main', 'home'], _index4.default);
-    this.$store.complete(['main', 'projects'], _index2.default);
-  },
-  created: function created() {},
-  mounted: function mounted() {
-    this.$store.dispatch('main/home/fetch', { what: 'jianshu' });
-    this.$store.dispatch('main/projects/init');
-  },
-
-  methods: {
-    register: function register(store) {
-      store.complete(['main', 'home'], _index4.default);
-      store.complete(['main', 'projects'], _index2.default);
-    },
-    preFetch: function preFetch(store) {
-      store.dispatch('main/projects/init');
-    }
-  }
-};
-
-/***/ }),
-
-/***/ 318:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _toConsumableArray2 = __webpack_require__(163);
-
-var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+var _regenerator2 = _interopRequireDefault(_regenerator);
 
 var _promise = __webpack_require__(29);
 
 var _promise2 = _interopRequireDefault(_promise);
 
+var _asyncToGenerator2 = __webpack_require__(54);
+
+var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  namespaced: true,
+  state: {
+    inited: false,
+    navbar: {
+      options: [{
+        name: 'Home',
+        icon: 'fa-home',
+        to: '/main/home'
+      }, {
+        name: 'Projects',
+        icon: 'fa-code',
+        to: '/main/projects'
+      }, {
+        name: 'Canvas',
+        icon: 'fa-image',
+        to: '/main/canvas'
+      }, {
+        name: 'Blog',
+        icon: 'fa-book',
+        to: '/main/blog'
+      }, {
+        name: 'Farm',
+        icon: 'fa-gamepad',
+        href: '/farm/'
+      }, {
+        name: 'Vue',
+        icon: 'fa-cog',
+        href: '/vue/'
+      }, {
+        name: 'Mall',
+        icon: 'fa-laptop',
+        to: '/mall'
+      }, {
+        name: 'Admin',
+        icon: 'fa-cogs',
+        to: '/admin'
+      }]
+    },
+    theme: {
+      options: ['blue', 'zhihu', 'angulur', 'github'],
+      val: 'zhihu'
+    }
+  },
+  modules: {
+    // routes
+    // home: require('./home/home.js').default,
+    // blog: require('./blog/blog.js').default,
+    // projects: require('./projects/projects.js').default,
+    post: __webpack_require__(183).default,
+    // Canvas: require('./canvas/Canvas.js').default,
+
+    // data
+    // posts: require('./posts.js').default,
+    // focus: require('./focus.js').default,
+    news: __webpack_require__(184).default
+  },
+  actions: {
+    init: function init(_ref) {
+      var _this = this;
+
+      var state = _ref.state,
+          dispatch = _ref.dispatch;
+      return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+        var theme;
+        return _regenerator2.default.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return new _promise2.default(function (resolve) {
+                  setTimeout(function () {
+                    console.log(111);
+                    resolve();
+                  }, 1000);
+                });
+
+              case 2:
+                theme = localStorage.getItem('theme');
+
+                if (theme) {
+                  dispatch('switch_theme', { name: theme });
+                }
+                state.inited = true;
+
+              case 5:
+              case 'end':
+                return _context.stop();
+            }
+          }
+        }, _callee, _this);
+      }))();
+    },
+    switch_theme: function switch_theme(_ref2, _ref3) {
+      var state = _ref2.state;
+      var name = _ref3.name;
+
+      state.theme.val = name;
+      localStorage.setItem('theme', name);
+    }
+  }
+};
+
+/***/ }),
+
+/***/ 183:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _axios = __webpack_require__(17);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _router = __webpack_require__(19);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var state = {
-  inited: false,
-  projects: []
+  firstMount: true,
+  tick: 0,
+  state: 'pending',
+  id: null,
+  html: ''
 };
 
 var actions = {
-  init: function init(ctx) {
-    if (ctx.state.inited === false) {
-      ctx.dispatch('fetchProjects').then(function (projects) {
-        ctx.commit('SET_PROJECTS', projects);
-      });
-    }
-  },
-  fetchProjects: function fetchProjects(ctx) {
-    return new _promise2.default(function (resolve, reject) {
-      var projects = __webpack_require__(319).default;
-      resolve(projects);
+  fetchPost: function fetchPost(ctx, _ref) {
+    var id = _ref.id;
+
+    ctx.commit('FETCH_POST_PENDING');
+
+    // var params = router.currentRoute.path.split('/');
+    // var id = params[params.length - 1];
+    // console.log(id)
+
+    return (0, _axios2.default)({
+      url: '/api/marked/' + id,
+      // this is essential cause a fetch request is without cookie by default
+      credentials: 'include',
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      mode: 'cors'
+    }).then(function (res) {
+      ctx.commit('SET_POST', { newPost: res.data, id: id });
+    }).catch(function (err) {
+      console.log(err);
     });
   }
 };
 
 var mutations = {
-  SET_PROJECTS: function SET_PROJECTS(state, arr) {
-    var _state$projects;
+  FETCH_POST_PENDING: function FETCH_POST_PENDING(state) {
+    state.state = 'pending';
+    state.html = '';
+  },
+  SET_POST: function SET_POST(state, _ref2) {
+    var newPost = _ref2.newPost,
+        id = _ref2.id;
 
-    state.inited = true;
-    (_state$projects = state.projects).push.apply(_state$projects, (0, _toConsumableArray3.default)(arr));
+    state.state = 'resolved';
+    state.tick++;
+    state.id = id;
+    state.html = newPost;
   }
 };
 
@@ -1320,7 +1260,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 319:
+/***/ 184:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1329,133 +1269,627 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = [{
-  title: 'Farm',
-  desc: 'An E-commerce mobile webapp built with react, react-router, redux and webpack.',
-  hrefs: ['/farm/index.html']
-}, {
-  title: 'Time',
-  desc: 'An E-commerce website with an admin system built using vue, vue-router, vuex and webpack.',
-  hrefs: ['/time/index.html']
-}, {
-  title: 'Effects Showcase',
-  desc: 'A Showcase of effects including CSS3, svg and canvas, built using vue components.',
-  hrefs: ['/vue/index.html']
-}, {
-  title: 'H5',
-  desc: 'So-called H5 projects',
-  hrefs: ['/hot/wolf.html', './_mobile/h5/star_wars/index.html', './_mobile/h5/olympics/index.html', './_mobile/h5/olympics/result.html', './h5/carnival.html', './_mobile/h5/school/index.html', './_mobile/h5/feast/feast.html', './_mobile/h5/live/live.html', './_mobile/h5/project/index.html']
-}, {
-  title: 'Desktop',
-  desc: 'Some desktop website projects.',
-  hrefs: ['./fytpy/index.html', './fytpy/react/index.html', './caredaily/index.html', './desktop/_wolf/index.html', './desktop/presentation/index.html']
-}, {
-  title: 'Canvas',
-  desc: 'Some fun canvases.',
-  hrefs: ['./_canvas/Heart.html', './_canvas/NeonHexagons/index.html', './_canvas/DriftingBalls/index.html', './_canvas/lion/index.html', './_canvas/cube/canvas_geometry_cube.html']
-}];
+
+var _toConsumableArray2 = __webpack_require__(165);
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
+var _axios = __webpack_require__(17);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  namespaced: true,
+  state: {
+    inited: false,
+    status: '',
+    items: [],
+    page: 1
+  },
+  getters: {
+    nav: function nav(state) {
+      var nav = [];
+      var start, end;
+      if (state.page <= 2) {
+        start = 1;
+        end = 5;
+      } else {
+        start = state.page - 2;
+        end = state.page + 2;
+      }
+      for (var i = start; i < end + 1; i++) {
+        nav.push(i);
+      }
+      console.log(nav);
+      return nav;
+    }
+  },
+  actions: {
+    init: function init(_ref) {
+      var state = _ref.state,
+          dispatch = _ref.dispatch;
+
+      if (state.inited === false) {
+        dispatch('fetch', { page: 1 });
+      }
+    },
+    fetch: function fetch(_ref2, _ref3) {
+      var state = _ref2.state;
+      var page = _ref3.page;
+
+      state.status = 'loading';
+      return (0, _axios2.default)({
+        // url: '//cnodejs.org/api/v1/topics?page=' + page + '&limit=20',
+        url: '/api/cnode?page=' + page,
+        // this is essential cause a fetch request is without cookie by default
+        credentials: 'include',
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        mode: 'cors'
+      }).then(function (res) {
+        var _state$items;
+
+        state.items.length = 0;
+        (_state$items = state.items).push.apply(_state$items, (0, _toConsumableArray3.default)(res.data.data));
+        state.inited = true;
+        state.page = page;
+        state.status = 'success';
+
+        var el = document.querySelector('#container-1996');
+        window.scroll(0, el.offsetTop - 30);
+      }).catch(function (err) {
+        alert(err.message);
+        // state.status = 'error';
+        // state.items.length = 0;
+        // state.items.push(...[{
+        //   author: {
+
+        //   }
+        // }]);
+        // state.inited = true;
+        // state.page = 1;
+        // console.log(err);
+      });
+    },
+    to_page: function to_page(_ref4, _ref5) {
+      var state = _ref4.state,
+          dispatch = _ref4.dispatch;
+      var page = _ref5.page;
+
+      dispatch('fetch', { page: page }).then(function () {
+        state.page = page;
+      });
+    }
+  },
+  mutations: {}
+};
 
 /***/ }),
 
-/***/ 320:
+/***/ 355:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(356);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(1)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../../../../../node_modules/css-loader/index.js!../../../../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-bd9c99de&scoped=true!../../../../../../../node_modules/postcss-loader/index.js!../../../../../../../node_modules/less-loader/index.js!../../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.binance.vue", function() {
+			var newContent = require("!!../../../../../../../node_modules/css-loader/index.js!../../../../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-bd9c99de&scoped=true!../../../../../../../node_modules/postcss-loader/index.js!../../../../../../../node_modules/less-loader/index.js!../../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.binance.vue");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ 356:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)();
+// imports
+
+
+// module
+exports.push([module.i, "\n.Binance th[data-v-bd9c99de],\n.Binance td[data-v-bd9c99de] {\n  vertical-align: middle;\n}\n.Binance .min-30[data-v-bd9c99de] {\n  min-height: 30px;\n  line-height: 30px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 357:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _indexMain = __webpack_require__(182);
+
+var _indexMain2 = _interopRequireDefault(_indexMain);
+
+var _index = __webpack_require__(176);
+
+var _index2 = _interopRequireDefault(_index);
+
+var _vuex = __webpack_require__(55);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  components: {},
+  computed: {
+    picked: function picked() {
+      // console.log(this.$store.getters['main/home/binance/picked']);
+      return this.$store.getters['main/home/binance/picked'];
+    },
+    home: function home() {
+      return this.$store.state.main.home;
+    },
+    user: function user() {
+      return this.$store.state.app.user;
+    }
+  },
+  beforeCreate: function beforeCreate() {
+    this.$store.complete(['main'], _indexMain2.default);
+    this.$store.complete(['main', 'home'], _index2.default);
+  },
+
+  mounted: function mounted() {
+    this.$store.dispatch('main/home/binance/init');
+  },
+  methods: {
+    // register(store) {
+    //   store.complete(['main', 'home'], rawModule);
+    // },
+    // preFetch(store) {
+    //   return store.dispatch('main/home/init');
+    // },
+  }
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+
+/***/ 358:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('transition', {
+  return _c('div', {
+    staticClass: "Binance container-fluid"
+  }, [_c('div', {
+    staticClass: "form-group"
+  }, [_c('router-link', {
+    staticClass: "btn btn-primary",
     attrs: {
-      "name": "fade-in"
+      "to": '/main/home'
     }
-  }, [_c('div', {
-    staticClass: "Projects"
-  }, [_c('div', {
-    staticClass: "container"
-  }, [_c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col-sm-8"
-  }, [_c('div', {
-    staticClass: "panel panel-default panel-full-sm"
-  }, [_c('div', {
-    staticClass: "panel-heading color-text"
-  }, [_c('span', [_vm._v("简书")])]), _c('div', {
-    staticClass: "list-group"
-  }, _vm._l((_vm.$store.state.main.home.jianshu.items), function(a) {
-    return _c('div', {
-      staticClass: "list-group-item"
-    }, [_c('div', {
-      staticClass: "small color-text"
-    }, [_c('img', {
-      staticStyle: {
-        "width": "30px",
-        "border-radius": "1000px",
-        "display": "inline-block",
-        "margin-right": "10px"
-      },
-      attrs: {
-        "src": a.author.avatar
-      }
-    }), _c('span', {
-      staticStyle: {
-        "margin-right": "10px"
-      }
-    }, [_vm._v(_vm._s(a.author.name))]), _c('span', {
-      staticClass: "text-muted"
-    }, [_vm._v(_vm._s(a.time.substr(0, 10)))]), _c('h4', [_c('a', {
-      attrs: {
-        "href": a.href
-      }
-    }, [_vm._v("\n                      " + _vm._s(a.title) + "\n                    ")])])]), _c('div', [_vm._v(_vm._s(a.abstract))])])
-  })), _c('div', {
-    staticClass: "panel-body"
-  }, [_c('div', {
-    staticClass: "btn btn-primary"
-  }, [_vm._v("加载更多")])])])]), _c('div', {
-    staticClass: "col-sm-4"
-  }, [_c('div', {
+  }, [_vm._v("\n        Back\n      ")])], 1), _c('div', {
     staticClass: "panel panel-default"
   }, [_c('div', {
     staticClass: "panel-heading"
-  }, [_vm._v("\n              Fun Places\n            ")]), _c('div', {
+  }, [_vm._v("\n        Binance (" + _vm._s(_vm.home.binance.status) + ")\n      ")]), _c('div', {
     staticClass: "panel-body"
-  }, _vm._l((_vm.arr), function(a) {
-    return _c('p', [_c('a', {
-      attrs: {
-        "href": a.href
-      }
-    }, [_vm._v(_vm._s(a.name))])])
-  }))])])]), _c('div', {
-    staticClass: "panel panel-default"
-  }, [_c('div', {
-    staticClass: "panel-body"
-  }, [_vm._v("\n          Ah, you finally got here! These are the projects I am maintaining currently.\n        ")])]), _c('div', {
-    staticClass: "row"
-  }, _vm._l((_vm.projects.projects), function(a) {
+  }, [_vm._m(0), (_vm.home.binance.alert_text) ? _c('div', {
+    staticClass: "alert alert-danger"
+  }, [_vm._v("\n          " + _vm._s(_vm.home.binance.alert_text) + "\n        ")]) : _vm._e()]), _c('div', {
+    staticClass: "list-group"
+  }, _vm._l((_vm.picked), function(a) {
     return _c('div', {
+      staticClass: "list-group-item",
+      style: ((a.percent > 1 ? 'background: #dff0d8;' : '') +
+        (a.percent < -1 ? 'background: #f2dede;' : ''))
+    }, [_c('div', {
+      staticClass: "row"
+    }, [_c('div', {
+      staticClass: "col-sm-3"
+    }, [_c('div', {
+      staticClass: "row"
+    }, [_c('div', {
+      staticClass: "col-xs-4 col-sm-6"
+    }, [_vm._v("\n                  " + _vm._s(a.key) + "\n                ")]), _c('div', {
+      staticClass: "col-xs-6"
+    }, [_vm._v("\n                  " + _vm._s(a.stream.match(/usdt/) ? Number(a.open_price).toFixed(2) : a.open_price) + "\n                ")])])]), _c('div', {
       staticClass: "col-sm-4"
     }, [_c('div', {
-      staticClass: "panel panel-default"
+      staticClass: "row",
+      class: (a.percent > 1 ? 'bg-success' : '') + ' ' +
+        (a.percent < -1 ? 'bg-danger' : '')
     }, [_c('div', {
-      staticClass: "panel-heading"
-    }, [_c('span', {
-      staticClass: "title"
-    }, [_vm._v(_vm._s(a.title))])]), _c('div', {
-      staticClass: "list-group"
+      staticClass: "col-xs-4",
+      style: ('color: ' + (a.percent > 0 ? 'green' : 'red') + ';')
+    }, [_vm._v("\n                  " + _vm._s(a.stream.match(/usdt/) ? Number(a.last_price).toFixed(2) : a.last_price) + "\n                ")]), _c('div', {
+      staticClass: "col-xs-4",
+      style: ('color: ' + (a.percent > 0 ? 'green' : 'red') + ';')
+    }, [_vm._v("\n                  (" + _vm._s(a.percent) + "%)\n                ")]), _c('div', {
+      staticClass: "col-xs-4",
+      style: ('color: ' + (a.percent > 0 ? 'green' : 'red') + ';')
+    }, [_vm._v(" \n                  $" + _vm._s(a.stream.match(/usdt/) ? '--' : (a.last_price * _vm.home.binance.ratio).toFixed(2)) + " \n                ")])])]), _c('div', {
+      staticClass: "col-sm-5"
     }, [_c('div', {
-      staticClass: "list-group-item"
-    }, [(a.desc) ? _c('div', {
-      staticClass: "desc"
-    }, [_vm._v("\n                  " + _vm._s(a.desc) + "\n                ")]) : _vm._e()]), (a.hrefs) ? _c('div', {
-      staticClass: "list-group-item"
-    }, _vm._l((a.hrefs), function(b) {
-      return _c('span', [_c('a', {
-        attrs: {
-          "href": b,
-          "target": "_blank"
+      staticClass: "row"
+    }, [_c('div', {
+      staticClass: "col-xs-4"
+    }, [_c('input', {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
+        value: (a.lower),
+        expression: "a.lower"
+      }],
+      staticClass: "input-sm form-control",
+      attrs: {
+        "placeholder": "Lower limit"
+      },
+      domProps: {
+        "value": (a.lower)
+      },
+      on: {
+        "input": function($event) {
+          if ($event.target.composing) { return; }
+          a.lower = $event.target.value
         }
-      }, [_vm._v(_vm._s(b))]), _c('br')])
-    })) : _vm._e()])])])
-  }))])])])
-},staticRenderFns: []}
+      }
+    })]), _c('div', {
+      staticClass: "col-xs-4"
+    }, [_c('input', {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
+        value: (a.upper),
+        expression: "a.upper"
+      }],
+      staticClass: "input-sm form-control",
+      attrs: {
+        "placeholder": "Upper limit"
+      },
+      domProps: {
+        "value": (a.upper)
+      },
+      on: {
+        "input": function($event) {
+          if ($event.target.composing) { return; }
+          a.upper = $event.target.value
+        }
+      }
+    })]), _c('div', {
+      staticClass: "col-xs-4"
+    }, [_c('div', {
+      directives: [{
+        name: "show",
+        rawName: "v-show",
+        value: (_vm.home.binance.watching === false),
+        expression: " home.binance.watching === false "
+      }],
+      staticClass: "btn btn-primary btn-sm",
+      on: {
+        "click": function($event) {
+          _vm.$store.dispatch('main/home/binance/watch')
+        }
+      }
+    }, [_vm._v("\n                    Watch\n                  ")]), _c('div', {
+      directives: [{
+        name: "show",
+        rawName: "v-show",
+        value: (_vm.home.binance.watching === true),
+        expression: " home.binance.watching === true "
+      }],
+      staticClass: "btn btn-success btn-sm",
+      on: {
+        "click": function($event) {
+          _vm.$store.dispatch('main/home/binance/unwatch')
+        }
+      }
+    }, [_vm._v("\n                    Watching\n                  ")])])])])])])
+  })), _c('div', {
+    staticClass: "panel-body"
+  }, [_c('div', {
+    staticClass: "table-responsive"
+  }, [_c('table', {
+    staticClass: "table table-bordered"
+  }, [_vm._m(1), _c('tbody', _vm._l((_vm.picked), function(a) {
+    return _c('tr', [_c('td', [_vm._v(_vm._s(a.key))]), _c('td', [_vm._v("\n                  " + _vm._s(a.open_price) + "\n                ")]), _c('td', {
+      class: (a.percent > 1 ? 'bg-success' : '') + ' ' +
+        (a.percent < -1 ? 'bg-danger' : '')
+    }, [_c('div', {
+      staticClass: "row"
+    }, [_c('div', {
+      staticClass: "col-md-4",
+      style: ('color: ' + (a.percent > 0 ? 'green' : 'red') + ';')
+    }, [_vm._v("\n                      " + _vm._s(a.stream.match(/usdt/) ? Number(a.last_price).toFixed(2) : a.last_price) + "\n                    ")]), _c('div', {
+      staticClass: "col-md-4",
+      style: ('color: ' + (a.percent > 0 ? 'green' : 'red') + ';')
+    }, [_vm._v("\n                      (" + _vm._s(a.percent) + "%)\n                    ")]), _c('div', {
+      staticClass: "col-md-4"
+    }, [_vm._v(" \n                      $" + _vm._s(a.stream.match(/usdt/) ? '--' : (a.last_price * _vm.home.binance.ratio).toFixed(2)) + " \n                    ")])])]), _c('td', [_c('input', {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
+        value: (a.lower),
+        expression: "a.lower"
+      }],
+      staticClass: "input-sm form-control",
+      domProps: {
+        "value": (a.lower)
+      },
+      on: {
+        "input": function($event) {
+          if ($event.target.composing) { return; }
+          a.lower = $event.target.value
+        }
+      }
+    })]), _c('td', [_c('input', {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
+        value: (a.upper),
+        expression: "a.upper"
+      }],
+      staticClass: "input-sm form-control",
+      domProps: {
+        "value": (a.upper)
+      },
+      on: {
+        "input": function($event) {
+          if ($event.target.composing) { return; }
+          a.upper = $event.target.value
+        }
+      }
+    })]), _c('td', {
+      style: ('color: ' + (a.last_price < a.target ? 'red' : 'green') + ';')
+    }, [_vm._v("\n                  " + _vm._s(a.target) + "\n                ")]), _c('td', [_vm._v(_vm._s(parseInt(a.volume)))]), _c('td', [_vm._v(_vm._s(a.start_time))])])
+  }))])])]), _c('div', {
+    staticClass: "list-group"
+  }, _vm._l((_vm.home.binance.pairs), function(a) {
+    return _c('div', {
+      staticClass: "list-group-item"
+    }, [_c('div', {
+      staticClass: "row"
+    }, [_c('div', {
+      staticClass: "col-xs-3"
+    }, [_vm._v("\n              " + _vm._s(a.key) + "\n            ")]), _c('div', {
+      staticClass: "col-xs-3"
+    }, [_vm._v("\n              " + _vm._s(a.open_price) + "\n            ")]), _c('div', {
+      staticClass: "col-xs-3"
+    }, [_vm._v("\n              " + _vm._s(a.last_price) + "\n            ")]), _c('div', {
+      staticClass: "col-xs-1"
+    }, [_vm._v("\n              " + _vm._s(a.start_time) + "\n            ")]), _c('div', {
+      staticClass: "col-xs-2"
+    }, [_vm._v("\n              " + _vm._s(a.percent) + "\n            ")])])])
+  }))])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "alert alert-danger"
+  }, [_vm._v("\n          Tips:"), _c('br'), _vm._v("\n          1. The only right moment to buy is when the price is falling hard. "), _c('br'), _vm._v("\n          2. The price always soar up all of a sudden. All you need to do is wait. "), _c('br'), _vm._v("\n          3. Sell half of your holdings near the top to refund. "), _c('br')])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('thead', [_c('tr', [_c('th', [_vm._v("\n                  Pair\n                ")]), _c('th', [_vm._v("Open Price")]), _c('th', [_vm._v("Last Price")]), _c('th', [_vm._v("Lower Limit")]), _c('th', [_vm._v("Upper Limit")]), _c('th', [_vm._v("Target")]), _c('th', [_vm._v("Volume")]), _c('th', [_vm._v("Start Time")])])])
+}]}
 
 /***/ })
 
