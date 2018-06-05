@@ -234,6 +234,7 @@ var rawModule = {
           state.post.comments.length = 0;
           (_state$post$comments = state.post.comments).push.apply(_state$post$comments, (0, _toConsumableArray3.default)(res.data.data.replies.slice()));
           // console.log(this.post);
+          window.scroll(0, 0);
           state.inited = true;
           resolve();
         }).catch(function (err) {

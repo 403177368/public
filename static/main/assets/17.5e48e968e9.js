@@ -184,6 +184,9 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
 
 exports.default = {
   components: {},
@@ -327,8 +330,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
           })
         }
       }
-    }, [_vm._v("\n                Delete\n              ")])]), _vm._l((a), function(b) {
-      return _c('td', [_vm._v(_vm._s(b))])
+    }, [_vm._v("\n                Delete\n              ")])]), _vm._l((a), function(b, key) {
+      return _c('td', [(key === 'createdAt' || key === 'updatedAt') ? _c('span', [_vm._v(_vm._s(_vm._f("date")(b)))]) : _c('span', [_vm._v(_vm._s(b))])])
     })], 2)
   }))])]) : _vm._e()])], 1)
 },staticRenderFns: []}
