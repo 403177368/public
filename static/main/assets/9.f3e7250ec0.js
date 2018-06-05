@@ -391,6 +391,7 @@ var rawModule = {
 //
 //
 //
+//
 
 exports.default = {
   data: function data() {
@@ -446,12 +447,6 @@ exports.default = {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.$store.state.main.cnode_post.inited),
-      expression: "$store.state.main.cnode_post.inited"
-    }],
     staticClass: "RouteCnodePost"
   }, [_c('div', {
     staticClass: "container"
@@ -466,7 +461,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       value: (_vm.state.inited === false),
       expression: "state.inited === false"
     }],
-    staticClass: "panel panel-default panel-full-sm post--"
+    staticClass: "panel panel-default panel-full-sm post--",
+    staticStyle: {
+      "height": "150vh"
+    }
   }, [_vm._m(0)]), _c('div', {
     directives: [{
       name: "show",
