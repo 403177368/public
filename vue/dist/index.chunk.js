@@ -850,7 +850,7 @@ var store = new Vuex.Store({
         ctx.dispatch('items/fetchItems', {
           tag: '按钮'
         });
-      };
+      }
     }
   },
   mutations: {
