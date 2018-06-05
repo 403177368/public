@@ -429,6 +429,7 @@ exports.default = {
     this.$store.dispatch('main/cnode_post/init', { id: this.$route.params.id });
   },
   mounted: function mounted() {
+    window.scroll(0, 0);
     // this.preFetch();
   },
 
