@@ -381,6 +381,16 @@ var rawModule = {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
   data: function data() {
@@ -406,6 +416,9 @@ exports.default = {
   // },
   components: {},
   computed: {
+    state: function state() {
+      return this.$store.state.main.cnode_post;
+    },
     post: function post() {
       return this.$store.state.main.cnode_post.post;
     }
@@ -447,13 +460,27 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "col-sm-8 col-sm-offset-2"
   }, [_c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.state.inited === false),
+      expression: "state.inited === false"
+    }],
+    staticClass: "panel panel-default panel-full-sm post--"
+  }, [_vm._m(0)]), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.state.inited),
+      expression: "state.inited"
+    }],
     staticClass: "panel panel-default panel-full-sm post--"
   }, [_c('div', {
     staticClass: "panel-body",
     staticStyle: {
       "overflow": "hidden"
     }
-  }, [_vm._m(0), _c('div', {
+  }, [_vm._m(1), _c('div', {
     staticClass: "page-header",
     staticStyle: {
       "margin-top": "0"
@@ -496,8 +523,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "innerHTML": _vm._s(_vm.post.content)
     }
   })])]), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.state.inited),
+      expression: "state.inited"
+    }],
     staticClass: "panel panel-default panel-full-sm"
-  }, [_vm._m(1), _c('ul', {
+  }, [_vm._m(2), _c('ul', {
     staticClass: "list-group comments"
   }, [_vm._l((_vm.post.comments), function(a, i) {
     return _c('li', {
@@ -532,6 +565,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "list-group-item text-center"
   }, [_vm._v("\n                No comments.\n              ")])], 2)])])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "panel-body text-center",
+    staticStyle: {
+      "overflow": "hidden"
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-spinner fa-spin"
+  })])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('a', {
     attrs: {
       "href": "javascript:history.back();"
